@@ -1037,7 +1037,14 @@
       }
     }
   ],
-  "variable_elements": [],
+  "variable_elements": [
+    {
+      "name": "Inspiration",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    }
+  ],
   "sound_elements": [
     {
       "name": "whistle_sound",
@@ -1117,9 +1124,9 @@
       "item.instrumental.obsidian_banjo": "Obsidian Banjo",
       "key.mcreator.inspiration_test_key": "Inspiration Test Key",
       "item.instrumental.diamond_string": "Diamond String",
-      "subtitles.tambourine_sound": "",
-      "item.instrumental.gold_triangle": "Gold Triangle",
       "item.instrumental.dried_bamboo_iron_chimes": "Dried Bamboo Iron Chimes",
+      "item.instrumental.gold_triangle": "Gold Triangle",
+      "subtitles.tambourine_sound": "",
       "item.instrumental.oak_whistle": "Owak Whistle",
       "item.instrumental.dark_oak_whistle": "Dark Oak Whistle",
       "item.instrumental.birch_tambourine": "Birch Tambourine",

@@ -2,6 +2,7 @@ package net.mcreator.instrumental.procedures;
 
 import net.minecraft.entity.Entity;
 
+import net.mcreator.instrumental.InstrumentalModVariables;
 import net.mcreator.instrumental.InstrumentalModElements;
 
 import java.util.Map;
@@ -19,7 +20,10 @@ public class Inspiration4Procedure extends InstrumentalModElements.ModElement {
 			return false;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		if (((4 == (entity.getPersistentData().getDouble("Inspiration"))) || (4 > (entity.getPersistentData().getDouble("Inspiration"))))) {
+		if (((4 == ((entity.getCapability(InstrumentalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new InstrumentalModVariables.PlayerVariables())).Inspiration))
+				|| (4 > ((entity.getCapability(InstrumentalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new InstrumentalModVariables.PlayerVariables())).Inspiration)))) {
 			return (true);
 		}
 		return (false);
