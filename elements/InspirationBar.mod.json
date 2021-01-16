@@ -1,0 +1,370 @@
+{
+  "_fv": 13,
+  "_type": "overlay",
+  "definition": {
+    "priority": "NORMAL",
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "empty_inspiration.png",
+          "use1Xscale": false,
+          "name": "empty_inspiration.png",
+          "x": 123,
+          "y": 206
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "empty_inspiration.png",
+          "use1Xscale": false,
+          "name": "empty_inspiration.png",
+          "x": 132,
+          "y": 206
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "empty_inspiration.png",
+          "use1Xscale": false,
+          "name": "empty_inspiration.png",
+          "x": 150,
+          "y": 206
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "empty_inspiration.png",
+          "use1Xscale": false,
+          "name": "empty_inspiration.png",
+          "x": 150,
+          "y": 206
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "empty_inspiration.png",
+          "use1Xscale": false,
+          "name": "empty_inspiration.png",
+          "x": 159,
+          "y": 206
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "empty_inspiration.png",
+          "use1Xscale": false,
+          "name": "empty_inspiration.png",
+          "x": 168,
+          "y": 206
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "empty_inspiration.png",
+          "use1Xscale": false,
+          "name": "empty_inspiration.png",
+          "x": 177,
+          "y": 206
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "empty_inspiration.png",
+          "use1Xscale": false,
+          "name": "empty_inspiration.png",
+          "x": 186,
+          "y": 206
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "empty_inspiration.png",
+          "use1Xscale": false,
+          "name": "empty_inspiration.png",
+          "x": 195,
+          "y": 206
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "empty_inspiration.png",
+          "use1Xscale": false,
+          "name": "empty_inspiration.png",
+          "x": 204,
+          "y": 206
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "half_inspiration.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Inspiration1"
+          },
+          "name": "half_inspiration.png",
+          "x": 123,
+          "y": 206
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "half_inspiration.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Inspiration3"
+          },
+          "name": "half_inspiration.png",
+          "x": 132,
+          "y": 206
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "half_inspiration.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Inspiration5"
+          },
+          "name": "half_inspiration.png",
+          "x": 141,
+          "y": 206
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "half_inspiration.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Inspiration7"
+          },
+          "name": "half_inspiration.png",
+          "x": 150,
+          "y": 206
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "half_inspiration.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Inspiration9"
+          },
+          "name": "half_inspiration.png",
+          "x": 159,
+          "y": 206
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "half_inspiration.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Inspiration11"
+          },
+          "name": "half_inspiration.png",
+          "x": 168,
+          "y": 206
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "half_inspiration.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Inspiration13"
+          },
+          "name": "half_inspiration.png",
+          "x": 177,
+          "y": 206
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "half_inspiration.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Inspiration15"
+          },
+          "name": "half_inspiration.png",
+          "x": 186,
+          "y": 206
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "half_inspiration.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Inspiration17"
+          },
+          "name": "half_inspiration.png",
+          "x": 195,
+          "y": 206
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "half_inspiration.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Inspiration19"
+          },
+          "name": "half_inspiration.png",
+          "x": 204,
+          "y": 206
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "full_inspiration.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Inspiration2"
+          },
+          "name": "full_inspiration.png",
+          "x": 123,
+          "y": 206
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "full_inspiration.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Inspiration4"
+          },
+          "name": "full_inspiration.png",
+          "x": 132,
+          "y": 206
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "full_inspiration.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Inspiration6"
+          },
+          "name": "full_inspiration.png",
+          "x": 141,
+          "y": 206
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "full_inspiration.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Inspiration8"
+          },
+          "name": "full_inspiration.png",
+          "x": 150,
+          "y": 206
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "full_inspiration.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Inspiration10"
+          },
+          "name": "full_inspiration.png",
+          "x": 159,
+          "y": 206
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "full_inspiration.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Inspiration12"
+          },
+          "name": "full_inspiration.png",
+          "x": 168,
+          "y": 206
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "full_inspiration.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Inspiration14"
+          },
+          "name": "full_inspiration.png",
+          "x": 177,
+          "y": 206
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "full_inspiration.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Inspiration16"
+          },
+          "name": "full_inspiration.png",
+          "x": 186,
+          "y": 206
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "full_inspiration.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Inspiratio18"
+          },
+          "name": "full_inspiration.png",
+          "x": 195,
+          "y": 206
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "full_inspiration.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Inspiration20"
+          },
+          "name": "full_inspiration.png",
+          "x": 204,
+          "y": 206
+        }
+      }
+    ],
+    "baseTexture": ""
+  }
+}
