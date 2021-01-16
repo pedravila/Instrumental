@@ -45,11 +45,11 @@ public class IronBellRightClickedInAirProcedure extends InstrumentalModElements.
 		if (!world.getWorld().isRemote) {
 			world.playSound(null, new BlockPos((int) x, (int) y, (int) z),
 					(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("instrumental:bell_sound")),
-					SoundCategory.NEUTRAL, (float) 1, (float) 0.5);
+					SoundCategory.NEUTRAL, (float) 1, (float) 1);
 		} else {
 			world.getWorld().playSound(x, y, z,
 					(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("instrumental:bell_sound")),
-					SoundCategory.NEUTRAL, (float) 1, (float) 0.5, false);
+					SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
 		}
 	}
 }
