@@ -17,7 +17,7 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.block.BlockState;
 
-import net.mcreator.instrumental.procedures.RedstoneMaracaRightClickedInAirProcedure;
+import net.mcreator.instrumental.procedures.IronBellRightClickedInAirProcedure;
 import net.mcreator.instrumental.InstrumentalModElements;
 
 import java.util.Map;
@@ -26,11 +26,11 @@ import java.util.HashMap;
 import com.google.common.collect.Multimap;
 
 @InstrumentalModElements.ModElement.Tag
-public class RedstoneMaracaItem extends InstrumentalModElements.ModElement {
-	@ObjectHolder("instrumental:redstone_maraca")
+public class GoldBellItem extends InstrumentalModElements.ModElement {
+	@ObjectHolder("instrumental:gold_bell")
 	public static final Item block = null;
-	public RedstoneMaracaItem(InstrumentalModElements instance) {
-		super(instance, 28);
+	public GoldBellItem(InstrumentalModElements instance) {
+		super(instance, 107);
 	}
 
 	@Override
@@ -49,15 +49,15 @@ public class RedstoneMaracaItem extends InstrumentalModElements.ModElement {
 					$_dependencies.put("y", y);
 					$_dependencies.put("z", z);
 					$_dependencies.put("world", world);
-					RedstoneMaracaRightClickedInAirProcedure.executeProcedure($_dependencies);
+					IronBellRightClickedInAirProcedure.executeProcedure($_dependencies);
 				}
 				return retval;
 			}
-		}.setRegistryName("redstone_maraca"));
+		}.setRegistryName("gold_bell"));
 	}
 	private static class ItemToolCustom extends Item {
 		protected ItemToolCustom() {
-			super(new Item.Properties().group(ItemGroup.TOOLS).maxDamage(1000));
+			super(new Item.Properties().group(ItemGroup.TOOLS).maxDamage(300));
 		}
 
 		@Override
@@ -87,9 +87,9 @@ public class RedstoneMaracaItem extends InstrumentalModElements.ModElement {
 			Multimap<String, AttributeModifier> multimap = super.getAttributeModifiers(equipmentSlot);
 			if (equipmentSlot == EquipmentSlotType.MAINHAND) {
 				multimap.put(SharedMonsterAttributes.ATTACK_DAMAGE.getName(),
-						new AttributeModifier(ATTACK_DAMAGE_MODIFIER, "Tool modifier", 3f, AttributeModifier.Operation.ADDITION));
+						new AttributeModifier(ATTACK_DAMAGE_MODIFIER, "Tool modifier", 6f, AttributeModifier.Operation.ADDITION));
 				multimap.put(SharedMonsterAttributes.ATTACK_SPEED.getName(),
-						new AttributeModifier(ATTACK_SPEED_MODIFIER, "Tool modifier", -2.8, AttributeModifier.Operation.ADDITION));
+						new AttributeModifier(ATTACK_SPEED_MODIFIER, "Tool modifier", -2.6, AttributeModifier.Operation.ADDITION));
 			}
 			return multimap;
 		}

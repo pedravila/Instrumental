@@ -46,13 +46,13 @@ import java.util.List;
 import java.util.HashMap;
 
 @InstrumentalModElements.ModElement.Tag
-public class ObsidianLyreItem extends InstrumentalModElements.ModElement {
-	@ObjectHolder("instrumental:obsidian_lyre")
+public class ObsidianClarinetItem extends InstrumentalModElements.ModElement {
+	@ObjectHolder("instrumental:obsidian_clarinet")
 	public static final Item block = null;
-	@ObjectHolder("instrumental:entitybulletobsidian_lyre")
+	@ObjectHolder("instrumental:entitybulletobsidian_clarinet")
 	public static final EntityType arrow = null;
-	public ObsidianLyreItem(InstrumentalModElements instance) {
-		super(instance, 22);
+	public ObsidianClarinetItem(InstrumentalModElements instance) {
+		super(instance, 112);
 	}
 
 	@Override
@@ -60,7 +60,7 @@ public class ObsidianLyreItem extends InstrumentalModElements.ModElement {
 		elements.items.add(() -> new ItemRanged());
 		elements.entities.add(() -> (EntityType.Builder.<ArrowCustomEntity>create(ArrowCustomEntity::new, EntityClassification.MISC)
 				.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).setCustomClientFactory(ArrowCustomEntity::new)
-				.size(0.5f, 0.5f)).build("entitybulletobsidian_lyre").setRegistryName("entitybulletobsidian_lyre"));
+				.size(0.5f, 0.5f)).build("entitybulletobsidian_clarinet").setRegistryName("entitybulletobsidian_clarinet"));
 	}
 
 	@Override
@@ -72,7 +72,7 @@ public class ObsidianLyreItem extends InstrumentalModElements.ModElement {
 	public static class ItemRanged extends Item {
 		public ItemRanged() {
 			super(new Item.Properties().group(ItemGroup.COMBAT).maxDamage(100));
-			setRegistryName("obsidian_lyre");
+			setRegistryName("obsidian_clarinet");
 		}
 
 		@Override
@@ -186,7 +186,7 @@ public class ObsidianLyreItem extends InstrumentalModElements.ModElement {
 		double y = entity.getPosY();
 		double z = entity.getPosZ();
 		world.playSound((PlayerEntity) null, (double) x, (double) y, (double) z,
-				(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("instrumental:lyre_sound")),
+				(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("instrumental:clarinet_sound")),
 				SoundCategory.PLAYERS, 1, 1f / (random.nextFloat() * 0.5f + 1) + (power / 2));
 		return entityarrow;
 	}
@@ -206,7 +206,7 @@ public class ObsidianLyreItem extends InstrumentalModElements.ModElement {
 		double y = entity.getPosY();
 		double z = entity.getPosZ();
 		entity.world.playSound((PlayerEntity) null, (double) x, (double) y, (double) z,
-				(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("instrumental:lyre_sound")),
+				(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("instrumental:clarinet_sound")),
 				SoundCategory.PLAYERS, 1, 1f / (new Random().nextFloat() * 0.5f + 1));
 		return entityarrow;
 	}

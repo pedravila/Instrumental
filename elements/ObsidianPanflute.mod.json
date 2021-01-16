@@ -3,9 +3,9 @@
   "_type": "gun",
   "definition": {
     "renderType": 0,
-    "texture": "obsidian_lyre",
+    "texture": "obsidian_panflute",
     "customModelName": "Normal",
-    "name": "Obsidian Lyre",
+    "name": "Obsidian Panflute",
     "specialInfo": [
       "§2 9 Attack Damage"
     ],
@@ -19,7 +19,7 @@
     "shootConstantly": false,
     "usageCount": 100,
     "actionSound": {
-      "value": "CUSTOM:lyre_sound"
+      "value": "CUSTOM:panflute_sound"
     },
     "hasGlow": false,
     "animation": "none",

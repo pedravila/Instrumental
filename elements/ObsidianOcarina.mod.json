@@ -3,9 +3,9 @@
   "_type": "gun",
   "definition": {
     "renderType": 0,
-    "texture": "obsidian_lyre",
+    "texture": "obsidian_ocarina",
     "customModelName": "Normal",
-    "name": "Obsidian Lyre",
+    "name": "Obsidian Ocarina",
     "specialInfo": [
       "§2 9 Attack Damage"
     ],
@@ -19,7 +19,7 @@
     "shootConstantly": false,
     "usageCount": 100,
     "actionSound": {
-      "value": "CUSTOM:lyre_sound"
+      "value": "CUSTOM:ocarina_sound"
     },
     "hasGlow": false,
     "animation": "none",
