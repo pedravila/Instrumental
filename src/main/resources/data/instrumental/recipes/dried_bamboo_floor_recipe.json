@@ -1,0 +1,26 @@
+{
+  "group": "instrumental",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "01",
+    "23"
+  ],
+  "key": {
+    "0": {
+      "item": "instrumental:dried_bamboo"
+    },
+    "1": {
+      "item": "instrumental:dried_bamboo"
+    },
+    "2": {
+      "item": "instrumental:dried_bamboo"
+    },
+    "3": {
+      "item": "instrumental:dried_bamboo"
+    }
+  },
+  "result": {
+    "item": "instrumental:dried_bamboo_floor",
+    "count": 4
+  }
+}

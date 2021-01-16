@@ -1,0 +1,83 @@
+{
+  "whistle_sound": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "instrumental:whistle_sound",
+        "stream": false
+      }
+    ]
+  },
+  "tambourine_sound": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "instrumental:tambourine_sound",
+        "stream": false
+      }
+    ]
+  },
+  "triangle_sound": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "instrumental:triangle_sound",
+        "stream": false
+      }
+    ]
+  },
+  "trumpet_sound": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "instrumental:trumpet_sound",
+        "stream": false
+      }
+    ]
+  },
+  "dried_bamboo_chime_sound": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "instrumental:dried_bamboo_chime",
+        "stream": false
+      }
+    ]
+  },
+  "redstone_maraca_sound": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "instrumental:redstone_maraca_sound",
+        "stream": false
+      }
+    ]
+  },
+  "lyre_sound": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "instrumental:lyre_sound",
+        "stream": false
+      }
+    ]
+  },
+  "banjo_sound": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "instrumental:banjo_sound",
+        "stream": false
+      }
+    ]
+  },
+  "accordion_sound": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "instrumental:accordion_sound",
+        "stream": false
+      }
+    ]
+  }
+}

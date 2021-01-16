@@ -1,0 +1,46 @@
+{
+  "_fv": 13,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 1,
+    "group": "",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": ""
+      },
+      {
+        "value": "Items.IRON_INGOT"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:DriedBamboo"
+      },
+      {
+        "value": "CUSTOM:DriedBamboo"
+      },
+      {
+        "value": "CUSTOM:DriedBamboo"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:DriedBamboo"
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:DriedBambooIronChimes"
+    },
+    "name": "dried_bamboo_iron_chimes_recipe",
+    "namespace": "mod"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "group": "instrumental",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    " 45"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:dark_oak_planks"
+    },
+    "1": {
+      "item": "minecraft:dark_oak_planks"
+    },
+    "2": {
+      "item": "minecraft:dark_oak_planks"
+    },
+    "4": {
+      "item": "minecraft:dark_oak_planks"
+    },
+    "5": {
+      "item": "minecraft:dark_oak_planks"
+    }
+  },
+  "result": {
+    "item": "instrumental:dark_oak_whistle",
+    "count": 1
+  }
+}

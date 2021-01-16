@@ -1,0 +1,29 @@
+{
+  "group": "instrumental",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    " 45"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:birch_planks"
+    },
+    "1": {
+      "item": "minecraft:birch_planks"
+    },
+    "2": {
+      "item": "minecraft:birch_planks"
+    },
+    "4": {
+      "item": "minecraft:birch_planks"
+    },
+    "5": {
+      "item": "minecraft:birch_planks"
+    }
+  },
+  "result": {
+    "item": "instrumental:birch_whistle",
+    "count": 1
+  }
+}

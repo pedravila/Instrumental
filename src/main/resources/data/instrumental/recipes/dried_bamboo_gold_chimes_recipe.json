@@ -1,0 +1,30 @@
+{
+  "group": "instrumental",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1 ",
+    "345",
+    " 7 "
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:gold_ingot"
+    },
+    "3": {
+      "item": "instrumental:dried_bamboo"
+    },
+    "4": {
+      "item": "instrumental:dried_bamboo"
+    },
+    "5": {
+      "item": "instrumental:dried_bamboo"
+    },
+    "7": {
+      "item": "instrumental:dried_bamboo"
+    }
+  },
+  "result": {
+    "item": "instrumental:dried_bamboo_gold_chimes",
+    "count": 1
+  }
+}
