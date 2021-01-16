@@ -1012,6 +1012,23 @@
       }
     },
     {
+      "name": "OverlayGenerating",
+      "type": "procedure",
+      "sortid": 105,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "overlay_generating",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
       "name": "ObsdianBellRecipe",
       "type": "recipe",
       "sortid": 115,
@@ -1165,23 +1182,6 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "obsidian_berimbau_recipe"
-    },
-    {
-      "name": "OverlayGenerating",
-      "type": "procedure",
-      "sortid": 105,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "overlay_generating",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
     }
   ],
   "variable_elements": [
