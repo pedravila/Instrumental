@@ -7,6 +7,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraft.world.World;
 import net.minecraft.entity.Entity;
 
+import net.mcreator.instrumental.InstrumentalModVariables;
 import net.mcreator.instrumental.InstrumentalModElements;
 
 import java.util.Map;
@@ -26,7 +27,13 @@ public class OverlayGeneratingProcedure extends InstrumentalModElements.ModEleme
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		entity.getPersistentData().putDouble("Inspiration", 0);
+		{
+			double _setval = (double) 0;
+			entity.getCapability(InstrumentalModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				capability.Inspiration = _setval;
+				capability.syncPlayerVariables(entity);
+			});
+		}
 	}
 
 	@SubscribeEvent

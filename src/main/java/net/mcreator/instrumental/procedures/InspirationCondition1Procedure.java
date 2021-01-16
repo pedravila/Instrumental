@@ -55,7 +55,7 @@ public class InspirationCondition1Procedure extends InstrumentalModElements.ModE
 				return false;
 			}
 		}.checkGamemode(entity)))) && (((ItemTags.getCollection()
-				.getOrCreate(new ResourceLocation(("instruments").toLowerCase(java.util.Locale.ENGLISH)))
+				.getOrCreate(new ResourceLocation(("forge:instruments_tag").toLowerCase(java.util.Locale.ENGLISH)))
 				.contains(((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem()))
 				|| (ItemTags.getCollection().getOrCreate(new ResourceLocation(("instruments").toLowerCase(java.util.Locale.ENGLISH)))
 						.contains(((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY).getItem())))

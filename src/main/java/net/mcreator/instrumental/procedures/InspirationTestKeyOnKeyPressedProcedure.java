@@ -2,6 +2,7 @@ package net.mcreator.instrumental.procedures;
 
 import net.minecraft.entity.Entity;
 
+import net.mcreator.instrumental.InstrumentalModVariables;
 import net.mcreator.instrumental.InstrumentalModElements;
 
 import java.util.Map;
@@ -19,6 +20,13 @@ public class InspirationTestKeyOnKeyPressedProcedure extends InstrumentalModElem
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		entity.getPersistentData().putDouble("Inspiration", ((entity.getPersistentData().getDouble("Inspiration")) + 1));
+		{
+			double _setval = (double) (((entity.getCapability(InstrumentalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+					.orElse(new InstrumentalModVariables.PlayerVariables())).Inspiration) + 1);
+			entity.getCapability(InstrumentalModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				capability.Inspiration = _setval;
+				capability.syncPlayerVariables(entity);
+			});
+		}
 	}
 }
