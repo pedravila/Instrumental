@@ -79,5 +79,50 @@
         "stream": false
       }
     ]
+  },
+  "bell_sound": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "instrumental:bell_sound",
+        "stream": false
+      }
+    ]
+  },
+  "ocarina_sound": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "instrumental:ocarina_sound",
+        "stream": false
+      }
+    ]
+  },
+  "panflute_sound": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "instrumental:panflute_sound",
+        "stream": false
+      }
+    ]
+  },
+  "clarinet_sound": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "instrumental:clarinet_sound",
+        "stream": false
+      }
+    ]
+  },
+  "berimbau_sound": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "instrumental:berimbau_sound",
+        "stream": false
+      }
+    ]
   }
 }

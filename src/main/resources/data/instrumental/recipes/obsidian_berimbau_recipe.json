@@ -1,0 +1,27 @@
+{
+  "group": "instrumental",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1",
+    "23",
+    " 5"
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:obsidian"
+    },
+    "2": {
+      "item": "minecraft:obsidian"
+    },
+    "3": {
+      "item": "instrumental:diamond_string"
+    },
+    "5": {
+      "item": "minecraft:obsidian"
+    }
+  },
+  "result": {
+    "item": "instrumental:obsidian_berimbau",
+    "count": 1
+  }
+}

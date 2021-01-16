@@ -1,0 +1,27 @@
+{
+  "group": "instrumental",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1 ",
+    " 45",
+    "6  "
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:obsidian"
+    },
+    "4": {
+      "item": "minecraft:diamond"
+    },
+    "5": {
+      "item": "minecraft:obsidian"
+    },
+    "6": {
+      "item": "minecraft:obsidian"
+    }
+  },
+  "result": {
+    "item": "instrumental:unknown_element",
+    "count": 1
+  }
+}
