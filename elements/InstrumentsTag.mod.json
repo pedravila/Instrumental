@@ -1,0 +1,97 @@
+{
+  "_fv": 13,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:OakWhistle"
+      },
+      {
+        "value": "CUSTOM:SpruceWhistle"
+      },
+      {
+        "value": "CUSTOM:AcaciaWhistle"
+      },
+      {
+        "value": "CUSTOM:DarkOakWhistle"
+      },
+      {
+        "value": "CUSTOM:JungleWhistle"
+      },
+      {
+        "value": "CUSTOM:BirchWhistle"
+      },
+      {
+        "value": "CUSTOM:OakTambourine"
+      },
+      {
+        "value": "CUSTOM:SpruceTambourine"
+      },
+      {
+        "value": "CUSTOM:AcaciaTambourine"
+      },
+      {
+        "value": "CUSTOM:DarkOakTambourine"
+      },
+      {
+        "value": "CUSTOM:JungleTambourine"
+      },
+      {
+        "value": "CUSTOM:BirchTambourine"
+      },
+      {
+        "value": "CUSTOM:IronTriangle"
+      },
+      {
+        "value": "CUSTOM:GoldTriangle"
+      },
+      {
+        "value": "CUSTOM:IronTrumpet"
+      },
+      {
+        "value": "CUSTOM:GoldTrumpet"
+      },
+      {
+        "value": "CUSTOM:DriedBamboo"
+      },
+      {
+        "value": "CUSTOM:DriedBambooFloor"
+      },
+      {
+        "value": "CUSTOM:DriedBambooIronChimes"
+      },
+      {
+        "value": "CUSTOM:DriedBambooGoldChimes"
+      },
+      {
+        "value": "CUSTOM:DriedBambooDiamondChimes"
+      },
+      {
+        "value": "CUSTOM:DiamondString"
+      },
+      {
+        "value": "CUSTOM:IronLyre"
+      },
+      {
+        "value": "CUSTOM:GoldLyre"
+      },
+      {
+        "value": "CUSTOM:ObsidianLyre"
+      },
+      {
+        "value": "CUSTOM:RedstoneMaraca"
+      },
+      {
+        "value": "CUSTOM:ObsidianBanjo"
+      },
+      {
+        "value": "CUSTOM:ObsidianAccordion"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "name": "instruments_tag",
+    "namespace": "forge"
+  }
+}
