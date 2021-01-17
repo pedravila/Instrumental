@@ -1,6 +1,6 @@
 {
-  "item.instrumental.obsidian_banjo": "Obsidian Banjo",
   "item.instrumental.speaker": "Speaker",
+  "item.instrumental.obsidian_banjo": "Obsidian Banjo",
   "item.instrumental.dried_bamboo_iron_chimes": "Dried Bamboo Iron Chimes",
   "item.instrumental.birch_tambourine": "Birch Tambourine",
   "subtitles.dried_bamboo_chime_sound": "",
@@ -34,6 +34,7 @@
   "item.instrumental.gold_bell": "Gold Bell",
   "item.instrumental.gold_trumpet": "Gold Trumpet",
   "item.instrumental.poison_score": "Poison Score",
+  "item.instrumental.powered_regeneration_speaker": "Powered Regeneration Speaker",
   "item.minecraft.potion.effect.inspirated": "Inspirated",
   "item.instrumental.diamond_string": "Diamond String",
   "item.minecraft.tipped_arrow.effect.inspirated": "Arrow of Inspirated",
@@ -56,12 +57,15 @@
   "item.instrumental.end_score": "End Score",
   "item.instrumental.obsidian_accordion": "Obsidian Accordion",
   "subtitles.lyre_sound": "",
+  "item.instrumental.inpiration_speaker": "Inspiration Speaker",
   "item.instrumental.dried_bamboo_diamond_chimes": "Dried Bamboo Diamond Chimes",
   "item.instrumental.strength_speaker": "Stregth Speaker",
   "item.instrumental.jungle_tambourine": "Jungle Tambourine",
   "subtitles.bell_sound": "",
+  "item.instrumental.powered_strength_speaker": "Powered Strength Speaker",
   "item.instrumental.obsidian_lyre": "Obsidian Lyre",
   "item.instrumental.obsidian_bell": "Obsidian Bell",
+  "item.instrumental.powered_speed_speaker": "Powered Speed Speaker",
   "subtitles.triangle_sound": "",
   "item.instrumental.obsidian_panflute": "Obsidian Panflute",
   "subtitles.clarinet_sound": "",
@@ -69,5 +73,6 @@
   "item.instrumental.jungle_whistle": "Jungle Whistle",
   "item.instrumental.spruce_tambourine": "Spruce Tambourine",
   "item.instrumental.dried_bamboo_gold_chimes": "Dried Bamboo Gold Chimes",
-  "item.instrumental.redstone_maraca": "Redstone Maraca"
+  "item.instrumental.redstone_maraca": "Redstone Maraca",
+  "item.instrumental.powered_jump_boos_speaker": "Powered Jump Boost Speaker"
 }

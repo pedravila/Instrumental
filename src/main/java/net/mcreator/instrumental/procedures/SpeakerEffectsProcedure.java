@@ -19,13 +19,19 @@ import net.minecraft.client.network.play.NetworkPlayerInfo;
 import net.minecraft.client.entity.player.ClientPlayerEntity;
 import net.minecraft.client.Minecraft;
 
+import net.mcreator.instrumental.potion.InspiratedPotion;
 import net.mcreator.instrumental.item.WaterBreathingSpeakerItem;
 import net.mcreator.instrumental.item.StrengthSpeakerItem;
 import net.mcreator.instrumental.item.SpeedSpeakerItem;
 import net.mcreator.instrumental.item.SlowFallingSpeakerItem;
 import net.mcreator.instrumental.item.RegenerationSpeakerItem;
+import net.mcreator.instrumental.item.PoweredStrengthSpeakerItem;
+import net.mcreator.instrumental.item.PoweredSpeedSpeakerItem;
+import net.mcreator.instrumental.item.PoweredRegenerationSpeakerItem;
+import net.mcreator.instrumental.item.PoweredJumpBoosSpeakerItem;
 import net.mcreator.instrumental.item.NightVisionSpeakerItem;
 import net.mcreator.instrumental.item.JumpBoostSpeakerItem;
+import net.mcreator.instrumental.item.InpirationSpeakerItem;
 import net.mcreator.instrumental.item.FireResistanceSpeakerItem;
 import net.mcreator.instrumental.item.DolphinGraceSpeakerItem;
 import net.mcreator.instrumental.InstrumentalModVariables;
@@ -391,6 +397,216 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 						.getItem() == new ItemStack(WaterBreathingSpeakerItem.block, (int) (1)).getItem()))) {
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.WATER_BREATHING, (int) 2400, (int) 1));
+			if ((new Object() {
+				public boolean checkGamemode(Entity _ent) {
+					if (_ent instanceof ServerPlayerEntity) {
+						return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.SURVIVAL;
+					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote) {
+						NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
+								.getPlayerInfo(((ClientPlayerEntity) _ent).getGameProfile().getId());
+						return _npi != null && _npi.getGameType() == GameType.SURVIVAL;
+					}
+					return false;
+				}
+			}.checkGamemode(entity))) {
+				{
+					double _setval = (double) (((entity.getCapability(InstrumentalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+							.orElse(new InstrumentalModVariables.PlayerVariables())).Inspiration) - 4);
+					entity.getCapability(InstrumentalModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.Inspiration = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+				{
+					ItemStack _ist = ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY);
+					if (_ist.attemptDamageItem((int) 1, new Random(), null)) {
+						_ist.shrink(1);
+						_ist.setDamage(0);
+					}
+				}
+				{
+					ItemStack _ist = ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY);
+					if (_ist.attemptDamageItem((int) 1, new Random(), null)) {
+						_ist.shrink(1);
+						_ist.setDamage(0);
+					}
+				}
+			}
+		}
+		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:melee_instruments").toLowerCase(java.util.Locale.ENGLISH)))
+				.contains(((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem()))
+				&& (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+						.getItem() == new ItemStack(InpirationSpeakerItem.block, (int) (1)).getItem()))) {
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(InspiratedPotion.potion, (int) 2400, (int) 1));
+			if ((new Object() {
+				public boolean checkGamemode(Entity _ent) {
+					if (_ent instanceof ServerPlayerEntity) {
+						return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.SURVIVAL;
+					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote) {
+						NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
+								.getPlayerInfo(((ClientPlayerEntity) _ent).getGameProfile().getId());
+						return _npi != null && _npi.getGameType() == GameType.SURVIVAL;
+					}
+					return false;
+				}
+			}.checkGamemode(entity))) {
+				{
+					double _setval = (double) (((entity.getCapability(InstrumentalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+							.orElse(new InstrumentalModVariables.PlayerVariables())).Inspiration) - 4);
+					entity.getCapability(InstrumentalModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.Inspiration = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+				{
+					ItemStack _ist = ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY);
+					if (_ist.attemptDamageItem((int) 1, new Random(), null)) {
+						_ist.shrink(1);
+						_ist.setDamage(0);
+					}
+				}
+				{
+					ItemStack _ist = ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY);
+					if (_ist.attemptDamageItem((int) 1, new Random(), null)) {
+						_ist.shrink(1);
+						_ist.setDamage(0);
+					}
+				}
+			}
+		}
+		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:melee_instruments").toLowerCase(java.util.Locale.ENGLISH)))
+				.contains(((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem()))
+				&& (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+						.getItem() == new ItemStack(PoweredRegenerationSpeakerItem.block, (int) (1)).getItem()))) {
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.REGENERATION, (int) 400, (int) 2));
+			if ((new Object() {
+				public boolean checkGamemode(Entity _ent) {
+					if (_ent instanceof ServerPlayerEntity) {
+						return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.SURVIVAL;
+					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote) {
+						NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
+								.getPlayerInfo(((ClientPlayerEntity) _ent).getGameProfile().getId());
+						return _npi != null && _npi.getGameType() == GameType.SURVIVAL;
+					}
+					return false;
+				}
+			}.checkGamemode(entity))) {
+				{
+					double _setval = (double) (((entity.getCapability(InstrumentalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+							.orElse(new InstrumentalModVariables.PlayerVariables())).Inspiration) - 4);
+					entity.getCapability(InstrumentalModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.Inspiration = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+				{
+					ItemStack _ist = ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY);
+					if (_ist.attemptDamageItem((int) 1, new Random(), null)) {
+						_ist.shrink(1);
+						_ist.setDamage(0);
+					}
+				}
+				{
+					ItemStack _ist = ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY);
+					if (_ist.attemptDamageItem((int) 1, new Random(), null)) {
+						_ist.shrink(1);
+						_ist.setDamage(0);
+					}
+				}
+			}
+		}
+		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:melee_instruments").toLowerCase(java.util.Locale.ENGLISH)))
+				.contains(((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem()))
+				&& (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+						.getItem() == new ItemStack(PoweredJumpBoosSpeakerItem.block, (int) (1)).getItem()))) {
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, (int) 1200, (int) 2));
+			if ((new Object() {
+				public boolean checkGamemode(Entity _ent) {
+					if (_ent instanceof ServerPlayerEntity) {
+						return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.SURVIVAL;
+					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote) {
+						NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
+								.getPlayerInfo(((ClientPlayerEntity) _ent).getGameProfile().getId());
+						return _npi != null && _npi.getGameType() == GameType.SURVIVAL;
+					}
+					return false;
+				}
+			}.checkGamemode(entity))) {
+				{
+					double _setval = (double) (((entity.getCapability(InstrumentalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+							.orElse(new InstrumentalModVariables.PlayerVariables())).Inspiration) - 4);
+					entity.getCapability(InstrumentalModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.Inspiration = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+				{
+					ItemStack _ist = ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY);
+					if (_ist.attemptDamageItem((int) 1, new Random(), null)) {
+						_ist.shrink(1);
+						_ist.setDamage(0);
+					}
+				}
+				{
+					ItemStack _ist = ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY);
+					if (_ist.attemptDamageItem((int) 1, new Random(), null)) {
+						_ist.shrink(1);
+						_ist.setDamage(0);
+					}
+				}
+			}
+		}
+		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:melee_instruments").toLowerCase(java.util.Locale.ENGLISH)))
+				.contains(((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem()))
+				&& (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+						.getItem() == new ItemStack(PoweredSpeedSpeakerItem.block, (int) (1)).getItem()))) {
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SPEED, (int) 1200, (int) 2));
+			if ((new Object() {
+				public boolean checkGamemode(Entity _ent) {
+					if (_ent instanceof ServerPlayerEntity) {
+						return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.SURVIVAL;
+					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote) {
+						NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
+								.getPlayerInfo(((ClientPlayerEntity) _ent).getGameProfile().getId());
+						return _npi != null && _npi.getGameType() == GameType.SURVIVAL;
+					}
+					return false;
+				}
+			}.checkGamemode(entity))) {
+				{
+					double _setval = (double) (((entity.getCapability(InstrumentalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+							.orElse(new InstrumentalModVariables.PlayerVariables())).Inspiration) - 4);
+					entity.getCapability(InstrumentalModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.Inspiration = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+				{
+					ItemStack _ist = ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY);
+					if (_ist.attemptDamageItem((int) 1, new Random(), null)) {
+						_ist.shrink(1);
+						_ist.setDamage(0);
+					}
+				}
+				{
+					ItemStack _ist = ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY);
+					if (_ist.attemptDamageItem((int) 1, new Random(), null)) {
+						_ist.shrink(1);
+						_ist.setDamage(0);
+					}
+				}
+			}
+		}
+		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:melee_instruments").toLowerCase(java.util.Locale.ENGLISH)))
+				.contains(((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem()))
+				&& (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+						.getItem() == new ItemStack(PoweredStrengthSpeakerItem.block, (int) (1)).getItem()))) {
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.STRENGTH, (int) 1200, (int) 2));
 			if ((new Object() {
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayerEntity) {

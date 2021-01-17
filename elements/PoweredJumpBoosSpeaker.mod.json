@@ -1,0 +1,29 @@
+{
+  "_fv": 13,
+  "_type": "tool",
+  "definition": {
+    "renderType": 0,
+    "texture": "powered_jump_boost_speaker",
+    "customModelName": "Normal",
+    "name": "Powered Jump Boost Speaker",
+    "specialInfo": [
+      "§9 Jump Boost II Effect",
+      "§9 4 Inspiration"
+    ],
+    "creativeTab": {
+      "value": "TOOLS"
+    },
+    "toolType": "Special",
+    "harvestLevel": 0,
+    "efficiency": 0.0,
+    "attackSpeed": 1.0,
+    "enchantability": 0,
+    "damageVsEntity": 0.0,
+    "usageCount": 10,
+    "blocksAffected": [],
+    "hasGlow": false,
+    "repairItems": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false
+  }
+}
