@@ -564,15 +564,6 @@
       "registry_name": "obsidian_accordion_recipe"
     },
     {
-      "name": "InspirationBar",
-      "type": "overlay",
-      "sortid": 59,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "inspiration_bar"
-    },
-    {
       "name": "Inspiration1",
       "type": "procedure",
       "sortid": 60,
@@ -1182,6 +1173,213 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "obsidian_berimbau_recipe"
+    },
+    {
+      "name": "InspirationBarEmpty",
+      "type": "overlay",
+      "sortid": 120,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "inspiration_bar_empty"
+    },
+    {
+      "name": "InspirationBar1",
+      "type": "overlay",
+      "sortid": 121,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "inspiration_bar_1"
+    },
+    {
+      "name": "InspirationBar2",
+      "type": "overlay",
+      "sortid": 122,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "inspiration_bar_2"
+    },
+    {
+      "name": "InspirationBar3",
+      "type": "overlay",
+      "sortid": 123,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "inspiration_bar_3"
+    },
+    {
+      "name": "InspirationBar4",
+      "type": "overlay",
+      "sortid": 124,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "inspiration_bar_4"
+    },
+    {
+      "name": "InspirationBar5",
+      "type": "overlay",
+      "sortid": 125,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "inspiration_bar_5"
+    },
+    {
+      "name": "InspirationBar6",
+      "type": "overlay",
+      "sortid": 126,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "inspiration_bar_6"
+    },
+    {
+      "name": "InspirationBar7",
+      "type": "overlay",
+      "sortid": 127,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "inspiration_bar_7"
+    },
+    {
+      "name": "InspirationBar8",
+      "type": "overlay",
+      "sortid": 128,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "inspiration_bar_8"
+    },
+    {
+      "name": "InspirationBar9",
+      "type": "overlay",
+      "sortid": 129,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "inspiration_bar_9"
+    },
+    {
+      "name": "InspirationBar10",
+      "type": "overlay",
+      "sortid": 130,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "inspiration_bar_10"
+    },
+    {
+      "name": "InspirationBar11",
+      "type": "overlay",
+      "sortid": 131,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "inspiration_bar_11"
+    },
+    {
+      "name": "InspirationBar12",
+      "type": "overlay",
+      "sortid": 132,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "inspiration_bar_12"
+    },
+    {
+      "name": "InspirationBar13",
+      "type": "overlay",
+      "sortid": 133,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "inspiration_bar_13"
+    },
+    {
+      "name": "InspirationBar14",
+      "type": "overlay",
+      "sortid": 134,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "inspiration_bar_14"
+    },
+    {
+      "name": "InspirationBar15",
+      "type": "overlay",
+      "sortid": 135,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "inspiration_bar_15"
+    },
+    {
+      "name": "InspirationBar16",
+      "type": "overlay",
+      "sortid": 136,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "inspiration_bar_16"
+    },
+    {
+      "name": "InspirationBar17",
+      "type": "overlay",
+      "sortid": 137,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "inspiration_bar_17"
+    },
+    {
+      "name": "InspirationBar18",
+      "type": "overlay",
+      "sortid": 138,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "inspiration_bar_18"
+    },
+    {
+      "name": "InspirationBar19",
+      "type": "overlay",
+      "sortid": 139,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "inspiration_bar_19"
+    },
+    {
+      "name": "InspirationBar20",
+      "type": "overlay",
+      "sortid": 140,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "inspiration_bar_20"
+    },
+    {
+      "name": "InspirationBarEmptyDisplayOverlayIngame",
+      "type": "procedure",
+      "sortid": 141,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "inspiration_bar_empty_display_overlay_ingame",
+      "metadata": {
+        "return_type": "LOGIC",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -1317,8 +1515,8 @@
       "subtitles.banjo_sound": "",
       "item.instrumental.acacia_tambourine": "Acacia Tambourine",
       "block.instrumental.dried_bamboo_floor": "Dried Bamboo Floor",
-      "item.instrumental.iron_trumpet": "Iron Trumpet",
       "key.mcreator.inspiration_test_key_2": "Inspiration Test Key",
+      "item.instrumental.iron_trumpet": "Iron Trumpet",
       "item.instrumental.iron_lyre": "Iron Lyre",
       "subtitles.berimbau_sound": "",
       "item.instrumental.dried_bamboo": "Dried Bamboo",

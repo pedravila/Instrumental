@@ -20,12 +20,9 @@ public class Inspiration10Procedure extends InstrumentalModElements.ModElement {
 			return false;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		if (((10 == ((entity.getCapability(InstrumentalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+		return ((10 == ((entity.getCapability(InstrumentalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new InstrumentalModVariables.PlayerVariables())).Inspiration))
 				|| (10 > ((entity.getCapability(InstrumentalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new InstrumentalModVariables.PlayerVariables())).Inspiration)))) {
-			return (true);
-		}
-		return (false);
+						.orElse(new InstrumentalModVariables.PlayerVariables())).Inspiration)));
 	}
 }

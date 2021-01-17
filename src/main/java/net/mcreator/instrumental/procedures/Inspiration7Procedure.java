@@ -20,10 +20,7 @@ public class Inspiration7Procedure extends InstrumentalModElements.ModElement {
 			return false;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		if ((7 == ((entity.getCapability(InstrumentalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new InstrumentalModVariables.PlayerVariables())).Inspiration))) {
-			return (true);
-		}
-		return (false);
+		return (7 == ((entity.getCapability(InstrumentalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new InstrumentalModVariables.PlayerVariables())).Inspiration));
 	}
 }
