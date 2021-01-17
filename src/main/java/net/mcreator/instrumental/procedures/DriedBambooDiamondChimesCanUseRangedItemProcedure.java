@@ -40,12 +40,26 @@ public class DriedBambooDiamondChimesCanUseRangedItemProcedure extends Instrumen
 			}
 		}.checkGamemode(entity))) {
 			if ((((entity.getCapability(InstrumentalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new InstrumentalModVariables.PlayerVariables())).Inspiration) >= 3.9)) {
+					.orElse(new InstrumentalModVariables.PlayerVariables())).Inspiration) >= 3.999)) {
 				return (true);
 			}
 			if (entity instanceof PlayerEntity && !entity.world.isRemote) {
 				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("Not Enough Inspiration"), (false));
 			}
+		}
+		if ((new Object() {
+			public boolean checkGamemode(Entity _ent) {
+				if (_ent instanceof ServerPlayerEntity) {
+					return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.CREATIVE;
+				} else if (_ent instanceof PlayerEntity && _ent.world.isRemote) {
+					NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
+							.getPlayerInfo(((ClientPlayerEntity) _ent).getGameProfile().getId());
+					return _npi != null && _npi.getGameType() == GameType.CREATIVE;
+				}
+				return false;
+			}
+		}.checkGamemode(entity))) {
+			return (true);
 		}
 		return (false);
 	}

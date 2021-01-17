@@ -89,7 +89,7 @@ public class RedstoneMaracaItem extends InstrumentalModElements.ModElement {
 				multimap.put(SharedMonsterAttributes.ATTACK_DAMAGE.getName(),
 						new AttributeModifier(ATTACK_DAMAGE_MODIFIER, "Tool modifier", 3f, AttributeModifier.Operation.ADDITION));
 				multimap.put(SharedMonsterAttributes.ATTACK_SPEED.getName(),
-						new AttributeModifier(ATTACK_SPEED_MODIFIER, "Tool modifier", -2.8, AttributeModifier.Operation.ADDITION));
+						new AttributeModifier(ATTACK_SPEED_MODIFIER, "Tool modifier", -2, AttributeModifier.Operation.ADDITION));
 			}
 			return multimap;
 		}
