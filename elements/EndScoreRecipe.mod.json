@@ -1,0 +1,46 @@
+{
+  "_fv": 13,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 1,
+    "group": "",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "Blocks.END_STONE"
+      },
+      {
+        "value": "Items.ENDER_EYE"
+      },
+      {
+        "value": "Blocks.END_STONE"
+      },
+      {
+        "value": "Items.ENDER_EYE"
+      },
+      {
+        "value": "Items.PAPER"
+      },
+      {
+        "value": "Items.ENDER_EYE"
+      },
+      {
+        "value": "Blocks.END_STONE"
+      },
+      {
+        "value": "Items.ENDER_EYE"
+      },
+      {
+        "value": "Blocks.END_STONE"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:EndScore"
+    },
+    "name": "end_score_recipe",
+    "namespace": "mod"
+  }
+}

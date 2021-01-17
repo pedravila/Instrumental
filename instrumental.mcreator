@@ -1862,6 +1862,266 @@
           }
         ]
       }
+    },
+    {
+      "name": "EndScoreRecipe",
+      "type": "recipe",
+      "sortid": 198,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "end_score_recipe"
+    },
+    {
+      "name": "FireScoreRecipe",
+      "type": "recipe",
+      "sortid": 199,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "fire_score_recipe"
+    },
+    {
+      "name": "FrozenScoreRecipe",
+      "type": "recipe",
+      "sortid": 200,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "frozen_score_recipe"
+    },
+    {
+      "name": "SpectralScoreRecipe",
+      "type": "recipe",
+      "sortid": 201,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "spectral_score_recipe"
+    },
+    {
+      "name": "PoisonScoreRecipe",
+      "type": "recipe",
+      "sortid": 202,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "poison_score_recipe"
+    },
+    {
+      "name": "RottenScoreRecipe",
+      "type": "recipe",
+      "sortid": 203,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rotten_score_recipe"
+    },
+    {
+      "name": "Speaker",
+      "type": "item",
+      "sortid": 204,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "speaker"
+    },
+    {
+      "name": "SpeakerRecipe",
+      "type": "recipe",
+      "sortid": 205,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "speaker_recipe"
+    },
+    {
+      "name": "RegenerationSpeaker",
+      "type": "tool",
+      "sortid": 206,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "regeneration_speaker"
+    },
+    {
+      "name": "DolphinGraceSpeaker",
+      "type": "tool",
+      "sortid": 207,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dolphin_grace_speaker"
+    },
+    {
+      "name": "FireResistanceSpeaker",
+      "type": "tool",
+      "sortid": 208,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "fire_resistance_speaker"
+    },
+    {
+      "name": "JumpBoostSpeaker",
+      "type": "tool",
+      "sortid": 209,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "jump_boost_speaker"
+    },
+    {
+      "name": "NightVisionSpeaker",
+      "type": "tool",
+      "sortid": 210,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "night_vision_speaker"
+    },
+    {
+      "name": "SlowFallingSpeaker",
+      "type": "tool",
+      "sortid": 211,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "slow_falling_speaker"
+    },
+    {
+      "name": "SpeedSpeaker",
+      "type": "tool",
+      "sortid": 212,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "speed_speaker"
+    },
+    {
+      "name": "StrengthSpeaker",
+      "type": "tool",
+      "sortid": 213,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "strength_speaker"
+    },
+    {
+      "name": "WaterBreathingSpeaker",
+      "type": "tool",
+      "sortid": 214,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "water_breathing_speaker"
+    },
+    {
+      "name": "RangedInstruments",
+      "type": "tag",
+      "sortid": 215,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ranged_instruments"
+    },
+    {
+      "name": "MeleeInstruments",
+      "type": "tag",
+      "sortid": 216,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "melee_instruments"
+    },
+    {
+      "name": "SpeakerEffects",
+      "type": "procedure",
+      "sortid": 217,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "speaker_effects",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RegenerationSpeakerRecipe",
+      "type": "recipe",
+      "sortid": 218,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "regeneration_speaker_recipe"
+    },
+    {
+      "name": "DolphinGraceSpeakerRecipe",
+      "type": "recipe",
+      "sortid": 219,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dolphin_grace_speaker_recipe"
+    },
+    {
+      "name": "FireResistanceSpeakerRecipe",
+      "type": "recipe",
+      "sortid": 220,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "fire_resistance_speaker_recipe"
+    },
+    {
+      "name": "JumpBoostSpeakerRecipe",
+      "type": "recipe",
+      "sortid": 221,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "jump_boost_speaker_recipe"
+    },
+    {
+      "name": "NightVisionSpeakerRecipe",
+      "type": "recipe",
+      "sortid": 222,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "night_vision_speaker_recipe"
+    },
+    {
+      "name": "SlowFallingSpeakerRecipe",
+      "type": "recipe",
+      "sortid": 223,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "slow_falling_speaker_recipe"
+    },
+    {
+      "name": "StrengthSpeakerRecipe",
+      "type": "recipe",
+      "sortid": 224,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "strength_speaker_recipe"
+    },
+    {
+      "name": "WaterBreathingSpeakerRecipe",
+      "type": "recipe",
+      "sortid": 225,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "water_breathing_speaker_recipe"
     }
   ],
   "variable_elements": [
@@ -1989,12 +2249,15 @@
   "language_map": {
     "en_us": {
       "item.instrumental.obsidian_banjo": "Obsidian Banjo",
+      "item.instrumental.speaker": "Speaker",
       "item.instrumental.dried_bamboo_iron_chimes": "Dried Bamboo Iron Chimes",
       "item.instrumental.birch_tambourine": "Birch Tambourine",
       "subtitles.dried_bamboo_chime_sound": "",
       "item.instrumental.birch_whistle": "Birch Whistle",
       "item.minecraft.lingering_potion.effect.inspirated": "Lingering Inspirated",
+      "item.instrumental.night_vision_speaker": "Night Vision Speaker",
       "subtitles.banjo_sound": "",
+      "item.instrumental.speed_speaker": "Speed Speaker",
       "item.instrumental.acacia_tambourine": "Acacia Tambourine",
       "block.instrumental.dried_bamboo_floor": "Dried Bamboo Floor",
       "item.instrumental.rotten_score": "Rotten Score",
@@ -2003,14 +2266,19 @@
       "item.instrumental.iron_trumpet": "Iron Trumpet",
       "item.instrumental.iron_lyre": "Iron Lyre",
       "subtitles.berimbau_sound": "",
+      "item.instrumental.fire_resistance_speaker": "Fire Resistance Speaker",
       "item.instrumental.dried_bamboo": "Dried Bamboo",
       "subtitles.redstone_maraca_sound": "",
       "subtitles.accordion_sound": "",
+      "item.instrumental.jump_boost_speaker": "Jump Boost Speaker",
       "subtitles.trumpet_sound": "",
+      "item.instrumental.water_breathing_speaker": "Water Breathing Speaker",
       "item.instrumental.iron_bell": "Iron Bell",
+      "item.instrumental.dolphin_grace_speaker": "Dolphins Grace Speaker",
       "item.instrumental.oak_tambourine": "Oak Tambourine",
       "item.instrumental.iron_triangle": "Iron Triangle",
       "subtitles.panflute_sound": "",
+      "item.instrumental.regeneration_speaker": "Regeneration Speaker",
       "item.instrumental.gold_lyre": "Gold Lyre",
       "item.instrumental.gold_bell": "Gold Bell",
       "item.instrumental.gold_trumpet": "Gold Trumpet",
@@ -2024,6 +2292,7 @@
       "item.instrumental.obsidian_clarinet": "Obsidian Clarinet",
       "item.instrumental.dark_oak_whistle": "Dark Oak Whistle",
       "item.instrumental.obsidian_berimbau": "Obsidian Berimbau",
+      "item.instrumental.slow_falling_speaker": "Slow Falling Speaker",
       "item.minecraft.splash_potion.effect.inspirated": "Splash Inspirated",
       "item.instrumental.spruce_whistle": "Spruce Whistle",
       "item.instrumental.inspiration_score": "Inspiration Score",
@@ -2037,6 +2306,7 @@
       "item.instrumental.obsidian_accordion": "Obsidian Accordion",
       "subtitles.lyre_sound": "",
       "item.instrumental.dried_bamboo_diamond_chimes": "Dried Bamboo Diamond Chimes",
+      "item.instrumental.strength_speaker": "Stregth Speaker",
       "item.instrumental.jungle_tambourine": "Jungle Tambourine",
       "subtitles.bell_sound": "",
       "item.instrumental.obsidian_lyre": "Obsidian Lyre",

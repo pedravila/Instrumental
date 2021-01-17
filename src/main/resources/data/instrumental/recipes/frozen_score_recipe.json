@@ -1,0 +1,42 @@
+{
+  "group": "instrumental",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:packed_ice"
+    },
+    "1": {
+      "item": "minecraft:snowball"
+    },
+    "2": {
+      "item": "minecraft:packed_ice"
+    },
+    "3": {
+      "item": "minecraft:snowball"
+    },
+    "4": {
+      "item": "minecraft:paper"
+    },
+    "5": {
+      "item": "minecraft:snowball"
+    },
+    "6": {
+      "item": "minecraft:packed_ice"
+    },
+    "7": {
+      "item": "minecraft:snowball"
+    },
+    "8": {
+      "item": "minecraft:packed_ice"
+    }
+  },
+  "result": {
+    "item": "instrumental:frozen_score",
+    "count": 1
+  }
+}

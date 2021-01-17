@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "instrumental:redstone_maraca",
+    "instrumental:gold_bell",
+    "instrumental:iron_bell",
+    "instrumental:obsidian_bell"
+  ]
+}

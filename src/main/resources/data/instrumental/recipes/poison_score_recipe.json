@@ -1,0 +1,42 @@
+{
+  "group": "instrumental",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:poisonous_potato"
+    },
+    "1": {
+      "item": "minecraft:spider_eye"
+    },
+    "2": {
+      "item": "minecraft:poisonous_potato"
+    },
+    "3": {
+      "item": "minecraft:spider_eye"
+    },
+    "4": {
+      "item": "minecraft:paper"
+    },
+    "5": {
+      "item": "minecraft:spider_eye"
+    },
+    "6": {
+      "item": "minecraft:poisonous_potato"
+    },
+    "7": {
+      "item": "minecraft:spider_eye"
+    },
+    "8": {
+      "item": "minecraft:poisonous_potato"
+    }
+  },
+  "result": {
+    "item": "instrumental:poison_score",
+    "count": 1
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "replace": false,
+  "values": [
+    "instrumental:oak_whistle",
+    "instrumental:spruce_whistle",
+    "instrumental:acacia_whistle",
+    "instrumental:dark_oak_whistle",
+    "instrumental:jungle_whistle",
+    "instrumental:birch_whistle",
+    "instrumental:oak_tambourine",
+    "instrumental:spruce_tambourine",
+    "instrumental:acacia_tambourine",
+    "instrumental:dark_oak_tambourine",
+    "instrumental:jungle_tambourine",
+    "instrumental:birch_tambourine",
+    "instrumental:iron_triangle",
+    "instrumental:gold_triangle",
+    "instrumental:iron_trumpet",
+    "instrumental:gold_trumpet",
+    "instrumental:dried_bamboo_iron_chimes",
+    "instrumental:dried_bamboo_gold_chimes",
+    "instrumental:dried_bamboo_diamond_chimes",
+    "instrumental:iron_lyre",
+    "instrumental:gold_lyre",
+    "instrumental:obsidian_lyre",
+    "instrumental:obsidian_banjo",
+    "instrumental:obsidian_accordion",
+    "instrumental:obsidian_berimbau",
+    "instrumental:obsidian_panflute",
+    "instrumental:obsidian_clarinet",
+    "instrumental:obsidian_ocarina"
+  ]
+}

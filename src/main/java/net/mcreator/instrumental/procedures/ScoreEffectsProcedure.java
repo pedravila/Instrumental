@@ -64,7 +64,7 @@ public class ScoreEffectsProcedure extends InstrumentalModElements.ModElement {
 		Entity entity = (Entity) dependencies.get("entity");
 		Entity sourceentity = (Entity) dependencies.get("sourceentity");
 		IWorld world = (IWorld) dependencies.get("world");
-		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:instruments").toLowerCase(java.util.Locale.ENGLISH)))
+		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:ranged_instruments").toLowerCase(java.util.Locale.ENGLISH)))
 				.contains(((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY).getItem()))
 				&& (((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemOffhand() : ItemStack.EMPTY)
 						.getItem() == new ItemStack(FireScoreItem.block, (int) (1)).getItem()))) {
@@ -90,7 +90,7 @@ public class ScoreEffectsProcedure extends InstrumentalModElements.ModElement {
 				}
 			}
 		}
-		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:instruments").toLowerCase(java.util.Locale.ENGLISH)))
+		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:ranged_instruments").toLowerCase(java.util.Locale.ENGLISH)))
 				.contains(((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY).getItem()))
 				&& (((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemOffhand() : ItemStack.EMPTY)
 						.getItem() == new ItemStack(FrozenScoreItem.block, (int) (1)).getItem()))) {
@@ -117,7 +117,7 @@ public class ScoreEffectsProcedure extends InstrumentalModElements.ModElement {
 				}
 			}
 		}
-		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:instruments").toLowerCase(java.util.Locale.ENGLISH)))
+		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:ranged_instruments").toLowerCase(java.util.Locale.ENGLISH)))
 				.contains(((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY).getItem()))
 				&& (((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemOffhand() : ItemStack.EMPTY)
 						.getItem() == new ItemStack(PoisonScoreItem.block, (int) (1)).getItem()))) {
@@ -144,7 +144,7 @@ public class ScoreEffectsProcedure extends InstrumentalModElements.ModElement {
 				}
 			}
 		}
-		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:instruments").toLowerCase(java.util.Locale.ENGLISH)))
+		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:ranged_instruments").toLowerCase(java.util.Locale.ENGLISH)))
 				.contains(((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY).getItem()))
 				&& (((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemOffhand() : ItemStack.EMPTY)
 						.getItem() == new ItemStack(RottenScoreItem.block, (int) (1)).getItem()))) {
@@ -171,7 +171,7 @@ public class ScoreEffectsProcedure extends InstrumentalModElements.ModElement {
 				}
 			}
 		}
-		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:instruments").toLowerCase(java.util.Locale.ENGLISH)))
+		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:ranged_instruments").toLowerCase(java.util.Locale.ENGLISH)))
 				.contains(((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY).getItem()))
 				&& (((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemOffhand() : ItemStack.EMPTY)
 						.getItem() == new ItemStack(SpectralScoreItem.block, (int) (1)).getItem()))) {
@@ -198,7 +198,7 @@ public class ScoreEffectsProcedure extends InstrumentalModElements.ModElement {
 				}
 			}
 		}
-		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:instruments").toLowerCase(java.util.Locale.ENGLISH)))
+		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:ranged_instruments").toLowerCase(java.util.Locale.ENGLISH)))
 				.contains(((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY).getItem()))
 				&& (((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemOffhand() : ItemStack.EMPTY)
 						.getItem() == new ItemStack(EndScoreItem.block, (int) (1)).getItem()))) {

@@ -1,0 +1,42 @@
+{
+  "group": "instrumental",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:glowstone"
+    },
+    "1": {
+      "item": "minecraft:glowstone_dust"
+    },
+    "2": {
+      "item": "minecraft:glowstone"
+    },
+    "3": {
+      "item": "minecraft:glowstone_dust"
+    },
+    "4": {
+      "item": "minecraft:paper"
+    },
+    "5": {
+      "item": "minecraft:glowstone_dust"
+    },
+    "6": {
+      "item": "minecraft:glowstone"
+    },
+    "7": {
+      "item": "minecraft:glowstone_dust"
+    },
+    "8": {
+      "item": "minecraft:glowstone"
+    }
+  },
+  "result": {
+    "item": "instrumental:inspiration_score",
+    "count": 1
+  }
+}

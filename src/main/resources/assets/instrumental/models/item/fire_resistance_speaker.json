@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "instrumental:items/fire_resistance_speaker"
+  }
+}
