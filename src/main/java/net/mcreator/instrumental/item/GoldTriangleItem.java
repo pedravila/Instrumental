@@ -75,7 +75,7 @@ public class GoldTriangleItem extends InstrumentalModElements.ModElement {
 	}
 	public static class ItemRanged extends Item {
 		public ItemRanged() {
-			super(new Item.Properties().group(ItemGroup.COMBAT).maxDamage(100));
+			super(new Item.Properties().group(ItemGroup.COMBAT).maxDamage(300));
 			setRegistryName("gold_triangle");
 		}
 

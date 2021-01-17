@@ -75,7 +75,7 @@ public class GoldLyreItem extends InstrumentalModElements.ModElement {
 	}
 	public static class ItemRanged extends Item {
 		public ItemRanged() {
-			super(new Item.Properties().group(ItemGroup.COMBAT).maxDamage(100));
+			super(new Item.Properties().group(ItemGroup.COMBAT).maxDamage(750));
 			setRegistryName("gold_lyre");
 		}
 

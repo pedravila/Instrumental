@@ -76,6 +76,10 @@ public class InstrumentalModElements {
 				new net.minecraft.util.SoundEvent(new ResourceLocation("instrumental", "clarinet_sound")));
 		sounds.put(new ResourceLocation("instrumental", "berimbau_sound"),
 				new net.minecraft.util.SoundEvent(new ResourceLocation("instrumental", "berimbau_sound")));
+		sounds.put(new ResourceLocation("instrumental", "ukulele_sound"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("instrumental", "ukulele_sound")));
+		sounds.put(new ResourceLocation("instrumental", "warhorn_sound"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("instrumental", "warhorn_sound")));
 		try {
 			ModFileScanData modFileInfo = ModList.get().getModFileById("instrumental").getFile().getScanResult();
 			Set<ModFileScanData.AnnotationData> annotations = modFileInfo.getAnnotations();

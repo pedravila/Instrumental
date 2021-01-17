@@ -124,5 +124,23 @@
         "stream": false
       }
     ]
+  },
+  "ukulele_sound": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "instrumental:ukulele_sound",
+        "stream": false
+      }
+    ]
+  },
+  "warhorn_sound": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "instrumental:warhorn_sound",
+        "stream": false
+      }
+    ]
   }
 }

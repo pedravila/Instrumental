@@ -2212,6 +2212,136 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "powered_strength_speaker_recipe"
+    },
+    {
+      "name": "ObsidianUkulele",
+      "type": "tool",
+      "sortid": 236,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "obsidian_ukulele"
+    },
+    {
+      "name": "ObsidianUkuleleRightClickedInAir",
+      "type": "procedure",
+      "sortid": 237,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "obsidian_ukulele_right_clicked_in_air",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "BoneWarhorn",
+      "type": "tool",
+      "sortid": 238,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bone_warhorn"
+    },
+    {
+      "name": "BoneWarhornRightClickedInAir",
+      "type": "procedure",
+      "sortid": 239,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bone_warhorn_right_clicked_in_air",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ObsidianUkuleleRecipe",
+      "type": "recipe",
+      "sortid": 240,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "obsidian_ukulele_recipe"
+    },
+    {
+      "name": "BoneWarhornRecipe",
+      "type": "recipe",
+      "sortid": 241,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bone_warhorn_recipe"
+    },
+    {
+      "name": "PistonScore",
+      "type": "tool",
+      "sortid": 242,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "piston_score"
+    },
+    {
+      "name": "BonemealScore",
+      "type": "tool",
+      "sortid": 243,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bonemeal_score"
+    },
+    {
+      "name": "LevitationScore",
+      "type": "tool",
+      "sortid": 244,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "levitation_score"
+    },
+    {
+      "name": "WitherScore",
+      "type": "tool",
+      "sortid": 245,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wither_score"
     }
   ],
   "variable_elements": [
@@ -2334,12 +2464,28 @@
       ],
       "category": "master",
       "subtitle": ""
+    },
+    {
+      "name": "ukulele_sound",
+      "files": [
+        "ukulele_sound"
+      ],
+      "category": "master",
+      "subtitle": ""
+    },
+    {
+      "name": "warhorn_sound",
+      "files": [
+        "warhorn_sound"
+      ],
+      "category": "master",
+      "subtitle": ""
     }
   ],
   "language_map": {
     "en_us": {
-      "item.instrumental.speaker": "Speaker",
       "item.instrumental.obsidian_banjo": "Obsidian Banjo",
+      "item.instrumental.speaker": "Speaker",
       "item.instrumental.dried_bamboo_iron_chimes": "Dried Bamboo Iron Chimes",
       "item.instrumental.birch_tambourine": "Birch Tambourine",
       "subtitles.dried_bamboo_chime_sound": "",
@@ -2356,19 +2502,23 @@
       "item.instrumental.iron_trumpet": "Iron Trumpet",
       "item.instrumental.iron_lyre": "Iron Lyre",
       "subtitles.berimbau_sound": "",
+      "item.instrumental.wither_score": "Wither Score",
       "item.instrumental.fire_resistance_speaker": "Fire Resistance Speaker",
       "item.instrumental.dried_bamboo": "Dried Bamboo",
       "subtitles.redstone_maraca_sound": "",
       "subtitles.accordion_sound": "",
       "item.instrumental.jump_boost_speaker": "Jump Boost Speaker",
+      "item.instrumental.obsidian_ukulele": "Ukulele Bell",
       "subtitles.trumpet_sound": "",
       "item.instrumental.water_breathing_speaker": "Water Breathing Speaker",
       "item.instrumental.iron_bell": "Iron Bell",
       "item.instrumental.dolphin_grace_speaker": "Dolphins Grace Speaker",
       "item.instrumental.oak_tambourine": "Oak Tambourine",
       "item.instrumental.iron_triangle": "Iron Triangle",
+      "subtitles.warhorn_sound": "",
       "subtitles.panflute_sound": "",
       "item.instrumental.regeneration_speaker": "Regeneration Speaker",
+      "item.instrumental.levitation_score": "Levitation Score",
       "item.instrumental.gold_lyre": "Gold Lyre",
       "item.instrumental.gold_bell": "Gold Bell",
       "item.instrumental.gold_trumpet": "Gold Trumpet",
@@ -2383,10 +2533,12 @@
       "item.instrumental.obsidian_clarinet": "Obsidian Clarinet",
       "item.instrumental.dark_oak_whistle": "Dark Oak Whistle",
       "item.instrumental.obsidian_berimbau": "Obsidian Berimbau",
+      "item.instrumental.bone_warhorn": "Bone Warhorn",
       "item.instrumental.slow_falling_speaker": "Slow Falling Speaker",
       "item.minecraft.splash_potion.effect.inspirated": "Splash Inspirated",
       "item.instrumental.spruce_whistle": "Spruce Whistle",
       "item.instrumental.inspiration_score": "Inspiration Score",
+      "subtitles.ukulele_sound": "",
       "subtitles.whistle_sound": "",
       "subtitles.ocarina_sound": "",
       "item.instrumental.acacia_whistle": "Acacia Whistle",
@@ -2399,6 +2551,7 @@
       "item.instrumental.inpiration_speaker": "Inspiration Speaker",
       "item.instrumental.dried_bamboo_diamond_chimes": "Dried Bamboo Diamond Chimes",
       "item.instrumental.strength_speaker": "Stregth Speaker",
+      "item.instrumental.bonemeal_score": "Bonemeal Score",
       "item.instrumental.jungle_tambourine": "Jungle Tambourine",
       "subtitles.bell_sound": "",
       "item.instrumental.powered_strength_speaker": "Powered Strength Speaker",
@@ -2407,6 +2560,7 @@
       "item.instrumental.powered_speed_speaker": "Powered Speed Speaker",
       "subtitles.triangle_sound": "",
       "item.instrumental.obsidian_panflute": "Obsidian Panflute",
+      "item.instrumental.piston_score": "Piston Score",
       "subtitles.clarinet_sound": "",
       "item.instrumental.obsidian_ocarina": "Obsidian Ocarina",
       "item.instrumental.jungle_whistle": "Jungle Whistle",

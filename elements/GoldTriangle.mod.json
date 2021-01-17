@@ -19,7 +19,7 @@
       "value": ""
     },
     "shootConstantly": false,
-    "usageCount": 100,
+    "usageCount": 300,
     "actionSound": {
       "value": "CUSTOM:triangle_sound"
     },

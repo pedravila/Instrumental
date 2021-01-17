@@ -75,7 +75,7 @@ public class DriedBambooIronChimesItem extends InstrumentalModElements.ModElemen
 	}
 	public static class ItemRanged extends Item {
 		public ItemRanged() {
-			super(new Item.Properties().group(ItemGroup.COMBAT).maxDamage(100));
+			super(new Item.Properties().group(ItemGroup.COMBAT).maxDamage(250));
 			setRegistryName("dried_bamboo_iron_chimes");
 		}
 
