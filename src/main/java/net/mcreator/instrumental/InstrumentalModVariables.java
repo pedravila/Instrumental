@@ -79,7 +79,7 @@ public class InstrumentalModVariables {
 	}
 
 	public static class PlayerVariables {
-		public double Inspiration = 0;
+		public double Inspiration = 20.0;
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
 				InstrumentalMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayerEntity) entity),

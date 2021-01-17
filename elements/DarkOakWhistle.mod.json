@@ -7,7 +7,9 @@
     "customModelName": "Normal",
     "name": "Dark Oak Whistle",
     "specialInfo": [
-      "§2 2 Attack Damage"
+      "§2 2 Attack Damage",
+      "§2 1 Inspiration",
+      "§2 0.25 Seconds Cooldown"
     ],
     "creativeTab": {
       "value": "COMBAT"
@@ -25,6 +27,12 @@
     "animation": "none",
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
+    "onRangedItemUsed": {
+      "name": "OakWhistleRangedItemUsed"
+    },
+    "useCondition": {
+      "name": "OakWhistleCanUseRangedItem"
+    },
     "bulletPower": 1.0,
     "bulletDamage": 1.0,
     "bulletKnockback": 0,

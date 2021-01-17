@@ -37,13 +37,17 @@ import net.minecraft.client.renderer.entity.SpriteRenderer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.block.Blocks;
 
-import net.mcreator.instrumental.procedures.AsdaWhileBulletFlyingTickProcedure;
+import net.mcreator.instrumental.procedures.IronTrumpetRangedItemUsedProcedure;
+import net.mcreator.instrumental.procedures.IronTriangleCanUseRangedItemProcedure;
+import net.mcreator.instrumental.procedures.IronNoteProjectileProcedure;
 import net.mcreator.instrumental.InstrumentalModElements;
 
 import java.util.Random;
 import java.util.Map;
 import java.util.List;
 import java.util.HashMap;
+
+import com.google.common.collect.ImmutableMap;
 
 @InstrumentalModElements.ModElement.Tag
 public class IronTrumpetItem extends InstrumentalModElements.ModElement {
@@ -85,6 +89,8 @@ public class IronTrumpetItem extends InstrumentalModElements.ModElement {
 		public void addInformation(ItemStack itemstack, World world, List<ITextComponent> list, ITooltipFlag flag) {
 			super.addInformation(itemstack, world, list, flag);
 			list.add(new StringTextComponent("\u00A72 5 Attack Damage"));
+			list.add(new StringTextComponent("\u00A72 2 inspiration"));
+			list.add(new StringTextComponent("\u00A72 1 Second Cooldown"));
 		}
 
 		@Override
@@ -104,10 +110,16 @@ public class IronTrumpetItem extends InstrumentalModElements.ModElement {
 				double x = entity.getPosX();
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
-				if (true) {
+				if (IronTriangleCanUseRangedItemProcedure.executeProcedure(ImmutableMap.of("entity", entity))) {
 					ArrowCustomEntity entityarrow = shoot(world, entity, random, 1f, 2.5, 0);
 					itemstack.damageItem(1, entity, e -> e.sendBreakAnimation(entity.getActiveHand()));
 					entityarrow.pickupStatus = AbstractArrowEntity.PickupStatus.DISALLOWED;
+					{
+						Map<String, Object> $_dependencies = new HashMap<>();
+						$_dependencies.put("entity", entity);
+						$_dependencies.put("itemstack", itemstack);
+						IronTrumpetRangedItemUsedProcedure.executeProcedure($_dependencies);
+					}
 				}
 			}
 		}
@@ -167,7 +179,7 @@ public class IronTrumpetItem extends InstrumentalModElements.ModElement {
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				AsdaWhileBulletFlyingTickProcedure.executeProcedure($_dependencies);
+				IronNoteProjectileProcedure.executeProcedure($_dependencies);
 			}
 			if (this.inGround) {
 				this.remove();

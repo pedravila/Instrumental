@@ -37,13 +37,17 @@ import net.minecraft.client.renderer.entity.SpriteRenderer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.block.Blocks;
 
-import net.mcreator.instrumental.procedures.AsdaWhileBulletFlyingTickProcedure;
+import net.mcreator.instrumental.procedures.IronLyreCanUseRangedItemProcedure;
+import net.mcreator.instrumental.procedures.GoldNoteProjectileProcedure;
+import net.mcreator.instrumental.procedures.GoldLyreRangedItemUsedProcedure;
 import net.mcreator.instrumental.InstrumentalModElements;
 
 import java.util.Random;
 import java.util.Map;
 import java.util.List;
 import java.util.HashMap;
+
+import com.google.common.collect.ImmutableMap;
 
 @InstrumentalModElements.ModElement.Tag
 public class GoldLyreItem extends InstrumentalModElements.ModElement {
@@ -85,6 +89,8 @@ public class GoldLyreItem extends InstrumentalModElements.ModElement {
 		public void addInformation(ItemStack itemstack, World world, List<ITextComponent> list, ITooltipFlag flag) {
 			super.addInformation(itemstack, world, list, flag);
 			list.add(new StringTextComponent("\u00A72 7 Attack Damage"));
+			list.add(new StringTextComponent("\u00A72 4 inspiration"));
+			list.add(new StringTextComponent("\u00A72 1 Seconds Cooldown"));
 		}
 
 		@Override
@@ -104,10 +110,16 @@ public class GoldLyreItem extends InstrumentalModElements.ModElement {
 				double x = entity.getPosX();
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
-				if (true) {
+				if (IronLyreCanUseRangedItemProcedure.executeProcedure(ImmutableMap.of("entity", entity))) {
 					ArrowCustomEntity entityarrow = shoot(world, entity, random, 1.1f, 3, 0);
 					itemstack.damageItem(1, entity, e -> e.sendBreakAnimation(entity.getActiveHand()));
 					entityarrow.pickupStatus = AbstractArrowEntity.PickupStatus.DISALLOWED;
+					{
+						Map<String, Object> $_dependencies = new HashMap<>();
+						$_dependencies.put("entity", entity);
+						$_dependencies.put("itemstack", itemstack);
+						GoldLyreRangedItemUsedProcedure.executeProcedure($_dependencies);
+					}
 				}
 			}
 		}
@@ -167,7 +179,7 @@ public class GoldLyreItem extends InstrumentalModElements.ModElement {
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				AsdaWhileBulletFlyingTickProcedure.executeProcedure($_dependencies);
+				GoldNoteProjectileProcedure.executeProcedure($_dependencies);
 			}
 			if (this.inGround) {
 				this.remove();

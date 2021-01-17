@@ -10,14 +10,14 @@
           "image": "inspiration_15.png",
           "use1Xscale": false,
           "name": "inspiration_15.png",
-          "x": 123,
-          "y": 206
+          "x": 122,
+          "y": 197
         }
       }
     ],
     "baseTexture": "",
     "displayCondition": {
-      "name": "Inspiration15"
+      "name": "InspirationBar15DisplayOverlayIngame"
     }
   }
 }

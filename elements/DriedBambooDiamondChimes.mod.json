@@ -7,7 +7,9 @@
     "customModelName": "Normal",
     "name": "Dried Bamboo Diamond Chimes",
     "specialInfo": [
-      "§2 8 Attack Damage"
+      "§2 8 Attack Damage",
+      "§2 4 Inspiration",
+      "§2 1 Second Cooldown"
     ],
     "creativeTab": {
       "value": "COMBAT"
@@ -25,6 +27,12 @@
     "animation": "none",
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
+    "onRangedItemUsed": {
+      "name": "DriedBambooDiamondChimesRangedItemUsed"
+    },
+    "useCondition": {
+      "name": "DriedBambooDiamondChimesCanUseRangedItem"
+    },
     "bulletPower": 1.1,
     "bulletDamage": 3.5,
     "bulletKnockback": 0,

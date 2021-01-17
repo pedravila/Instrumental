@@ -37,6 +37,8 @@ import net.minecraft.client.renderer.entity.SpriteRenderer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.block.Blocks;
 
+import net.mcreator.instrumental.procedures.DriedBambooIronChimesRangedItemUsedProcedure;
+import net.mcreator.instrumental.procedures.DriedBambooIronChimesCanUseRangedItemProcedure;
 import net.mcreator.instrumental.procedures.AsdaWhileBulletFlyingTickProcedure;
 import net.mcreator.instrumental.InstrumentalModElements;
 
@@ -44,6 +46,8 @@ import java.util.Random;
 import java.util.Map;
 import java.util.List;
 import java.util.HashMap;
+
+import com.google.common.collect.ImmutableMap;
 
 @InstrumentalModElements.ModElement.Tag
 public class DriedBambooGoldChimesItem extends InstrumentalModElements.ModElement {
@@ -85,6 +89,8 @@ public class DriedBambooGoldChimesItem extends InstrumentalModElements.ModElemen
 		public void addInformation(ItemStack itemstack, World world, List<ITextComponent> list, ITooltipFlag flag) {
 			super.addInformation(itemstack, world, list, flag);
 			list.add(new StringTextComponent("\u00A72 7 Attack Damage"));
+			list.add(new StringTextComponent("\u00A72 3 Inspiration"));
+			list.add(new StringTextComponent("\u00A72 1 Second Cooldown"));
 		}
 
 		@Override
@@ -104,10 +110,16 @@ public class DriedBambooGoldChimesItem extends InstrumentalModElements.ModElemen
 				double x = entity.getPosX();
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
-				if (true) {
+				if (DriedBambooIronChimesCanUseRangedItemProcedure.executeProcedure(ImmutableMap.of("entity", entity))) {
 					ArrowCustomEntity entityarrow = shoot(world, entity, random, 1.1f, 3, 0);
 					itemstack.damageItem(1, entity, e -> e.sendBreakAnimation(entity.getActiveHand()));
 					entityarrow.pickupStatus = AbstractArrowEntity.PickupStatus.DISALLOWED;
+					{
+						Map<String, Object> $_dependencies = new HashMap<>();
+						$_dependencies.put("entity", entity);
+						$_dependencies.put("itemstack", itemstack);
+						DriedBambooIronChimesRangedItemUsedProcedure.executeProcedure($_dependencies);
+					}
 				}
 			}
 		}

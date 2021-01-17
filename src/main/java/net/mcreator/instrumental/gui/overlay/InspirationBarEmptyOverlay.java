@@ -51,7 +51,7 @@ public class InspirationBarEmptyOverlay extends InstrumentalModElements.ModEleme
 				RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
 				RenderSystem.disableAlphaTest();
 				Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("instrumental:textures/inspiration_0.png"));
-				Minecraft.getInstance().ingameGUI.blit(posX + -90, posY + 86, 0, 0, 100, 10, 100, 10);
+				Minecraft.getInstance().ingameGUI.blit(posX + -91, posY + 77, 0, 0, 100, 10, 100, 10);
 				RenderSystem.depthMask(true);
 				RenderSystem.enableDepthTest();
 				RenderSystem.enableAlphaTest();

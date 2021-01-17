@@ -7,7 +7,9 @@
     "customModelName": "Normal",
     "name": "Obsidian Berimbau",
     "specialInfo": [
-      "§2 9 Attack Damage"
+      "§2 9 Attack Damage",
+      "§2 5 inspiration",
+      "§2 1 Seconds Cooldown"
     ],
     "creativeTab": {
       "value": "COMBAT"
@@ -25,6 +27,12 @@
     "animation": "none",
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
+    "onRangedItemUsed": {
+      "name": "ObsidianLyreRangedItemUsed"
+    },
+    "useCondition": {
+      "name": "ObsidianLyreCanUseRangedItem"
+    },
     "bulletPower": 1.2,
     "bulletDamage": 3.5,
     "bulletKnockback": 0,
@@ -36,7 +44,7 @@
     "bulletModel": "Default",
     "customBulletModelTexture": "",
     "onBulletFlyingTick": {
-      "name": "AsdaWhileBulletFlyingTick"
+      "name": "DiamondNoteProjectile"
     }
   }
 }

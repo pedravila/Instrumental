@@ -13,7 +13,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.client.Minecraft;
 
-import net.mcreator.instrumental.procedures.Inspiratio18Procedure;
+import net.mcreator.instrumental.procedures.InspirationBar18DisplayOverlayIngameProcedure;
 import net.mcreator.instrumental.InstrumentalModElements;
 
 import com.mojang.blaze3d.systems.RenderSystem;
@@ -43,7 +43,7 @@ public class InspirationBar18Overlay extends InstrumentalModElements.ModElement 
 			double x = entity.getPosX();
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
-			if (Inspiratio18Procedure.executeProcedure(ImmutableMap.of("entity", entity))) {
+			if (InspirationBar18DisplayOverlayIngameProcedure.executeProcedure(ImmutableMap.of("entity", entity))) {
 				RenderSystem.disableDepthTest();
 				RenderSystem.depthMask(false);
 				RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA,
@@ -51,7 +51,7 @@ public class InspirationBar18Overlay extends InstrumentalModElements.ModElement 
 				RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
 				RenderSystem.disableAlphaTest();
 				Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("instrumental:textures/inspiration_18.png"));
-				Minecraft.getInstance().ingameGUI.blit(posX + -90, posY + 86, 0, 0, 100, 10, 100, 10);
+				Minecraft.getInstance().ingameGUI.blit(posX + -91, posY + 77, 0, 0, 100, 10, 100, 10);
 				RenderSystem.depthMask(true);
 				RenderSystem.enableDepthTest();
 				RenderSystem.enableAlphaTest();

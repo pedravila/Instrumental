@@ -7,7 +7,9 @@
     "customModelName": "Normal",
     "name": "Acacia Tambourine",
     "specialInfo": [
-      "§2 3 Attack Damage"
+      "§2 3 Attack Damage",
+      "§2 1 Inspiration",
+      "§2 0.5 Seconds Cooldown"
     ],
     "creativeTab": {
       "value": "COMBAT"
@@ -25,6 +27,12 @@
     "animation": "none",
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
+    "onRangedItemUsed": {
+      "name": "OakTambourineRangedItemUsed"
+    },
+    "useCondition": {
+      "name": "OakWhistleCanUseRangedItem"
+    },
     "bulletPower": 1.0,
     "bulletDamage": 1.5,
     "bulletKnockback": 0,
