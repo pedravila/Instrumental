@@ -16,6 +16,7 @@ import net.minecraftforge.common.ToolType;
 import net.minecraft.world.storage.loot.LootContext;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.World;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.ITextComponent;
@@ -89,8 +90,13 @@ public class OakdrumBlock extends InstrumentalModElements.ModElement {
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(1f, 10f).lightValue(0).harvestLevel(1)
-					.harvestTool(ToolType.AXE).tickRandomly());
+					.harvestTool(ToolType.AXE));
 			setRegistryName("oakdrum");
+		}
+
+		@Override
+		public int tickRate(IWorldReader world) {
+			return 20;
 		}
 
 		@Override
@@ -99,6 +105,15 @@ public class OakdrumBlock extends InstrumentalModElements.ModElement {
 			if (!dropsOriginal.isEmpty())
 				return dropsOriginal;
 			return Collections.singletonList(new ItemStack(this, 1));
+		}
+
+		@Override
+		public void onBlockAdded(BlockState state, World world, BlockPos pos, BlockState oldState, boolean moving) {
+			super.onBlockAdded(state, world, pos, oldState, moving);
+			int x = pos.getX();
+			int y = pos.getY();
+			int z = pos.getZ();
+			world.getPendingBlockTicks().scheduleTick(new BlockPos(x, y, z), this, this.tickRate(world));
 		}
 
 		@Override
@@ -115,6 +130,7 @@ public class OakdrumBlock extends InstrumentalModElements.ModElement {
 				$_dependencies.put("world", world);
 				DrumTickUpdateProcedure.executeProcedure($_dependencies);
 			}
+			world.getPendingBlockTicks().scheduleTick(new BlockPos(x, y, z), this, this.tickRate(world));
 		}
 
 		@Override

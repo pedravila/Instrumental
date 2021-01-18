@@ -127,7 +127,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 															.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
 												}
 											}.compareDistOf(((sx) + x), ((sy) + y), ((sz) + z))).findFirst().orElse(null)))
-													.addPotionEffect(new EffectInstance(Effects.HASTE, (int) 20, (int) 1, (false), (true)));
+													.addPotionEffect(new EffectInstance(Effects.HASTE, (int) 200, (int) 0, (false), (true)));
 							}
 							sz = (double) ((sz) + 1);
 						}
