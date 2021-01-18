@@ -8,7 +8,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ActionResult;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.entity.player.PlayerEntity;
@@ -18,6 +17,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.block.BlockState;
 
 import net.mcreator.instrumental.procedures.ObsidianUkuleleRightClickedInAirProcedure;
+import net.mcreator.instrumental.itemgroup.RangedInstrumentsTabItemGroup;
 import net.mcreator.instrumental.InstrumentalModElements;
 
 import java.util.Map;
@@ -30,7 +30,7 @@ public class ObsidianUkuleleItem extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:obsidian_ukulele")
 	public static final Item block = null;
 	public ObsidianUkuleleItem(InstrumentalModElements instance) {
-		super(instance, 236);
+		super(instance, 28);
 	}
 
 	@Override
@@ -57,7 +57,7 @@ public class ObsidianUkuleleItem extends InstrumentalModElements.ModElement {
 	}
 	private static class ItemToolCustom extends Item {
 		protected ItemToolCustom() {
-			super(new Item.Properties().group(ItemGroup.TOOLS).maxDamage(1500));
+			super(new Item.Properties().group(RangedInstrumentsTabItemGroup.tab).maxDamage(1500));
 		}
 
 		@Override
@@ -87,7 +87,7 @@ public class ObsidianUkuleleItem extends InstrumentalModElements.ModElement {
 			Multimap<String, AttributeModifier> multimap = super.getAttributeModifiers(equipmentSlot);
 			if (equipmentSlot == EquipmentSlotType.MAINHAND) {
 				multimap.put(SharedMonsterAttributes.ATTACK_DAMAGE.getName(),
-						new AttributeModifier(ATTACK_DAMAGE_MODIFIER, "Tool modifier", 2f, AttributeModifier.Operation.ADDITION));
+						new AttributeModifier(ATTACK_DAMAGE_MODIFIER, "Tool modifier", 5f, AttributeModifier.Operation.ADDITION));
 				multimap.put(SharedMonsterAttributes.ATTACK_SPEED.getName(),
 						new AttributeModifier(ATTACK_SPEED_MODIFIER, "Tool modifier", -2, AttributeModifier.Operation.ADDITION));
 			}

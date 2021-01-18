@@ -24,7 +24,7 @@ public class DriedBambooFloorBlock extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:dried_bamboo_floor")
 	public static final Block block = null;
 	public DriedBambooFloorBlock(InstrumentalModElements instance) {
-		super(instance, 27);
+		super(instance, 62);
 	}
 
 	@Override

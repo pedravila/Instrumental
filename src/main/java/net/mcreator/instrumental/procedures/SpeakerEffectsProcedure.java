@@ -22,18 +22,18 @@ import net.minecraft.client.Minecraft;
 import net.mcreator.instrumental.potion.InspiratedPotion;
 import net.mcreator.instrumental.item.WaterBreathingSpeakerItem;
 import net.mcreator.instrumental.item.StrengthSpeakerItem;
+import net.mcreator.instrumental.item.SpirationSpeakerItem;
 import net.mcreator.instrumental.item.SpeedSpeakerItem;
 import net.mcreator.instrumental.item.SlowFallingSpeakerItem;
 import net.mcreator.instrumental.item.RegenerationSpeakerItem;
 import net.mcreator.instrumental.item.PoweredStrengthSpeakerItem;
 import net.mcreator.instrumental.item.PoweredSpeedSpeakerItem;
 import net.mcreator.instrumental.item.PoweredRegenerationSpeakerItem;
-import net.mcreator.instrumental.item.PoweredJumpBoosSpeakerItem;
+import net.mcreator.instrumental.item.PoweredJumpBoostSpeakerItem;
 import net.mcreator.instrumental.item.NightVisionSpeakerItem;
 import net.mcreator.instrumental.item.JumpBoostSpeakerItem;
-import net.mcreator.instrumental.item.InpirationSpeakerItem;
 import net.mcreator.instrumental.item.FireResistanceSpeakerItem;
-import net.mcreator.instrumental.item.DolphinGraceSpeakerItem;
+import net.mcreator.instrumental.item.DolphinsGraceSpeakerItem;
 import net.mcreator.instrumental.InstrumentalModVariables;
 import net.mcreator.instrumental.InstrumentalModElements;
 
@@ -44,7 +44,7 @@ import java.util.HashMap;
 @InstrumentalModElements.ModElement.Tag
 public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement {
 	public SpeakerEffectsProcedure(InstrumentalModElements instance) {
-		super(instance, 217);
+		super(instance, 180);
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 
@@ -60,7 +60,7 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 				&& (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 						.getItem() == new ItemStack(RegenerationSpeakerItem.block, (int) (1)).getItem()))) {
 			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.REGENERATION, (int) 900, (int) 1));
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.REGENERATION, (int) 900, (int) 0));
 			if ((new Object() {
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayerEntity) {
@@ -100,9 +100,9 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:melee_instruments").toLowerCase(java.util.Locale.ENGLISH)))
 				.contains(((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem()))
 				&& (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
-						.getItem() == new ItemStack(DolphinGraceSpeakerItem.block, (int) (1)).getItem()))) {
+						.getItem() == new ItemStack(DolphinsGraceSpeakerItem.block, (int) (1)).getItem()))) {
 			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.DOLPHINS_GRACE, (int) 2400, (int) 1));
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.DOLPHINS_GRACE, (int) 2400, (int) 0));
 			if ((new Object() {
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayerEntity) {
@@ -144,7 +144,7 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 				&& (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 						.getItem() == new ItemStack(FireResistanceSpeakerItem.block, (int) (1)).getItem()))) {
 			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.FIRE_RESISTANCE, (int) 2400, (int) 1));
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.FIRE_RESISTANCE, (int) 2400, (int) 0));
 			if ((new Object() {
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayerEntity) {
@@ -186,7 +186,7 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 				&& (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 						.getItem() == new ItemStack(JumpBoostSpeakerItem.block, (int) (1)).getItem()))) {
 			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, (int) 2400, (int) 1));
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, (int) 2400, (int) 0));
 			if ((new Object() {
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayerEntity) {
@@ -228,7 +228,7 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 				&& (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 						.getItem() == new ItemStack(NightVisionSpeakerItem.block, (int) (1)).getItem()))) {
 			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.NIGHT_VISION, (int) 2400, (int) 1));
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.NIGHT_VISION, (int) 2400, (int) 0));
 			if ((new Object() {
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayerEntity) {
@@ -270,7 +270,7 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 				&& (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 						.getItem() == new ItemStack(SlowFallingSpeakerItem.block, (int) (1)).getItem()))) {
 			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOW_FALLING, (int) 2400, (int) 1));
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOW_FALLING, (int) 2400, (int) 0));
 			if ((new Object() {
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayerEntity) {
@@ -312,7 +312,7 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 				&& (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 						.getItem() == new ItemStack(SpeedSpeakerItem.block, (int) (1)).getItem()))) {
 			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SPEED, (int) 2400, (int) 1));
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SPEED, (int) 2400, (int) 0));
 			if ((new Object() {
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayerEntity) {
@@ -354,7 +354,7 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 				&& (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 						.getItem() == new ItemStack(StrengthSpeakerItem.block, (int) (1)).getItem()))) {
 			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.STRENGTH, (int) 2400, (int) 1));
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.STRENGTH, (int) 2400, (int) 0));
 			if ((new Object() {
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayerEntity) {
@@ -396,7 +396,7 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 				&& (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 						.getItem() == new ItemStack(WaterBreathingSpeakerItem.block, (int) (1)).getItem()))) {
 			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.WATER_BREATHING, (int) 2400, (int) 1));
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.WATER_BREATHING, (int) 2400, (int) 0));
 			if ((new Object() {
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayerEntity) {
@@ -436,9 +436,9 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:melee_instruments").toLowerCase(java.util.Locale.ENGLISH)))
 				.contains(((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem()))
 				&& (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
-						.getItem() == new ItemStack(InpirationSpeakerItem.block, (int) (1)).getItem()))) {
+						.getItem() == new ItemStack(SpirationSpeakerItem.block, (int) (1)).getItem()))) {
 			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(InspiratedPotion.potion, (int) 2400, (int) 1));
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(InspiratedPotion.potion, (int) 2400, (int) 0));
 			if ((new Object() {
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayerEntity) {
@@ -480,7 +480,7 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 				&& (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 						.getItem() == new ItemStack(PoweredRegenerationSpeakerItem.block, (int) (1)).getItem()))) {
 			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.REGENERATION, (int) 400, (int) 2));
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.REGENERATION, (int) 400, (int) 1));
 			if ((new Object() {
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayerEntity) {
@@ -520,9 +520,9 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:melee_instruments").toLowerCase(java.util.Locale.ENGLISH)))
 				.contains(((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem()))
 				&& (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
-						.getItem() == new ItemStack(PoweredJumpBoosSpeakerItem.block, (int) (1)).getItem()))) {
+						.getItem() == new ItemStack(PoweredJumpBoostSpeakerItem.block, (int) (1)).getItem()))) {
 			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, (int) 1200, (int) 2));
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, (int) 1200, (int) 1));
 			if ((new Object() {
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayerEntity) {
@@ -564,7 +564,7 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 				&& (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 						.getItem() == new ItemStack(PoweredSpeedSpeakerItem.block, (int) (1)).getItem()))) {
 			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SPEED, (int) 1200, (int) 2));
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SPEED, (int) 1200, (int) 1));
 			if ((new Object() {
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayerEntity) {
@@ -606,7 +606,7 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 				&& (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 						.getItem() == new ItemStack(PoweredStrengthSpeakerItem.block, (int) (1)).getItem()))) {
 			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.STRENGTH, (int) 1200, (int) 2));
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.STRENGTH, (int) 1200, (int) 1));
 			if ((new Object() {
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayerEntity) {

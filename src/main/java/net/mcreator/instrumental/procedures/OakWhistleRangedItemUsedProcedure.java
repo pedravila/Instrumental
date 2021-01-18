@@ -17,7 +17,7 @@ import java.util.Map;
 @InstrumentalModElements.ModElement.Tag
 public class OakWhistleRangedItemUsedProcedure extends InstrumentalModElements.ModElement {
 	public OakWhistleRangedItemUsedProcedure(InstrumentalModElements instance) {
-		super(instance, 161);
+		super(instance, 141);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

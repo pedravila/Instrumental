@@ -80,6 +80,10 @@ public class InstrumentalModElements {
 				new net.minecraft.util.SoundEvent(new ResourceLocation("instrumental", "ukulele_sound")));
 		sounds.put(new ResourceLocation("instrumental", "warhorn_sound"),
 				new net.minecraft.util.SoundEvent(new ResourceLocation("instrumental", "warhorn_sound")));
+		sounds.put(new ResourceLocation("instrumental", "drum_fail_sound.ogg"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("instrumental", "drum_fail_sound.ogg")));
+		sounds.put(new ResourceLocation("instrumental", "drum_sound"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("instrumental", "drum_sound")));
 		try {
 			ModFileScanData modFileInfo = ModList.get().getModFileById("instrumental").getFile().getScanResult();
 			Set<ModFileScanData.AnnotationData> annotations = modFileInfo.getAnnotations();

@@ -1,0 +1,16 @@
+{
+  "_fv": 13,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "Blocks.SLIME_BLOCK"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "name": "melodies",
+    "namespace": "forge"
+  }
+}

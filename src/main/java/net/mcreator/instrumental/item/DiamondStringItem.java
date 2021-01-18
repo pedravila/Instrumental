@@ -16,7 +16,7 @@ public class DiamondStringItem extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:diamond_string")
 	public static final Item block = null;
 	public DiamondStringItem(InstrumentalModElements instance) {
-		super(instance, 26);
+		super(instance, 61);
 	}
 
 	@Override

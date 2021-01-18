@@ -8,7 +8,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ActionResult;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.entity.player.PlayerEntity;
@@ -18,6 +17,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.block.BlockState;
 
 import net.mcreator.instrumental.procedures.IronBellRightClickedInAirProcedure;
+import net.mcreator.instrumental.itemgroup.RangedInstrumentsTabItemGroup;
 import net.mcreator.instrumental.InstrumentalModElements;
 
 import java.util.Map;
@@ -30,7 +30,7 @@ public class ObsidianBellItem extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:obsidian_bell")
 	public static final Item block = null;
 	public ObsidianBellItem(InstrumentalModElements instance) {
-		super(instance, 108);
+		super(instance, 25);
 	}
 
 	@Override
@@ -57,7 +57,7 @@ public class ObsidianBellItem extends InstrumentalModElements.ModElement {
 	}
 	private static class ItemToolCustom extends Item {
 		protected ItemToolCustom() {
-			super(new Item.Properties().group(ItemGroup.TOOLS).maxDamage(1500));
+			super(new Item.Properties().group(RangedInstrumentsTabItemGroup.tab).maxDamage(1500));
 		}
 
 		@Override

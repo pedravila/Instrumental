@@ -1,6 +1,0 @@
-{
-  "parent": "item/handheld",
-  "textures": {
-    "layer0": "instrumental:items/powered_jump_boost_speaker"
-  }
-}

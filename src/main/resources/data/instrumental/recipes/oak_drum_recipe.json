@@ -1,0 +1,42 @@
+{
+  "group": "instrumental",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "instrumental:drum_leather"
+    },
+    "1": {
+      "item": "instrumental:drum_leather"
+    },
+    "2": {
+      "item": "instrumental:drum_leather"
+    },
+    "3": {
+      "item": "minecraft:oak_planks"
+    },
+    "4": {
+      "item": "instrumental:instrumental_string"
+    },
+    "5": {
+      "item": "minecraft:oak_planks"
+    },
+    "6": {
+      "item": "minecraft:oak_planks"
+    },
+    "7": {
+      "item": "instrumental:instrumental_string"
+    },
+    "8": {
+      "item": "minecraft:oak_planks"
+    }
+  },
+  "result": {
+    "item": "instrumental:oakdrum",
+    "count": 1
+  }
+}

@@ -8,7 +8,7 @@
     "name": "Bone Warhorn",
     "specialInfo": [],
     "creativeTab": {
-      "value": "TOOLS"
+      "value": "CUSTOM:RangedInstrumentsTab"
     },
     "toolType": "Special",
     "harvestLevel": 1,

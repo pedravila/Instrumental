@@ -22,7 +22,7 @@
         "value": "Items.PRISMARINE_SHARD"
       },
       {
-        "value": "CUSTOM:DolphinGraceSpeaker"
+        "value": "CUSTOM:Speaker"
       },
       {
         "value": "Items.PRISMARINE_SHARD"
@@ -38,7 +38,7 @@
       }
     ],
     "recipeReturnStack": {
-      "value": "CUSTOM:DolphinGraceSpeaker"
+      "value": "CUSTOM:DolphinsGraceSpeaker"
     },
     "name": "dolphin_grace_speaker_recipe",
     "namespace": "mod"

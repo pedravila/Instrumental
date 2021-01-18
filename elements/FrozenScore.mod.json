@@ -1,26 +1,35 @@
 {
   "_fv": 13,
-  "_type": "tool",
+  "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "frozen_score",
     "customModelName": "Normal",
     "name": "Frozen Score",
-    "specialInfo": [],
+    "rarity": "RARE",
     "creativeTab": {
-      "value": "TOOLS"
+      "value": "CUSTOM:RangedInstrumentsTab"
     },
-    "toolType": "Special",
-    "harvestLevel": 0,
-    "efficiency": 0.0,
-    "attackSpeed": 0.0,
+    "stackSize": 1,
     "enchantability": 0,
-    "damageVsEntity": 0.0,
-    "usageCount": 10,
-    "blocksAffected": [],
-    "hasGlow": false,
-    "repairItems": [],
+    "useDuration": 0,
+    "toolType": 1.0,
+    "damageCount": 10,
+    "recipeRemainder": {
+      "value": ""
+    },
+    "destroyAnyBlock": false,
     "stayInGridWhenCrafting": false,
-    "damageOnCrafting": false
+    "damageOnCrafting": false,
+    "enableMeleeDamage": false,
+    "damageVsEntity": 0.0,
+    "specialInfo": [
+      "§c Slow down enemies",
+      "§c 4 Inspiration"
+    ],
+    "hasGlow": false,
+    "guiBoundTo": "<NONE>",
+    "inventorySize": 9,
+    "inventoryStackSize": 64
   }
 }

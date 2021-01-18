@@ -22,7 +22,6 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.network.IPacket;
 import net.minecraft.item.UseAction;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -40,6 +39,7 @@ import net.minecraft.block.Blocks;
 import net.mcreator.instrumental.procedures.IronTrumpetRangedItemUsedProcedure;
 import net.mcreator.instrumental.procedures.IronTriangleCanUseRangedItemProcedure;
 import net.mcreator.instrumental.procedures.IronNoteProjectileProcedure;
+import net.mcreator.instrumental.itemgroup.RangedInstrumentsTabItemGroup;
 import net.mcreator.instrumental.InstrumentalModElements;
 
 import java.util.Random;
@@ -75,7 +75,7 @@ public class GoldTrumpetItem extends InstrumentalModElements.ModElement {
 	}
 	public static class ItemRanged extends Item {
 		public ItemRanged() {
-			super(new Item.Properties().group(ItemGroup.COMBAT).maxDamage(300));
+			super(new Item.Properties().group(RangedInstrumentsTabItemGroup.tab).maxDamage(300));
 			setRegistryName("gold_trumpet");
 		}
 

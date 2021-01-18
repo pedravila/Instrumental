@@ -38,7 +38,7 @@
       }
     ],
     "recipeReturnStack": {
-      "value": "CUSTOM:PoweredJumpBoosSpeaker"
+      "value": "CUSTOM:PoweredJumpBoostSpeaker"
     },
     "name": "powered_jump_boost_speaker_recipe",
     "namespace": "mod"

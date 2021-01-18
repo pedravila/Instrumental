@@ -1,29 +1,35 @@
 {
   "_fv": 13,
-  "_type": "tool",
+  "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "fire_resistance_speaker",
     "customModelName": "Normal",
     "name": "Fire Resistance Speaker",
+    "rarity": "COMMON",
+    "creativeTab": {
+      "value": "CUSTOM:RangedInstrumentsTab"
+    },
+    "stackSize": 1,
+    "enchantability": 0,
+    "useDuration": 0,
+    "toolType": 1.0,
+    "damageCount": 10,
+    "recipeRemainder": {
+      "value": ""
+    },
+    "destroyAnyBlock": false,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "enableMeleeDamage": false,
+    "damageVsEntity": 0.0,
     "specialInfo": [
       "§9 Fire Resistance Effect",
       "§9 4 Inspiration"
     ],
-    "creativeTab": {
-      "value": "TOOLS"
-    },
-    "toolType": "Special",
-    "harvestLevel": 0,
-    "efficiency": 0.0,
-    "attackSpeed": 1.0,
-    "enchantability": 0,
-    "damageVsEntity": 0.0,
-    "usageCount": 10,
-    "blocksAffected": [],
     "hasGlow": false,
-    "repairItems": [],
-    "stayInGridWhenCrafting": false,
-    "damageOnCrafting": false
+    "guiBoundTo": "<NONE>",
+    "inventorySize": 9,
+    "inventoryStackSize": 64
   }
 }

@@ -8,7 +8,7 @@
     "name": "Iron Bell",
     "specialInfo": [],
     "creativeTab": {
-      "value": "TOOLS"
+      "value": "CUSTOM:RangedInstrumentsTab"
     },
     "toolType": "Special",
     "harvestLevel": 1,

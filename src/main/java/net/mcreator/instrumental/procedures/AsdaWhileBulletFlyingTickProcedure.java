@@ -10,7 +10,7 @@ import java.util.Map;
 @InstrumentalModElements.ModElement.Tag
 public class AsdaWhileBulletFlyingTickProcedure extends InstrumentalModElements.ModElement {
 	public AsdaWhileBulletFlyingTickProcedure(InstrumentalModElements instance) {
-		super(instance, 29);
+		super(instance, 63);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

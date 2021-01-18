@@ -142,5 +142,23 @@
         "stream": false
       }
     ]
+  },
+  "drum_fail_sound.ogg": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "instrumental:drum_fail_sound",
+        "stream": false
+      }
+    ]
+  },
+  "drum_sound": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "instrumental:drum_sound",
+        "stream": false
+      }
+    ]
   }
 }

@@ -38,7 +38,7 @@
       }
     ],
     "recipeReturnStack": {
-      "value": "CUSTOM:InspirationScore"
+      "value": "CUSTOM:SpectralScore"
     },
     "name": "spectral_score_recipe",
     "namespace": "mod"

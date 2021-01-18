@@ -8,16 +8,16 @@
   ],
   "key": {
     "1": {
-      "item": "minecraft:bone"
+      "item": "minecraft:bone_block"
     },
     "4": {
-      "item": "minecraft:bone"
+      "item": "minecraft:bone_block"
     },
     "5": {
-      "item": "minecraft:bone"
+      "item": "minecraft:bone_block"
     },
     "6": {
-      "item": "minecraft:bone"
+      "item": "minecraft:bone_block"
     }
   },
   "result": {
