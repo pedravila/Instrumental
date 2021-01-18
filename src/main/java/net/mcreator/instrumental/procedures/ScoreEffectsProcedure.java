@@ -264,7 +264,8 @@ public class ScoreEffectsProcedure extends InstrumentalModElements.ModElement {
 						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.piston.extend")),
 						SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
 			}
-			entity.setMotion((((entity.getPosX()) - (sourceentity.getPosX())) / 1.5), 2.5, (((entity.getPosZ()) - (sourceentity.getPosZ())) / 1.5));
+			entity.setMotion(((Math.abs(((entity.getPosX()) - (sourceentity.getPosX()))) / ((entity.getPosX()) - (sourceentity.getPosX()))) * 2), 2.5,
+					((Math.abs(((entity.getPosZ()) - (sourceentity.getPosZ()))) / ((entity.getPosZ()) - (sourceentity.getPosZ()))) * 2));
 			if ((new Object() {
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayerEntity) {
