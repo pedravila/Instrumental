@@ -22,7 +22,7 @@ import java.util.Collection;
 @InstrumentalModElements.ModElement.Tag
 public class InspirationRegenDisplayOverlayIngameProcedure extends InstrumentalModElements.ModElement {
 	public InspirationRegenDisplayOverlayIngameProcedure(InstrumentalModElements instance) {
-		super(instance, 161);
+		super(instance, 171);
 	}
 
 	public static boolean executeProcedure(Map<String, Object> dependencies) {

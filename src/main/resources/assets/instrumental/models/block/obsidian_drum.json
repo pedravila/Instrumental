@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "instrumental:blocks/obsidian",
+    "up": "instrumental:blocks/obsidian_drum_top",
+    "north": "instrumental:blocks/obsidian_drum_side",
+    "east": "instrumental:blocks/obsidian_drum_side",
+    "south": "instrumental:blocks/obsidian_drum_side",
+    "west": "instrumental:blocks/obsidian_drum_side",
+    "particle": "instrumental:blocks/obsidian"
+  }
+}

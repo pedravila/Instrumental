@@ -4,7 +4,7 @@
     {
       "name": "AsdaWhileBulletFlyingTick",
       "type": "procedure",
-      "sortid": 63,
+      "sortid": 73,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -177,7 +177,7 @@
     {
       "name": "DriedBamboo",
       "type": "item",
-      "sortid": 60,
+      "sortid": 68,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -186,7 +186,7 @@
     {
       "name": "DriedBambooFloor",
       "type": "block",
-      "sortid": 62,
+      "sortid": 72,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -195,7 +195,7 @@
     {
       "name": "DriedBambooRecipe",
       "type": "recipe",
-      "sortid": 64,
+      "sortid": 74,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -204,7 +204,7 @@
     {
       "name": "DriedBambooFloorRecipe",
       "type": "recipe",
-      "sortid": 65,
+      "sortid": 75,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -240,7 +240,7 @@
     {
       "name": "DiamondString",
       "type": "item",
-      "sortid": 61,
+      "sortid": 69,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -249,7 +249,7 @@
     {
       "name": "DiamondStringRecipe",
       "type": "recipe",
-      "sortid": 66,
+      "sortid": 76,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -285,7 +285,7 @@
     {
       "name": "RedstoneMaracaRightClickedInAir",
       "type": "procedure",
-      "sortid": 67,
+      "sortid": 77,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -341,7 +341,7 @@
     {
       "name": "OakWhistleRecipe",
       "type": "recipe",
-      "sortid": 68,
+      "sortid": 78,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -350,7 +350,7 @@
     {
       "name": "SpruceWhistleRecipe",
       "type": "recipe",
-      "sortid": 69,
+      "sortid": 79,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -359,7 +359,7 @@
     {
       "name": "AcaciaWhistleRecipe",
       "type": "recipe",
-      "sortid": 70,
+      "sortid": 80,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -368,7 +368,7 @@
     {
       "name": "DarkOakWhistleRecipe",
       "type": "recipe",
-      "sortid": 71,
+      "sortid": 81,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -377,7 +377,7 @@
     {
       "name": "JungleWhistleRecipe",
       "type": "recipe",
-      "sortid": 72,
+      "sortid": 82,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -386,7 +386,7 @@
     {
       "name": "BirchWhistleRecipe",
       "type": "recipe",
-      "sortid": 73,
+      "sortid": 83,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -395,7 +395,7 @@
     {
       "name": "OakTambourineRecipe",
       "type": "recipe",
-      "sortid": 74,
+      "sortid": 84,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -404,7 +404,7 @@
     {
       "name": "SpruceTambourineRecipe",
       "type": "recipe",
-      "sortid": 75,
+      "sortid": 85,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -413,7 +413,7 @@
     {
       "name": "AcaciaTambourineRecipe",
       "type": "recipe",
-      "sortid": 76,
+      "sortid": 86,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -422,7 +422,7 @@
     {
       "name": "DarkOakTambourineRecipe",
       "type": "recipe",
-      "sortid": 77,
+      "sortid": 87,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -431,7 +431,7 @@
     {
       "name": "JungleTambourineRecipe",
       "type": "recipe",
-      "sortid": 78,
+      "sortid": 88,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -440,7 +440,7 @@
     {
       "name": "BirchTambourineRecipe",
       "type": "recipe",
-      "sortid": 79,
+      "sortid": 89,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -449,7 +449,7 @@
     {
       "name": "IronTriangleRecipe",
       "type": "recipe",
-      "sortid": 80,
+      "sortid": 90,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -458,7 +458,7 @@
     {
       "name": "GoldTriangleRecipe",
       "type": "recipe",
-      "sortid": 81,
+      "sortid": 91,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -467,7 +467,7 @@
     {
       "name": "IronTrumpetRecipe",
       "type": "recipe",
-      "sortid": 82,
+      "sortid": 92,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -476,7 +476,7 @@
     {
       "name": "GoldTrumpetRecipe",
       "type": "recipe",
-      "sortid": 83,
+      "sortid": 93,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -485,7 +485,7 @@
     {
       "name": "DriedBambooIronChimesRecipe",
       "type": "recipe",
-      "sortid": 84,
+      "sortid": 94,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -494,7 +494,7 @@
     {
       "name": "DriedBambooGoldChimesRecipe",
       "type": "recipe",
-      "sortid": 85,
+      "sortid": 95,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -503,7 +503,7 @@
     {
       "name": "DriedBambooDiamondChimesRecipe",
       "type": "recipe",
-      "sortid": 86,
+      "sortid": 96,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -512,7 +512,7 @@
     {
       "name": "IronLyreRecipe",
       "type": "recipe",
-      "sortid": 87,
+      "sortid": 97,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -521,7 +521,7 @@
     {
       "name": "GoldLyreRecipe",
       "type": "recipe",
-      "sortid": 88,
+      "sortid": 98,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -530,7 +530,7 @@
     {
       "name": "ObsidianLyreRecipe",
       "type": "recipe",
-      "sortid": 89,
+      "sortid": 99,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -539,7 +539,7 @@
     {
       "name": "RedstoneMaracaRecipe",
       "type": "recipe",
-      "sortid": 90,
+      "sortid": 100,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -548,7 +548,7 @@
     {
       "name": "ObsidianBanjoRecipe",
       "type": "recipe",
-      "sortid": 91,
+      "sortid": 101,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -557,7 +557,7 @@
     {
       "name": "ObsidianAccordionRecipe",
       "type": "recipe",
-      "sortid": 92,
+      "sortid": 102,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -566,7 +566,7 @@
     {
       "name": "ObsdianBellRecipe",
       "type": "recipe",
-      "sortid": 93,
+      "sortid": 103,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -575,7 +575,7 @@
     {
       "name": "IronBellRecipe",
       "type": "recipe",
-      "sortid": 94,
+      "sortid": 104,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -584,7 +584,7 @@
     {
       "name": "ObsidianClarinetRecipe",
       "type": "recipe",
-      "sortid": 95,
+      "sortid": 105,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -602,7 +602,7 @@
     {
       "name": "IronBellRightClickedInAir",
       "type": "procedure",
-      "sortid": 96,
+      "sortid": 106,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -649,7 +649,7 @@
     {
       "name": "ObsidianOcarinaRecipe",
       "type": "recipe",
-      "sortid": 97,
+      "sortid": 107,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -685,7 +685,7 @@
     {
       "name": "ObsidianPanfluteRecipe",
       "type": "recipe",
-      "sortid": 98,
+      "sortid": 108,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -703,7 +703,7 @@
     {
       "name": "GoldBellrecipe",
       "type": "recipe",
-      "sortid": 99,
+      "sortid": 109,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -712,7 +712,7 @@
     {
       "name": "ObsidianBerimbauRecipe",
       "type": "recipe",
-      "sortid": 100,
+      "sortid": 110,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -721,7 +721,7 @@
     {
       "name": "InspirationBarEmpty",
       "type": "overlay",
-      "sortid": 101,
+      "sortid": 111,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -730,7 +730,7 @@
     {
       "name": "InspirationBar1",
       "type": "overlay",
-      "sortid": 102,
+      "sortid": 112,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -739,7 +739,7 @@
     {
       "name": "InspirationBar2",
       "type": "overlay",
-      "sortid": 103,
+      "sortid": 113,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -748,7 +748,7 @@
     {
       "name": "InspirationBar3",
       "type": "overlay",
-      "sortid": 104,
+      "sortid": 114,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -757,7 +757,7 @@
     {
       "name": "InspirationBar4",
       "type": "overlay",
-      "sortid": 105,
+      "sortid": 115,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -766,7 +766,7 @@
     {
       "name": "InspirationBar5",
       "type": "overlay",
-      "sortid": 106,
+      "sortid": 116,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -775,7 +775,7 @@
     {
       "name": "InspirationBar6",
       "type": "overlay",
-      "sortid": 107,
+      "sortid": 117,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -784,7 +784,7 @@
     {
       "name": "InspirationBar7",
       "type": "overlay",
-      "sortid": 108,
+      "sortid": 118,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -793,7 +793,7 @@
     {
       "name": "InspirationBar8",
       "type": "overlay",
-      "sortid": 109,
+      "sortid": 119,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -802,7 +802,7 @@
     {
       "name": "InspirationBar9",
       "type": "overlay",
-      "sortid": 110,
+      "sortid": 120,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -811,7 +811,7 @@
     {
       "name": "InspirationBar10",
       "type": "overlay",
-      "sortid": 111,
+      "sortid": 121,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -820,7 +820,7 @@
     {
       "name": "InspirationBar11",
       "type": "overlay",
-      "sortid": 112,
+      "sortid": 122,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -829,7 +829,7 @@
     {
       "name": "InspirationBar12",
       "type": "overlay",
-      "sortid": 113,
+      "sortid": 123,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -838,7 +838,7 @@
     {
       "name": "InspirationBar13",
       "type": "overlay",
-      "sortid": 114,
+      "sortid": 124,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -847,7 +847,7 @@
     {
       "name": "InspirationBar14",
       "type": "overlay",
-      "sortid": 115,
+      "sortid": 125,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -856,7 +856,7 @@
     {
       "name": "InspirationBar15",
       "type": "overlay",
-      "sortid": 116,
+      "sortid": 126,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -865,7 +865,7 @@
     {
       "name": "InspirationBar16",
       "type": "overlay",
-      "sortid": 117,
+      "sortid": 127,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -874,7 +874,7 @@
     {
       "name": "InspirationBar18",
       "type": "overlay",
-      "sortid": 118,
+      "sortid": 128,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -883,7 +883,7 @@
     {
       "name": "InspirationBar19",
       "type": "overlay",
-      "sortid": 119,
+      "sortid": 129,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -892,7 +892,7 @@
     {
       "name": "InspirationBar20",
       "type": "overlay",
-      "sortid": 120,
+      "sortid": 130,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -901,7 +901,7 @@
     {
       "name": "InspirationBarEmptyDisplayOverlayIngame",
       "type": "procedure",
-      "sortid": 121,
+      "sortid": 131,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -919,7 +919,7 @@
     {
       "name": "InspirationBar1DisplayOverlayIngame",
       "type": "procedure",
-      "sortid": 122,
+      "sortid": 132,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -937,7 +937,7 @@
     {
       "name": "InspirationBar2DisplayOverlayIngame",
       "type": "procedure",
-      "sortid": 123,
+      "sortid": 133,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -955,7 +955,7 @@
     {
       "name": "InspirationBar3DisplayOverlayIngame",
       "type": "procedure",
-      "sortid": 124,
+      "sortid": 134,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -973,7 +973,7 @@
     {
       "name": "InspirationBar4DisplayOverlayIngame",
       "type": "procedure",
-      "sortid": 125,
+      "sortid": 135,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -991,7 +991,7 @@
     {
       "name": "InspirationBar5DisplayOverlayIngame",
       "type": "procedure",
-      "sortid": 126,
+      "sortid": 136,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1009,7 +1009,7 @@
     {
       "name": "InspirationBar6DisplayOverlayIngame",
       "type": "procedure",
-      "sortid": 127,
+      "sortid": 137,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1027,7 +1027,7 @@
     {
       "name": "InspirationBar7DisplayOverlayIngame",
       "type": "procedure",
-      "sortid": 128,
+      "sortid": 138,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1045,7 +1045,7 @@
     {
       "name": "InspirationBar8DisplayOverlayIngame",
       "type": "procedure",
-      "sortid": 129,
+      "sortid": 139,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1063,7 +1063,7 @@
     {
       "name": "InspirationBar9DisplayOverlayIngame",
       "type": "procedure",
-      "sortid": 130,
+      "sortid": 140,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1081,7 +1081,7 @@
     {
       "name": "InspirationBar10DisplayOverlayIngame",
       "type": "procedure",
-      "sortid": 131,
+      "sortid": 141,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1099,7 +1099,7 @@
     {
       "name": "InspirationBar11DisplayOverlayIngame",
       "type": "procedure",
-      "sortid": 132,
+      "sortid": 142,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1117,7 +1117,7 @@
     {
       "name": "InspirationBar12DisplayOverlayIngame",
       "type": "procedure",
-      "sortid": 133,
+      "sortid": 143,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1135,7 +1135,7 @@
     {
       "name": "InspirationBar13DisplayOverlayIngame",
       "type": "procedure",
-      "sortid": 134,
+      "sortid": 144,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1153,7 +1153,7 @@
     {
       "name": "InspirationBar14DisplayOverlayIngame",
       "type": "procedure",
-      "sortid": 135,
+      "sortid": 145,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1171,7 +1171,7 @@
     {
       "name": "InspirationBar15DisplayOverlayIngame",
       "type": "procedure",
-      "sortid": 136,
+      "sortid": 146,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1189,7 +1189,7 @@
     {
       "name": "InspirationBar16DisplayOverlayIngame",
       "type": "procedure",
-      "sortid": 137,
+      "sortid": 147,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1207,7 +1207,7 @@
     {
       "name": "InspirationBar18DisplayOverlayIngame",
       "type": "procedure",
-      "sortid": 138,
+      "sortid": 148,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1225,7 +1225,7 @@
     {
       "name": "InspirationBar19DisplayOverlayIngame",
       "type": "procedure",
-      "sortid": 139,
+      "sortid": 149,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1243,7 +1243,7 @@
     {
       "name": "InspirationBar20DisplayOverlayIngame",
       "type": "procedure",
-      "sortid": 140,
+      "sortid": 150,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1261,7 +1261,7 @@
     {
       "name": "OakWhistleRangedItemUsed",
       "type": "procedure",
-      "sortid": 141,
+      "sortid": 151,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1282,7 +1282,7 @@
     {
       "name": "Instruments",
       "type": "tag",
-      "sortid": 142,
+      "sortid": 152,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1291,7 +1291,7 @@
     {
       "name": "InspirationBar17",
       "type": "overlay",
-      "sortid": 143,
+      "sortid": 153,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1300,7 +1300,7 @@
     {
       "name": "InspirationBar17DisplayOverlayIngame",
       "type": "procedure",
-      "sortid": 144,
+      "sortid": 154,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1318,7 +1318,7 @@
     {
       "name": "OakWhistleCanUseRangedItem",
       "type": "procedure",
-      "sortid": 145,
+      "sortid": 155,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1336,7 +1336,7 @@
     {
       "name": "OakTambourineRangedItemUsed",
       "type": "procedure",
-      "sortid": 146,
+      "sortid": 156,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1357,7 +1357,7 @@
     {
       "name": "IronTriangleCanUseRangedItem",
       "type": "procedure",
-      "sortid": 147,
+      "sortid": 157,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1375,7 +1375,7 @@
     {
       "name": "IronTriangleRangedItemUsed",
       "type": "procedure",
-      "sortid": 148,
+      "sortid": 158,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1396,7 +1396,7 @@
     {
       "name": "IronTrumpetRangedItemUsed",
       "type": "procedure",
-      "sortid": 149,
+      "sortid": 159,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1417,7 +1417,7 @@
     {
       "name": "DriedBambooIronChimesCanUseRangedItem",
       "type": "procedure",
-      "sortid": 150,
+      "sortid": 160,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1435,7 +1435,7 @@
     {
       "name": "DriedBambooIronChimesRangedItemUsed",
       "type": "procedure",
-      "sortid": 151,
+      "sortid": 161,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1456,7 +1456,7 @@
     {
       "name": "DriedBambooDiamondChimesCanUseRangedItem",
       "type": "procedure",
-      "sortid": 152,
+      "sortid": 162,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1474,7 +1474,7 @@
     {
       "name": "DriedBambooDiamondChimesRangedItemUsed",
       "type": "procedure",
-      "sortid": 153,
+      "sortid": 163,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1495,7 +1495,7 @@
     {
       "name": "IronLyreCanUseRangedItem",
       "type": "procedure",
-      "sortid": 154,
+      "sortid": 164,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1513,7 +1513,7 @@
     {
       "name": "IronLyreRangedItemUsed",
       "type": "procedure",
-      "sortid": 155,
+      "sortid": 165,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1534,7 +1534,7 @@
     {
       "name": "GoldLyreRangedItemUsed",
       "type": "procedure",
-      "sortid": 156,
+      "sortid": 166,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1555,7 +1555,7 @@
     {
       "name": "ObsidianLyreCanUseRangedItem",
       "type": "procedure",
-      "sortid": 157,
+      "sortid": 167,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1573,7 +1573,7 @@
     {
       "name": "ObsidianLyreRangedItemUsed",
       "type": "procedure",
-      "sortid": 158,
+      "sortid": 168,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1594,7 +1594,7 @@
     {
       "name": "InspirationRegen",
       "type": "overlay",
-      "sortid": 159,
+      "sortid": 169,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1603,7 +1603,7 @@
     {
       "name": "Inspirated",
       "type": "potion",
-      "sortid": 160,
+      "sortid": 170,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1612,7 +1612,7 @@
     {
       "name": "InspirationRegenDisplayOverlayIngame",
       "type": "procedure",
-      "sortid": 161,
+      "sortid": 171,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1630,7 +1630,7 @@
     {
       "name": "InspirationPassiveRegeneration",
       "type": "procedure",
-      "sortid": 162,
+      "sortid": 172,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1647,7 +1647,7 @@
     {
       "name": "InspirationLimit",
       "type": "procedure",
-      "sortid": 163,
+      "sortid": 173,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1664,7 +1664,7 @@
     {
       "name": "IronNote",
       "type": "particle",
-      "sortid": 164,
+      "sortid": 174,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1673,7 +1673,7 @@
     {
       "name": "GoldNote",
       "type": "particle",
-      "sortid": 165,
+      "sortid": 175,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1682,7 +1682,7 @@
     {
       "name": "DiamondNote",
       "type": "particle",
-      "sortid": 166,
+      "sortid": 176,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1691,7 +1691,7 @@
     {
       "name": "IronNoteProjectile",
       "type": "procedure",
-      "sortid": 167,
+      "sortid": 177,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1720,7 +1720,7 @@
     {
       "name": "GoldNoteProjectile",
       "type": "procedure",
-      "sortid": 168,
+      "sortid": 178,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1749,7 +1749,7 @@
     {
       "name": "DiamondNoteProjectile",
       "type": "procedure",
-      "sortid": 169,
+      "sortid": 179,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1778,7 +1778,7 @@
     {
       "name": "ScoreEffects",
       "type": "procedure",
-      "sortid": 170,
+      "sortid": 180,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1803,7 +1803,7 @@
     {
       "name": "EndScoreRecipe",
       "type": "recipe",
-      "sortid": 171,
+      "sortid": 181,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1812,7 +1812,7 @@
     {
       "name": "FireScoreRecipe",
       "type": "recipe",
-      "sortid": 172,
+      "sortid": 182,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1821,7 +1821,7 @@
     {
       "name": "FrozenScoreRecipe",
       "type": "recipe",
-      "sortid": 173,
+      "sortid": 183,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1830,7 +1830,7 @@
     {
       "name": "SpectralScoreRecipe",
       "type": "recipe",
-      "sortid": 174,
+      "sortid": 184,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1839,7 +1839,7 @@
     {
       "name": "PoisonScoreRecipe",
       "type": "recipe",
-      "sortid": 175,
+      "sortid": 185,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1848,7 +1848,7 @@
     {
       "name": "RottenScoreRecipe",
       "type": "recipe",
-      "sortid": 176,
+      "sortid": 186,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1866,7 +1866,7 @@
     {
       "name": "SpeakerRecipe",
       "type": "recipe",
-      "sortid": 177,
+      "sortid": 187,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1875,7 +1875,7 @@
     {
       "name": "RangedInstruments",
       "type": "tag",
-      "sortid": 178,
+      "sortid": 188,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1884,7 +1884,7 @@
     {
       "name": "MeleeInstruments",
       "type": "tag",
-      "sortid": 179,
+      "sortid": 189,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1893,7 +1893,7 @@
     {
       "name": "SpeakerEffects",
       "type": "procedure",
-      "sortid": 180,
+      "sortid": 190,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1910,7 +1910,7 @@
     {
       "name": "RegenerationSpeakerRecipe",
       "type": "recipe",
-      "sortid": 181,
+      "sortid": 191,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1919,7 +1919,7 @@
     {
       "name": "DolphinGraceSpeakerRecipe",
       "type": "recipe",
-      "sortid": 182,
+      "sortid": 192,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1928,7 +1928,7 @@
     {
       "name": "FireResistanceSpeakerRecipe",
       "type": "recipe",
-      "sortid": 183,
+      "sortid": 193,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1937,7 +1937,7 @@
     {
       "name": "JumpBoostSpeakerRecipe",
       "type": "recipe",
-      "sortid": 184,
+      "sortid": 194,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1946,7 +1946,7 @@
     {
       "name": "NightVisionSpeakerRecipe",
       "type": "recipe",
-      "sortid": 185,
+      "sortid": 195,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1955,7 +1955,7 @@
     {
       "name": "SlowFallingSpeakerRecipe",
       "type": "recipe",
-      "sortid": 186,
+      "sortid": 196,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1964,7 +1964,7 @@
     {
       "name": "StrengthSpeakerRecipe",
       "type": "recipe",
-      "sortid": 187,
+      "sortid": 197,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1973,7 +1973,7 @@
     {
       "name": "WaterBreathingSpeakerRecipe",
       "type": "recipe",
-      "sortid": 188,
+      "sortid": 198,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1982,7 +1982,7 @@
     {
       "name": "InspirationSpeaker",
       "type": "recipe",
-      "sortid": 189,
+      "sortid": 199,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -1991,7 +1991,7 @@
     {
       "name": "PoweredRegenerationSpeakerRecipe",
       "type": "recipe",
-      "sortid": 190,
+      "sortid": 200,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -2000,7 +2000,7 @@
     {
       "name": "PoweredJumpBoostSpeakerRecipe",
       "type": "recipe",
-      "sortid": 191,
+      "sortid": 201,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -2009,7 +2009,7 @@
     {
       "name": "PoweredSpeedSpeakerRecipe",
       "type": "recipe",
-      "sortid": 192,
+      "sortid": 202,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -2018,7 +2018,7 @@
     {
       "name": "PoweredStrengthSpeakerRecipe",
       "type": "recipe",
-      "sortid": 193,
+      "sortid": 203,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -2036,7 +2036,7 @@
     {
       "name": "ObsidianUkuleleRightClickedInAir",
       "type": "procedure",
-      "sortid": 194,
+      "sortid": 204,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -2074,7 +2074,7 @@
     {
       "name": "BoneWarhornRightClickedInAir",
       "type": "procedure",
-      "sortid": 195,
+      "sortid": 205,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -2103,7 +2103,7 @@
     {
       "name": "ObsidianUkuleleRecipe",
       "type": "recipe",
-      "sortid": 196,
+      "sortid": 206,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -2112,7 +2112,7 @@
     {
       "name": "BoneWarhornRecipe",
       "type": "recipe",
-      "sortid": 197,
+      "sortid": 207,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -2121,7 +2121,7 @@
     {
       "name": "PistonScoreRecipe",
       "type": "recipe",
-      "sortid": 198,
+      "sortid": 208,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -2130,7 +2130,7 @@
     {
       "name": "LevitationScoreRecipe",
       "type": "recipe",
-      "sortid": 199,
+      "sortid": 209,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -2139,7 +2139,7 @@
     {
       "name": "SwitchScoreRecipe",
       "type": "recipe",
-      "sortid": 200,
+      "sortid": 210,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -2148,7 +2148,7 @@
     {
       "name": "WitherScoreRecipe",
       "type": "recipe",
-      "sortid": 201,
+      "sortid": 211,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -2157,7 +2157,7 @@
     {
       "name": "RangedInstrumentsTab",
       "type": "tab",
-      "sortid": 202,
+      "sortid": 212,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -2346,7 +2346,7 @@
     {
       "name": "SpeedSpeakerRecipe",
       "type": "recipe",
-      "sortid": 203,
+      "sortid": 213,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -2391,7 +2391,7 @@
     {
       "name": "Oakdrum",
       "type": "block",
-      "sortid": 204,
+      "sortid": 61,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -2400,16 +2400,16 @@
     {
       "name": "DrumGUI",
       "type": "gui",
-      "sortid": 205,
+      "sortid": 214,
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "ids": {},
       "registry_name": "drum_gui"
     },
     {
       "name": "Melodies",
       "type": "tag",
-      "sortid": 206,
+      "sortid": 215,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -2418,7 +2418,7 @@
     {
       "name": "PlayMelodyButtonClicked",
       "type": "procedure",
-      "sortid": 207,
+      "sortid": 216,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -2447,7 +2447,7 @@
     {
       "name": "DrumLeather",
       "type": "item",
-      "sortid": 208,
+      "sortid": 70,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -2456,7 +2456,7 @@
     {
       "name": "InstrumentalString",
       "type": "item",
-      "sortid": 209,
+      "sortid": 71,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -2465,7 +2465,7 @@
     {
       "name": "DrumLeatherRecipe",
       "type": "recipe",
-      "sortid": 210,
+      "sortid": 217,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -2474,7 +2474,7 @@
     {
       "name": "InstrumentalStringRecipe",
       "type": "recipe",
-      "sortid": 211,
+      "sortid": 218,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -2483,7 +2483,7 @@
     {
       "name": "OakDrumRecipe",
       "type": "recipe",
-      "sortid": 212,
+      "sortid": 219,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -2492,11 +2492,65 @@
     {
       "name": "HasteMelody",
       "type": "item",
-      "sortid": 213,
+      "sortid": 60,
       "compiles": true,
       "locked_code": false,
       "ids": {},
       "registry_name": "haste_melody"
+    },
+    {
+      "name": "SpruceDrum",
+      "type": "block",
+      "sortid": 62,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "spruce_drum"
+    },
+    {
+      "name": "BirchDrum",
+      "type": "block",
+      "sortid": 63,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "birch_drum"
+    },
+    {
+      "name": "JungleDrum",
+      "type": "block",
+      "sortid": 64,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "jungle_drum"
+    },
+    {
+      "name": "AcaciaDrum",
+      "type": "block",
+      "sortid": 65,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "acacia_drum"
+    },
+    {
+      "name": "DarkOakDrum",
+      "type": "block",
+      "sortid": 66,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dark_oak_drum"
+    },
+    {
+      "name": "ObsidianDrum",
+      "type": "block",
+      "sortid": 67,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "obsidian_drum"
     }
   ],
   "variable_elements": [
@@ -2657,94 +2711,100 @@
     "en_us": {
       "item.instrumental.obsidian_banjo": "Obsidian Banjo",
       "item.instrumental.speaker": "Speaker",
-      "item.instrumental.dried_bamboo_iron_chimes": "Dried Bamboo Iron Chimes",
       "item.instrumental.birch_tambourine": "Birch Tambourine",
-      "item.instrumental.dolphins_grace_speaker": "Dolphins Grace Speaker",
       "subtitles.dried_bamboo_chime_sound": "",
       "item.instrumental.birch_whistle": "Birch Whistle",
       "item.minecraft.lingering_potion.effect.inspirated": "Lingering Inspirated",
       "item.instrumental.night_vision_speaker": "Night Vision Speaker",
-      "subtitles.banjo_sound": "",
       "item.instrumental.speed_speaker": "Speed Speaker",
-      "item.instrumental.acacia_tambourine": "Acacia Tambourine",
       "item.instrumental.spiration_speaker": "Inspiration Speaker",
+      "block.instrumental.obsidian_drum": "Obsidian Drum",
       "block.instrumental.dried_bamboo_floor": "Dried Bamboo Floor",
+      "block.instrumental.birch_drum": "Birch Drum",
       "item.instrumental.rotten_score": "Rotten Score",
-      "item.instrumental.spectral_score": "Spectral Score",
-      "item.instrumental.powered_jump_boost_speaker": "Powered Jump Boost Speaker",
-      "effect.inspirated": "Inspirated",
-      "item.instrumental.iron_trumpet": "Iron Trumpet",
       "subtitles.drum_sound": "",
       "item.instrumental.iron_lyre": "Iron Lyre",
       "subtitles.berimbau_sound": "",
       "item.instrumental.wither_score": "Wither Score",
-      "item.instrumental.fire_resistance_speaker": "Fire Resistance Speaker",
-      "item.instrumental.dried_bamboo": "Dried Bamboo",
       "subtitles.redstone_maraca_sound": "",
-      "subtitles.accordion_sound": "",
+      "item.instrumental.dried_bamboo": "Dried Bamboo",
       "item.instrumental.jump_boost_speaker": "Jump Boost Speaker",
       "item.instrumental.obsidian_ukulele": "Ukulele Bell",
       "subtitles.trumpet_sound": "",
-      "item.instrumental.switch_score": "Switch Score",
       "item.instrumental.water_breathing_speaker": "Water Breathing Speaker",
-      "item.instrumental.iron_bell": "Iron Bell",
       "item.instrumental.oak_tambourine": "Oak Tambourine",
-      "item.instrumental.iron_triangle": "Iron Triangle",
-      "subtitles.warhorn_sound": "",
-      "subtitles.panflute_sound": "",
       "item.instrumental.regeneration_speaker": "Regeneration Speaker",
-      "item.instrumental.levitation_score": "Levitation Score",
-      "item.instrumental.gold_lyre": "Gold Lyre",
       "item.instrumental.gold_bell": "Gold Bell",
-      "item.instrumental.gold_trumpet": "Gold Trumpet",
       "item.instrumental.poison_score": "Poison Score",
-      "itemGroup.tabranged_instruments_tab": "Instrumental",
       "item.instrumental.powered_regeneration_speaker": "Powered Regeneration Speaker",
-      "item.minecraft.potion.effect.inspirated": "Inspirated",
       "item.instrumental.diamond_string": "Diamond String",
       "item.minecraft.tipped_arrow.effect.inspirated": "Arrow of Inspirated",
       "item.instrumental.gold_triangle": "Gold Triangle",
-      "subtitles.tambourine_sound": "",
-      "item.instrumental.oak_whistle": "Oak Whistle",
       "item.instrumental.obsidian_clarinet": "Obsidian Clarinet",
-      "item.instrumental.dark_oak_whistle": "Dark Oak Whistle",
       "item.instrumental.obsidian_berimbau": "Obsidian Berimbau",
-      "item.instrumental.bone_warhorn": "Bone Warhorn",
-      "item.instrumental.slow_falling_speaker": "Slow Falling Speaker",
-      "item.minecraft.splash_potion.effect.inspirated": "Splash Inspirated",
+      "item.instrumental.dark_oak_whistle": "Dark Oak Whistle",
       "item.instrumental.spruce_whistle": "Spruce Whistle",
-      "subtitles.ukulele_sound": "",
-      "subtitles.whistle_sound": "",
       "subtitles.ocarina_sound": "",
-      "item.instrumental.instrumental_string": "Instrumental String",
-      "item.instrumental.acacia_whistle": "Acacia Whistle",
       "item.instrumental.frozen_score": "Frozen Score",
       "item.instrumental.dark_oak_tambourine": "Dark Oak Tambourine",
       "item.instrumental.fire_score": "Fire Score",
-      "item.instrumental.end_score": "End Score",
       "item.instrumental.obsidian_accordion": "Obsidian Accordion",
-      "subtitles.lyre_sound": "",
-      "item.instrumental.drum_leather": "Drum Leather",
-      "item.instrumental.dried_bamboo_diamond_chimes": "Dried Bamboo Diamond Chimes",
       "item.instrumental.strength_speaker": "Strength Speaker",
-      "subtitles.drum_fail_sound.ogg": "",
       "item.instrumental.jungle_tambourine": "Jungle Tambourine",
-      "subtitles.bell_sound": "",
-      "item.instrumental.powered_strength_speaker": "Powered Strength Speaker",
-      "block.instrumental.oakdrum": "Oakdrum",
-      "item.instrumental.obsidian_lyre": "Obsidian Lyre",
       "item.instrumental.obsidian_bell": "Obsidian Bell",
-      "item.instrumental.powered_speed_speaker": "Powered Speed Speaker",
-      "item.instrumental.haste_melody": "Haste Melody",
-      "subtitles.triangle_sound": "",
       "item.instrumental.obsidian_panflute": "Obsidian Panflute",
-      "item.instrumental.piston_score": "Piston Score",
-      "subtitles.clarinet_sound": "",
       "item.instrumental.obsidian_ocarina": "Obsidian Ocarina",
       "item.instrumental.jungle_whistle": "Jungle Whistle",
       "item.instrumental.spruce_tambourine": "Spruce Tambourine",
-      "item.instrumental.dried_bamboo_gold_chimes": "Dried Bamboo Gold Chimes",
-      "item.instrumental.redstone_maraca": "Redstone Maraca"
+      "item.instrumental.redstone_maraca": "Redstone Maraca",
+      "item.instrumental.dried_bamboo_iron_chimes": "Dried Bamboo Iron Chimes",
+      "item.instrumental.dolphins_grace_speaker": "Dolphins Grace Speaker",
+      "subtitles.banjo_sound": "",
+      "item.instrumental.acacia_tambourine": "Acacia Tambourine",
+      "item.instrumental.spectral_score": "Spectral Score",
+      "item.instrumental.powered_jump_boost_speaker": "Powered Jump Boost Speaker",
+      "effect.inspirated": "Inspirated",
+      "item.instrumental.iron_trumpet": "Iron Trumpet",
+      "item.instrumental.fire_resistance_speaker": "Fire Resistance Speaker",
+      "subtitles.accordion_sound": "",
+      "item.instrumental.switch_score": "Switch Score",
+      "item.instrumental.iron_bell": "Iron Bell",
+      "item.instrumental.iron_triangle": "Iron Triangle",
+      "block.instrumental.acacia_drum": "Acacia Drum",
+      "subtitles.warhorn_sound": "",
+      "subtitles.panflute_sound": "",
+      "item.instrumental.levitation_score": "Levitation Score",
+      "item.instrumental.gold_lyre": "Gold Lyre",
+      "item.instrumental.gold_trumpet": "Gold Trumpet",
+      "block.instrumental.spruce_drum": "Spruce Drum",
+      "block.instrumental.jungle_drum": "Jungle Drum",
+      "itemGroup.tabranged_instruments_tab": "Instrumental",
+      "item.minecraft.potion.effect.inspirated": "Inspirated",
+      "subtitles.tambourine_sound": "",
+      "item.instrumental.oak_whistle": "Oak Whistle",
+      "item.instrumental.bone_warhorn": "Bone Warhorn",
+      "item.instrumental.slow_falling_speaker": "Slow Falling Speaker",
+      "item.minecraft.splash_potion.effect.inspirated": "Splash Inspirated",
+      "subtitles.ukulele_sound": "",
+      "subtitles.whistle_sound": "",
+      "item.instrumental.instrumental_string": "Instrumental String",
+      "item.instrumental.acacia_whistle": "Acacia Whistle",
+      "item.instrumental.end_score": "End Score",
+      "subtitles.lyre_sound": "",
+      "item.instrumental.drum_leather": "Drum Leather",
+      "item.instrumental.dried_bamboo_diamond_chimes": "Dried Bamboo Diamond Chimes",
+      "subtitles.drum_fail_sound.ogg": "",
+      "subtitles.bell_sound": "",
+      "item.instrumental.powered_strength_speaker": "Powered Strength Speaker",
+      "block.instrumental.oakdrum": "Oak Drum",
+      "item.instrumental.obsidian_lyre": "Obsidian Lyre",
+      "item.instrumental.powered_speed_speaker": "Powered Speed Speaker",
+      "item.instrumental.haste_melody": "Haste Melody",
+      "subtitles.triangle_sound": "",
+      "item.instrumental.piston_score": "Piston Score",
+      "subtitles.clarinet_sound": "",
+      "block.instrumental.dark_oak_drum": "Dark Oak Drum",
+      "item.instrumental.dried_bamboo_gold_chimes": "Dried Bamboo Gold Chimes"
     }
   },
   "workspaceSettings": {

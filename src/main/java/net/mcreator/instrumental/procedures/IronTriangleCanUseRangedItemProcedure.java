@@ -17,7 +17,7 @@ import java.util.Map;
 @InstrumentalModElements.ModElement.Tag
 public class IronTriangleCanUseRangedItemProcedure extends InstrumentalModElements.ModElement {
 	public IronTriangleCanUseRangedItemProcedure(InstrumentalModElements instance) {
-		super(instance, 147);
+		super(instance, 157);
 	}
 
 	public static boolean executeProcedure(Map<String, Object> dependencies) {

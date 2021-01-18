@@ -10,7 +10,7 @@ import java.util.Map;
 @InstrumentalModElements.ModElement.Tag
 public class DiamondNoteProjectileProcedure extends InstrumentalModElements.ModElement {
 	public DiamondNoteProjectileProcedure(InstrumentalModElements instance) {
-		super(instance, 169);
+		super(instance, 179);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

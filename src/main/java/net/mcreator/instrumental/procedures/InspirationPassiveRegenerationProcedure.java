@@ -22,7 +22,7 @@ import java.util.HashMap;
 @InstrumentalModElements.ModElement.Tag
 public class InspirationPassiveRegenerationProcedure extends InstrumentalModElements.ModElement {
 	public InspirationPassiveRegenerationProcedure(InstrumentalModElements instance) {
-		super(instance, 162);
+		super(instance, 172);
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 

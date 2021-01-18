@@ -66,7 +66,7 @@ public class OakdrumBlock extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:oakdrum")
 	public static final TileEntityType<CustomTileEntity> tileEntityType = null;
 	public OakdrumBlock(InstrumentalModElements instance) {
-		super(instance, 204);
+		super(instance, 61);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
 	}
 
@@ -107,7 +107,7 @@ public class OakdrumBlock extends InstrumentalModElements.ModElement {
 				NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {
 					@Override
 					public ITextComponent getDisplayName() {
-						return new StringTextComponent("Oakdrum");
+						return new StringTextComponent("Oak Drum");
 					}
 
 					@Override
@@ -239,7 +239,7 @@ public class OakdrumBlock extends InstrumentalModElements.ModElement {
 
 		@Override
 		public ITextComponent getDisplayName() {
-			return new StringTextComponent("Oakdrum");
+			return new StringTextComponent("Oak Drum");
 		}
 
 		@Override

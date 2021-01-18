@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "instrumental:blocks/dark_oak_planks",
+    "up": "instrumental:blocks/dark_oak_drum_top",
+    "north": "instrumental:blocks/dark_oak_drum_side",
+    "east": "instrumental:blocks/dark_oak_drum_side",
+    "south": "instrumental:blocks/dark_oak_drum_side",
+    "west": "instrumental:blocks/dark_oak_drum_side",
+    "particle": "instrumental:blocks/dark_oak_planks"
+  }
+}

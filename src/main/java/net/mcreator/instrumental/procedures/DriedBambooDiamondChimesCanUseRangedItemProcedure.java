@@ -17,7 +17,7 @@ import java.util.Map;
 @InstrumentalModElements.ModElement.Tag
 public class DriedBambooDiamondChimesCanUseRangedItemProcedure extends InstrumentalModElements.ModElement {
 	public DriedBambooDiamondChimesCanUseRangedItemProcedure(InstrumentalModElements instance) {
-		super(instance, 152);
+		super(instance, 162);
 	}
 
 	public static boolean executeProcedure(Map<String, Object> dependencies) {

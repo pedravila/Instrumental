@@ -17,7 +17,7 @@ import java.util.Map;
 @InstrumentalModElements.ModElement.Tag
 public class ObsidianLyreCanUseRangedItemProcedure extends InstrumentalModElements.ModElement {
 	public ObsidianLyreCanUseRangedItemProcedure(InstrumentalModElements instance) {
-		super(instance, 157);
+		super(instance, 167);
 	}
 
 	public static boolean executeProcedure(Map<String, Object> dependencies) {

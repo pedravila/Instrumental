@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "instrumental:blocks/spruce_planks",
+    "up": "instrumental:blocks/spruce_drum_top",
+    "north": "instrumental:blocks/spruce_drum_side",
+    "east": "instrumental:blocks/spruce_drum_side",
+    "south": "instrumental:blocks/spruce_drum_side",
+    "west": "instrumental:blocks/spruce_drum_side",
+    "particle": "instrumental:blocks/spruce_planks"
+  }
+}

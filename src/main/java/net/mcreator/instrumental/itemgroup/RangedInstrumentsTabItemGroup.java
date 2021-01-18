@@ -13,7 +13,7 @@ import net.mcreator.instrumental.InstrumentalModElements;
 @InstrumentalModElements.ModElement.Tag
 public class RangedInstrumentsTabItemGroup extends InstrumentalModElements.ModElement {
 	public RangedInstrumentsTabItemGroup(InstrumentalModElements instance) {
-		super(instance, 202);
+		super(instance, 212);
 	}
 
 	@Override
