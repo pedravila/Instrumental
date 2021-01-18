@@ -1,0 +1,42 @@
+{
+  "group": "instrumental",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "instrumental:diamond_drum_leather"
+    },
+    "1": {
+      "item": "instrumental:diamond_drum_leather"
+    },
+    "2": {
+      "item": "instrumental:diamond_drum_leather"
+    },
+    "3": {
+      "item": "minecraft:obsidian"
+    },
+    "4": {
+      "item": "instrumental:diamond_string"
+    },
+    "5": {
+      "item": "minecraft:obsidian"
+    },
+    "6": {
+      "item": "minecraft:obsidian"
+    },
+    "7": {
+      "item": "instrumental:diamond_string"
+    },
+    "8": {
+      "item": "minecraft:obsidian"
+    }
+  },
+  "result": {
+    "item": "instrumental:obsidian_drum",
+    "count": 1
+  }
+}

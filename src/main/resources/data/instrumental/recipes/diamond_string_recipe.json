@@ -8,19 +8,19 @@
   ],
   "key": {
     "1": {
-      "item": "minecraft:string"
+      "item": "minecraft:white_wool"
     },
     "3": {
-      "item": "minecraft:string"
+      "item": "minecraft:white_wool"
     },
     "4": {
       "item": "minecraft:diamond"
     },
     "5": {
-      "item": "minecraft:string"
+      "item": "minecraft:white_wool"
     },
     "7": {
-      "item": "minecraft:string"
+      "item": "minecraft:white_wool"
     }
   },
   "result": {
