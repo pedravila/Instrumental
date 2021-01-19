@@ -16,7 +16,7 @@ public class InstrumentalStringItem extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:instrumental_string")
 	public static final Item block = null;
 	public InstrumentalStringItem(InstrumentalModElements instance) {
-		super(instance, 71);
+		super(instance, 79);
 	}
 
 	@Override

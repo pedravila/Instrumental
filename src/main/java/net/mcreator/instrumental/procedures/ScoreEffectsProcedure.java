@@ -45,7 +45,7 @@ import java.util.Collections;
 @InstrumentalModElements.ModElement.Tag
 public class ScoreEffectsProcedure extends InstrumentalModElements.ModElement {
 	public ScoreEffectsProcedure(InstrumentalModElements instance) {
-		super(instance, 180);
+		super(instance, 190);
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 

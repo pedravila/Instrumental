@@ -22,7 +22,7 @@ public class RegenerationSpeakerItem extends InstrumentalModElements.ModElement 
 	@ObjectHolder("instrumental:regeneration_speaker")
 	public static final Item block = null;
 	public RegenerationSpeakerItem(InstrumentalModElements instance) {
-		super(instance, 46);
+		super(instance, 48);
 	}
 
 	@Override

@@ -30,7 +30,7 @@ public class ObsidianUkuleleItem extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:obsidian_ukulele")
 	public static final Item block = null;
 	public ObsidianUkuleleItem(InstrumentalModElements instance) {
-		super(instance, 28);
+		super(instance, 31);
 	}
 
 	@Override

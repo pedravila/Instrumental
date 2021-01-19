@@ -56,7 +56,7 @@ public class ObsidianClarinetItem extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:entitybulletobsidian_clarinet")
 	public static final EntityType arrow = null;
 	public ObsidianClarinetItem(InstrumentalModElements instance) {
-		super(instance, 34);
+		super(instance, 36);
 	}
 
 	@Override

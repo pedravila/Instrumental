@@ -22,7 +22,7 @@ public class PoisonScoreItem extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:poison_score")
 	public static final Item block = null;
 	public PoisonScoreItem(InstrumentalModElements instance) {
-		super(instance, 38);
+		super(instance, 40);
 	}
 
 	@Override

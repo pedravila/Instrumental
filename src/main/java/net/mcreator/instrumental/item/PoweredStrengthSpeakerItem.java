@@ -22,7 +22,7 @@ public class PoweredStrengthSpeakerItem extends InstrumentalModElements.ModEleme
 	@ObjectHolder("instrumental:powered_strength_speaker")
 	public static final Item block = null;
 	public PoweredStrengthSpeakerItem(InstrumentalModElements instance) {
-		super(instance, 59);
+		super(instance, 61);
 	}
 
 	@Override

@@ -75,7 +75,7 @@ public class OakdrumBlock extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:oakdrum")
 	public static final TileEntityType<CustomTileEntity> tileEntityType = null;
 	public OakdrumBlock(InstrumentalModElements instance) {
-		super(instance, 61);
+		super(instance, 63);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
 	}
 

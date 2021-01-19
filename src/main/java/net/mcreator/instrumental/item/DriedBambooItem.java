@@ -16,7 +16,7 @@ public class DriedBambooItem extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:dried_bamboo")
 	public static final Item block = null;
 	public DriedBambooItem(InstrumentalModElements instance) {
-		super(instance, 68);
+		super(instance, 76);
 	}
 
 	@Override

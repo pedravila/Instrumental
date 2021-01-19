@@ -30,7 +30,7 @@ public class RedstoneMaracaItem extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:redstone_maraca")
 	public static final Item block = null;
 	public RedstoneMaracaItem(InstrumentalModElements instance) {
-		super(instance, 26);
+		super(instance, 29);
 	}
 
 	@Override

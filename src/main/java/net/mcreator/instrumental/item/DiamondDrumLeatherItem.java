@@ -16,7 +16,7 @@ public class DiamondDrumLeatherItem extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:diamond_drum_leather")
 	public static final Item block = null;
 	public DiamondDrumLeatherItem(InstrumentalModElements instance) {
-		super(instance, 225);
+		super(instance, 80);
 	}
 
 	@Override

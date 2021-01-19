@@ -16,7 +16,7 @@ public class MelodyCardItem extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:melody_card")
 	public static final Item block = null;
 	public MelodyCardItem(InstrumentalModElements instance) {
-		super(instance, 235);
+		super(instance, 81);
 	}
 
 	@Override

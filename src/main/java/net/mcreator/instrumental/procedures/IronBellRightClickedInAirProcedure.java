@@ -14,7 +14,7 @@ import java.util.Map;
 @InstrumentalModElements.ModElement.Tag
 public class IronBellRightClickedInAirProcedure extends InstrumentalModElements.ModElement {
 	public IronBellRightClickedInAirProcedure(InstrumentalModElements instance) {
-		super(instance, 106);
+		super(instance, 116);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

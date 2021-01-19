@@ -22,7 +22,7 @@ public class PoweredJumpBoostSpeakerItem extends InstrumentalModElements.ModElem
 	@ObjectHolder("instrumental:powered_jump_boost_speaker")
 	public static final Item block = null;
 	public PoweredJumpBoostSpeakerItem(InstrumentalModElements instance) {
-		super(instance, 57);
+		super(instance, 59);
 	}
 
 	@Override

@@ -75,7 +75,7 @@ public class JungleDrumBlock extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:jungle_drum")
 	public static final TileEntityType<CustomTileEntity> tileEntityType = null;
 	public JungleDrumBlock(InstrumentalModElements instance) {
-		super(instance, 64);
+		super(instance, 66);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
 	}
 

@@ -56,7 +56,7 @@ public class ObsidianBanjoItem extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:entitybulletobsidian_banjo")
 	public static final EntityType arrow = null;
 	public ObsidianBanjoItem(InstrumentalModElements instance) {
-		super(instance, 29);
+		super(instance, 28);
 	}
 
 	@Override

@@ -16,7 +16,7 @@ public class SpeakerItem extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:speaker")
 	public static final Item block = null;
 	public SpeakerItem(InstrumentalModElements instance) {
-		super(instance, 45);
+		super(instance, 47);
 	}
 
 	@Override

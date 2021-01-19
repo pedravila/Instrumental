@@ -17,7 +17,7 @@ import java.util.Map;
 @InstrumentalModElements.ModElement.Tag
 public class GoldLyreRangedItemUsedProcedure extends InstrumentalModElements.ModElement {
 	public GoldLyreRangedItemUsedProcedure(InstrumentalModElements instance) {
-		super(instance, 166);
+		super(instance, 176);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

@@ -22,7 +22,7 @@ public class SpectralScoreItem extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:spectral_score")
 	public static final Item block = null;
 	public SpectralScoreItem(InstrumentalModElements instance) {
-		super(instance, 40);
+		super(instance, 42);
 	}
 
 	@Override

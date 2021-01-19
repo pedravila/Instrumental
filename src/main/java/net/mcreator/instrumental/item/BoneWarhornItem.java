@@ -30,7 +30,7 @@ public class BoneWarhornItem extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:bone_warhorn")
 	public static final Item block = null;
 	public BoneWarhornItem(InstrumentalModElements instance) {
-		super(instance, 27);
+		super(instance, 30);
 	}
 
 	@Override

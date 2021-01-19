@@ -56,7 +56,7 @@ public class GoldBanjoItem extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:entitybulletgold_banjo")
 	public static final EntityType arrow = null;
 	public GoldBanjoItem(InstrumentalModElements instance) {
-		super(instance, 247);
+		super(instance, 27);
 	}
 
 	@Override

@@ -44,7 +44,7 @@ import java.util.HashMap;
 @InstrumentalModElements.ModElement.Tag
 public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement {
 	public SpeakerEffectsProcedure(InstrumentalModElements instance) {
-		super(instance, 190);
+		super(instance, 200);
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 

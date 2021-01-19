@@ -22,7 +22,7 @@ public class FireResistanceSpeakerItem extends InstrumentalModElements.ModElemen
 	@ObjectHolder("instrumental:fire_resistance_speaker")
 	public static final Item block = null;
 	public FireResistanceSpeakerItem(InstrumentalModElements instance) {
-		super(instance, 48);
+		super(instance, 50);
 	}
 
 	@Override

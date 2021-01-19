@@ -56,7 +56,7 @@ public class ObsidianPanfluteItem extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:entitybulletobsidian_panflute")
 	public static final EntityType arrow = null;
 	public ObsidianPanfluteItem(InstrumentalModElements instance) {
-		super(instance, 32);
+		super(instance, 34);
 	}
 
 	@Override

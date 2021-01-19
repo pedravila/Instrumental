@@ -22,7 +22,7 @@ public class PoweredSpeedSpeakerItem extends InstrumentalModElements.ModElement 
 	@ObjectHolder("instrumental:powered_speed_speaker")
 	public static final Item block = null;
 	public PoweredSpeedSpeakerItem(InstrumentalModElements instance) {
-		super(instance, 58);
+		super(instance, 60);
 	}
 
 	@Override

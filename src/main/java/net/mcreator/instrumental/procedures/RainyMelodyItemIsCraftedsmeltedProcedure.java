@@ -14,7 +14,7 @@ import java.util.Map;
 @InstrumentalModElements.ModElement.Tag
 public class RainyMelodyItemIsCraftedsmeltedProcedure extends InstrumentalModElements.ModElement {
 	public RainyMelodyItemIsCraftedsmeltedProcedure(InstrumentalModElements instance) {
-		super(instance, 240);
+		super(instance, 243);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

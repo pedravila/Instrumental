@@ -22,7 +22,7 @@ public class GrowthMelodyItem extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:growth_melody")
 	public static final Item block = null;
 	public GrowthMelodyItem(InstrumentalModElements instance) {
-		super(instance, 228);
+		super(instance, 70);
 	}
 
 	@Override

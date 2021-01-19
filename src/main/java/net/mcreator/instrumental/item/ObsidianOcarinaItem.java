@@ -56,7 +56,7 @@ public class ObsidianOcarinaItem extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:entitybulletobsidian_ocarina")
 	public static final EntityType arrow = null;
 	public ObsidianOcarinaItem(InstrumentalModElements instance) {
-		super(instance, 31);
+		super(instance, 33);
 	}
 
 	@Override

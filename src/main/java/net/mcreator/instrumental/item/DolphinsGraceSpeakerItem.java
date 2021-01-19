@@ -22,7 +22,7 @@ public class DolphinsGraceSpeakerItem extends InstrumentalModElements.ModElement
 	@ObjectHolder("instrumental:dolphins_grace_speaker")
 	public static final Item block = null;
 	public DolphinsGraceSpeakerItem(InstrumentalModElements instance) {
-		super(instance, 47);
+		super(instance, 49);
 	}
 
 	@Override

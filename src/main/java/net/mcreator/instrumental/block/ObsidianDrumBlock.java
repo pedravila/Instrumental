@@ -70,7 +70,7 @@ public class ObsidianDrumBlock extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:obsidian_drum")
 	public static final TileEntityType<CustomTileEntity> tileEntityType = null;
 	public ObsidianDrumBlock(InstrumentalModElements instance) {
-		super(instance, 67);
+		super(instance, 69);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
 	}
 

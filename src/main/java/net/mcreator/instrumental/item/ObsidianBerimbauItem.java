@@ -56,7 +56,7 @@ public class ObsidianBerimbauItem extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:entitybulletobsidian_berimbau")
 	public static final EntityType arrow = null;
 	public ObsidianBerimbauItem(InstrumentalModElements instance) {
-		super(instance, 33);
+		super(instance, 35);
 	}
 
 	@Override

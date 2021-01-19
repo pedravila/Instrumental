@@ -75,7 +75,7 @@ public class SpruceDrumBlock extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:spruce_drum")
 	public static final TileEntityType<CustomTileEntity> tileEntityType = null;
 	public SpruceDrumBlock(InstrumentalModElements instance) {
-		super(instance, 62);
+		super(instance, 64);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
 	}
 

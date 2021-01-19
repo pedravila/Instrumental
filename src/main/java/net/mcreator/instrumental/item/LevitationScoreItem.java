@@ -22,7 +22,7 @@ public class LevitationScoreItem extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:levitation_score")
 	public static final Item block = null;
 	public LevitationScoreItem(InstrumentalModElements instance) {
-		super(instance, 42);
+		super(instance, 44);
 	}
 
 	@Override

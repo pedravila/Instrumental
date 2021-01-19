@@ -56,7 +56,7 @@ public class ObsidianAccordionItem extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:entitybulletobsidian_accordion")
 	public static final EntityType arrow = null;
 	public ObsidianAccordionItem(InstrumentalModElements instance) {
-		super(instance, 30);
+		super(instance, 32);
 	}
 
 	@Override
