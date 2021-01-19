@@ -26,6 +26,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.command.ICommandSource;
 import net.minecraft.command.CommandSource;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.BlockState;
 
 import net.mcreator.instrumental.InstrumentalModElements;
@@ -748,12 +749,16 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 						for (int index7 = 0; index7 < (int) (21); index7++) {
 							sz = (double) (-10);
 							for (int index8 = 0; index8 < (int) (21); index8++) {
-								if (BoneMealItem.applyBonemeal(new ItemStack(Items.BONE_MEAL), world.getWorld(),
-										new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z)))
-										|| BoneMealItem.growSeagrass(new ItemStack(Items.BONE_MEAL), world.getWorld(),
-												new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z)), (Direction) null)) {
-									if (!world.getWorld().isRemote)
-										world.getWorld().playEvent(2005, new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z)), 0);
+								if (((world.getBlockState(new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z))).isSolid())
+										|| ((world.getBlockState(new BlockPos((int) ((sx) + x), (int) (((sy) + y) - 1), (int) ((sz) + z))))
+												.getBlock() == Blocks.FARMLAND.getDefaultState().getBlock()))) {
+									if (BoneMealItem.applyBonemeal(new ItemStack(Items.BONE_MEAL), world.getWorld(),
+											new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z)))
+											|| BoneMealItem.growSeagrass(new ItemStack(Items.BONE_MEAL), world.getWorld(),
+													new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z)), (Direction) null)) {
+										if (!world.getWorld().isRemote)
+											world.getWorld().playEvent(2005, new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z)), 0);
+									}
 								}
 								sz = (double) ((sz) + 1);
 							}
