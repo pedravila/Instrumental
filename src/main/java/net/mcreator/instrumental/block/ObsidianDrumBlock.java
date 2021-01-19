@@ -15,6 +15,7 @@ import net.minecraftforge.common.ToolType;
 
 import net.minecraft.world.storage.loot.LootContext;
 import net.minecraft.world.World;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.ITextComponent;
@@ -84,8 +85,13 @@ public class ObsidianDrumBlock extends InstrumentalModElements.ModElement {
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.IRON).sound(SoundType.STONE).hardnessAndResistance(10f, 1000f).lightValue(0).harvestLevel(1)
-					.harvestTool(ToolType.PICKAXE).tickRandomly());
+					.harvestTool(ToolType.PICKAXE));
 			setRegistryName("obsidian_drum");
+		}
+
+		@Override
+		public int tickRate(IWorldReader world) {
+			return 20;
 		}
 
 		@Override
