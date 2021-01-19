@@ -1,6 +1,7 @@
 {
   "item.instrumental.obsidian_banjo": "Obsidian Banjo",
   "item.instrumental.speaker": "Speaker",
+  "block.instrumental.drum_leather_block": "Drum Leather Block",
   "item.instrumental.birch_tambourine": "Birch Tambourine",
   "subtitles.dried_bamboo_chime_sound": "",
   "item.instrumental.birch_whistle": "Birch Whistle",
@@ -42,6 +43,7 @@
   "item.instrumental.obsidian_accordion": "Obsidian Accordion",
   "item.instrumental.strength_speaker": "Strength Speaker",
   "item.instrumental.jungle_tambourine": "Jungle Tambourine",
+  "item.instrumental.thundery_melody": "Thundery Melody",
   "item.instrumental.obsidian_bell": "Obsidian Bell",
   "item.instrumental.obsidian_panflute": "Obsidian Panflute",
   "item.instrumental.obsidian_ocarina": "Obsidian Ocarina",
@@ -73,6 +75,7 @@
   "item.minecraft.potion.effect.inspirated": "Inspirated",
   "subtitles.tambourine_sound": "",
   "item.instrumental.oak_whistle": "Oak Whistle",
+  "item.instrumental.melody_card": "Melody Card",
   "item.instrumental.bone_warhorn": "Bone Warhorn",
   "item.instrumental.slow_falling_speaker": "Slow Falling Speaker",
   "item.instrumental.harm_melody": "Harm Melody",

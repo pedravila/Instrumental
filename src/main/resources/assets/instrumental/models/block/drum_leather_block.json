@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "instrumental:blocks/drum_leather_block",
+    "up": "instrumental:blocks/drum_leather_block",
+    "north": "instrumental:blocks/drum_leather_block",
+    "east": "instrumental:blocks/drum_leather_block",
+    "south": "instrumental:blocks/drum_leather_block",
+    "west": "instrumental:blocks/drum_leather_block",
+    "particle": "instrumental:blocks/drum_leather_block"
+  }
+}

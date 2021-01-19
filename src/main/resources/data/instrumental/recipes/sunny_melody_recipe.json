@@ -1,0 +1,42 @@
+{
+  "group": "instrumental",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:glowstone"
+    },
+    "1": {
+      "item": "minecraft:bucket"
+    },
+    "2": {
+      "item": "minecraft:glowstone"
+    },
+    "3": {
+      "item": "minecraft:bucket"
+    },
+    "4": {
+      "item": "instrumental:melody_card"
+    },
+    "5": {
+      "item": "minecraft:bucket"
+    },
+    "6": {
+      "item": "minecraft:glowstone"
+    },
+    "7": {
+      "item": "minecraft:bucket"
+    },
+    "8": {
+      "item": "minecraft:glowstone"
+    }
+  },
+  "result": {
+    "item": "instrumental:sunny_melody",
+    "count": 1
+  }
+}

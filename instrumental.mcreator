@@ -2663,15 +2663,6 @@
       "registry_name": "harm_melody"
     },
     {
-      "name": "SunnyMelody",
-      "type": "item",
-      "sortid": 230,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "sunny_melody"
-    },
-    {
       "name": "RainyMelody",
       "type": "item",
       "sortid": 231,
@@ -2679,6 +2670,140 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "rainy_melody"
+    },
+    {
+      "name": "DiamondDrumLeatherRecipe",
+      "type": "recipe",
+      "sortid": 232,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "diamond_drum_leather_recipe"
+    },
+    {
+      "name": "DrumLeatherBlock",
+      "type": "block",
+      "sortid": 233,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "drum_leather_block"
+    },
+    {
+      "name": "DrumLeatherBlockRecipe",
+      "type": "recipe",
+      "sortid": 234,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "drum_leather_block_recipe"
+    },
+    {
+      "name": "MelodyCard",
+      "type": "item",
+      "sortid": 235,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "melody_card"
+    },
+    {
+      "name": "MelodyCardRecipe",
+      "type": "recipe",
+      "sortid": 236,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "melody_card_recipe"
+    },
+    {
+      "name": "HasteMelodyRecipe",
+      "type": "recipe",
+      "sortid": 237,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "haste_melody_recipe"
+    },
+    {
+      "name": "GrowthMelodyRecipe",
+      "type": "recipe",
+      "sortid": 238,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "growth_melody_recipe"
+    },
+    {
+      "name": "RainyMelodyRecipe",
+      "type": "recipe",
+      "sortid": 239,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rainy_melody_recipe"
+    },
+    {
+      "name": "RainyMelodyItemIsCraftedsmelted",
+      "type": "procedure",
+      "sortid": 240,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rainy_melody_item_is_craftedsmelted",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ThunderyMelodyRecipe",
+      "type": "recipe",
+      "sortid": 241,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "thundery_melody_recipe"
+    },
+    {
+      "name": "ThunderyMelody",
+      "type": "item",
+      "sortid": 242,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "thundery_melody"
+    },
+    {
+      "name": "HarmMelodyRecipe",
+      "type": "recipe",
+      "sortid": 243,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "harm_melody_recipe"
+    },
+    {
+      "name": "SunnyMelody",
+      "type": "item",
+      "sortid": 244,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "sunny_melody"
+    },
+    {
+      "name": "SunnyMelodyRecipe",
+      "type": "recipe",
+      "sortid": 245,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "sunny_melody_recipe"
     }
   ],
   "variable_elements": [
@@ -2839,6 +2964,7 @@
     "en_us": {
       "item.instrumental.obsidian_banjo": "Obsidian Banjo",
       "item.instrumental.speaker": "Speaker",
+      "block.instrumental.drum_leather_block": "Drum Leather Block",
       "item.instrumental.birch_tambourine": "Birch Tambourine",
       "subtitles.dried_bamboo_chime_sound": "",
       "item.instrumental.birch_whistle": "Birch Whistle",
@@ -2880,6 +3006,7 @@
       "item.instrumental.obsidian_accordion": "Obsidian Accordion",
       "item.instrumental.strength_speaker": "Strength Speaker",
       "item.instrumental.jungle_tambourine": "Jungle Tambourine",
+      "item.instrumental.thundery_melody": "Thundery Melody",
       "item.instrumental.obsidian_bell": "Obsidian Bell",
       "item.instrumental.obsidian_panflute": "Obsidian Panflute",
       "item.instrumental.obsidian_ocarina": "Obsidian Ocarina",
@@ -2911,6 +3038,7 @@
       "item.minecraft.potion.effect.inspirated": "Inspirated",
       "subtitles.tambourine_sound": "",
       "item.instrumental.oak_whistle": "Oak Whistle",
+      "item.instrumental.melody_card": "Melody Card",
       "item.instrumental.bone_warhorn": "Bone Warhorn",
       "item.instrumental.slow_falling_speaker": "Slow Falling Speaker",
       "item.instrumental.harm_melody": "Harm Melody",

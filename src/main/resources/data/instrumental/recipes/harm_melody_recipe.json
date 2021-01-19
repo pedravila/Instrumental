@@ -1,0 +1,42 @@
+{
+  "group": "instrumental",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:cactus"
+    },
+    "1": {
+      "item": "minecraft:iron_sword"
+    },
+    "2": {
+      "item": "minecraft:cactus"
+    },
+    "3": {
+      "item": "minecraft:iron_sword"
+    },
+    "4": {
+      "item": "instrumental:melody_card"
+    },
+    "5": {
+      "item": "minecraft:iron_sword"
+    },
+    "6": {
+      "item": "minecraft:cactus"
+    },
+    "7": {
+      "item": "minecraft:iron_sword"
+    },
+    "8": {
+      "item": "minecraft:cactus"
+    }
+  },
+  "result": {
+    "item": "instrumental:harm_melody",
+    "count": 1
+  }
+}

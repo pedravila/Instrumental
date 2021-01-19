@@ -1,0 +1,46 @@
+{
+  "_fv": 13,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 1,
+    "group": "",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "Blocks.CACTUS"
+      },
+      {
+        "value": "Items.IRON_SWORD"
+      },
+      {
+        "value": "Blocks.CACTUS"
+      },
+      {
+        "value": "Items.IRON_SWORD"
+      },
+      {
+        "value": "CUSTOM:MelodyCard"
+      },
+      {
+        "value": "Items.IRON_SWORD"
+      },
+      {
+        "value": "Blocks.CACTUS"
+      },
+      {
+        "value": "Items.IRON_SWORD"
+      },
+      {
+        "value": "Blocks.CACTUS"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:HarmMelody"
+    },
+    "name": "harm_melody_recipe",
+    "namespace": "mod"
+  }
+}

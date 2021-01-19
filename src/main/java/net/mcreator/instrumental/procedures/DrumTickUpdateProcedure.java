@@ -58,6 +58,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 		double sx = 0;
 		double sy = 0;
 		double sz = 0;
+		double GetDay = 0;
 		if ((((new Object() {
 			public String getValue(BlockPos pos, String tag) {
 				TileEntity tileEntity = world.getTileEntity(pos);
@@ -164,14 +165,15 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 						}.getValue(new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) + 1));
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
-				if ((((new Object() {
+				if (((((new Object() {
 					public double getValue(BlockPos pos, String tag) {
 						TileEntity tileEntity = world.getTileEntity(pos);
 						if (tileEntity != null)
 							return tileEntity.getTileData().getDouble(tag);
 						return -1;
 					}
-				}.getValue(new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) % 20) == 0)) {
+				}.getValue(new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) % 5) == 0)
+						&& (world.isAirBlock(new BlockPos((int) x, (int) (y + 1), (int) z))))) {
 					if (!world.getWorld().isRemote) {
 						world.playSound(null, new BlockPos((int) x, (int) y, (int) z), (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
 								.getValue(new ResourceLocation("instrumental:drum_sound")), SoundCategory.NEUTRAL, (float) 1, (float) 1);

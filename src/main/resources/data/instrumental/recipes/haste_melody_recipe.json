@@ -1,0 +1,42 @@
+{
+  "group": "instrumental",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:sugar"
+    },
+    "1": {
+      "item": "minecraft:golden_pickaxe"
+    },
+    "2": {
+      "item": "minecraft:sugar"
+    },
+    "3": {
+      "item": "minecraft:golden_pickaxe"
+    },
+    "4": {
+      "item": "instrumental:melody_card"
+    },
+    "5": {
+      "item": "minecraft:golden_pickaxe"
+    },
+    "6": {
+      "item": "minecraft:sugar"
+    },
+    "7": {
+      "item": "minecraft:golden_pickaxe"
+    },
+    "8": {
+      "item": "minecraft:sugar"
+    }
+  },
+  "result": {
+    "item": "instrumental:haste_melody",
+    "count": 1
+  }
+}

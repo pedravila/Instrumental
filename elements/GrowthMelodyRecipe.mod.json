@@ -1,0 +1,46 @@
+{
+  "_fv": 13,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 1,
+    "group": "",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "Blocks.GRASS"
+      },
+      {
+        "value": "Blocks.BONE_BLOCK"
+      },
+      {
+        "value": "Blocks.GRASS"
+      },
+      {
+        "value": "Blocks.BONE_BLOCK"
+      },
+      {
+        "value": "CUSTOM:MelodyCard"
+      },
+      {
+        "value": "Blocks.BONE_BLOCK"
+      },
+      {
+        "value": "Blocks.GRASS"
+      },
+      {
+        "value": "Blocks.BONE_BLOCK"
+      },
+      {
+        "value": "Blocks.GRASS"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:GrowthMelody"
+    },
+    "name": "growth_melody_recipe",
+    "namespace": "mod"
+  }
+}

@@ -25,7 +25,9 @@
     "My": 1.0,
     "Mz": 1.0,
     "name": "Oak Drum",
-    "specialInfo": [],
+    "specialInfo": [
+      "§7 Put a block above it to muffle the sound"
+    ],
     "hardness": 1.0,
     "resistance": 10.0,
     "hasGravity": false,
