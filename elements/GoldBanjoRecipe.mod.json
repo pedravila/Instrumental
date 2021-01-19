@@ -13,34 +13,34 @@
         "value": ""
       },
       {
-        "value": "Items.IRON_INGOT"
-      },
-      {
         "value": ""
       },
       {
-        "value": "Items.IRON_INGOT"
+        "value": "Items.GOLD_INGOT"
+      },
+      {
+        "value": "Items.GOLD_INGOT"
       },
       {
         "value": "CUSTOM:InstrumentalString"
       },
       {
-        "value": "Items.IRON_INGOT"
-      },
-      {
         "value": ""
       },
       {
-        "value": "Items.IRON_INGOT"
+        "value": "Items.GOLD_INGOT"
+      },
+      {
+        "value": "Items.GOLD_INGOT"
       },
       {
         "value": ""
       }
     ],
     "recipeReturnStack": {
-      "value": "CUSTOM:IronLyre"
+      "value": "CUSTOM:GoldBanjo"
     },
-    "name": "iron_lyre_recipe",
+    "name": "gold_banjo_recipe",
     "namespace": "mod"
   }
 }

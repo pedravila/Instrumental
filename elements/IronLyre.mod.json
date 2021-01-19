@@ -7,9 +7,9 @@
     "customModelName": "Normal",
     "name": "Iron Lyre",
     "specialInfo": [
-      "§2 6 Attack Damage",
-      "§2 4 inspiration",
-      "§2 0.75 Seconds Cooldown"
+      "§2 5 Attack Damage",
+      "§2 2 inspiration",
+      "§2 1 Second Cooldown"
     ],
     "creativeTab": {
       "value": "CUSTOM:RangedInstrumentsTab"
@@ -19,7 +19,7 @@
       "value": ""
     },
     "shootConstantly": false,
-    "usageCount": 500,
+    "usageCount": 250,
     "actionSound": {
       "value": "CUSTOM:lyre_sound"
     },
@@ -28,10 +28,10 @@
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
     "onRangedItemUsed": {
-      "name": "IronLyreRangedItemUsed"
+      "name": "IronTriangleRangedItemUsed"
     },
     "useCondition": {
-      "name": "IronLyreCanUseRangedItem"
+      "name": "IronTriangleCanUseRangedItem"
     },
     "bulletPower": 1.0,
     "bulletDamage": 3.0,

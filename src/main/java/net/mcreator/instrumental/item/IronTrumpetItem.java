@@ -111,7 +111,7 @@ public class IronTrumpetItem extends InstrumentalModElements.ModElement {
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 				if (IronTriangleCanUseRangedItemProcedure.executeProcedure(ImmutableMap.of("entity", entity))) {
-					ArrowCustomEntity entityarrow = shoot(world, entity, random, 1f, 2.5, 0);
+					ArrowCustomEntity entityarrow = shoot(world, entity, random, 1f, 3, 0);
 					itemstack.damageItem(1, entity, e -> e.sendBreakAnimation(entity.getActiveHand()));
 					entityarrow.pickupStatus = AbstractArrowEntity.PickupStatus.DISALLOWED;
 					{
@@ -210,7 +210,7 @@ public class IronTrumpetItem extends InstrumentalModElements.ModElement {
 		double d3 = target.getPosZ() - entity.getPosZ();
 		entityarrow.shoot(d1, d0 - entityarrow.getPosY() + (double) MathHelper.sqrt(d1 * d1 + d3 * d3) * 0.2F, d3, 1f * 2, 12.0F);
 		entityarrow.setSilent(true);
-		entityarrow.setDamage(2.5);
+		entityarrow.setDamage(3);
 		entityarrow.setKnockbackStrength(0);
 		entityarrow.setIsCritical(false);
 		entity.world.addEntity(entityarrow);

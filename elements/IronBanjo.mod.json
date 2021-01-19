@@ -3,9 +3,9 @@
   "_type": "gun",
   "definition": {
     "renderType": 0,
-    "texture": "gold_lyre",
+    "texture": "iron_banjo",
     "customModelName": "Normal",
-    "name": "Gold Lyre",
+    "name": "Iron Banjo",
     "specialInfo": [
       "§2 5 Attack Damage",
       "§2 2 inspiration",
@@ -19,9 +19,9 @@
       "value": ""
     },
     "shootConstantly": false,
-    "usageCount": 300,
+    "usageCount": 500,
     "actionSound": {
-      "value": "CUSTOM:lyre_sound"
+      "value": "CUSTOM:banjo_sound"
     },
     "hasGlow": false,
     "animation": "none",
@@ -33,8 +33,8 @@
     "useCondition": {
       "name": "IronTriangleCanUseRangedItem"
     },
-    "bulletPower": 1.1,
-    "bulletDamage": 2.5,
+    "bulletPower": 1.0,
+    "bulletDamage": 3.0,
     "bulletKnockback": 0,
     "bulletParticles": false,
     "bulletIgnitesFire": false,
@@ -44,7 +44,7 @@
     "bulletModel": "Default",
     "customBulletModelTexture": "",
     "onBulletFlyingTick": {
-      "name": "GoldNoteProjectile"
+      "name": "IronNoteProjectile"
     }
   }
 }

@@ -36,9 +36,9 @@ import net.minecraft.client.renderer.entity.SpriteRenderer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.block.Blocks;
 
+import net.mcreator.instrumental.procedures.IronTriangleRangedItemUsedProcedure;
+import net.mcreator.instrumental.procedures.IronTriangleCanUseRangedItemProcedure;
 import net.mcreator.instrumental.procedures.IronNoteProjectileProcedure;
-import net.mcreator.instrumental.procedures.IronLyreRangedItemUsedProcedure;
-import net.mcreator.instrumental.procedures.IronLyreCanUseRangedItemProcedure;
 import net.mcreator.instrumental.itemgroup.RangedInstrumentsTabItemGroup;
 import net.mcreator.instrumental.InstrumentalModElements;
 
@@ -75,7 +75,7 @@ public class IronLyreItem extends InstrumentalModElements.ModElement {
 	}
 	public static class ItemRanged extends Item {
 		public ItemRanged() {
-			super(new Item.Properties().group(RangedInstrumentsTabItemGroup.tab).maxDamage(500));
+			super(new Item.Properties().group(RangedInstrumentsTabItemGroup.tab).maxDamage(250));
 			setRegistryName("iron_lyre");
 		}
 
@@ -88,9 +88,9 @@ public class IronLyreItem extends InstrumentalModElements.ModElement {
 		@Override
 		public void addInformation(ItemStack itemstack, World world, List<ITextComponent> list, ITooltipFlag flag) {
 			super.addInformation(itemstack, world, list, flag);
-			list.add(new StringTextComponent("\u00A72 6 Attack Damage"));
-			list.add(new StringTextComponent("\u00A72 4 inspiration"));
-			list.add(new StringTextComponent("\u00A72 0.75 Seconds Cooldown"));
+			list.add(new StringTextComponent("\u00A72 5 Attack Damage"));
+			list.add(new StringTextComponent("\u00A72 2 inspiration"));
+			list.add(new StringTextComponent("\u00A72 1 Second Cooldown"));
 		}
 
 		@Override
@@ -110,7 +110,7 @@ public class IronLyreItem extends InstrumentalModElements.ModElement {
 				double x = entity.getPosX();
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
-				if (IronLyreCanUseRangedItemProcedure.executeProcedure(ImmutableMap.of("entity", entity))) {
+				if (IronTriangleCanUseRangedItemProcedure.executeProcedure(ImmutableMap.of("entity", entity))) {
 					ArrowCustomEntity entityarrow = shoot(world, entity, random, 1f, 3, 0);
 					itemstack.damageItem(1, entity, e -> e.sendBreakAnimation(entity.getActiveHand()));
 					entityarrow.pickupStatus = AbstractArrowEntity.PickupStatus.DISALLOWED;
@@ -118,7 +118,7 @@ public class IronLyreItem extends InstrumentalModElements.ModElement {
 						Map<String, Object> $_dependencies = new HashMap<>();
 						$_dependencies.put("entity", entity);
 						$_dependencies.put("itemstack", itemstack);
-						IronLyreRangedItemUsedProcedure.executeProcedure($_dependencies);
+						IronTriangleRangedItemUsedProcedure.executeProcedure($_dependencies);
 					}
 				}
 			}

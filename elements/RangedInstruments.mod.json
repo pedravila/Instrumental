@@ -87,6 +87,12 @@
       },
       {
         "value": "CUSTOM:ObsidianOcarina"
+      },
+      {
+        "value": "CUSTOM:IronBanjo"
+      },
+      {
+        "value": "CUSTOM:GoldBanjo"
       }
     ],
     "blocks": [],

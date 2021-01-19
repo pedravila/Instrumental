@@ -13,10 +13,10 @@
         "value": ""
       },
       {
-        "value": "Items.IRON_INGOT"
+        "value": ""
       },
       {
-        "value": ""
+        "value": "Items.IRON_INGOT"
       },
       {
         "value": "Items.IRON_INGOT"
@@ -25,10 +25,10 @@
         "value": "CUSTOM:InstrumentalString"
       },
       {
-        "value": "Items.IRON_INGOT"
+        "value": ""
       },
       {
-        "value": ""
+        "value": "Items.IRON_INGOT"
       },
       {
         "value": "Items.IRON_INGOT"
@@ -38,9 +38,9 @@
       }
     ],
     "recipeReturnStack": {
-      "value": "CUSTOM:IronLyre"
+      "value": "CUSTOM:IronBanjo"
     },
-    "name": "iron_lyre_recipe",
+    "name": "iron_banjo_recipe",
     "namespace": "mod"
   }
 }

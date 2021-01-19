@@ -50,13 +50,13 @@ import java.util.HashMap;
 import com.google.common.collect.ImmutableMap;
 
 @InstrumentalModElements.ModElement.Tag
-public class GoldLyreItem extends InstrumentalModElements.ModElement {
-	@ObjectHolder("instrumental:gold_lyre")
+public class GoldBanjoItem extends InstrumentalModElements.ModElement {
+	@ObjectHolder("instrumental:gold_banjo")
 	public static final Item block = null;
-	@ObjectHolder("instrumental:entitybulletgold_lyre")
+	@ObjectHolder("instrumental:entitybulletgold_banjo")
 	public static final EntityType arrow = null;
-	public GoldLyreItem(InstrumentalModElements instance) {
-		super(instance, 21);
+	public GoldBanjoItem(InstrumentalModElements instance) {
+		super(instance, 247);
 	}
 
 	@Override
@@ -64,7 +64,7 @@ public class GoldLyreItem extends InstrumentalModElements.ModElement {
 		elements.items.add(() -> new ItemRanged());
 		elements.entities.add(() -> (EntityType.Builder.<ArrowCustomEntity>create(ArrowCustomEntity::new, EntityClassification.MISC)
 				.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).setCustomClientFactory(ArrowCustomEntity::new)
-				.size(0.5f, 0.5f)).build("entitybulletgold_lyre").setRegistryName("entitybulletgold_lyre"));
+				.size(0.5f, 0.5f)).build("entitybulletgold_banjo").setRegistryName("entitybulletgold_banjo"));
 	}
 
 	@Override
@@ -76,7 +76,7 @@ public class GoldLyreItem extends InstrumentalModElements.ModElement {
 	public static class ItemRanged extends Item {
 		public ItemRanged() {
 			super(new Item.Properties().group(RangedInstrumentsTabItemGroup.tab).maxDamage(300));
-			setRegistryName("gold_lyre");
+			setRegistryName("gold_banjo");
 		}
 
 		@Override
@@ -198,7 +198,7 @@ public class GoldLyreItem extends InstrumentalModElements.ModElement {
 		double y = entity.getPosY();
 		double z = entity.getPosZ();
 		world.playSound((PlayerEntity) null, (double) x, (double) y, (double) z,
-				(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("instrumental:lyre_sound")),
+				(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("instrumental:banjo_sound")),
 				SoundCategory.PLAYERS, 1, 1f / (random.nextFloat() * 0.5f + 1) + (power / 2));
 		return entityarrow;
 	}
@@ -218,7 +218,7 @@ public class GoldLyreItem extends InstrumentalModElements.ModElement {
 		double y = entity.getPosY();
 		double z = entity.getPosZ();
 		entity.world.playSound((PlayerEntity) null, (double) x, (double) y, (double) z,
-				(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("instrumental:lyre_sound")),
+				(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("instrumental:banjo_sound")),
 				SoundCategory.PLAYERS, 1, 1f / (new Random().nextFloat() * 0.5f + 1));
 		return entityarrow;
 	}
