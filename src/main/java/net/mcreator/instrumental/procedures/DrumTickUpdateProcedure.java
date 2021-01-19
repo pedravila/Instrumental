@@ -4,18 +4,28 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.CapabilityItemHandler;
 
+import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.IWorld;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.Vec2f;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.Direction;
+import net.minecraft.util.DamageSource;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.potion.Effects;
 import net.minecraft.potion.EffectInstance;
+import net.minecraft.item.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.BoneMealItem;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.command.ICommandSource;
+import net.minecraft.command.CommandSource;
 import net.minecraft.block.BlockState;
 
 import net.mcreator.instrumental.InstrumentalModElements;
@@ -182,6 +192,574 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 								(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
 										.getValue(new ResourceLocation("instrumental:drum_sound")),
 								SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
+					}
+				}
+			} else {
+				if (!world.getWorld().isRemote) {
+					world.playSound(null, new BlockPos((int) x, (int) y, (int) z), (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+							.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")), SoundCategory.NEUTRAL, (float) 1, (float) 1);
+				} else {
+					world.getWorld().playSound(x, y, z,
+							(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+									.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")),
+							SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
+				}
+				if (!world.getWorld().isRemote) {
+					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+					TileEntity _tileEntity = world.getTileEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_tileEntity != null)
+						_tileEntity.getTileData().putString("MelodyType", "None");
+					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+				}
+				if (!world.getWorld().isRemote) {
+					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+					TileEntity _tileEntity = world.getTileEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_tileEntity != null)
+						_tileEntity.getTileData().putDouble("Countdown", 0);
+					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+				}
+			}
+		}
+		if ((((new Object() {
+			public String getValue(BlockPos pos, String tag) {
+				TileEntity tileEntity = world.getTileEntity(pos);
+				if (tileEntity != null)
+					return tileEntity.getTileData().getString(tag);
+				return "";
+			}
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "MelodyType"))).equals("Rainy"))) {
+			if (!world.getWorld().isRemote) {
+				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+				TileEntity _tileEntity = world.getTileEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_tileEntity != null)
+					_tileEntity.getTileData().putDouble("Countdown", ((new Object() {
+						public double getValue(BlockPos pos, String tag) {
+							TileEntity tileEntity = world.getTileEntity(pos);
+							if (tileEntity != null)
+								return tileEntity.getTileData().getDouble(tag);
+							return -1;
+						}
+					}.getValue(new BlockPos((int) x, (int) y, (int) z), "Countdown")) + 1));
+				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+			}
+			if (((new Object() {
+				public double getValue(BlockPos pos, String tag) {
+					TileEntity tileEntity = world.getTileEntity(pos);
+					if (tileEntity != null)
+						return tileEntity.getTileData().getDouble(tag);
+					return -1;
+				}
+			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Countdown")) < 12000)) {
+				if (!world.getWorld().isRemote) {
+					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+					TileEntity _tileEntity = world.getTileEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_tileEntity != null)
+						_tileEntity.getTileData().putDouble("DrumSoundCounter", ((new Object() {
+							public double getValue(BlockPos pos, String tag) {
+								TileEntity tileEntity = world.getTileEntity(pos);
+								if (tileEntity != null)
+									return tileEntity.getTileData().getDouble(tag);
+								return -1;
+							}
+						}.getValue(new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) + 1));
+					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+				}
+				if (((((new Object() {
+					public double getValue(BlockPos pos, String tag) {
+						TileEntity tileEntity = world.getTileEntity(pos);
+						if (tileEntity != null)
+							return tileEntity.getTileData().getDouble(tag);
+						return -1;
+					}
+				}.getValue(new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) % 5) == 0)
+						&& (world.isAirBlock(new BlockPos((int) x, (int) (y + 1), (int) z))))) {
+					if (!world.getWorld().isRemote) {
+						world.playSound(null, new BlockPos((int) x, (int) y, (int) z), (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+								.getValue(new ResourceLocation("instrumental:drum_sound")), SoundCategory.NEUTRAL, (float) 1, (float) 1);
+					} else {
+						world.getWorld().playSound(x, y, z,
+								(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+										.getValue(new ResourceLocation("instrumental:drum_sound")),
+								SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
+					}
+					if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
+						world.getWorld().getServer().getCommandManager()
+								.handleCommand(
+										new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
+												new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
+										"weather rain");
+					}
+				}
+			} else {
+				if (!world.getWorld().isRemote) {
+					world.playSound(null, new BlockPos((int) x, (int) y, (int) z), (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+							.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")), SoundCategory.NEUTRAL, (float) 1, (float) 1);
+				} else {
+					world.getWorld().playSound(x, y, z,
+							(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+									.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")),
+							SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
+				}
+				if (!world.getWorld().isRemote) {
+					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+					TileEntity _tileEntity = world.getTileEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_tileEntity != null)
+						_tileEntity.getTileData().putString("MelodyType", "None");
+					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+				}
+				if (!world.getWorld().isRemote) {
+					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+					TileEntity _tileEntity = world.getTileEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_tileEntity != null)
+						_tileEntity.getTileData().putDouble("Countdown", 0);
+					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+				}
+			}
+		}
+		if ((((new Object() {
+			public String getValue(BlockPos pos, String tag) {
+				TileEntity tileEntity = world.getTileEntity(pos);
+				if (tileEntity != null)
+					return tileEntity.getTileData().getString(tag);
+				return "";
+			}
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "MelodyType"))).equals("Tundery"))) {
+			if (!world.getWorld().isRemote) {
+				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+				TileEntity _tileEntity = world.getTileEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_tileEntity != null)
+					_tileEntity.getTileData().putDouble("Countdown", ((new Object() {
+						public double getValue(BlockPos pos, String tag) {
+							TileEntity tileEntity = world.getTileEntity(pos);
+							if (tileEntity != null)
+								return tileEntity.getTileData().getDouble(tag);
+							return -1;
+						}
+					}.getValue(new BlockPos((int) x, (int) y, (int) z), "Countdown")) + 1));
+				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+			}
+			if (((new Object() {
+				public double getValue(BlockPos pos, String tag) {
+					TileEntity tileEntity = world.getTileEntity(pos);
+					if (tileEntity != null)
+						return tileEntity.getTileData().getDouble(tag);
+					return -1;
+				}
+			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Countdown")) < 12000)) {
+				if (!world.getWorld().isRemote) {
+					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+					TileEntity _tileEntity = world.getTileEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_tileEntity != null)
+						_tileEntity.getTileData().putDouble("DrumSoundCounter", ((new Object() {
+							public double getValue(BlockPos pos, String tag) {
+								TileEntity tileEntity = world.getTileEntity(pos);
+								if (tileEntity != null)
+									return tileEntity.getTileData().getDouble(tag);
+								return -1;
+							}
+						}.getValue(new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) + 1));
+					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+				}
+				if (((((new Object() {
+					public double getValue(BlockPos pos, String tag) {
+						TileEntity tileEntity = world.getTileEntity(pos);
+						if (tileEntity != null)
+							return tileEntity.getTileData().getDouble(tag);
+						return -1;
+					}
+				}.getValue(new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) % 5) == 0)
+						&& (world.isAirBlock(new BlockPos((int) x, (int) (y + 1), (int) z))))) {
+					if (!world.getWorld().isRemote) {
+						world.playSound(null, new BlockPos((int) x, (int) y, (int) z), (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+								.getValue(new ResourceLocation("instrumental:drum_sound")), SoundCategory.NEUTRAL, (float) 1, (float) 1);
+					} else {
+						world.getWorld().playSound(x, y, z,
+								(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+										.getValue(new ResourceLocation("instrumental:drum_sound")),
+								SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
+					}
+					if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
+						world.getWorld().getServer().getCommandManager()
+								.handleCommand(
+										new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
+												new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
+										"weather thunder");
+					}
+				}
+			} else {
+				if (!world.getWorld().isRemote) {
+					world.playSound(null, new BlockPos((int) x, (int) y, (int) z), (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+							.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")), SoundCategory.NEUTRAL, (float) 1, (float) 1);
+				} else {
+					world.getWorld().playSound(x, y, z,
+							(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+									.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")),
+							SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
+				}
+				if (!world.getWorld().isRemote) {
+					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+					TileEntity _tileEntity = world.getTileEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_tileEntity != null)
+						_tileEntity.getTileData().putString("MelodyType", "None");
+					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+				}
+				if (!world.getWorld().isRemote) {
+					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+					TileEntity _tileEntity = world.getTileEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_tileEntity != null)
+						_tileEntity.getTileData().putDouble("Countdown", 0);
+					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+				}
+			}
+		}
+		if ((((new Object() {
+			public String getValue(BlockPos pos, String tag) {
+				TileEntity tileEntity = world.getTileEntity(pos);
+				if (tileEntity != null)
+					return tileEntity.getTileData().getString(tag);
+				return "";
+			}
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "MelodyType"))).equals("Sunny"))) {
+			if (!world.getWorld().isRemote) {
+				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+				TileEntity _tileEntity = world.getTileEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_tileEntity != null)
+					_tileEntity.getTileData().putDouble("Countdown", ((new Object() {
+						public double getValue(BlockPos pos, String tag) {
+							TileEntity tileEntity = world.getTileEntity(pos);
+							if (tileEntity != null)
+								return tileEntity.getTileData().getDouble(tag);
+							return -1;
+						}
+					}.getValue(new BlockPos((int) x, (int) y, (int) z), "Countdown")) + 1));
+				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+			}
+			if (((new Object() {
+				public double getValue(BlockPos pos, String tag) {
+					TileEntity tileEntity = world.getTileEntity(pos);
+					if (tileEntity != null)
+						return tileEntity.getTileData().getDouble(tag);
+					return -1;
+				}
+			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Countdown")) < 12000)) {
+				if (!world.getWorld().isRemote) {
+					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+					TileEntity _tileEntity = world.getTileEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_tileEntity != null)
+						_tileEntity.getTileData().putDouble("DrumSoundCounter", ((new Object() {
+							public double getValue(BlockPos pos, String tag) {
+								TileEntity tileEntity = world.getTileEntity(pos);
+								if (tileEntity != null)
+									return tileEntity.getTileData().getDouble(tag);
+								return -1;
+							}
+						}.getValue(new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) + 1));
+					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+				}
+				if (((((new Object() {
+					public double getValue(BlockPos pos, String tag) {
+						TileEntity tileEntity = world.getTileEntity(pos);
+						if (tileEntity != null)
+							return tileEntity.getTileData().getDouble(tag);
+						return -1;
+					}
+				}.getValue(new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) % 5) == 0)
+						&& (world.isAirBlock(new BlockPos((int) x, (int) (y + 1), (int) z))))) {
+					if (!world.getWorld().isRemote) {
+						world.playSound(null, new BlockPos((int) x, (int) y, (int) z), (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+								.getValue(new ResourceLocation("instrumental:drum_sound")), SoundCategory.NEUTRAL, (float) 1, (float) 1);
+					} else {
+						world.getWorld().playSound(x, y, z,
+								(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+										.getValue(new ResourceLocation("instrumental:drum_sound")),
+								SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
+					}
+					if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
+						world.getWorld().getServer().getCommandManager()
+								.handleCommand(
+										new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
+												new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
+										"weather clear");
+					}
+				}
+			} else {
+				if (!world.getWorld().isRemote) {
+					world.playSound(null, new BlockPos((int) x, (int) y, (int) z), (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+							.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")), SoundCategory.NEUTRAL, (float) 1, (float) 1);
+				} else {
+					world.getWorld().playSound(x, y, z,
+							(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+									.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")),
+							SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
+				}
+				if (!world.getWorld().isRemote) {
+					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+					TileEntity _tileEntity = world.getTileEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_tileEntity != null)
+						_tileEntity.getTileData().putString("MelodyType", "None");
+					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+				}
+				if (!world.getWorld().isRemote) {
+					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+					TileEntity _tileEntity = world.getTileEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_tileEntity != null)
+						_tileEntity.getTileData().putDouble("Countdown", 0);
+					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+				}
+			}
+		}
+		if ((((new Object() {
+			public String getValue(BlockPos pos, String tag) {
+				TileEntity tileEntity = world.getTileEntity(pos);
+				if (tileEntity != null)
+					return tileEntity.getTileData().getString(tag);
+				return "";
+			}
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "MelodyType"))).equals("Harm"))) {
+			if (!world.getWorld().isRemote) {
+				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+				TileEntity _tileEntity = world.getTileEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_tileEntity != null)
+					_tileEntity.getTileData().putDouble("Countdown", ((new Object() {
+						public double getValue(BlockPos pos, String tag) {
+							TileEntity tileEntity = world.getTileEntity(pos);
+							if (tileEntity != null)
+								return tileEntity.getTileData().getDouble(tag);
+							return -1;
+						}
+					}.getValue(new BlockPos((int) x, (int) y, (int) z), "Countdown")) + 1));
+				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+			}
+			if (((new Object() {
+				public double getValue(BlockPos pos, String tag) {
+					TileEntity tileEntity = world.getTileEntity(pos);
+					if (tileEntity != null)
+						return tileEntity.getTileData().getDouble(tag);
+					return -1;
+				}
+			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Countdown")) < 12000)) {
+				sx = (double) (-10);
+				for (int index3 = 0; index3 < (int) (21); index3++) {
+					sy = (double) (-10);
+					for (int index4 = 0; index4 < (int) (21); index4++) {
+						sz = (double) (-10);
+						for (int index5 = 0; index5 < (int) (21); index5++) {
+							if ((((Entity) world
+									.getEntitiesWithinAABB(LivingEntity.class,
+											new AxisAlignedBB(((sx) + x) - (1 / 2d), ((sy) + y) - (1 / 2d), ((sz) + z) - (1 / 2d),
+													((sx) + x) + (1 / 2d), ((sy) + y) + (1 / 2d), ((sz) + z) + (1 / 2d)),
+											null)
+									.stream().sorted(new Object() {
+										Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+											return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+										}
+									}.compareDistOf(((sx) + x), ((sy) + y), ((sz) + z))).findFirst().orElse(null)) != null)) {
+								((Entity) world
+										.getEntitiesWithinAABB(LivingEntity.class,
+												new AxisAlignedBB(((sx) + x) - (1 / 2d), ((sy) + y) - (1 / 2d), ((sz) + z) - (1 / 2d),
+														((sx) + x) + (1 / 2d), ((sy) + y) + (1 / 2d), ((sz) + z) + (1 / 2d)),
+												null)
+										.stream().sorted(new Object() {
+											Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+												return Comparator
+														.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+											}
+										}.compareDistOf(((sx) + x), ((sy) + y), ((sz) + z))).findFirst().orElse(null))
+												.attackEntityFrom(DamageSource.GENERIC, (float) 1);
+							}
+							sz = (double) ((sz) + 1);
+						}
+						sy = (double) ((sy) + 1);
+					}
+					sx = (double) ((sx) + 1);
+				}
+				{
+					TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+					if (_ent != null) {
+						final int _sltid = (int) (0);
+						final int _amount = (int) 1;
+						_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+							if (capability instanceof IItemHandlerModifiable) {
+								ItemStack _stk = capability.getStackInSlot(_sltid).copy();
+								_stk.shrink(_amount);
+								((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _stk);
+							}
+						});
+					}
+				}
+				if (!world.getWorld().isRemote) {
+					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+					TileEntity _tileEntity = world.getTileEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_tileEntity != null)
+						_tileEntity.getTileData().putDouble("DrumSoundCounter", ((new Object() {
+							public double getValue(BlockPos pos, String tag) {
+								TileEntity tileEntity = world.getTileEntity(pos);
+								if (tileEntity != null)
+									return tileEntity.getTileData().getDouble(tag);
+								return -1;
+							}
+						}.getValue(new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) + 1));
+					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+				}
+				if (((((new Object() {
+					public double getValue(BlockPos pos, String tag) {
+						TileEntity tileEntity = world.getTileEntity(pos);
+						if (tileEntity != null)
+							return tileEntity.getTileData().getDouble(tag);
+						return -1;
+					}
+				}.getValue(new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) % 5) == 0)
+						&& (world.isAirBlock(new BlockPos((int) x, (int) (y + 1), (int) z))))) {
+					if (!world.getWorld().isRemote) {
+						world.playSound(null, new BlockPos((int) x, (int) y, (int) z), (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+								.getValue(new ResourceLocation("instrumental:drum_sound")), SoundCategory.NEUTRAL, (float) 1, (float) 1);
+					} else {
+						world.getWorld().playSound(x, y, z,
+								(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+										.getValue(new ResourceLocation("instrumental:drum_sound")),
+								SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
+					}
+				}
+			} else {
+				if (!world.getWorld().isRemote) {
+					world.playSound(null, new BlockPos((int) x, (int) y, (int) z), (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+							.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")), SoundCategory.NEUTRAL, (float) 1, (float) 1);
+				} else {
+					world.getWorld().playSound(x, y, z,
+							(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+									.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")),
+							SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
+				}
+				if (!world.getWorld().isRemote) {
+					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+					TileEntity _tileEntity = world.getTileEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_tileEntity != null)
+						_tileEntity.getTileData().putString("MelodyType", "None");
+					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+				}
+				if (!world.getWorld().isRemote) {
+					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+					TileEntity _tileEntity = world.getTileEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_tileEntity != null)
+						_tileEntity.getTileData().putDouble("Countdown", 0);
+					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+				}
+			}
+		}
+		if ((((new Object() {
+			public String getValue(BlockPos pos, String tag) {
+				TileEntity tileEntity = world.getTileEntity(pos);
+				if (tileEntity != null)
+					return tileEntity.getTileData().getString(tag);
+				return "";
+			}
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "MelodyType"))).equals("Growth"))) {
+			if (!world.getWorld().isRemote) {
+				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+				TileEntity _tileEntity = world.getTileEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_tileEntity != null)
+					_tileEntity.getTileData().putDouble("Countdown", ((new Object() {
+						public double getValue(BlockPos pos, String tag) {
+							TileEntity tileEntity = world.getTileEntity(pos);
+							if (tileEntity != null)
+								return tileEntity.getTileData().getDouble(tag);
+							return -1;
+						}
+					}.getValue(new BlockPos((int) x, (int) y, (int) z), "Countdown")) + 1));
+				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+			}
+			if (((new Object() {
+				public double getValue(BlockPos pos, String tag) {
+					TileEntity tileEntity = world.getTileEntity(pos);
+					if (tileEntity != null)
+						return tileEntity.getTileData().getDouble(tag);
+					return -1;
+				}
+			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Countdown")) < 12000)) {
+				{
+					TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+					if (_ent != null) {
+						final int _sltid = (int) (0);
+						final int _amount = (int) 1;
+						_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+							if (capability instanceof IItemHandlerModifiable) {
+								ItemStack _stk = capability.getStackInSlot(_sltid).copy();
+								_stk.shrink(_amount);
+								((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _stk);
+							}
+						});
+					}
+				}
+				if (!world.getWorld().isRemote) {
+					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+					TileEntity _tileEntity = world.getTileEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_tileEntity != null)
+						_tileEntity.getTileData().putDouble("DrumSoundCounter", ((new Object() {
+							public double getValue(BlockPos pos, String tag) {
+								TileEntity tileEntity = world.getTileEntity(pos);
+								if (tileEntity != null)
+									return tileEntity.getTileData().getDouble(tag);
+								return -1;
+							}
+						}.getValue(new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) + 1));
+					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+				}
+				if (((((new Object() {
+					public double getValue(BlockPos pos, String tag) {
+						TileEntity tileEntity = world.getTileEntity(pos);
+						if (tileEntity != null)
+							return tileEntity.getTileData().getDouble(tag);
+						return -1;
+					}
+				}.getValue(new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) % 5) == 0)
+						&& (world.isAirBlock(new BlockPos((int) x, (int) (y + 1), (int) z))))) {
+					if (!world.getWorld().isRemote) {
+						world.playSound(null, new BlockPos((int) x, (int) y, (int) z), (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+								.getValue(new ResourceLocation("instrumental:drum_sound")), SoundCategory.NEUTRAL, (float) 1, (float) 1);
+					} else {
+						world.getWorld().playSound(x, y, z,
+								(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+										.getValue(new ResourceLocation("instrumental:drum_sound")),
+								SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
+					}
+					sx = (double) (-10);
+					for (int index6 = 0; index6 < (int) (21); index6++) {
+						sy = (double) (-10);
+						for (int index7 = 0; index7 < (int) (21); index7++) {
+							sz = (double) (-10);
+							for (int index8 = 0; index8 < (int) (21); index8++) {
+								if (BoneMealItem.applyBonemeal(new ItemStack(Items.BONE_MEAL), world.getWorld(),
+										new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z)))
+										|| BoneMealItem.growSeagrass(new ItemStack(Items.BONE_MEAL), world.getWorld(),
+												new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z)), (Direction) null)) {
+									if (!world.getWorld().isRemote)
+										world.getWorld().playEvent(2005, new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z)), 0);
+								}
+								sz = (double) ((sz) + 1);
+							}
+							sy = (double) ((sy) + 1);
+						}
+						sx = (double) ((sx) + 1);
 					}
 				}
 			} else {
