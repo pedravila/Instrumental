@@ -1,0 +1,42 @@
+{
+  "group": "instrumental",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "tag": "forge:dyes"
+    },
+    "1": {
+      "tag": "forge:dyes"
+    },
+    "2": {
+      "tag": "forge:dyes"
+    },
+    "3": {
+      "tag": "forge:dyes"
+    },
+    "4": {
+      "item": "instrumental:melody_card"
+    },
+    "5": {
+      "tag": "forge:dyes"
+    },
+    "6": {
+      "tag": "forge:dyes"
+    },
+    "7": {
+      "tag": "forge:dyes"
+    },
+    "8": {
+      "tag": "forge:dyes"
+    }
+  },
+  "result": {
+    "item": "instrumental:party_melody",
+    "count": 1
+  }
+}
