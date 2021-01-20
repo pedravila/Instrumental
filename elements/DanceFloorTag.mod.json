@@ -1,0 +1,64 @@
+{
+  "_fv": 13,
+  "_type": "tag",
+  "definition": {
+    "type": "Blocks",
+    "items": [],
+    "blocks": [
+      {
+        "value": "CUSTOM:DanceFloor"
+      },
+      {
+        "value": "CUSTOM:BlackDanceFloor"
+      },
+      {
+        "value": "CUSTOM:RedDanceFloor"
+      },
+      {
+        "value": "CUSTOM:GreenDanceFloor"
+      },
+      {
+        "value": "CUSTOM:BrownDanceFloor"
+      },
+      {
+        "value": "CUSTOM:BlueDanceFloor"
+      },
+      {
+        "value": "CUSTOM:PurpleDancFloor"
+      },
+      {
+        "value": "CUSTOM:CyanDanceFloor"
+      },
+      {
+        "value": "CUSTOM:LightGrayDanceFloor"
+      },
+      {
+        "value": "CUSTOM:GrayDanceFloor"
+      },
+      {
+        "value": "CUSTOM:PinkDanceFloor"
+      },
+      {
+        "value": "CUSTOM:LimeDanceFloor"
+      },
+      {
+        "value": "CUSTOM:YellowDanceFloor"
+      },
+      {
+        "value": "CUSTOM:LightBlueDanceFloor"
+      },
+      {
+        "value": "CUSTOM:MagentaDanceFloor"
+      },
+      {
+        "value": "CUSTOM:OrangeDanceFloor"
+      },
+      {
+        "value": "CUSTOM:WhiteDanceFloor"
+      }
+    ],
+    "functions": [],
+    "name": "dance_floor_tag",
+    "namespace": "forge"
+  }
+}

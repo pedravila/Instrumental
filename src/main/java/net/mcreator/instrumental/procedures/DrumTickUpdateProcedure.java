@@ -32,6 +32,23 @@ import net.minecraft.command.CommandSource;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.BlockState;
 
+import net.mcreator.instrumental.block.YellowDanceFloorBlock;
+import net.mcreator.instrumental.block.WhiteDanceFloorBlock;
+import net.mcreator.instrumental.block.RedDanceFloorBlock;
+import net.mcreator.instrumental.block.PurpleDancFloorBlock;
+import net.mcreator.instrumental.block.PinkDanceFloorBlock;
+import net.mcreator.instrumental.block.OrangeDanceFloorBlock;
+import net.mcreator.instrumental.block.MagentaDanceFloorBlock;
+import net.mcreator.instrumental.block.LimeDanceFloorBlock;
+import net.mcreator.instrumental.block.LightGrayDanceFloorBlock;
+import net.mcreator.instrumental.block.LightBlueDanceFloorBlock;
+import net.mcreator.instrumental.block.GreenDanceFloorBlock;
+import net.mcreator.instrumental.block.GrayDanceFloorBlock;
+import net.mcreator.instrumental.block.DanceFloorBlock;
+import net.mcreator.instrumental.block.CyanDanceFloorBlock;
+import net.mcreator.instrumental.block.BrownDanceFloorBlock;
+import net.mcreator.instrumental.block.BlueDanceFloorBlock;
+import net.mcreator.instrumental.block.BlackDanceFloorBlock;
 import net.mcreator.instrumental.InstrumentalModElements;
 
 import java.util.function.Function;
@@ -835,12 +852,13 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 					for (int index10 = 0; index10 < (int) (21); index10++) {
 						sz = (double) (-10);
 						for (int index11 = 0; index11 < (int) (21); index11++) {
-							if ((BlockTags.getCollection().getOrCreate(new ResourceLocation(("wool").toLowerCase(java.util.Locale.ENGLISH))).contains(
-									(world.getBlockState(new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z)))).getBlock()))) {
+							if ((BlockTags.getCollection()
+									.getOrCreate(new ResourceLocation(("forge:dance_floor_tag").toLowerCase(java.util.Locale.ENGLISH))).contains(
+											(world.getBlockState(new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z)))).getBlock()))) {
 								if ((Math.random() < 0)) {
 									{
 										BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
-										BlockState _bs = Blocks.WHITE_WOOL.getDefaultState();
+										BlockState _bs = WhiteDanceFloorBlock.block.getDefaultState();
 										BlockState _bso = world.getBlockState(_bp);
 										for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
 											IProperty _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
@@ -853,7 +871,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 									if ((Math.random() < 0.0625)) {
 										{
 											BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
-											BlockState _bs = Blocks.ORANGE_WOOL.getDefaultState();
+											BlockState _bs = OrangeDanceFloorBlock.block.getDefaultState();
 											BlockState _bso = world.getBlockState(_bp);
 											for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
 												IProperty _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
@@ -866,7 +884,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 										if ((Math.random() < 0.125)) {
 											{
 												BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
-												BlockState _bs = Blocks.MAGENTA_WOOL.getDefaultState();
+												BlockState _bs = MagentaDanceFloorBlock.block.getDefaultState();
 												BlockState _bso = world.getBlockState(_bp);
 												for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
 													IProperty _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
@@ -879,7 +897,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 											if ((Math.random() < 0.1875)) {
 												{
 													BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
-													BlockState _bs = Blocks.LIGHT_BLUE_WOOL.getDefaultState();
+													BlockState _bs = LightBlueDanceFloorBlock.block.getDefaultState();
 													BlockState _bso = world.getBlockState(_bp);
 													for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
 														IProperty _property = _bs.getBlock().getStateContainer()
@@ -893,7 +911,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 												if ((Math.random() < 0.25)) {
 													{
 														BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
-														BlockState _bs = Blocks.YELLOW_WOOL.getDefaultState();
+														BlockState _bs = YellowDanceFloorBlock.block.getDefaultState();
 														BlockState _bso = world.getBlockState(_bp);
 														for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
 															IProperty _property = _bs.getBlock().getStateContainer()
@@ -907,7 +925,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 													if ((Math.random() < 0.3125)) {
 														{
 															BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
-															BlockState _bs = Blocks.LIME_WOOL.getDefaultState();
+															BlockState _bs = LimeDanceFloorBlock.block.getDefaultState();
 															BlockState _bso = world.getBlockState(_bp);
 															for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
 																IProperty _property = _bs.getBlock().getStateContainer()
@@ -921,7 +939,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 														if ((Math.random() < 0.375)) {
 															{
 																BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
-																BlockState _bs = Blocks.PINK_WOOL.getDefaultState();
+																BlockState _bs = PinkDanceFloorBlock.block.getDefaultState();
 																BlockState _bso = world.getBlockState(_bp);
 																for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
 																	IProperty _property = _bs.getBlock().getStateContainer()
@@ -935,7 +953,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 															if ((Math.random() < 0.4375)) {
 																{
 																	BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
-																	BlockState _bs = Blocks.GRAY_WOOL.getDefaultState();
+																	BlockState _bs = GrayDanceFloorBlock.block.getDefaultState();
 																	BlockState _bso = world.getBlockState(_bp);
 																	for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
 																		IProperty _property = _bs.getBlock().getStateContainer()
@@ -950,7 +968,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																	{
 																		BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y),
 																				(int) ((sz) + z));
-																		BlockState _bs = Blocks.LIGHT_GRAY_WOOL.getDefaultState();
+																		BlockState _bs = LightGrayDanceFloorBlock.block.getDefaultState();
 																		BlockState _bso = world.getBlockState(_bp);
 																		for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues()
 																				.entrySet()) {
@@ -966,7 +984,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																		{
 																			BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y),
 																					(int) ((sz) + z));
-																			BlockState _bs = Blocks.CYAN_WOOL.getDefaultState();
+																			BlockState _bs = CyanDanceFloorBlock.block.getDefaultState();
 																			BlockState _bso = world.getBlockState(_bp);
 																			for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues()
 																					.entrySet()) {
@@ -982,7 +1000,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																			{
 																				BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y),
 																						(int) ((sz) + z));
-																				BlockState _bs = Blocks.PURPLE_WOOL.getDefaultState();
+																				BlockState _bs = PurpleDancFloorBlock.block.getDefaultState();
 																				BlockState _bso = world.getBlockState(_bp);
 																				for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues()
 																						.entrySet()) {
@@ -998,7 +1016,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																				{
 																					BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y),
 																							(int) ((sz) + z));
-																					BlockState _bs = Blocks.BLUE_WOOL.getDefaultState();
+																					BlockState _bs = BlueDanceFloorBlock.block.getDefaultState();
 																					BlockState _bso = world.getBlockState(_bp);
 																					for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso
 																							.getValues().entrySet()) {
@@ -1014,7 +1032,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																					{
 																						BlockPos _bp = new BlockPos((int) ((sx) + x),
 																								(int) ((sy) + y), (int) ((sz) + z));
-																						BlockState _bs = Blocks.BROWN_WOOL.getDefaultState();
+																						BlockState _bs = BrownDanceFloorBlock.block.getDefaultState();
 																						BlockState _bso = world.getBlockState(_bp);
 																						for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso
 																								.getValues().entrySet()) {
@@ -1031,7 +1049,8 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																						{
 																							BlockPos _bp = new BlockPos((int) ((sx) + x),
 																									(int) ((sy) + y), (int) ((sz) + z));
-																							BlockState _bs = Blocks.GREEN_WOOL.getDefaultState();
+																							BlockState _bs = GreenDanceFloorBlock.block
+																									.getDefaultState();
 																							BlockState _bso = world.getBlockState(_bp);
 																							for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso
 																									.getValues().entrySet()) {
@@ -1049,256 +1068,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																							{
 																								BlockPos _bp = new BlockPos((int) ((sx) + x),
 																										(int) ((sy) + y), (int) ((sz) + z));
-																								BlockState _bs = Blocks.RED_WOOL.getDefaultState();
-																								BlockState _bso = world.getBlockState(_bp);
-																								for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso
-																										.getValues().entrySet()) {
-																									IProperty _property = _bs.getBlock()
-																											.getStateContainer()
-																											.getProperty(entry.getKey().getName());
-																									if (_bs.has(_property))
-																										_bs = _bs.with(_property,
-																												(Comparable) entry.getValue());
-																								}
-																								world.setBlockState(_bp, _bs, 3);
-																							}
-																						} else {
-																							{
-																								BlockPos _bp = new BlockPos((int) ((sx) + x),
-																										(int) ((sy) + y), (int) ((sz) + z));
-																								BlockState _bs = Blocks.BLACK_WOOL.getDefaultState();
-																								BlockState _bso = world.getBlockState(_bp);
-																								for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso
-																										.getValues().entrySet()) {
-																									IProperty _property = _bs.getBlock()
-																											.getStateContainer()
-																											.getProperty(entry.getKey().getName());
-																									if (_bs.has(_property))
-																										_bs = _bs.with(_property,
-																												(Comparable) entry.getValue());
-																								}
-																								world.setBlockState(_bp, _bs, 3);
-																							}
-																						}
-																					}
-																				}
-																			}
-																		}
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							} else {
-								if ((BlockTags.getCollection().getOrCreate(new ResourceLocation(("terracota").toLowerCase(java.util.Locale.ENGLISH)))
-										.contains((world.getBlockState(new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z))))
-												.getBlock()))) {
-									if ((Math.random() < 0)) {
-										{
-											BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
-											BlockState _bs = Blocks.WHITE_TERRACOTTA.getDefaultState();
-											BlockState _bso = world.getBlockState(_bp);
-											for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-												IProperty _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
-												if (_bs.has(_property))
-													_bs = _bs.with(_property, (Comparable) entry.getValue());
-											}
-											world.setBlockState(_bp, _bs, 3);
-										}
-									} else {
-										if ((Math.random() < 0.0625)) {
-											{
-												BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
-												BlockState _bs = Blocks.ORANGE_TERRACOTTA.getDefaultState();
-												BlockState _bso = world.getBlockState(_bp);
-												for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-													IProperty _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
-													if (_bs.has(_property))
-														_bs = _bs.with(_property, (Comparable) entry.getValue());
-												}
-												world.setBlockState(_bp, _bs, 3);
-											}
-										} else {
-											if ((Math.random() < 0.125)) {
-												{
-													BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
-													BlockState _bs = Blocks.MAGENTA_TERRACOTTA.getDefaultState();
-													BlockState _bso = world.getBlockState(_bp);
-													for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-														IProperty _property = _bs.getBlock().getStateContainer()
-																.getProperty(entry.getKey().getName());
-														if (_bs.has(_property))
-															_bs = _bs.with(_property, (Comparable) entry.getValue());
-													}
-													world.setBlockState(_bp, _bs, 3);
-												}
-											} else {
-												if ((Math.random() < 0.1875)) {
-													{
-														BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
-														BlockState _bs = Blocks.LIGHT_BLUE_TERRACOTTA.getDefaultState();
-														BlockState _bso = world.getBlockState(_bp);
-														for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-															IProperty _property = _bs.getBlock().getStateContainer()
-																	.getProperty(entry.getKey().getName());
-															if (_bs.has(_property))
-																_bs = _bs.with(_property, (Comparable) entry.getValue());
-														}
-														world.setBlockState(_bp, _bs, 3);
-													}
-												} else {
-													if ((Math.random() < 0.25)) {
-														{
-															BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
-															BlockState _bs = Blocks.YELLOW_TERRACOTTA.getDefaultState();
-															BlockState _bso = world.getBlockState(_bp);
-															for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-																IProperty _property = _bs.getBlock().getStateContainer()
-																		.getProperty(entry.getKey().getName());
-																if (_bs.has(_property))
-																	_bs = _bs.with(_property, (Comparable) entry.getValue());
-															}
-															world.setBlockState(_bp, _bs, 3);
-														}
-													} else {
-														if ((Math.random() < 0.3125)) {
-															{
-																BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
-																BlockState _bs = Blocks.LIME_TERRACOTTA.getDefaultState();
-																BlockState _bso = world.getBlockState(_bp);
-																for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-																	IProperty _property = _bs.getBlock().getStateContainer()
-																			.getProperty(entry.getKey().getName());
-																	if (_bs.has(_property))
-																		_bs = _bs.with(_property, (Comparable) entry.getValue());
-																}
-																world.setBlockState(_bp, _bs, 3);
-															}
-														} else {
-															if ((Math.random() < 0.375)) {
-																{
-																	BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
-																	BlockState _bs = Blocks.PINK_TERRACOTTA.getDefaultState();
-																	BlockState _bso = world.getBlockState(_bp);
-																	for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-																		IProperty _property = _bs.getBlock().getStateContainer()
-																				.getProperty(entry.getKey().getName());
-																		if (_bs.has(_property))
-																			_bs = _bs.with(_property, (Comparable) entry.getValue());
-																	}
-																	world.setBlockState(_bp, _bs, 3);
-																}
-															} else {
-																if ((Math.random() < 0.4375)) {
-																	{
-																		BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y),
-																				(int) ((sz) + z));
-																		BlockState _bs = Blocks.GRAY_TERRACOTTA.getDefaultState();
-																		BlockState _bso = world.getBlockState(_bp);
-																		for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues()
-																				.entrySet()) {
-																			IProperty _property = _bs.getBlock().getStateContainer()
-																					.getProperty(entry.getKey().getName());
-																			if (_bs.has(_property))
-																				_bs = _bs.with(_property, (Comparable) entry.getValue());
-																		}
-																		world.setBlockState(_bp, _bs, 3);
-																	}
-																} else {
-																	if ((Math.random() < 0.5)) {
-																		{
-																			BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y),
-																					(int) ((sz) + z));
-																			BlockState _bs = Blocks.LIGHT_GRAY_TERRACOTTA.getDefaultState();
-																			BlockState _bso = world.getBlockState(_bp);
-																			for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues()
-																					.entrySet()) {
-																				IProperty _property = _bs.getBlock().getStateContainer()
-																						.getProperty(entry.getKey().getName());
-																				if (_bs.has(_property))
-																					_bs = _bs.with(_property, (Comparable) entry.getValue());
-																			}
-																			world.setBlockState(_bp, _bs, 3);
-																		}
-																	} else {
-																		if ((Math.random() < 0.5625)) {
-																			{
-																				BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y),
-																						(int) ((sz) + z));
-																				BlockState _bs = Blocks.CYAN_TERRACOTTA.getDefaultState();
-																				BlockState _bso = world.getBlockState(_bp);
-																				for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues()
-																						.entrySet()) {
-																					IProperty _property = _bs.getBlock().getStateContainer()
-																							.getProperty(entry.getKey().getName());
-																					if (_bs.has(_property))
-																						_bs = _bs.with(_property, (Comparable) entry.getValue());
-																				}
-																				world.setBlockState(_bp, _bs, 3);
-																			}
-																		} else {
-																			if ((Math.random() < 0.625)) {
-																				{
-																					BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y),
-																							(int) ((sz) + z));
-																					BlockState _bs = Blocks.PURPLE_TERRACOTTA.getDefaultState();
-																					BlockState _bso = world.getBlockState(_bp);
-																					for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso
-																							.getValues().entrySet()) {
-																						IProperty _property = _bs.getBlock().getStateContainer()
-																								.getProperty(entry.getKey().getName());
-																						if (_bs.has(_property))
-																							_bs = _bs.with(_property, (Comparable) entry.getValue());
-																					}
-																					world.setBlockState(_bp, _bs, 3);
-																				}
-																			} else {
-																				if ((Math.random() < 0.6875)) {
-																					{
-																						BlockPos _bp = new BlockPos((int) ((sx) + x),
-																								(int) ((sy) + y), (int) ((sz) + z));
-																						BlockState _bs = Blocks.BLUE_TERRACOTTA.getDefaultState();
-																						BlockState _bso = world.getBlockState(_bp);
-																						for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso
-																								.getValues().entrySet()) {
-																							IProperty _property = _bs.getBlock().getStateContainer()
-																									.getProperty(entry.getKey().getName());
-																							if (_bs.has(_property))
-																								_bs = _bs.with(_property,
-																										(Comparable) entry.getValue());
-																						}
-																						world.setBlockState(_bp, _bs, 3);
-																					}
-																				} else {
-																					if ((Math.random() < 0.75)) {
-																						{
-																							BlockPos _bp = new BlockPos((int) ((sx) + x),
-																									(int) ((sy) + y), (int) ((sz) + z));
-																							BlockState _bs = Blocks.BROWN_TERRACOTTA
-																									.getDefaultState();
-																							BlockState _bso = world.getBlockState(_bp);
-																							for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso
-																									.getValues().entrySet()) {
-																								IProperty _property = _bs.getBlock()
-																										.getStateContainer()
-																										.getProperty(entry.getKey().getName());
-																								if (_bs.has(_property))
-																									_bs = _bs.with(_property,
-																											(Comparable) entry.getValue());
-																							}
-																							world.setBlockState(_bp, _bs, 3);
-																						}
-																					} else {
-																						if ((Math.random() < 0.8125)) {
-																							{
-																								BlockPos _bp = new BlockPos((int) ((sx) + x),
-																										(int) ((sy) + y), (int) ((sz) + z));
-																								BlockState _bs = Blocks.GREEN_TERRACOTTA
+																								BlockState _bs = RedDanceFloorBlock.block
 																										.getDefaultState();
 																								BlockState _bso = world.getBlockState(_bp);
 																								for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso
@@ -1313,252 +1083,10 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																								world.setBlockState(_bp, _bs, 3);
 																							}
 																						} else {
-																							if ((Math.random() < 0.875)) {
-																								{
-																									BlockPos _bp = new BlockPos((int) ((sx) + x),
-																											(int) ((sy) + y), (int) ((sz) + z));
-																									BlockState _bs = Blocks.RED_TERRACOTTA
-																											.getDefaultState();
-																									BlockState _bso = world.getBlockState(_bp);
-																									for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso
-																											.getValues().entrySet()) {
-																										IProperty _property = _bs.getBlock()
-																												.getStateContainer().getProperty(
-																														entry.getKey().getName());
-																										if (_bs.has(_property))
-																											_bs = _bs.with(_property,
-																													(Comparable) entry.getValue());
-																									}
-																									world.setBlockState(_bp, _bs, 3);
-																								}
-																							} else {
-																								{
-																									BlockPos _bp = new BlockPos((int) ((sx) + x),
-																											(int) ((sy) + y), (int) ((sz) + z));
-																									BlockState _bs = Blocks.BLACK_TERRACOTTA
-																											.getDefaultState();
-																									BlockState _bso = world.getBlockState(_bp);
-																									for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso
-																											.getValues().entrySet()) {
-																										IProperty _property = _bs.getBlock()
-																												.getStateContainer().getProperty(
-																														entry.getKey().getName());
-																										if (_bs.has(_property))
-																											_bs = _bs.with(_property,
-																													(Comparable) entry.getValue());
-																									}
-																									world.setBlockState(_bp, _bs, 3);
-																								}
-																							}
-																						}
-																					}
-																				}
-																			}
-																		}
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								} else {
-									if ((BlockTags.getCollection()
-											.getOrCreate(new ResourceLocation(("glazed_terracota").toLowerCase(java.util.Locale.ENGLISH)))
-											.contains((world.getBlockState(new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z))))
-													.getBlock()))) {
-										if ((Math.random() < 0)) {
-											{
-												BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
-												BlockState _bs = Blocks.WHITE_GLAZED_TERRACOTTA.getDefaultState();
-												BlockState _bso = world.getBlockState(_bp);
-												for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-													IProperty _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
-													if (_bs.has(_property))
-														_bs = _bs.with(_property, (Comparable) entry.getValue());
-												}
-												world.setBlockState(_bp, _bs, 3);
-											}
-										} else {
-											if ((Math.random() < 0.0625)) {
-												{
-													BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
-													BlockState _bs = Blocks.ORANGE_GLAZED_TERRACOTTA.getDefaultState();
-													BlockState _bso = world.getBlockState(_bp);
-													for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-														IProperty _property = _bs.getBlock().getStateContainer()
-																.getProperty(entry.getKey().getName());
-														if (_bs.has(_property))
-															_bs = _bs.with(_property, (Comparable) entry.getValue());
-													}
-													world.setBlockState(_bp, _bs, 3);
-												}
-											} else {
-												if ((Math.random() < 0.125)) {
-													{
-														BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
-														BlockState _bs = Blocks.MAGENTA_GLAZED_TERRACOTTA.getDefaultState();
-														BlockState _bso = world.getBlockState(_bp);
-														for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-															IProperty _property = _bs.getBlock().getStateContainer()
-																	.getProperty(entry.getKey().getName());
-															if (_bs.has(_property))
-																_bs = _bs.with(_property, (Comparable) entry.getValue());
-														}
-														world.setBlockState(_bp, _bs, 3);
-													}
-												} else {
-													if ((Math.random() < 0.1875)) {
-														{
-															BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
-															BlockState _bs = Blocks.LIGHT_BLUE_GLAZED_TERRACOTTA.getDefaultState();
-															BlockState _bso = world.getBlockState(_bp);
-															for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-																IProperty _property = _bs.getBlock().getStateContainer()
-																		.getProperty(entry.getKey().getName());
-																if (_bs.has(_property))
-																	_bs = _bs.with(_property, (Comparable) entry.getValue());
-															}
-															world.setBlockState(_bp, _bs, 3);
-														}
-													} else {
-														if ((Math.random() < 0.25)) {
-															{
-																BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
-																BlockState _bs = Blocks.YELLOW_GLAZED_TERRACOTTA.getDefaultState();
-																BlockState _bso = world.getBlockState(_bp);
-																for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-																	IProperty _property = _bs.getBlock().getStateContainer()
-																			.getProperty(entry.getKey().getName());
-																	if (_bs.has(_property))
-																		_bs = _bs.with(_property, (Comparable) entry.getValue());
-																}
-																world.setBlockState(_bp, _bs, 3);
-															}
-														} else {
-															if ((Math.random() < 0.3125)) {
-																{
-																	BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
-																	BlockState _bs = Blocks.LIME_GLAZED_TERRACOTTA.getDefaultState();
-																	BlockState _bso = world.getBlockState(_bp);
-																	for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-																		IProperty _property = _bs.getBlock().getStateContainer()
-																				.getProperty(entry.getKey().getName());
-																		if (_bs.has(_property))
-																			_bs = _bs.with(_property, (Comparable) entry.getValue());
-																	}
-																	world.setBlockState(_bp, _bs, 3);
-																}
-															} else {
-																if ((Math.random() < 0.375)) {
-																	{
-																		BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y),
-																				(int) ((sz) + z));
-																		BlockState _bs = Blocks.PINK_GLAZED_TERRACOTTA.getDefaultState();
-																		BlockState _bso = world.getBlockState(_bp);
-																		for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues()
-																				.entrySet()) {
-																			IProperty _property = _bs.getBlock().getStateContainer()
-																					.getProperty(entry.getKey().getName());
-																			if (_bs.has(_property))
-																				_bs = _bs.with(_property, (Comparable) entry.getValue());
-																		}
-																		world.setBlockState(_bp, _bs, 3);
-																	}
-																} else {
-																	if ((Math.random() < 0.4375)) {
-																		{
-																			BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y),
-																					(int) ((sz) + z));
-																			BlockState _bs = Blocks.GRAY_GLAZED_TERRACOTTA.getDefaultState();
-																			BlockState _bso = world.getBlockState(_bp);
-																			for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues()
-																					.entrySet()) {
-																				IProperty _property = _bs.getBlock().getStateContainer()
-																						.getProperty(entry.getKey().getName());
-																				if (_bs.has(_property))
-																					_bs = _bs.with(_property, (Comparable) entry.getValue());
-																			}
-																			world.setBlockState(_bp, _bs, 3);
-																		}
-																	} else {
-																		if ((Math.random() < 0.5)) {
-																			{
-																				BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y),
-																						(int) ((sz) + z));
-																				BlockState _bs = Blocks.LIGHT_GRAY_GLAZED_TERRACOTTA
-																						.getDefaultState();
-																				BlockState _bso = world.getBlockState(_bp);
-																				for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues()
-																						.entrySet()) {
-																					IProperty _property = _bs.getBlock().getStateContainer()
-																							.getProperty(entry.getKey().getName());
-																					if (_bs.has(_property))
-																						_bs = _bs.with(_property, (Comparable) entry.getValue());
-																				}
-																				world.setBlockState(_bp, _bs, 3);
-																			}
-																		} else {
-																			if ((Math.random() < 0.5625)) {
-																				{
-																					BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y),
-																							(int) ((sz) + z));
-																					BlockState _bs = Blocks.CYAN_GLAZED_TERRACOTTA.getDefaultState();
-																					BlockState _bso = world.getBlockState(_bp);
-																					for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso
-																							.getValues().entrySet()) {
-																						IProperty _property = _bs.getBlock().getStateContainer()
-																								.getProperty(entry.getKey().getName());
-																						if (_bs.has(_property))
-																							_bs = _bs.with(_property, (Comparable) entry.getValue());
-																					}
-																					world.setBlockState(_bp, _bs, 3);
-																				}
-																			} else {
-																				if ((Math.random() < 0.625)) {
-																					{
-																						BlockPos _bp = new BlockPos((int) ((sx) + x),
-																								(int) ((sy) + y), (int) ((sz) + z));
-																						BlockState _bs = Blocks.PURPLE_GLAZED_TERRACOTTA
-																								.getDefaultState();
-																						BlockState _bso = world.getBlockState(_bp);
-																						for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso
-																								.getValues().entrySet()) {
-																							IProperty _property = _bs.getBlock().getStateContainer()
-																									.getProperty(entry.getKey().getName());
-																							if (_bs.has(_property))
-																								_bs = _bs.with(_property,
-																										(Comparable) entry.getValue());
-																						}
-																						world.setBlockState(_bp, _bs, 3);
-																					}
-																				} else {
-																					if ((Math.random() < 0.6875)) {
-																						{
-																							BlockPos _bp = new BlockPos((int) ((sx) + x),
-																									(int) ((sy) + y), (int) ((sz) + z));
-																							BlockState _bs = Blocks.BLUE_GLAZED_TERRACOTTA
-																									.getDefaultState();
-																							BlockState _bso = world.getBlockState(_bp);
-																							for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso
-																									.getValues().entrySet()) {
-																								IProperty _property = _bs.getBlock()
-																										.getStateContainer()
-																										.getProperty(entry.getKey().getName());
-																								if (_bs.has(_property))
-																									_bs = _bs.with(_property,
-																											(Comparable) entry.getValue());
-																							}
-																							world.setBlockState(_bp, _bs, 3);
-																						}
-																					} else {
-																						if ((Math.random() < 0.75)) {
 																							{
 																								BlockPos _bp = new BlockPos((int) ((sx) + x),
 																										(int) ((sy) + y), (int) ((sz) + z));
-																								BlockState _bs = Blocks.BROWN_GLAZED_TERRACOTTA
+																								BlockState _bs = BlackDanceFloorBlock.block
 																										.getDefaultState();
 																								BlockState _bso = world.getBlockState(_bp);
 																								for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso
@@ -1571,671 +1099,6 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																												(Comparable) entry.getValue());
 																								}
 																								world.setBlockState(_bp, _bs, 3);
-																							}
-																						} else {
-																							if ((Math.random() < 0.8125)) {
-																								{
-																									BlockPos _bp = new BlockPos((int) ((sx) + x),
-																											(int) ((sy) + y), (int) ((sz) + z));
-																									BlockState _bs = Blocks.GREEN_GLAZED_TERRACOTTA
-																											.getDefaultState();
-																									BlockState _bso = world.getBlockState(_bp);
-																									for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso
-																											.getValues().entrySet()) {
-																										IProperty _property = _bs.getBlock()
-																												.getStateContainer().getProperty(
-																														entry.getKey().getName());
-																										if (_bs.has(_property))
-																											_bs = _bs.with(_property,
-																													(Comparable) entry.getValue());
-																									}
-																									world.setBlockState(_bp, _bs, 3);
-																								}
-																							} else {
-																								if ((Math.random() < 0.875)) {
-																									{
-																										BlockPos _bp = new BlockPos((int) ((sx) + x),
-																												(int) ((sy) + y), (int) ((sz) + z));
-																										BlockState _bs = Blocks.RED_GLAZED_TERRACOTTA
-																												.getDefaultState();
-																										BlockState _bso = world.getBlockState(_bp);
-																										for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso
-																												.getValues().entrySet()) {
-																											IProperty _property = _bs.getBlock()
-																													.getStateContainer().getProperty(
-																															entry.getKey().getName());
-																											if (_bs.has(_property))
-																												_bs = _bs.with(_property,
-																														(Comparable) entry
-																																.getValue());
-																										}
-																										world.setBlockState(_bp, _bs, 3);
-																									}
-																								} else {
-																									{
-																										BlockPos _bp = new BlockPos((int) ((sx) + x),
-																												(int) ((sy) + y), (int) ((sz) + z));
-																										BlockState _bs = Blocks.BLACK_GLAZED_TERRACOTTA
-																												.getDefaultState();
-																										BlockState _bso = world.getBlockState(_bp);
-																										for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso
-																												.getValues().entrySet()) {
-																											IProperty _property = _bs.getBlock()
-																													.getStateContainer().getProperty(
-																															entry.getKey().getName());
-																											if (_bs.has(_property))
-																												_bs = _bs.with(_property,
-																														(Comparable) entry
-																																.getValue());
-																										}
-																										world.setBlockState(_bp, _bs, 3);
-																									}
-																								}
-																							}
-																						}
-																					}
-																				}
-																			}
-																		}
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									} else {
-										if ((BlockTags.getCollection()
-												.getOrCreate(new ResourceLocation(("concrete_powder").toLowerCase(java.util.Locale.ENGLISH)))
-												.contains((world.getBlockState(new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z))))
-														.getBlock()))) {
-											if ((Math.random() < 0)) {
-												{
-													BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
-													BlockState _bs = Blocks.WHITE_CONCRETE_POWDER.getDefaultState();
-													BlockState _bso = world.getBlockState(_bp);
-													for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-														IProperty _property = _bs.getBlock().getStateContainer()
-																.getProperty(entry.getKey().getName());
-														if (_bs.has(_property))
-															_bs = _bs.with(_property, (Comparable) entry.getValue());
-													}
-													world.setBlockState(_bp, _bs, 3);
-												}
-											} else {
-												if ((Math.random() < 0.0625)) {
-													{
-														BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
-														BlockState _bs = Blocks.ORANGE_CONCRETE_POWDER.getDefaultState();
-														BlockState _bso = world.getBlockState(_bp);
-														for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-															IProperty _property = _bs.getBlock().getStateContainer()
-																	.getProperty(entry.getKey().getName());
-															if (_bs.has(_property))
-																_bs = _bs.with(_property, (Comparable) entry.getValue());
-														}
-														world.setBlockState(_bp, _bs, 3);
-													}
-												} else {
-													if ((Math.random() < 0.125)) {
-														{
-															BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
-															BlockState _bs = Blocks.MAGENTA_CONCRETE_POWDER.getDefaultState();
-															BlockState _bso = world.getBlockState(_bp);
-															for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-																IProperty _property = _bs.getBlock().getStateContainer()
-																		.getProperty(entry.getKey().getName());
-																if (_bs.has(_property))
-																	_bs = _bs.with(_property, (Comparable) entry.getValue());
-															}
-															world.setBlockState(_bp, _bs, 3);
-														}
-													} else {
-														if ((Math.random() < 0.1875)) {
-															{
-																BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
-																BlockState _bs = Blocks.LIGHT_BLUE_CONCRETE_POWDER.getDefaultState();
-																BlockState _bso = world.getBlockState(_bp);
-																for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-																	IProperty _property = _bs.getBlock().getStateContainer()
-																			.getProperty(entry.getKey().getName());
-																	if (_bs.has(_property))
-																		_bs = _bs.with(_property, (Comparable) entry.getValue());
-																}
-																world.setBlockState(_bp, _bs, 3);
-															}
-														} else {
-															if ((Math.random() < 0.25)) {
-																{
-																	BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
-																	BlockState _bs = Blocks.YELLOW_CONCRETE_POWDER.getDefaultState();
-																	BlockState _bso = world.getBlockState(_bp);
-																	for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-																		IProperty _property = _bs.getBlock().getStateContainer()
-																				.getProperty(entry.getKey().getName());
-																		if (_bs.has(_property))
-																			_bs = _bs.with(_property, (Comparable) entry.getValue());
-																	}
-																	world.setBlockState(_bp, _bs, 3);
-																}
-															} else {
-																if ((Math.random() < 0.3125)) {
-																	{
-																		BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y),
-																				(int) ((sz) + z));
-																		BlockState _bs = Blocks.LIME_CONCRETE_POWDER.getDefaultState();
-																		BlockState _bso = world.getBlockState(_bp);
-																		for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues()
-																				.entrySet()) {
-																			IProperty _property = _bs.getBlock().getStateContainer()
-																					.getProperty(entry.getKey().getName());
-																			if (_bs.has(_property))
-																				_bs = _bs.with(_property, (Comparable) entry.getValue());
-																		}
-																		world.setBlockState(_bp, _bs, 3);
-																	}
-																} else {
-																	if ((Math.random() < 0.375)) {
-																		{
-																			BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y),
-																					(int) ((sz) + z));
-																			BlockState _bs = Blocks.PINK_CONCRETE_POWDER.getDefaultState();
-																			BlockState _bso = world.getBlockState(_bp);
-																			for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues()
-																					.entrySet()) {
-																				IProperty _property = _bs.getBlock().getStateContainer()
-																						.getProperty(entry.getKey().getName());
-																				if (_bs.has(_property))
-																					_bs = _bs.with(_property, (Comparable) entry.getValue());
-																			}
-																			world.setBlockState(_bp, _bs, 3);
-																		}
-																	} else {
-																		if ((Math.random() < 0.4375)) {
-																			{
-																				BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y),
-																						(int) ((sz) + z));
-																				BlockState _bs = Blocks.GRAY_CONCRETE_POWDER.getDefaultState();
-																				BlockState _bso = world.getBlockState(_bp);
-																				for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues()
-																						.entrySet()) {
-																					IProperty _property = _bs.getBlock().getStateContainer()
-																							.getProperty(entry.getKey().getName());
-																					if (_bs.has(_property))
-																						_bs = _bs.with(_property, (Comparable) entry.getValue());
-																				}
-																				world.setBlockState(_bp, _bs, 3);
-																			}
-																		} else {
-																			if ((Math.random() < 0.5)) {
-																				{
-																					BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y),
-																							(int) ((sz) + z));
-																					BlockState _bs = Blocks.LIGHT_GRAY_CONCRETE_POWDER
-																							.getDefaultState();
-																					BlockState _bso = world.getBlockState(_bp);
-																					for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso
-																							.getValues().entrySet()) {
-																						IProperty _property = _bs.getBlock().getStateContainer()
-																								.getProperty(entry.getKey().getName());
-																						if (_bs.has(_property))
-																							_bs = _bs.with(_property, (Comparable) entry.getValue());
-																					}
-																					world.setBlockState(_bp, _bs, 3);
-																				}
-																			} else {
-																				if ((Math.random() < 0.5625)) {
-																					{
-																						BlockPos _bp = new BlockPos((int) ((sx) + x),
-																								(int) ((sy) + y), (int) ((sz) + z));
-																						BlockState _bs = Blocks.CYAN_CONCRETE_POWDER
-																								.getDefaultState();
-																						BlockState _bso = world.getBlockState(_bp);
-																						for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso
-																								.getValues().entrySet()) {
-																							IProperty _property = _bs.getBlock().getStateContainer()
-																									.getProperty(entry.getKey().getName());
-																							if (_bs.has(_property))
-																								_bs = _bs.with(_property,
-																										(Comparable) entry.getValue());
-																						}
-																						world.setBlockState(_bp, _bs, 3);
-																					}
-																				} else {
-																					if ((Math.random() < 0.625)) {
-																						{
-																							BlockPos _bp = new BlockPos((int) ((sx) + x),
-																									(int) ((sy) + y), (int) ((sz) + z));
-																							BlockState _bs = Blocks.PURPLE_CONCRETE_POWDER
-																									.getDefaultState();
-																							BlockState _bso = world.getBlockState(_bp);
-																							for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso
-																									.getValues().entrySet()) {
-																								IProperty _property = _bs.getBlock()
-																										.getStateContainer()
-																										.getProperty(entry.getKey().getName());
-																								if (_bs.has(_property))
-																									_bs = _bs.with(_property,
-																											(Comparable) entry.getValue());
-																							}
-																							world.setBlockState(_bp, _bs, 3);
-																						}
-																					} else {
-																						if ((Math.random() < 0.6875)) {
-																							{
-																								BlockPos _bp = new BlockPos((int) ((sx) + x),
-																										(int) ((sy) + y), (int) ((sz) + z));
-																								BlockState _bs = Blocks.BLUE_CONCRETE_POWDER
-																										.getDefaultState();
-																								BlockState _bso = world.getBlockState(_bp);
-																								for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso
-																										.getValues().entrySet()) {
-																									IProperty _property = _bs.getBlock()
-																											.getStateContainer()
-																											.getProperty(entry.getKey().getName());
-																									if (_bs.has(_property))
-																										_bs = _bs.with(_property,
-																												(Comparable) entry.getValue());
-																								}
-																								world.setBlockState(_bp, _bs, 3);
-																							}
-																						} else {
-																							if ((Math.random() < 0.75)) {
-																								{
-																									BlockPos _bp = new BlockPos((int) ((sx) + x),
-																											(int) ((sy) + y), (int) ((sz) + z));
-																									BlockState _bs = Blocks.BROWN_CONCRETE_POWDER
-																											.getDefaultState();
-																									BlockState _bso = world.getBlockState(_bp);
-																									for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso
-																											.getValues().entrySet()) {
-																										IProperty _property = _bs.getBlock()
-																												.getStateContainer().getProperty(
-																														entry.getKey().getName());
-																										if (_bs.has(_property))
-																											_bs = _bs.with(_property,
-																													(Comparable) entry.getValue());
-																									}
-																									world.setBlockState(_bp, _bs, 3);
-																								}
-																							} else {
-																								if ((Math.random() < 0.8125)) {
-																									{
-																										BlockPos _bp = new BlockPos((int) ((sx) + x),
-																												(int) ((sy) + y), (int) ((sz) + z));
-																										BlockState _bs = Blocks.GREEN_CONCRETE_POWDER
-																												.getDefaultState();
-																										BlockState _bso = world.getBlockState(_bp);
-																										for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso
-																												.getValues().entrySet()) {
-																											IProperty _property = _bs.getBlock()
-																													.getStateContainer().getProperty(
-																															entry.getKey().getName());
-																											if (_bs.has(_property))
-																												_bs = _bs.with(_property,
-																														(Comparable) entry
-																																.getValue());
-																										}
-																										world.setBlockState(_bp, _bs, 3);
-																									}
-																								} else {
-																									if ((Math.random() < 0.875)) {
-																										{
-																											BlockPos _bp = new BlockPos(
-																													(int) ((sx) + x),
-																													(int) ((sy) + y),
-																													(int) ((sz) + z));
-																											BlockState _bs = Blocks.RED_CONCRETE_POWDER
-																													.getDefaultState();
-																											BlockState _bso = world
-																													.getBlockState(_bp);
-																											for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso
-																													.getValues().entrySet()) {
-																												IProperty _property = _bs.getBlock()
-																														.getStateContainer()
-																														.getProperty(entry.getKey()
-																																.getName());
-																												if (_bs.has(_property))
-																													_bs = _bs.with(_property,
-																															(Comparable) entry
-																																	.getValue());
-																											}
-																											world.setBlockState(_bp, _bs, 3);
-																										}
-																									} else {
-																										{
-																											BlockPos _bp = new BlockPos(
-																													(int) ((sx) + x),
-																													(int) ((sy) + y),
-																													(int) ((sz) + z));
-																											BlockState _bs = Blocks.BLACK_CONCRETE_POWDER
-																													.getDefaultState();
-																											BlockState _bso = world
-																													.getBlockState(_bp);
-																											for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso
-																													.getValues().entrySet()) {
-																												IProperty _property = _bs.getBlock()
-																														.getStateContainer()
-																														.getProperty(entry.getKey()
-																																.getName());
-																												if (_bs.has(_property))
-																													_bs = _bs.with(_property,
-																															(Comparable) entry
-																																	.getValue());
-																											}
-																											world.setBlockState(_bp, _bs, 3);
-																										}
-																									}
-																								}
-																							}
-																						}
-																					}
-																				}
-																			}
-																		}
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										} else {
-											if ((BlockTags.getCollection()
-													.getOrCreate(new ResourceLocation(("concrete").toLowerCase(java.util.Locale.ENGLISH))).contains(
-															(world.getBlockState(new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z))))
-																	.getBlock()))) {
-												if ((Math.random() < 0)) {
-													{
-														BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
-														BlockState _bs = Blocks.WHITE_CONCRETE.getDefaultState();
-														BlockState _bso = world.getBlockState(_bp);
-														for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-															IProperty _property = _bs.getBlock().getStateContainer()
-																	.getProperty(entry.getKey().getName());
-															if (_bs.has(_property))
-																_bs = _bs.with(_property, (Comparable) entry.getValue());
-														}
-														world.setBlockState(_bp, _bs, 3);
-													}
-												} else {
-													if ((Math.random() < 0.0625)) {
-														{
-															BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
-															BlockState _bs = Blocks.ORANGE_CONCRETE.getDefaultState();
-															BlockState _bso = world.getBlockState(_bp);
-															for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-																IProperty _property = _bs.getBlock().getStateContainer()
-																		.getProperty(entry.getKey().getName());
-																if (_bs.has(_property))
-																	_bs = _bs.with(_property, (Comparable) entry.getValue());
-															}
-															world.setBlockState(_bp, _bs, 3);
-														}
-													} else {
-														if ((Math.random() < 0.125)) {
-															{
-																BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
-																BlockState _bs = Blocks.MAGENTA_CONCRETE.getDefaultState();
-																BlockState _bso = world.getBlockState(_bp);
-																for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-																	IProperty _property = _bs.getBlock().getStateContainer()
-																			.getProperty(entry.getKey().getName());
-																	if (_bs.has(_property))
-																		_bs = _bs.with(_property, (Comparable) entry.getValue());
-																}
-																world.setBlockState(_bp, _bs, 3);
-															}
-														} else {
-															if ((Math.random() < 0.1875)) {
-																{
-																	BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
-																	BlockState _bs = Blocks.LIGHT_BLUE_CONCRETE.getDefaultState();
-																	BlockState _bso = world.getBlockState(_bp);
-																	for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-																		IProperty _property = _bs.getBlock().getStateContainer()
-																				.getProperty(entry.getKey().getName());
-																		if (_bs.has(_property))
-																			_bs = _bs.with(_property, (Comparable) entry.getValue());
-																	}
-																	world.setBlockState(_bp, _bs, 3);
-																}
-															} else {
-																if ((Math.random() < 0.25)) {
-																	{
-																		BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y),
-																				(int) ((sz) + z));
-																		BlockState _bs = Blocks.YELLOW_CONCRETE.getDefaultState();
-																		BlockState _bso = world.getBlockState(_bp);
-																		for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues()
-																				.entrySet()) {
-																			IProperty _property = _bs.getBlock().getStateContainer()
-																					.getProperty(entry.getKey().getName());
-																			if (_bs.has(_property))
-																				_bs = _bs.with(_property, (Comparable) entry.getValue());
-																		}
-																		world.setBlockState(_bp, _bs, 3);
-																	}
-																} else {
-																	if ((Math.random() < 0.3125)) {
-																		{
-																			BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y),
-																					(int) ((sz) + z));
-																			BlockState _bs = Blocks.LIME_CONCRETE.getDefaultState();
-																			BlockState _bso = world.getBlockState(_bp);
-																			for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues()
-																					.entrySet()) {
-																				IProperty _property = _bs.getBlock().getStateContainer()
-																						.getProperty(entry.getKey().getName());
-																				if (_bs.has(_property))
-																					_bs = _bs.with(_property, (Comparable) entry.getValue());
-																			}
-																			world.setBlockState(_bp, _bs, 3);
-																		}
-																	} else {
-																		if ((Math.random() < 0.375)) {
-																			{
-																				BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y),
-																						(int) ((sz) + z));
-																				BlockState _bs = Blocks.PINK_CONCRETE.getDefaultState();
-																				BlockState _bso = world.getBlockState(_bp);
-																				for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues()
-																						.entrySet()) {
-																					IProperty _property = _bs.getBlock().getStateContainer()
-																							.getProperty(entry.getKey().getName());
-																					if (_bs.has(_property))
-																						_bs = _bs.with(_property, (Comparable) entry.getValue());
-																				}
-																				world.setBlockState(_bp, _bs, 3);
-																			}
-																		} else {
-																			if ((Math.random() < 0.4375)) {
-																				{
-																					BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y),
-																							(int) ((sz) + z));
-																					BlockState _bs = Blocks.GRAY_CONCRETE.getDefaultState();
-																					BlockState _bso = world.getBlockState(_bp);
-																					for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso
-																							.getValues().entrySet()) {
-																						IProperty _property = _bs.getBlock().getStateContainer()
-																								.getProperty(entry.getKey().getName());
-																						if (_bs.has(_property))
-																							_bs = _bs.with(_property, (Comparable) entry.getValue());
-																					}
-																					world.setBlockState(_bp, _bs, 3);
-																				}
-																			} else {
-																				if ((Math.random() < 0.5)) {
-																					{
-																						BlockPos _bp = new BlockPos((int) ((sx) + x),
-																								(int) ((sy) + y), (int) ((sz) + z));
-																						BlockState _bs = Blocks.LIGHT_GRAY_CONCRETE.getDefaultState();
-																						BlockState _bso = world.getBlockState(_bp);
-																						for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso
-																								.getValues().entrySet()) {
-																							IProperty _property = _bs.getBlock().getStateContainer()
-																									.getProperty(entry.getKey().getName());
-																							if (_bs.has(_property))
-																								_bs = _bs.with(_property,
-																										(Comparable) entry.getValue());
-																						}
-																						world.setBlockState(_bp, _bs, 3);
-																					}
-																				} else {
-																					if ((Math.random() < 0.5625)) {
-																						{
-																							BlockPos _bp = new BlockPos((int) ((sx) + x),
-																									(int) ((sy) + y), (int) ((sz) + z));
-																							BlockState _bs = Blocks.CYAN_CONCRETE.getDefaultState();
-																							BlockState _bso = world.getBlockState(_bp);
-																							for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso
-																									.getValues().entrySet()) {
-																								IProperty _property = _bs.getBlock()
-																										.getStateContainer()
-																										.getProperty(entry.getKey().getName());
-																								if (_bs.has(_property))
-																									_bs = _bs.with(_property,
-																											(Comparable) entry.getValue());
-																							}
-																							world.setBlockState(_bp, _bs, 3);
-																						}
-																					} else {
-																						if ((Math.random() < 0.625)) {
-																							{
-																								BlockPos _bp = new BlockPos((int) ((sx) + x),
-																										(int) ((sy) + y), (int) ((sz) + z));
-																								BlockState _bs = Blocks.PURPLE_CONCRETE
-																										.getDefaultState();
-																								BlockState _bso = world.getBlockState(_bp);
-																								for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso
-																										.getValues().entrySet()) {
-																									IProperty _property = _bs.getBlock()
-																											.getStateContainer()
-																											.getProperty(entry.getKey().getName());
-																									if (_bs.has(_property))
-																										_bs = _bs.with(_property,
-																												(Comparable) entry.getValue());
-																								}
-																								world.setBlockState(_bp, _bs, 3);
-																							}
-																						} else {
-																							if ((Math.random() < 0.6875)) {
-																								{
-																									BlockPos _bp = new BlockPos((int) ((sx) + x),
-																											(int) ((sy) + y), (int) ((sz) + z));
-																									BlockState _bs = Blocks.BLUE_CONCRETE
-																											.getDefaultState();
-																									BlockState _bso = world.getBlockState(_bp);
-																									for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso
-																											.getValues().entrySet()) {
-																										IProperty _property = _bs.getBlock()
-																												.getStateContainer().getProperty(
-																														entry.getKey().getName());
-																										if (_bs.has(_property))
-																											_bs = _bs.with(_property,
-																													(Comparable) entry.getValue());
-																									}
-																									world.setBlockState(_bp, _bs, 3);
-																								}
-																							} else {
-																								if ((Math.random() < 0.75)) {
-																									{
-																										BlockPos _bp = new BlockPos((int) ((sx) + x),
-																												(int) ((sy) + y), (int) ((sz) + z));
-																										BlockState _bs = Blocks.BROWN_CONCRETE
-																												.getDefaultState();
-																										BlockState _bso = world.getBlockState(_bp);
-																										for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso
-																												.getValues().entrySet()) {
-																											IProperty _property = _bs.getBlock()
-																													.getStateContainer().getProperty(
-																															entry.getKey().getName());
-																											if (_bs.has(_property))
-																												_bs = _bs.with(_property,
-																														(Comparable) entry
-																																.getValue());
-																										}
-																										world.setBlockState(_bp, _bs, 3);
-																									}
-																								} else {
-																									if ((Math.random() < 0.8125)) {
-																										{
-																											BlockPos _bp = new BlockPos(
-																													(int) ((sx) + x),
-																													(int) ((sy) + y),
-																													(int) ((sz) + z));
-																											BlockState _bs = Blocks.GREEN_CONCRETE
-																													.getDefaultState();
-																											BlockState _bso = world
-																													.getBlockState(_bp);
-																											for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso
-																													.getValues().entrySet()) {
-																												IProperty _property = _bs.getBlock()
-																														.getStateContainer()
-																														.getProperty(entry.getKey()
-																																.getName());
-																												if (_bs.has(_property))
-																													_bs = _bs.with(_property,
-																															(Comparable) entry
-																																	.getValue());
-																											}
-																											world.setBlockState(_bp, _bs, 3);
-																										}
-																									} else {
-																										if ((Math.random() < 0.875)) {
-																											{
-																												BlockPos _bp = new BlockPos(
-																														(int) ((sx) + x),
-																														(int) ((sy) + y),
-																														(int) ((sz) + z));
-																												BlockState _bs = Blocks.RED_CONCRETE
-																														.getDefaultState();
-																												BlockState _bso = world
-																														.getBlockState(_bp);
-																												for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso
-																														.getValues().entrySet()) {
-																													IProperty _property = _bs
-																															.getBlock()
-																															.getStateContainer()
-																															.getProperty(entry
-																																	.getKey()
-																																	.getName());
-																													if (_bs.has(_property))
-																														_bs = _bs.with(_property,
-																																(Comparable) entry
-																																		.getValue());
-																												}
-																												world.setBlockState(_bp, _bs, 3);
-																											}
-																										} else {
-																											{
-																												BlockPos _bp = new BlockPos(
-																														(int) ((sx) + x),
-																														(int) ((sy) + y),
-																														(int) ((sz) + z));
-																												BlockState _bs = Blocks.BLACK_CONCRETE
-																														.getDefaultState();
-																												BlockState _bso = world
-																														.getBlockState(_bp);
-																												for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso
-																														.getValues().entrySet()) {
-																													IProperty _property = _bs
-																															.getBlock()
-																															.getStateContainer()
-																															.getProperty(entry
-																																	.getKey()
-																																	.getName());
-																													if (_bs.has(_property))
-																														_bs = _bs.with(_property,
-																																(Comparable) entry
-																																		.getValue());
-																												}
-																												world.setBlockState(_bp, _bs, 3);
-																											}
-																										}
-																									}
-																								}
 																							}
 																						}
 																					}
@@ -2294,6 +1157,33 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 					}
 				}
 			} else {
+				sx = (double) (-10);
+				for (int index12 = 0; index12 < (int) (21); index12++) {
+					sy = (double) (-10);
+					for (int index13 = 0; index13 < (int) (21); index13++) {
+						sz = (double) (-10);
+						for (int index14 = 0; index14 < (int) (21); index14++) {
+							if ((BlockTags.getCollection()
+									.getOrCreate(new ResourceLocation(("forge:dance_floor_tag").toLowerCase(java.util.Locale.ENGLISH))).contains(
+											(world.getBlockState(new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z)))).getBlock()))) {
+								{
+									BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
+									BlockState _bs = DanceFloorBlock.block.getDefaultState();
+									BlockState _bso = world.getBlockState(_bp);
+									for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
+										IProperty _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
+										if (_bs.has(_property))
+											_bs = _bs.with(_property, (Comparable) entry.getValue());
+									}
+									world.setBlockState(_bp, _bs, 3);
+								}
+							}
+							sz = (double) ((sz) + 1);
+						}
+						sy = (double) ((sy) + 1);
+					}
+					sx = (double) ((sx) + 1);
+				}
 				if (!world.getWorld().isRemote) {
 					world.playSound(null, new BlockPos((int) x, (int) y, (int) z), (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
 							.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")), SoundCategory.NEUTRAL, (float) 1, (float) 1);
