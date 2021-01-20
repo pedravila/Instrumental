@@ -18,11 +18,11 @@ import net.mcreator.instrumental.InstrumentalModElements;
 import java.util.List;
 
 @InstrumentalModElements.ModElement.Tag
-public class PartyMelodyItem extends InstrumentalModElements.ModElement {
-	@ObjectHolder("instrumental:party_melody")
+public class FlyingMelodyItem extends InstrumentalModElements.ModElement {
+	@ObjectHolder("instrumental:flying_melody")
 	public static final Item block = null;
-	public PartyMelodyItem(InstrumentalModElements instance) {
-		super(instance, 249);
+	public FlyingMelodyItem(InstrumentalModElements instance) {
+		super(instance, 268);
 	}
 
 	@Override
@@ -32,7 +32,7 @@ public class PartyMelodyItem extends InstrumentalModElements.ModElement {
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			super(new Item.Properties().group(RangedInstrumentsTabItemGroup.tab).maxStackSize(1).rarity(Rarity.RARE));
-			setRegistryName("party_melody");
+			setRegistryName("flying_melody");
 		}
 
 		@Override
@@ -53,7 +53,7 @@ public class PartyMelodyItem extends InstrumentalModElements.ModElement {
 		@Override
 		public void addInformation(ItemStack itemstack, World world, List<ITextComponent> list, ITooltipFlag flag) {
 			super.addInformation(itemstack, world, list, flag);
-			list.add(new StringTextComponent("\u00A77 Get this party started!"));
+			list.add(new StringTextComponent("\u00A77 Time to get creative"));
 		}
 	}
 }

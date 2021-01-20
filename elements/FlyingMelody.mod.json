@@ -3,9 +3,9 @@
   "_type": "item",
   "definition": {
     "renderType": 0,
-    "texture": "party_melody",
+    "texture": "flying_melody",
     "customModelName": "Normal",
-    "name": "Party Melody",
+    "name": "Flying Melody",
     "rarity": "RARE",
     "creativeTab": {
       "value": "CUSTOM:RangedInstrumentsTab"
@@ -24,7 +24,7 @@
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
     "specialInfo": [
-      "§7 Get this party started!"
+      "§7 Time to get creative"
     ],
     "hasGlow": false,
     "guiBoundTo": "<NONE>",

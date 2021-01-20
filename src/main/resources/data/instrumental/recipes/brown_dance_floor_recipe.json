@@ -1,0 +1,42 @@
+{
+  "group": "instrumental",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "instrumental:dance_floor"
+    },
+    "1": {
+      "item": "instrumental:dance_floor"
+    },
+    "2": {
+      "item": "instrumental:dance_floor"
+    },
+    "3": {
+      "item": "instrumental:dance_floor"
+    },
+    "4": {
+      "item": "minecraft:brown_dye"
+    },
+    "5": {
+      "item": "instrumental:dance_floor"
+    },
+    "6": {
+      "item": "instrumental:dance_floor"
+    },
+    "7": {
+      "item": "instrumental:dance_floor"
+    },
+    "8": {
+      "item": "instrumental:dance_floor"
+    }
+  },
+  "result": {
+    "item": "instrumental:brown_dance_floor",
+    "count": 8
+  }
+}

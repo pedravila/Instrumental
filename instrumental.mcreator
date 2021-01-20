@@ -3011,6 +3011,168 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "white_dance_floor"
+    },
+    {
+      "name": "FlyingMelody",
+      "type": "item",
+      "sortid": 268,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "flying_melody"
+    },
+    {
+      "name": "DanceFloorRecipe",
+      "type": "recipe",
+      "sortid": 269,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dance_floor_recipe"
+    },
+    {
+      "name": "BlackDanceFloorRecipe",
+      "type": "recipe",
+      "sortid": 270,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "black_dance_floor_recipe"
+    },
+    {
+      "name": "RedDanceFloorRecipe",
+      "type": "recipe",
+      "sortid": 271,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "red_dance_floor_recipe"
+    },
+    {
+      "name": "GreenDanceFloorRecipe",
+      "type": "recipe",
+      "sortid": 272,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "green_dance_floor_recipe"
+    },
+    {
+      "name": "BrownDanceFloorRecipe",
+      "type": "recipe",
+      "sortid": 273,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "brown_dance_floor_recipe"
+    },
+    {
+      "name": "BlueDanceFloorRecipe",
+      "type": "recipe",
+      "sortid": 274,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "blue_dance_floor_recipe"
+    },
+    {
+      "name": "PurpleDanceFloorRecipe",
+      "type": "recipe",
+      "sortid": 275,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "purple_dance_floor_recipe"
+    },
+    {
+      "name": "CyanDanceFloorRecipe",
+      "type": "recipe",
+      "sortid": 276,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "cyan_dance_floor_recipe"
+    },
+    {
+      "name": "LightGrayDanceFloorRecipe",
+      "type": "recipe",
+      "sortid": 277,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "light_gray_dance_floor_recipe"
+    },
+    {
+      "name": "GrayDanceFloorRecipe",
+      "type": "recipe",
+      "sortid": 278,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "gray_dance_floor_recipe"
+    },
+    {
+      "name": "PinkDanceFloorRecipe",
+      "type": "recipe",
+      "sortid": 279,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "pink_dance_floor_recipe"
+    },
+    {
+      "name": "LimeDanceFloorRecipe",
+      "type": "recipe",
+      "sortid": 280,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "lime_dance_floor_recipe"
+    },
+    {
+      "name": "YellowDanceFloorRecipe",
+      "type": "recipe",
+      "sortid": 281,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "yellow_dance_floor_recipe"
+    },
+    {
+      "name": "LightBlueDanceFloorRecipe",
+      "type": "recipe",
+      "sortid": 282,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "light_blue_dance_floor_recipe"
+    },
+    {
+      "name": "MagentaDanceFloorRecipe",
+      "type": "recipe",
+      "sortid": 283,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "magenta_dance_floor_recipe"
+    },
+    {
+      "name": "OrangeDanceFloorRecipe",
+      "type": "recipe",
+      "sortid": 284,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "orange_dance_floor_recipe"
+    },
+    {
+      "name": "WhiteDanceFloorRecipe",
+      "type": "recipe",
+      "sortid": 285,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "white_dance_floor_recipe"
     }
   ],
   "variable_elements": [
@@ -3273,6 +3435,7 @@
       "block.instrumental.yellow_dance_floor": "Yellow Dance Floor",
       "item.instrumental.rainy_melody": "Rainy Melody",
       "item.instrumental.end_score": "End Score",
+      "item.instrumental.flying_melody": "Flying Melody",
       "subtitles.lyre_sound": "",
       "item.instrumental.drum_leather": "Drum Leather",
       "item.instrumental.dried_bamboo_diamond_chimes": "Dried Bamboo Diamond Chimes",
