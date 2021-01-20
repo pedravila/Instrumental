@@ -1211,5 +1211,192 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 				}
 			}
 		}
+		if ((((new Object() {
+			public String getValue(BlockPos pos, String tag) {
+				TileEntity tileEntity = world.getTileEntity(pos);
+				if (tileEntity != null)
+					return tileEntity.getTileData().getString(tag);
+				return "";
+			}
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "MelodyType"))).equals("Fly"))) {
+			if (!world.getWorld().isRemote) {
+				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+				TileEntity _tileEntity = world.getTileEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_tileEntity != null)
+					_tileEntity.getTileData().putDouble("Countdown", ((new Object() {
+						public double getValue(BlockPos pos, String tag) {
+							TileEntity tileEntity = world.getTileEntity(pos);
+							if (tileEntity != null)
+								return tileEntity.getTileData().getDouble(tag);
+							return -1;
+						}
+					}.getValue(new BlockPos((int) x, (int) y, (int) z), "Countdown")) + 1));
+				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+			}
+			if (((new Object() {
+				public double getValue(BlockPos pos, String tag) {
+					TileEntity tileEntity = world.getTileEntity(pos);
+					if (tileEntity != null)
+						return tileEntity.getTileData().getDouble(tag);
+					return -1;
+				}
+			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Countdown")) < 12000)) {
+				sx = (double) (-10);
+				for (int index15 = 0; index15 < (int) (21); index15++) {
+					sy = (double) (-10);
+					for (int index16 = 0; index16 < (int) (21); index16++) {
+						sz = (double) (-10);
+						for (int index17 = 0; index17 < (int) (21); index17++) {
+							if ((((Entity) world
+									.getEntitiesWithinAABB(PlayerEntity.class,
+											new AxisAlignedBB(((sx) + x) - (2 / 2d), ((sy) + y) - (2 / 2d), ((sz) + z) - (2 / 2d),
+													((sx) + x) + (2 / 2d), ((sy) + y) + (2 / 2d), ((sz) + z) + (2 / 2d)),
+											null)
+									.stream().sorted(new Object() {
+										Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+											return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+										}
+									}.compareDistOf(((sx) + x), ((sy) + y), ((sz) + z))).findFirst().orElse(null)) != null)) {
+								if (((Entity) world
+										.getEntitiesWithinAABB(PlayerEntity.class,
+												new AxisAlignedBB(((sx) + x) - (2 / 2d), ((sy) + y) - (2 / 2d), ((sz) + z) - (2 / 2d),
+														((sx) + x) + (2 / 2d), ((sy) + y) + (2 / 2d), ((sz) + z) + (2 / 2d)),
+												null)
+										.stream().sorted(new Object() {
+											Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+												return Comparator
+														.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+											}
+										}.compareDistOf(((sx) + x), ((sy) + y), ((sz) + z))).findFirst().orElse(null)) instanceof PlayerEntity) {
+									((PlayerEntity) ((Entity) world
+											.getEntitiesWithinAABB(PlayerEntity.class,
+													new AxisAlignedBB(((sx) + x) - (2 / 2d), ((sy) + y) - (2 / 2d), ((sz) + z) - (2 / 2d),
+															((sx) + x) + (2 / 2d), ((sy) + y) + (2 / 2d), ((sz) + z) + (2 / 2d)),
+													null)
+											.stream().sorted(new Object() {
+												Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+													return Comparator
+															.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+												}
+											}.compareDistOf(((sx) + x), ((sy) + y), ((sz) + z))).findFirst()
+											.orElse(null))).abilities.allowFlying = (((Entity) world
+													.getEntitiesWithinAABB(PlayerEntity.class,
+															new AxisAlignedBB(((sx) + x) - (2 / 2d), ((sy) + y) - (2 / 2d), ((sz) + z) - (2 / 2d),
+																	((sx) + x) + (2 / 2d), ((sy) + y) + (2 / 2d), ((sz) + z) + (2 / 2d)),
+															null)
+													.stream().sorted(new Object() {
+														Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+															return Comparator.comparing(
+																	(Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+														}
+													}.compareDistOf(((sx) + x), ((sy) + y), ((sz) + z))).findFirst().orElse(null)) != null);
+									((PlayerEntity) ((Entity) world
+											.getEntitiesWithinAABB(PlayerEntity.class,
+													new AxisAlignedBB(((sx) + x) - (2 / 2d), ((sy) + y) - (2 / 2d), ((sz) + z) - (2 / 2d),
+															((sx) + x) + (2 / 2d), ((sy) + y) + (2 / 2d), ((sz) + z) + (2 / 2d)),
+													null)
+											.stream().sorted(new Object() {
+												Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+													return Comparator
+															.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+												}
+											}.compareDistOf(((sx) + x), ((sy) + y), ((sz) + z))).findFirst().orElse(null))).sendPlayerAbilities();
+								}
+								((Entity) world
+										.getEntitiesWithinAABB(PlayerEntity.class,
+												new AxisAlignedBB(((sx) + x) - (2 / 2d), ((sy) + y) - (2 / 2d), ((sz) + z) - (2 / 2d),
+														((sx) + x) + (2 / 2d), ((sy) + y) + (2 / 2d), ((sz) + z) + (2 / 2d)),
+												null)
+										.stream().sorted(new Object() {
+											Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+												return Comparator
+														.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+											}
+										}.compareDistOf(((sx) + x), ((sy) + y), ((sz) + z))).findFirst().orElse(null)).getPersistentData()
+												.putBoolean("Fly", (true));
+							}
+							sz = (double) ((sz) + 1);
+						}
+						sy = (double) ((sy) + 1);
+					}
+					sx = (double) ((sx) + 1);
+				}
+				{
+					TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+					if (_ent != null) {
+						final int _sltid = (int) (0);
+						final int _amount = (int) 1;
+						_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+							if (capability instanceof IItemHandlerModifiable) {
+								ItemStack _stk = capability.getStackInSlot(_sltid).copy();
+								_stk.shrink(_amount);
+								((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _stk);
+							}
+						});
+					}
+				}
+				if (!world.getWorld().isRemote) {
+					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+					TileEntity _tileEntity = world.getTileEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_tileEntity != null)
+						_tileEntity.getTileData().putDouble("DrumSoundCounter", ((new Object() {
+							public double getValue(BlockPos pos, String tag) {
+								TileEntity tileEntity = world.getTileEntity(pos);
+								if (tileEntity != null)
+									return tileEntity.getTileData().getDouble(tag);
+								return -1;
+							}
+						}.getValue(new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) + 1));
+					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+				}
+				if (((((new Object() {
+					public double getValue(BlockPos pos, String tag) {
+						TileEntity tileEntity = world.getTileEntity(pos);
+						if (tileEntity != null)
+							return tileEntity.getTileData().getDouble(tag);
+						return -1;
+					}
+				}.getValue(new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) % 5) == 0)
+						&& (world.isAirBlock(new BlockPos((int) x, (int) (y + 1), (int) z))))) {
+					if (!world.getWorld().isRemote) {
+						world.playSound(null, new BlockPos((int) x, (int) y, (int) z), (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+								.getValue(new ResourceLocation("instrumental:drum_sound")), SoundCategory.NEUTRAL, (float) 1, (float) 1);
+					} else {
+						world.getWorld().playSound(x, y, z,
+								(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+										.getValue(new ResourceLocation("instrumental:drum_sound")),
+								SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
+					}
+				}
+			} else {
+				if (!world.getWorld().isRemote) {
+					world.playSound(null, new BlockPos((int) x, (int) y, (int) z), (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+							.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")), SoundCategory.NEUTRAL, (float) 1, (float) 1);
+				} else {
+					world.getWorld().playSound(x, y, z,
+							(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+									.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")),
+							SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
+				}
+				if (!world.getWorld().isRemote) {
+					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+					TileEntity _tileEntity = world.getTileEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_tileEntity != null)
+						_tileEntity.getTileData().putString("MelodyType", "None");
+					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+				}
+				if (!world.getWorld().isRemote) {
+					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+					TileEntity _tileEntity = world.getTileEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_tileEntity != null)
+						_tileEntity.getTileData().putDouble("Countdown", 0);
+					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+				}
+			}
+		}
 	}
 }
