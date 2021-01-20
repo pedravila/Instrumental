@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "instrumental:dance_floor",
+    "instrumental:black_dance_floor",
+    "instrumental:red_dance_floor",
+    "instrumental:green_dance_floor",
+    "instrumental:brown_dance_floor",
+    "instrumental:blue_dance_floor",
+    "instrumental:purple_danc_floor",
+    "instrumental:cyan_dance_floor",
+    "instrumental:light_gray_dance_floor",
+    "instrumental:gray_dance_floor",
+    "instrumental:pink_dance_floor",
+    "instrumental:lime_dance_floor",
+    "instrumental:yellow_dance_floor",
+    "instrumental:light_blue_dance_floor",
+    "instrumental:magenta_dance_floor",
+    "instrumental:orange_dance_floor",
+    "instrumental:white_dance_floor"
+  ]
+}
