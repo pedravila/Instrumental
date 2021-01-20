@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "instrumental:blocks/dance_floor_black",
+    "up": "instrumental:blocks/dance_floor_black",
+    "north": "instrumental:blocks/dance_floor_black",
+    "east": "instrumental:blocks/dance_floor_black",
+    "south": "instrumental:blocks/dance_floor_black",
+    "west": "instrumental:blocks/dance_floor_black",
+    "particle": "instrumental:blocks/dance_floor_black"
+  }
+}

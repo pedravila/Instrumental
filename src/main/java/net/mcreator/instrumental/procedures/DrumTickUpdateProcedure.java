@@ -1098,7 +1098,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 								if ((BlockTags.getCollection().getOrCreate(new ResourceLocation(("terracota").toLowerCase(java.util.Locale.ENGLISH)))
 										.contains((world.getBlockState(new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z))))
 												.getBlock()))) {
-									if ((Math.random() < 0.00003051757)) {
+									if ((Math.random() < 0)) {
 										{
 											BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
 											BlockState _bs = Blocks.WHITE_TERRACOTTA.getDefaultState();
@@ -1111,7 +1111,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 											world.setBlockState(_bp, _bs, 3);
 										}
 									} else {
-										if ((Math.random() < 0.00006103515)) {
+										if ((Math.random() < 0.0625)) {
 											{
 												BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
 												BlockState _bs = Blocks.ORANGE_TERRACOTTA.getDefaultState();
@@ -1124,7 +1124,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 												world.setBlockState(_bp, _bs, 3);
 											}
 										} else {
-											if ((Math.random() < 0.00012207031)) {
+											if ((Math.random() < 0.125)) {
 												{
 													BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
 													BlockState _bs = Blocks.MAGENTA_TERRACOTTA.getDefaultState();
@@ -1138,7 +1138,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 													world.setBlockState(_bp, _bs, 3);
 												}
 											} else {
-												if ((Math.random() < 0.00024414062)) {
+												if ((Math.random() < 0.1875)) {
 													{
 														BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
 														BlockState _bs = Blocks.LIGHT_BLUE_TERRACOTTA.getDefaultState();
@@ -1152,7 +1152,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 														world.setBlockState(_bp, _bs, 3);
 													}
 												} else {
-													if ((Math.random() < 0.00048828125)) {
+													if ((Math.random() < 0.25)) {
 														{
 															BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
 															BlockState _bs = Blocks.YELLOW_TERRACOTTA.getDefaultState();
@@ -1166,7 +1166,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 															world.setBlockState(_bp, _bs, 3);
 														}
 													} else {
-														if ((Math.random() < 0.0009765625)) {
+														if ((Math.random() < 0.3125)) {
 															{
 																BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
 																BlockState _bs = Blocks.LIME_TERRACOTTA.getDefaultState();
@@ -1180,7 +1180,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																world.setBlockState(_bp, _bs, 3);
 															}
 														} else {
-															if ((Math.random() < 0.001953125)) {
+															if ((Math.random() < 0.375)) {
 																{
 																	BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
 																	BlockState _bs = Blocks.PINK_TERRACOTTA.getDefaultState();
@@ -1194,7 +1194,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																	world.setBlockState(_bp, _bs, 3);
 																}
 															} else {
-																if ((Math.random() < 0.00390625)) {
+																if ((Math.random() < 0.4375)) {
 																	{
 																		BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y),
 																				(int) ((sz) + z));
@@ -1210,7 +1210,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																		world.setBlockState(_bp, _bs, 3);
 																	}
 																} else {
-																	if ((Math.random() < 0.0078125)) {
+																	if ((Math.random() < 0.5)) {
 																		{
 																			BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y),
 																					(int) ((sz) + z));
@@ -1226,7 +1226,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																			world.setBlockState(_bp, _bs, 3);
 																		}
 																	} else {
-																		if ((Math.random() < 0.015625)) {
+																		if ((Math.random() < 0.5625)) {
 																			{
 																				BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y),
 																						(int) ((sz) + z));
@@ -1242,7 +1242,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																				world.setBlockState(_bp, _bs, 3);
 																			}
 																		} else {
-																			if ((Math.random() < 0.03125)) {
+																			if ((Math.random() < 0.625)) {
 																				{
 																					BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y),
 																							(int) ((sz) + z));
@@ -1258,7 +1258,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																					world.setBlockState(_bp, _bs, 3);
 																				}
 																			} else {
-																				if ((Math.random() < 0.0625)) {
+																				if ((Math.random() < 0.6875)) {
 																					{
 																						BlockPos _bp = new BlockPos((int) ((sx) + x),
 																								(int) ((sy) + y), (int) ((sz) + z));
@@ -1275,7 +1275,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																						world.setBlockState(_bp, _bs, 3);
 																					}
 																				} else {
-																					if ((Math.random() < 0.125)) {
+																					if ((Math.random() < 0.75)) {
 																						{
 																							BlockPos _bp = new BlockPos((int) ((sx) + x),
 																									(int) ((sy) + y), (int) ((sz) + z));
@@ -1294,7 +1294,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																							world.setBlockState(_bp, _bs, 3);
 																						}
 																					} else {
-																						if ((Math.random() < 0.25)) {
+																						if ((Math.random() < 0.8125)) {
 																							{
 																								BlockPos _bp = new BlockPos((int) ((sx) + x),
 																										(int) ((sy) + y), (int) ((sz) + z));
@@ -1313,7 +1313,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																								world.setBlockState(_bp, _bs, 3);
 																							}
 																						} else {
-																							if ((Math.random() < 0.5)) {
+																							if ((Math.random() < 0.875)) {
 																								{
 																									BlockPos _bp = new BlockPos((int) ((sx) + x),
 																											(int) ((sy) + y), (int) ((sz) + z));
@@ -1369,7 +1369,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 											.getOrCreate(new ResourceLocation(("glazed_terracota").toLowerCase(java.util.Locale.ENGLISH)))
 											.contains((world.getBlockState(new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z))))
 													.getBlock()))) {
-										if ((Math.random() < 0.00003051757)) {
+										if ((Math.random() < 0)) {
 											{
 												BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
 												BlockState _bs = Blocks.WHITE_GLAZED_TERRACOTTA.getDefaultState();
@@ -1382,7 +1382,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 												world.setBlockState(_bp, _bs, 3);
 											}
 										} else {
-											if ((Math.random() < 0.00006103515)) {
+											if ((Math.random() < 0.0625)) {
 												{
 													BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
 													BlockState _bs = Blocks.ORANGE_GLAZED_TERRACOTTA.getDefaultState();
@@ -1396,7 +1396,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 													world.setBlockState(_bp, _bs, 3);
 												}
 											} else {
-												if ((Math.random() < 0.00012207031)) {
+												if ((Math.random() < 0.125)) {
 													{
 														BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
 														BlockState _bs = Blocks.MAGENTA_GLAZED_TERRACOTTA.getDefaultState();
@@ -1410,7 +1410,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 														world.setBlockState(_bp, _bs, 3);
 													}
 												} else {
-													if ((Math.random() < 0.00024414062)) {
+													if ((Math.random() < 0.1875)) {
 														{
 															BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
 															BlockState _bs = Blocks.LIGHT_BLUE_GLAZED_TERRACOTTA.getDefaultState();
@@ -1424,7 +1424,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 															world.setBlockState(_bp, _bs, 3);
 														}
 													} else {
-														if ((Math.random() < 0.00048828125)) {
+														if ((Math.random() < 0.25)) {
 															{
 																BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
 																BlockState _bs = Blocks.YELLOW_GLAZED_TERRACOTTA.getDefaultState();
@@ -1438,7 +1438,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																world.setBlockState(_bp, _bs, 3);
 															}
 														} else {
-															if ((Math.random() < 0.0009765625)) {
+															if ((Math.random() < 0.3125)) {
 																{
 																	BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
 																	BlockState _bs = Blocks.LIME_GLAZED_TERRACOTTA.getDefaultState();
@@ -1452,7 +1452,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																	world.setBlockState(_bp, _bs, 3);
 																}
 															} else {
-																if ((Math.random() < 0.001953125)) {
+																if ((Math.random() < 0.375)) {
 																	{
 																		BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y),
 																				(int) ((sz) + z));
@@ -1468,7 +1468,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																		world.setBlockState(_bp, _bs, 3);
 																	}
 																} else {
-																	if ((Math.random() < 0.00390625)) {
+																	if ((Math.random() < 0.4375)) {
 																		{
 																			BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y),
 																					(int) ((sz) + z));
@@ -1484,7 +1484,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																			world.setBlockState(_bp, _bs, 3);
 																		}
 																	} else {
-																		if ((Math.random() < 0.0078125)) {
+																		if ((Math.random() < 0.5)) {
 																			{
 																				BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y),
 																						(int) ((sz) + z));
@@ -1501,7 +1501,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																				world.setBlockState(_bp, _bs, 3);
 																			}
 																		} else {
-																			if ((Math.random() < 0.015625)) {
+																			if ((Math.random() < 0.5625)) {
 																				{
 																					BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y),
 																							(int) ((sz) + z));
@@ -1517,7 +1517,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																					world.setBlockState(_bp, _bs, 3);
 																				}
 																			} else {
-																				if ((Math.random() < 0.03125)) {
+																				if ((Math.random() < 0.625)) {
 																					{
 																						BlockPos _bp = new BlockPos((int) ((sx) + x),
 																								(int) ((sy) + y), (int) ((sz) + z));
@@ -1535,7 +1535,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																						world.setBlockState(_bp, _bs, 3);
 																					}
 																				} else {
-																					if ((Math.random() < 0.0625)) {
+																					if ((Math.random() < 0.6875)) {
 																						{
 																							BlockPos _bp = new BlockPos((int) ((sx) + x),
 																									(int) ((sy) + y), (int) ((sz) + z));
@@ -1554,7 +1554,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																							world.setBlockState(_bp, _bs, 3);
 																						}
 																					} else {
-																						if ((Math.random() < 0.125)) {
+																						if ((Math.random() < 0.75)) {
 																							{
 																								BlockPos _bp = new BlockPos((int) ((sx) + x),
 																										(int) ((sy) + y), (int) ((sz) + z));
@@ -1573,7 +1573,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																								world.setBlockState(_bp, _bs, 3);
 																							}
 																						} else {
-																							if ((Math.random() < 0.25)) {
+																							if ((Math.random() < 0.8125)) {
 																								{
 																									BlockPos _bp = new BlockPos((int) ((sx) + x),
 																											(int) ((sy) + y), (int) ((sz) + z));
@@ -1592,7 +1592,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																									world.setBlockState(_bp, _bs, 3);
 																								}
 																							} else {
-																								if ((Math.random() < 0.5)) {
+																								if ((Math.random() < 0.875)) {
 																									{
 																										BlockPos _bp = new BlockPos((int) ((sx) + x),
 																												(int) ((sy) + y), (int) ((sz) + z));
@@ -1650,7 +1650,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 												.getOrCreate(new ResourceLocation(("concrete_powder").toLowerCase(java.util.Locale.ENGLISH)))
 												.contains((world.getBlockState(new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z))))
 														.getBlock()))) {
-											if ((Math.random() < 0.00003051757)) {
+											if ((Math.random() < 0)) {
 												{
 													BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
 													BlockState _bs = Blocks.WHITE_CONCRETE_POWDER.getDefaultState();
@@ -1664,7 +1664,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 													world.setBlockState(_bp, _bs, 3);
 												}
 											} else {
-												if ((Math.random() < 0.00006103515)) {
+												if ((Math.random() < 0.0625)) {
 													{
 														BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
 														BlockState _bs = Blocks.ORANGE_CONCRETE_POWDER.getDefaultState();
@@ -1678,7 +1678,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 														world.setBlockState(_bp, _bs, 3);
 													}
 												} else {
-													if ((Math.random() < 0.00012207031)) {
+													if ((Math.random() < 0.125)) {
 														{
 															BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
 															BlockState _bs = Blocks.MAGENTA_CONCRETE_POWDER.getDefaultState();
@@ -1692,7 +1692,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 															world.setBlockState(_bp, _bs, 3);
 														}
 													} else {
-														if ((Math.random() < 0.00024414062)) {
+														if ((Math.random() < 0.1875)) {
 															{
 																BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
 																BlockState _bs = Blocks.LIGHT_BLUE_CONCRETE_POWDER.getDefaultState();
@@ -1706,7 +1706,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																world.setBlockState(_bp, _bs, 3);
 															}
 														} else {
-															if ((Math.random() < 0.00048828125)) {
+															if ((Math.random() < 0.25)) {
 																{
 																	BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
 																	BlockState _bs = Blocks.YELLOW_CONCRETE_POWDER.getDefaultState();
@@ -1720,7 +1720,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																	world.setBlockState(_bp, _bs, 3);
 																}
 															} else {
-																if ((Math.random() < 0.0009765625)) {
+																if ((Math.random() < 0.3125)) {
 																	{
 																		BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y),
 																				(int) ((sz) + z));
@@ -1736,7 +1736,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																		world.setBlockState(_bp, _bs, 3);
 																	}
 																} else {
-																	if ((Math.random() < 0.001953125)) {
+																	if ((Math.random() < 0.375)) {
 																		{
 																			BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y),
 																					(int) ((sz) + z));
@@ -1752,7 +1752,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																			world.setBlockState(_bp, _bs, 3);
 																		}
 																	} else {
-																		if ((Math.random() < 0.00390625)) {
+																		if ((Math.random() < 0.4375)) {
 																			{
 																				BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y),
 																						(int) ((sz) + z));
@@ -1768,7 +1768,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																				world.setBlockState(_bp, _bs, 3);
 																			}
 																		} else {
-																			if ((Math.random() < 0.0078125)) {
+																			if ((Math.random() < 0.5)) {
 																				{
 																					BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y),
 																							(int) ((sz) + z));
@@ -1785,7 +1785,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																					world.setBlockState(_bp, _bs, 3);
 																				}
 																			} else {
-																				if ((Math.random() < 0.015625)) {
+																				if ((Math.random() < 0.5625)) {
 																					{
 																						BlockPos _bp = new BlockPos((int) ((sx) + x),
 																								(int) ((sy) + y), (int) ((sz) + z));
@@ -1803,7 +1803,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																						world.setBlockState(_bp, _bs, 3);
 																					}
 																				} else {
-																					if ((Math.random() < 0.03125)) {
+																					if ((Math.random() < 0.625)) {
 																						{
 																							BlockPos _bp = new BlockPos((int) ((sx) + x),
 																									(int) ((sy) + y), (int) ((sz) + z));
@@ -1822,7 +1822,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																							world.setBlockState(_bp, _bs, 3);
 																						}
 																					} else {
-																						if ((Math.random() < 0.0625)) {
+																						if ((Math.random() < 0.6875)) {
 																							{
 																								BlockPos _bp = new BlockPos((int) ((sx) + x),
 																										(int) ((sy) + y), (int) ((sz) + z));
@@ -1841,7 +1841,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																								world.setBlockState(_bp, _bs, 3);
 																							}
 																						} else {
-																							if ((Math.random() < 0.125)) {
+																							if ((Math.random() < 0.75)) {
 																								{
 																									BlockPos _bp = new BlockPos((int) ((sx) + x),
 																											(int) ((sy) + y), (int) ((sz) + z));
@@ -1860,7 +1860,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																									world.setBlockState(_bp, _bs, 3);
 																								}
 																							} else {
-																								if ((Math.random() < 0.25)) {
+																								if ((Math.random() < 0.8125)) {
 																									{
 																										BlockPos _bp = new BlockPos((int) ((sx) + x),
 																												(int) ((sy) + y), (int) ((sz) + z));
@@ -1880,7 +1880,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																										world.setBlockState(_bp, _bs, 3);
 																									}
 																								} else {
-																									if ((Math.random() < 0.5)) {
+																									if ((Math.random() < 0.875)) {
 																										{
 																											BlockPos _bp = new BlockPos(
 																													(int) ((sx) + x),
@@ -1946,7 +1946,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 													.getOrCreate(new ResourceLocation(("concrete").toLowerCase(java.util.Locale.ENGLISH))).contains(
 															(world.getBlockState(new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z))))
 																	.getBlock()))) {
-												if ((Math.random() < 0.00003051757)) {
+												if ((Math.random() < 0)) {
 													{
 														BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
 														BlockState _bs = Blocks.WHITE_CONCRETE.getDefaultState();
@@ -1960,7 +1960,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 														world.setBlockState(_bp, _bs, 3);
 													}
 												} else {
-													if ((Math.random() < 0.00006103515)) {
+													if ((Math.random() < 0.0625)) {
 														{
 															BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
 															BlockState _bs = Blocks.ORANGE_CONCRETE.getDefaultState();
@@ -1974,7 +1974,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 															world.setBlockState(_bp, _bs, 3);
 														}
 													} else {
-														if ((Math.random() < 0.00012207031)) {
+														if ((Math.random() < 0.125)) {
 															{
 																BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
 																BlockState _bs = Blocks.MAGENTA_CONCRETE.getDefaultState();
@@ -1988,7 +1988,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																world.setBlockState(_bp, _bs, 3);
 															}
 														} else {
-															if ((Math.random() < 0.00024414062)) {
+															if ((Math.random() < 0.1875)) {
 																{
 																	BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
 																	BlockState _bs = Blocks.LIGHT_BLUE_CONCRETE.getDefaultState();
@@ -2002,7 +2002,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																	world.setBlockState(_bp, _bs, 3);
 																}
 															} else {
-																if ((Math.random() < 0.00048828125)) {
+																if ((Math.random() < 0.25)) {
 																	{
 																		BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y),
 																				(int) ((sz) + z));
@@ -2018,7 +2018,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																		world.setBlockState(_bp, _bs, 3);
 																	}
 																} else {
-																	if ((Math.random() < 0.0009765625)) {
+																	if ((Math.random() < 0.3125)) {
 																		{
 																			BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y),
 																					(int) ((sz) + z));
@@ -2034,7 +2034,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																			world.setBlockState(_bp, _bs, 3);
 																		}
 																	} else {
-																		if ((Math.random() < 0.001953125)) {
+																		if ((Math.random() < 0.375)) {
 																			{
 																				BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y),
 																						(int) ((sz) + z));
@@ -2050,7 +2050,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																				world.setBlockState(_bp, _bs, 3);
 																			}
 																		} else {
-																			if ((Math.random() < 0.00390625)) {
+																			if ((Math.random() < 0.4375)) {
 																				{
 																					BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y),
 																							(int) ((sz) + z));
@@ -2066,7 +2066,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																					world.setBlockState(_bp, _bs, 3);
 																				}
 																			} else {
-																				if ((Math.random() < 0.0078125)) {
+																				if ((Math.random() < 0.5)) {
 																					{
 																						BlockPos _bp = new BlockPos((int) ((sx) + x),
 																								(int) ((sy) + y), (int) ((sz) + z));
@@ -2083,7 +2083,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																						world.setBlockState(_bp, _bs, 3);
 																					}
 																				} else {
-																					if ((Math.random() < 0.015625)) {
+																					if ((Math.random() < 0.5625)) {
 																						{
 																							BlockPos _bp = new BlockPos((int) ((sx) + x),
 																									(int) ((sy) + y), (int) ((sz) + z));
@@ -2101,7 +2101,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																							world.setBlockState(_bp, _bs, 3);
 																						}
 																					} else {
-																						if ((Math.random() < 0.03125)) {
+																						if ((Math.random() < 0.625)) {
 																							{
 																								BlockPos _bp = new BlockPos((int) ((sx) + x),
 																										(int) ((sy) + y), (int) ((sz) + z));
@@ -2120,7 +2120,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																								world.setBlockState(_bp, _bs, 3);
 																							}
 																						} else {
-																							if ((Math.random() < 0.0625)) {
+																							if ((Math.random() < 0.6875)) {
 																								{
 																									BlockPos _bp = new BlockPos((int) ((sx) + x),
 																											(int) ((sy) + y), (int) ((sz) + z));
@@ -2139,7 +2139,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																									world.setBlockState(_bp, _bs, 3);
 																								}
 																							} else {
-																								if ((Math.random() < 0.125)) {
+																								if ((Math.random() < 0.75)) {
 																									{
 																										BlockPos _bp = new BlockPos((int) ((sx) + x),
 																												(int) ((sy) + y), (int) ((sz) + z));
@@ -2159,7 +2159,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																										world.setBlockState(_bp, _bs, 3);
 																									}
 																								} else {
-																									if ((Math.random() < 0.25)) {
+																									if ((Math.random() < 0.8125)) {
 																										{
 																											BlockPos _bp = new BlockPos(
 																													(int) ((sx) + x),
@@ -2183,7 +2183,7 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																											world.setBlockState(_bp, _bs, 3);
 																										}
 																									} else {
-																										if ((Math.random() < 0.5)) {
+																										if ((Math.random() < 0.875)) {
 																											{
 																												BlockPos _bp = new BlockPos(
 																														(int) ((sx) + x),
