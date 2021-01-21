@@ -26,7 +26,7 @@ public class ThunderyMelodyItem extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:thundery_melody")
 	public static final Item block = null;
 	public ThunderyMelodyItem(InstrumentalModElements instance) {
-		super(instance, 74);
+		super(instance, 68);
 	}
 
 	@Override

@@ -23,7 +23,7 @@ public class GrayDanceFloorBlock extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:gray_dance_floor")
 	public static final Block block = null;
 	public GrayDanceFloorBlock(InstrumentalModElements instance) {
-		super(instance, 260);
+		super(instance, 87);
 	}
 
 	@Override

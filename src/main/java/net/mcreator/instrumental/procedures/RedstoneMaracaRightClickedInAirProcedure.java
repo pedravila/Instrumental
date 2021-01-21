@@ -14,7 +14,7 @@ import java.util.Map;
 @InstrumentalModElements.ModElement.Tag
 public class RedstoneMaracaRightClickedInAirProcedure extends InstrumentalModElements.ModElement {
 	public RedstoneMaracaRightClickedInAirProcedure(InstrumentalModElements instance) {
-		super(instance, 87);
+		super(instance, 112);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

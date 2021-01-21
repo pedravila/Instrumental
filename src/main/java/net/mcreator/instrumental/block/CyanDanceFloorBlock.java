@@ -23,7 +23,7 @@ public class CyanDanceFloorBlock extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:cyan_dance_floor")
 	public static final Block block = null;
 	public CyanDanceFloorBlock(InstrumentalModElements instance) {
-		super(instance, 258);
+		super(instance, 89);
 	}
 
 	@Override

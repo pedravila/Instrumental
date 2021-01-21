@@ -25,7 +25,7 @@ import net.mcreator.instrumental.InstrumentalModElements;
 public class DiamondNoteParticle extends InstrumentalModElements.ModElement {
 	public static final BasicParticleType particle = new BasicParticleType(false);
 	public DiamondNoteParticle(InstrumentalModElements instance) {
-		super(instance, 186);
+		super(instance, 211);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
 	}

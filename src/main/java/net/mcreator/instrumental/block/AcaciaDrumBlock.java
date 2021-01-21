@@ -75,7 +75,7 @@ public class AcaciaDrumBlock extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:acacia_drum")
 	public static final TileEntityType<CustomTileEntity> tileEntityType = null;
 	public AcaciaDrumBlock(InstrumentalModElements instance) {
-		super(instance, 67);
+		super(instance, 76);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
 	}
 

@@ -22,7 +22,7 @@ public class SunnyMelodyItem extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:sunny_melody")
 	public static final Item block = null;
 	public SunnyMelodyItem(InstrumentalModElements instance) {
-		super(instance, 75);
+		super(instance, 69);
 	}
 
 	@Override

@@ -17,7 +17,7 @@ import java.util.Map;
 @InstrumentalModElements.ModElement.Tag
 public class OakWhistleCanUseRangedItemProcedure extends InstrumentalModElements.ModElement {
 	public OakWhistleCanUseRangedItemProcedure(InstrumentalModElements instance) {
-		super(instance, 165);
+		super(instance, 190);
 	}
 
 	public static boolean executeProcedure(Map<String, Object> dependencies) {

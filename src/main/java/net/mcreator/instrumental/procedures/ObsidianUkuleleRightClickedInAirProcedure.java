@@ -14,7 +14,7 @@ import java.util.Map;
 @InstrumentalModElements.ModElement.Tag
 public class ObsidianUkuleleRightClickedInAirProcedure extends InstrumentalModElements.ModElement {
 	public ObsidianUkuleleRightClickedInAirProcedure(InstrumentalModElements instance) {
-		super(instance, 214);
+		super(instance, 239);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

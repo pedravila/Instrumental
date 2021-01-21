@@ -10,7 +10,7 @@ import java.util.Map;
 @InstrumentalModElements.ModElement.Tag
 public class InspirationLimitProcedure extends InstrumentalModElements.ModElement {
 	public InspirationLimitProcedure(InstrumentalModElements instance) {
-		super(instance, 183);
+		super(instance, 208);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

@@ -23,7 +23,7 @@ public class DrumLeatherBlockBlock extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:drum_leather_block")
 	public static final Block block = null;
 	public DrumLeatherBlockBlock(InstrumentalModElements instance) {
-		super(instance, 73);
+		super(instance, 71);
 	}
 
 	@Override

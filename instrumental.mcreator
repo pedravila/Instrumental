@@ -3370,6 +3370,18 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "regeneration_melody"
+    },
+    {
+      "name": "ObsidianDrumTickUpdate",
+      "type": "procedure",
+      "sortid": 307,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "obsidian_drum_tick_update",
+      "metadata": {
+        "dependencies": []
+      }
     }
   ],
   "variable_elements": [

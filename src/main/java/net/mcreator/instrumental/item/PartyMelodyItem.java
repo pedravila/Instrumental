@@ -22,7 +22,7 @@ public class PartyMelodyItem extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:party_melody")
 	public static final Item block = null;
 	public PartyMelodyItem(InstrumentalModElements instance) {
-		super(instance, 249);
+		super(instance, 70);
 	}
 
 	@Override

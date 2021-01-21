@@ -20,7 +20,7 @@ import java.util.Map;
 @InstrumentalModElements.ModElement.Tag
 public class InspirationBar12DisplayOverlayIngameProcedure extends InstrumentalModElements.ModElement {
 	public InspirationBar12DisplayOverlayIngameProcedure(InstrumentalModElements instance) {
-		super(instance, 153);
+		super(instance, 178);
 	}
 
 	public static boolean executeProcedure(Map<String, Object> dependencies) {

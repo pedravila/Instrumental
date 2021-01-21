@@ -18,9 +18,4 @@ authors="pedro, MCreator"
 
 
 
-[[dependencies.instrumental]]
-    modId="just_enough_items"
-    mandatory=false
-    ordering="NONE"
-    side="BOTH"
 

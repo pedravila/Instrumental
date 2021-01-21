@@ -75,7 +75,7 @@ public class DarkOakDrumBlock extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:dark_oak_drum")
 	public static final TileEntityType<CustomTileEntity> tileEntityType = null;
 	public DarkOakDrumBlock(InstrumentalModElements instance) {
-		super(instance, 68);
+		super(instance, 77);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
 	}
 

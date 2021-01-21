@@ -12,10 +12,16 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.block.BlockState;
 
+import net.mcreator.instrumental.item.WaterBlessingMelodyItem;
 import net.mcreator.instrumental.item.ThunderyMelodyItem;
 import net.mcreator.instrumental.item.SunnyMelodyItem;
+import net.mcreator.instrumental.item.SpeedMelodyItem;
+import net.mcreator.instrumental.item.ResistanceMelodyItem;
+import net.mcreator.instrumental.item.RegenerationMelodyItem;
 import net.mcreator.instrumental.item.RainyMelodyItem;
 import net.mcreator.instrumental.item.PartyMelodyItem;
+import net.mcreator.instrumental.item.NightVisionMelodyItem;
+import net.mcreator.instrumental.item.HeroMelodyItem;
 import net.mcreator.instrumental.item.HasteMelodyItem;
 import net.mcreator.instrumental.item.HarmMelodyItem;
 import net.mcreator.instrumental.item.GrowthMelodyItem;
@@ -27,7 +33,7 @@ import java.util.Map;
 @InstrumentalModElements.ModElement.Tag
 public class PlayMelodyButtonClickedProcedure extends InstrumentalModElements.ModElement {
 	public PlayMelodyButtonClickedProcedure(InstrumentalModElements instance) {
-		super(instance, 226);
+		super(instance, 251);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -380,16 +386,313 @@ public class PlayMelodyButtonClickedProcedure extends InstrumentalModElements.Mo
 										world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 									}
 								} else {
-									if (!world.getWorld().isRemote) {
-										world.playSound(null, new BlockPos((int) x, (int) y, (int) z),
-												(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-														.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")),
-												SoundCategory.NEUTRAL, (float) 1, (float) 1);
+									if (((new Object() {
+										public ItemStack getItemStack(BlockPos pos, int sltid) {
+											AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+											TileEntity _ent = world.getTileEntity(pos);
+											if (_ent != null) {
+												_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+													_retval.set(capability.getStackInSlot(sltid).copy());
+												});
+											}
+											return _retval.get();
+										}
+									}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (0)))
+											.getItem() == new ItemStack(HeroMelodyItem.block, (int) (1)).getItem())) {
+										{
+											TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+											if (_ent != null) {
+												final int _sltid = (int) (0);
+												final int _amount = (int) 1;
+												_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+													if (capability instanceof IItemHandlerModifiable) {
+														ItemStack _stk = capability.getStackInSlot(_sltid).copy();
+														_stk.shrink(_amount);
+														((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _stk);
+													}
+												});
+											}
+										}
+										if (!world.getWorld().isRemote) {
+											world.playSound(null, new BlockPos((int) x, (int) y, (int) z),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("instrumental:drum_sound")),
+													SoundCategory.NEUTRAL, (float) 1, (float) 1);
+										} else {
+											world.getWorld().playSound(x, y, z,
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("instrumental:drum_sound")),
+													SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
+										}
+										if (!world.getWorld().isRemote) {
+											BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+											TileEntity _tileEntity = world.getTileEntity(_bp);
+											BlockState _bs = world.getBlockState(_bp);
+											if (_tileEntity != null)
+												_tileEntity.getTileData().putString("MelodyType", "Hero");
+											world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+										}
 									} else {
-										world.getWorld().playSound(x, y, z,
-												(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-														.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")),
-												SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
+										if (((new Object() {
+											public ItemStack getItemStack(BlockPos pos, int sltid) {
+												AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+												TileEntity _ent = world.getTileEntity(pos);
+												if (_ent != null) {
+													_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+														_retval.set(capability.getStackInSlot(sltid).copy());
+													});
+												}
+												return _retval.get();
+											}
+										}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (0)))
+												.getItem() == new ItemStack(NightVisionMelodyItem.block, (int) (1)).getItem())) {
+											{
+												TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+												if (_ent != null) {
+													final int _sltid = (int) (0);
+													final int _amount = (int) 1;
+													_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+														if (capability instanceof IItemHandlerModifiable) {
+															ItemStack _stk = capability.getStackInSlot(_sltid).copy();
+															_stk.shrink(_amount);
+															((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _stk);
+														}
+													});
+												}
+											}
+											if (!world.getWorld().isRemote) {
+												world.playSound(null, new BlockPos((int) x, (int) y, (int) z),
+														(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+																.getValue(new ResourceLocation("instrumental:drum_sound")),
+														SoundCategory.NEUTRAL, (float) 1, (float) 1);
+											} else {
+												world.getWorld().playSound(x, y, z,
+														(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+																.getValue(new ResourceLocation("instrumental:drum_sound")),
+														SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
+											}
+											if (!world.getWorld().isRemote) {
+												BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+												TileEntity _tileEntity = world.getTileEntity(_bp);
+												BlockState _bs = world.getBlockState(_bp);
+												if (_tileEntity != null)
+													_tileEntity.getTileData().putString("MelodyType", "Nightvision");
+												world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+											}
+										} else {
+											if (((new Object() {
+												public ItemStack getItemStack(BlockPos pos, int sltid) {
+													AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+													TileEntity _ent = world.getTileEntity(pos);
+													if (_ent != null) {
+														_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null)
+																.ifPresent(capability -> {
+																	_retval.set(capability.getStackInSlot(sltid).copy());
+																});
+													}
+													return _retval.get();
+												}
+											}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (0)))
+													.getItem() == new ItemStack(ResistanceMelodyItem.block, (int) (1)).getItem())) {
+												{
+													TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+													if (_ent != null) {
+														final int _sltid = (int) (0);
+														final int _amount = (int) 1;
+														_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null)
+																.ifPresent(capability -> {
+																	if (capability instanceof IItemHandlerModifiable) {
+																		ItemStack _stk = capability.getStackInSlot(_sltid).copy();
+																		_stk.shrink(_amount);
+																		((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _stk);
+																	}
+																});
+													}
+												}
+												if (!world.getWorld().isRemote) {
+													world.playSound(null, new BlockPos((int) x, (int) y, (int) z),
+															(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+																	.getValue(new ResourceLocation("instrumental:drum_sound")),
+															SoundCategory.NEUTRAL, (float) 1, (float) 1);
+												} else {
+													world.getWorld().playSound(x, y, z,
+															(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+																	.getValue(new ResourceLocation("instrumental:drum_sound")),
+															SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
+												}
+												if (!world.getWorld().isRemote) {
+													BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+													TileEntity _tileEntity = world.getTileEntity(_bp);
+													BlockState _bs = world.getBlockState(_bp);
+													if (_tileEntity != null)
+														_tileEntity.getTileData().putString("MelodyType", "Resistance");
+													world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+												}
+											} else {
+												if (((new Object() {
+													public ItemStack getItemStack(BlockPos pos, int sltid) {
+														AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+														TileEntity _ent = world.getTileEntity(pos);
+														if (_ent != null) {
+															_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null)
+																	.ifPresent(capability -> {
+																		_retval.set(capability.getStackInSlot(sltid).copy());
+																	});
+														}
+														return _retval.get();
+													}
+												}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (0)))
+														.getItem() == new ItemStack(SpeedMelodyItem.block, (int) (1)).getItem())) {
+													{
+														TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+														if (_ent != null) {
+															final int _sltid = (int) (0);
+															final int _amount = (int) 1;
+															_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null)
+																	.ifPresent(capability -> {
+																		if (capability instanceof IItemHandlerModifiable) {
+																			ItemStack _stk = capability.getStackInSlot(_sltid).copy();
+																			_stk.shrink(_amount);
+																			((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _stk);
+																		}
+																	});
+														}
+													}
+													if (!world.getWorld().isRemote) {
+														world.playSound(null, new BlockPos((int) x, (int) y, (int) z),
+																(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+																		.getValue(new ResourceLocation("instrumental:drum_sound")),
+																SoundCategory.NEUTRAL, (float) 1, (float) 1);
+													} else {
+														world.getWorld().playSound(x, y, z,
+																(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+																		.getValue(new ResourceLocation("instrumental:drum_sound")),
+																SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
+													}
+													if (!world.getWorld().isRemote) {
+														BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+														TileEntity _tileEntity = world.getTileEntity(_bp);
+														BlockState _bs = world.getBlockState(_bp);
+														if (_tileEntity != null)
+															_tileEntity.getTileData().putString("MelodyType", "Speed");
+														world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+													}
+												} else {
+													if (((new Object() {
+														public ItemStack getItemStack(BlockPos pos, int sltid) {
+															AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+															TileEntity _ent = world.getTileEntity(pos);
+															if (_ent != null) {
+																_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null)
+																		.ifPresent(capability -> {
+																			_retval.set(capability.getStackInSlot(sltid).copy());
+																		});
+															}
+															return _retval.get();
+														}
+													}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (0)))
+															.getItem() == new ItemStack(WaterBlessingMelodyItem.block, (int) (1)).getItem())) {
+														{
+															TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+															if (_ent != null) {
+																final int _sltid = (int) (0);
+																final int _amount = (int) 1;
+																_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null)
+																		.ifPresent(capability -> {
+																			if (capability instanceof IItemHandlerModifiable) {
+																				ItemStack _stk = capability.getStackInSlot(_sltid).copy();
+																				_stk.shrink(_amount);
+																				((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _stk);
+																			}
+																		});
+															}
+														}
+														if (!world.getWorld().isRemote) {
+															world.playSound(null, new BlockPos((int) x, (int) y, (int) z),
+																	(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+																			.getValue(new ResourceLocation("instrumental:drum_sound")),
+																	SoundCategory.NEUTRAL, (float) 1, (float) 1);
+														} else {
+															world.getWorld().playSound(x, y, z,
+																	(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+																			.getValue(new ResourceLocation("instrumental:drum_sound")),
+																	SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
+														}
+														if (!world.getWorld().isRemote) {
+															BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+															TileEntity _tileEntity = world.getTileEntity(_bp);
+															BlockState _bs = world.getBlockState(_bp);
+															if (_tileEntity != null)
+																_tileEntity.getTileData().putString("MelodyType", "Water");
+															world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+														}
+													} else {
+														if (((new Object() {
+															public ItemStack getItemStack(BlockPos pos, int sltid) {
+																AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+																TileEntity _ent = world.getTileEntity(pos);
+																if (_ent != null) {
+																	_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null)
+																			.ifPresent(capability -> {
+																				_retval.set(capability.getStackInSlot(sltid).copy());
+																			});
+																}
+																return _retval.get();
+															}
+														}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (0)))
+																.getItem() == new ItemStack(RegenerationMelodyItem.block, (int) (1)).getItem())) {
+															{
+																TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+																if (_ent != null) {
+																	final int _sltid = (int) (0);
+																	final int _amount = (int) 1;
+																	_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null)
+																			.ifPresent(capability -> {
+																				if (capability instanceof IItemHandlerModifiable) {
+																					ItemStack _stk = capability.getStackInSlot(_sltid).copy();
+																					_stk.shrink(_amount);
+																					((IItemHandlerModifiable) capability).setStackInSlot(_sltid,
+																							_stk);
+																				}
+																			});
+																}
+															}
+															if (!world.getWorld().isRemote) {
+																world.playSound(null, new BlockPos((int) x, (int) y, (int) z),
+																		(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+																				.getValue(new ResourceLocation("instrumental:drum_sound")),
+																		SoundCategory.NEUTRAL, (float) 1, (float) 1);
+															} else {
+																world.getWorld().playSound(x, y, z,
+																		(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+																				.getValue(new ResourceLocation("instrumental:drum_sound")),
+																		SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
+															}
+															if (!world.getWorld().isRemote) {
+																BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+																TileEntity _tileEntity = world.getTileEntity(_bp);
+																BlockState _bs = world.getBlockState(_bp);
+																if (_tileEntity != null)
+																	_tileEntity.getTileData().putString("MelodyType", "Regeneration");
+																world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+															}
+														} else {
+															if (!world.getWorld().isRemote) {
+																world.playSound(null, new BlockPos((int) x, (int) y, (int) z),
+																		(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+																				.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")),
+																		SoundCategory.NEUTRAL, (float) 1, (float) 1);
+															} else {
+																world.getWorld().playSound(x, y, z,
+																		(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+																				.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")),
+																		SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
+															}
+														}
+													}
+												}
+											}
+										}
 									}
 								}
 							}

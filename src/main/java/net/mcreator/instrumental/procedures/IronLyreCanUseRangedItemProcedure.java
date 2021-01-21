@@ -17,7 +17,7 @@ import java.util.Map;
 @InstrumentalModElements.ModElement.Tag
 public class IronLyreCanUseRangedItemProcedure extends InstrumentalModElements.ModElement {
 	public IronLyreCanUseRangedItemProcedure(InstrumentalModElements instance) {
-		super(instance, 174);
+		super(instance, 199);
 	}
 
 	public static boolean executeProcedure(Map<String, Object> dependencies) {

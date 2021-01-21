@@ -25,7 +25,7 @@ import net.mcreator.instrumental.InstrumentalModElements;
 public class IronNoteParticle extends InstrumentalModElements.ModElement {
 	public static final BasicParticleType particle = new BasicParticleType(false);
 	public IronNoteParticle(InstrumentalModElements instance) {
-		super(instance, 184);
+		super(instance, 209);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
 	}

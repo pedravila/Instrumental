@@ -75,7 +75,7 @@ public class BirchDrumBlock extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:birch_drum")
 	public static final TileEntityType<CustomTileEntity> tileEntityType = null;
 	public BirchDrumBlock(InstrumentalModElements instance) {
-		super(instance, 65);
+		super(instance, 74);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
 	}
 

@@ -24,7 +24,7 @@ import com.google.common.collect.ImmutableMap;
 @InstrumentalModElements.ModElement.Tag
 public class InspirationBar16Overlay extends InstrumentalModElements.ModElement {
 	public InspirationBar16Overlay(InstrumentalModElements instance) {
-		super(instance, 137);
+		super(instance, 162);
 	}
 
 	@Override

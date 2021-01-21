@@ -22,7 +22,7 @@ public class HarmMelodyItem extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:harm_melody")
 	public static final Item block = null;
 	public HarmMelodyItem(InstrumentalModElements instance) {
-		super(instance, 71);
+		super(instance, 66);
 	}
 
 	@Override
