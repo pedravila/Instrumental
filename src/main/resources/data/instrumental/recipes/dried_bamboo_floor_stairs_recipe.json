@@ -1,0 +1,33 @@
+{
+  "group": "instrumental",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0  ",
+    "34 ",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "instrumental:dried_bamboo_floor"
+    },
+    "3": {
+      "item": "instrumental:dried_bamboo_floor"
+    },
+    "4": {
+      "item": "instrumental:dried_bamboo_floor"
+    },
+    "6": {
+      "item": "instrumental:dried_bamboo_floor"
+    },
+    "7": {
+      "item": "instrumental:dried_bamboo_floor"
+    },
+    "8": {
+      "item": "instrumental:dried_bamboo_floor"
+    }
+  },
+  "result": {
+    "item": "instrumental:dried_bamboo_floor_stairs",
+    "count": 4
+  }
+}

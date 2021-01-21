@@ -1,0 +1,7 @@
+{
+  "parent": "block/fence_side",
+  "textures": {
+    "texture": "instrumental:blocks/dryed_bamboo_floor",
+    "particle": "instrumental:blocks/dryed_bamboo_floor"
+  }
+}

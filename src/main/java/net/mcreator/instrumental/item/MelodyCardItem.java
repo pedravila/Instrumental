@@ -5,10 +5,10 @@ import net.minecraftforge.registries.ObjectHolder;
 
 import net.minecraft.item.Rarity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.block.BlockState;
 
+import net.mcreator.instrumental.itemgroup.RangedInstrumentsTabItemGroup;
 import net.mcreator.instrumental.InstrumentalModElements;
 
 @InstrumentalModElements.ModElement.Tag
@@ -16,7 +16,7 @@ public class MelodyCardItem extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:melody_card")
 	public static final Item block = null;
 	public MelodyCardItem(InstrumentalModElements instance) {
-		super(instance, 81);
+		super(instance, 62);
 	}
 
 	@Override
@@ -25,7 +25,7 @@ public class MelodyCardItem extends InstrumentalModElements.ModElement {
 	}
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
-			super(new Item.Properties().group(ItemGroup.MISC).maxStackSize(64).rarity(Rarity.COMMON));
+			super(new Item.Properties().group(RangedInstrumentsTabItemGroup.tab).maxStackSize(64).rarity(Rarity.COMMON));
 			setRegistryName("melody_card");
 		}
 

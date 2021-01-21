@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "instrumental:block/dried_bamboo_floor_slab"
+    },
+    "type=top": {
+      "model": "instrumental:block/dried_bamboo_floor_slab_top"
+    },
+    "type=double": {
+      "model": "instrumental:block/dried_bamboo_floor_slab_full"
+    }
+  }
+}

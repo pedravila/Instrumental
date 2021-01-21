@@ -16,7 +16,7 @@ import java.util.HashMap;
 @InstrumentalModElements.ModElement.Tag
 public class PlayerFlyProcedure extends InstrumentalModElements.ModElement {
 	public PlayerFlyProcedure(InstrumentalModElements instance) {
-		super(instance, 286);
+		super(instance, 293);
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 

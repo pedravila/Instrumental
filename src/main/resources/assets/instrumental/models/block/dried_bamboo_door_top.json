@@ -1,0 +1,7 @@
+{
+  "parent": "block/door_top",
+  "textures": {
+    "bottom": "instrumental:blocks/dried_bamboo_door_btom",
+    "top": "instrumental:blocks/dried_bamboo_door_top"
+  }
+}

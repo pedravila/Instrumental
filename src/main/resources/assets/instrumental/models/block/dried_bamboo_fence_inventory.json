@@ -1,0 +1,7 @@
+{
+  "parent": "block/fence_inventory",
+  "textures": {
+    "texture": "instrumental:blocks/dryed_bamboo_floor",
+    "particle": "instrumental:blocks/dryed_bamboo_floor"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "block/outer_stairs",
+  "textures": {
+    "bottom": "instrumental:blocks/dryed_bamboo_floor",
+    "top": "instrumental:blocks/dryed_bamboo_floor",
+    "side": "instrumental:blocks/dryed_bamboo_floor"
+  }
+}
