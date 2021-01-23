@@ -24,7 +24,7 @@
     "Mx": 1.0,
     "My": 1.0,
     "Mz": 1.0,
-    "name": "Obsidian Drum",
+    "name": "Obsidian Drum [WIP]",
     "specialInfo": [
       "§7 Put a block above it to muffle the sound"
     ],
@@ -47,7 +47,7 @@
     "canProvidePower": false,
     "lightOpacity": 255,
     "material": {
-      "value": "IRON"
+      "value": "ROCK"
     },
     "tickRate": 20,
     "tickRandomly": false,
@@ -94,6 +94,9 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
+    "onTickUpdate": {
+      "name": "DrumTickUpdate"
+    },
     "spawnWorldTypes": [],
     "restrictionBiomes": [],
     "blocksToReplace": [

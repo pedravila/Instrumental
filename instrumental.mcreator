@@ -3370,18 +3370,6 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "regeneration_melody"
-    },
-    {
-      "name": "ObsidianDrumTickUpdate",
-      "type": "procedure",
-      "sortid": 307,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "obsidian_drum_tick_update",
-      "metadata": {
-        "dependencies": []
-      }
     }
   ],
   "variable_elements": [
@@ -3540,8 +3528,8 @@
   ],
   "language_map": {
     "en_us": {
-      "item.instrumental.speaker": "Speaker",
       "item.instrumental.obsidian_banjo": "Obsidian Banjo",
+      "item.instrumental.speaker": "Speaker",
       "block.instrumental.drum_leather_block": "Drum Leather Block",
       "item.instrumental.speed_melody": "Speed Melody",
       "item.instrumental.birch_tambourine": "Birch Tambourine",
@@ -3553,7 +3541,7 @@
       "item.instrumental.speed_speaker": "Speed Speaker",
       "item.instrumental.spiration_speaker": "Inspiration Speaker",
       "item.instrumental.water_blessing_melody": "Water Blessing Melody",
-      "block.instrumental.obsidian_drum": "Obsidian Drum",
+      "block.instrumental.obsidian_drum": "Obsidian Drum [WIP]",
       "block.instrumental.dried_bamboo_floor": "Dried Bamboo Floor",
       "block.instrumental.birch_drum": "Birch Drum",
       "item.instrumental.rotten_score": "Rotten Score",
@@ -3563,20 +3551,20 @@
       "item.instrumental.regeneration_melody": "Regeneration Melody",
       "item.instrumental.wither_score": "Wither Score",
       "subtitles.berimbau_sound": "",
-      "block.instrumental.driend_bamboo_fence_gate": "Dried Bamboo Fence Gate",
-      "item.instrumental.dried_bamboo": "Dried Bamboo",
       "subtitles.redstone_maraca_sound": "",
+      "item.instrumental.dried_bamboo": "Dried Bamboo",
+      "block.instrumental.driend_bamboo_fence_gate": "Dried Bamboo Fence Gate",
       "item.instrumental.jump_boost_speaker": "Jump Boost Speaker",
       "item.instrumental.obsidian_ukulele": "Obsidian Ukulele",
       "subtitles.trumpet_sound": "",
-      "block.instrumental.cyan_dance_floor": "Cyan Dance Floor",
       "item.instrumental.hero_melody": "Hero Melody",
+      "block.instrumental.cyan_dance_floor": "Cyan Dance Floor",
       "item.instrumental.water_breathing_speaker": "Water Breathing Speaker",
       "item.instrumental.oak_tambourine": "Oak Tambourine",
       "item.instrumental.regeneration_speaker": "Regeneration Speaker",
       "item.instrumental.gold_bell": "Gold Bell",
-      "item.instrumental.iron_banjo": "Iron Banjo",
       "item.instrumental.night_vision_melody": "Night Vision Melody",
+      "item.instrumental.iron_banjo": "Iron Banjo",
       "item.instrumental.poison_score": "Poison Score",
       "item.instrumental.powered_regeneration_speaker": "Powered Regeneration Speaker",
       "item.instrumental.diamond_string": "Diamond String",

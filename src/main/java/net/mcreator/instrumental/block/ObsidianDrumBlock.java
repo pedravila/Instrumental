@@ -16,6 +16,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.storage.loot.LootContext;
+import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.World;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.IBlockReader;
@@ -51,6 +52,7 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Block;
 
+import net.mcreator.instrumental.procedures.DrumTickUpdateProcedure;
 import net.mcreator.instrumental.itemgroup.RangedInstrumentsTabItemGroup;
 import net.mcreator.instrumental.gui.DrumGUIGui;
 import net.mcreator.instrumental.InstrumentalModElements;
@@ -58,7 +60,10 @@ import net.mcreator.instrumental.InstrumentalModElements;
 import javax.annotation.Nullable;
 
 import java.util.stream.IntStream;
+import java.util.Random;
+import java.util.Map;
 import java.util.List;
+import java.util.HashMap;
 import java.util.Collections;
 
 import io.netty.buffer.Unpooled;
@@ -87,7 +92,7 @@ public class ObsidianDrumBlock extends InstrumentalModElements.ModElement {
 	}
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
-			super(Block.Properties.create(Material.IRON).sound(SoundType.STONE).hardnessAndResistance(10f, 1000f).lightValue(0).harvestLevel(1)
+			super(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(10f, 1000f).lightValue(0).harvestLevel(1)
 					.harvestTool(ToolType.PICKAXE));
 			setRegistryName("obsidian_drum");
 		}
@@ -113,6 +118,32 @@ public class ObsidianDrumBlock extends InstrumentalModElements.ModElement {
 		}
 
 		@Override
+		public void onBlockAdded(BlockState state, World world, BlockPos pos, BlockState oldState, boolean moving) {
+			super.onBlockAdded(state, world, pos, oldState, moving);
+			int x = pos.getX();
+			int y = pos.getY();
+			int z = pos.getZ();
+			world.getPendingBlockTicks().scheduleTick(new BlockPos(x, y, z), this, this.tickRate(world));
+		}
+
+		@Override
+		public void tick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
+			super.tick(state, world, pos, random);
+			int x = pos.getX();
+			int y = pos.getY();
+			int z = pos.getZ();
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("x", x);
+				$_dependencies.put("y", y);
+				$_dependencies.put("z", z);
+				$_dependencies.put("world", world);
+				DrumTickUpdateProcedure.executeProcedure($_dependencies);
+			}
+			world.getPendingBlockTicks().scheduleTick(new BlockPos(x, y, z), this, this.tickRate(world));
+		}
+
+		@Override
 		public ActionResultType onBlockActivated(BlockState state, World world, BlockPos pos, PlayerEntity entity, Hand hand,
 				BlockRayTraceResult hit) {
 			super.onBlockActivated(state, world, pos, entity, hand, hit);
@@ -123,7 +154,7 @@ public class ObsidianDrumBlock extends InstrumentalModElements.ModElement {
 				NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {
 					@Override
 					public ITextComponent getDisplayName() {
-						return new StringTextComponent("Obsidian Drum");
+						return new StringTextComponent("Obsidian Drum [WIP]");
 					}
 
 					@Override
@@ -255,7 +286,7 @@ public class ObsidianDrumBlock extends InstrumentalModElements.ModElement {
 
 		@Override
 		public ITextComponent getDisplayName() {
-			return new StringTextComponent("Obsidian Drum");
+			return new StringTextComponent("Obsidian Drum [WIP]");
 		}
 
 		@Override
