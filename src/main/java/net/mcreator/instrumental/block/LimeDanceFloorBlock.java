@@ -3,7 +3,7 @@ package net.mcreator.instrumental.block;
 
 import net.minecraftforge.registries.ObjectHolder;
 
-import net.minecraft.world.storage.loot.LootContext;
+import net.minecraft.loot.LootContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
 import net.minecraft.item.BlockItem;
@@ -23,7 +23,7 @@ public class LimeDanceFloorBlock extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:lime_dance_floor")
 	public static final Block block = null;
 	public LimeDanceFloorBlock(InstrumentalModElements instance) {
-		super(instance, 85);
+		super(instance, 94);
 	}
 
 	@Override
@@ -34,7 +34,7 @@ public class LimeDanceFloorBlock extends InstrumentalModElements.ModElement {
 	}
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
-			super(Block.Properties.create(Material.GLASS).sound(SoundType.GLASS).hardnessAndResistance(1f, 10f).lightValue(15));
+			super(Block.Properties.create(Material.GLASS).sound(SoundType.GLASS).hardnessAndResistance(1f, 10f).setLightLevel(s -> 15));
 			setRegistryName("lime_dance_floor");
 		}
 

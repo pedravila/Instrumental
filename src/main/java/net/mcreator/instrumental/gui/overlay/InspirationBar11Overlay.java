@@ -24,7 +24,7 @@ import com.google.common.collect.ImmutableMap;
 @InstrumentalModElements.ModElement.Tag
 public class InspirationBar11Overlay extends InstrumentalModElements.ModElement {
 	public InspirationBar11Overlay(InstrumentalModElements instance) {
-		super(instance, 157);
+		super(instance, 172);
 	}
 
 	@Override
@@ -43,20 +43,20 @@ public class InspirationBar11Overlay extends InstrumentalModElements.ModElement 
 			double x = entity.getPosX();
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
+			RenderSystem.disableDepthTest();
+			RenderSystem.depthMask(false);
+			RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA,
+					GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
+			RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+			RenderSystem.disableAlphaTest();
 			if (InspirationBar11DisplayOverlayIngameProcedure.executeProcedure(ImmutableMap.of("entity", entity))) {
-				RenderSystem.disableDepthTest();
-				RenderSystem.depthMask(false);
-				RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA,
-						GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
-				RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
-				RenderSystem.disableAlphaTest();
 				Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("instrumental:textures/inspiration_11.png"));
-				Minecraft.getInstance().ingameGUI.blit(posX + -91, posY + 77, 0, 0, 100, 10, 100, 10);
-				RenderSystem.depthMask(true);
-				RenderSystem.enableDepthTest();
-				RenderSystem.enableAlphaTest();
-				RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+				Minecraft.getInstance().ingameGUI.blit(event.getMatrixStack(), posX + -91, posY + 77, 0, 0, 100, 10, 100, 10);
 			}
+			RenderSystem.depthMask(true);
+			RenderSystem.enableDepthTest();
+			RenderSystem.enableAlphaTest();
+			RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
 		}
 	}
 }

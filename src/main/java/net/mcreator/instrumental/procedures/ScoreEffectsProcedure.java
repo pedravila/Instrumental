@@ -22,7 +22,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.client.network.play.NetworkPlayerInfo;
-import net.minecraft.client.entity.player.ClientPlayerEntity;
+import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.client.Minecraft;
 
 import net.mcreator.instrumental.item.WitherScoreItem;
@@ -36,6 +36,7 @@ import net.mcreator.instrumental.item.FrozenScoreItem;
 import net.mcreator.instrumental.item.FireScoreItem;
 import net.mcreator.instrumental.item.EndScoreItem;
 import net.mcreator.instrumental.InstrumentalModElements;
+import net.mcreator.instrumental.InstrumentalMod;
 
 import java.util.Random;
 import java.util.Map;
@@ -45,24 +46,24 @@ import java.util.Collections;
 @InstrumentalModElements.ModElement.Tag
 public class ScoreEffectsProcedure extends InstrumentalModElements.ModElement {
 	public ScoreEffectsProcedure(InstrumentalModElements instance) {
-		super(instance, 215);
+		super(instance, 230);
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				System.err.println("Failed to load dependency entity for procedure ScoreEffects!");
+				InstrumentalMod.LOGGER.warn("Failed to load dependency entity for procedure ScoreEffects!");
 			return;
 		}
 		if (dependencies.get("sourceentity") == null) {
 			if (!dependencies.containsKey("sourceentity"))
-				System.err.println("Failed to load dependency sourceentity for procedure ScoreEffects!");
+				InstrumentalMod.LOGGER.warn("Failed to load dependency sourceentity for procedure ScoreEffects!");
 			return;
 		}
 		if (dependencies.get("world") == null) {
 			if (!dependencies.containsKey("world"))
-				System.err.println("Failed to load dependency world for procedure ScoreEffects!");
+				InstrumentalMod.LOGGER.warn("Failed to load dependency world for procedure ScoreEffects!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
@@ -71,7 +72,7 @@ public class ScoreEffectsProcedure extends InstrumentalModElements.ModElement {
 		double mob_x_position = 0;
 		double mob_z_position = 0;
 		double mob_y_position = 0;
-		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:ranged_instruments").toLowerCase(java.util.Locale.ENGLISH)))
+		if (((ItemTags.getCollection().getTagByID(new ResourceLocation(("forge:ranged_instruments").toLowerCase(java.util.Locale.ENGLISH)))
 				.contains(((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY).getItem()))
 				&& (((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemOffhand() : ItemStack.EMPTY)
 						.getItem() == new ItemStack(FireScoreItem.block, (int) (1)).getItem()))) {
@@ -80,9 +81,9 @@ public class ScoreEffectsProcedure extends InstrumentalModElements.ModElement {
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayerEntity) {
 						return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.SURVIVAL;
-					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote) {
+					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote()) {
 						NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
-								.getPlayerInfo(((ClientPlayerEntity) _ent).getGameProfile().getId());
+								.getPlayerInfo(((AbstractClientPlayerEntity) _ent).getGameProfile().getId());
 						return _npi != null && _npi.getGameType() == GameType.SURVIVAL;
 					}
 					return false;
@@ -97,7 +98,7 @@ public class ScoreEffectsProcedure extends InstrumentalModElements.ModElement {
 				}
 			}
 		}
-		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:ranged_instruments").toLowerCase(java.util.Locale.ENGLISH)))
+		if (((ItemTags.getCollection().getTagByID(new ResourceLocation(("forge:ranged_instruments").toLowerCase(java.util.Locale.ENGLISH)))
 				.contains(((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY).getItem()))
 				&& (((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemOffhand() : ItemStack.EMPTY)
 						.getItem() == new ItemStack(FrozenScoreItem.block, (int) (1)).getItem()))) {
@@ -107,9 +108,9 @@ public class ScoreEffectsProcedure extends InstrumentalModElements.ModElement {
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayerEntity) {
 						return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.SURVIVAL;
-					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote) {
+					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote()) {
 						NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
-								.getPlayerInfo(((ClientPlayerEntity) _ent).getGameProfile().getId());
+								.getPlayerInfo(((AbstractClientPlayerEntity) _ent).getGameProfile().getId());
 						return _npi != null && _npi.getGameType() == GameType.SURVIVAL;
 					}
 					return false;
@@ -124,7 +125,7 @@ public class ScoreEffectsProcedure extends InstrumentalModElements.ModElement {
 				}
 			}
 		}
-		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:ranged_instruments").toLowerCase(java.util.Locale.ENGLISH)))
+		if (((ItemTags.getCollection().getTagByID(new ResourceLocation(("forge:ranged_instruments").toLowerCase(java.util.Locale.ENGLISH)))
 				.contains(((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY).getItem()))
 				&& (((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemOffhand() : ItemStack.EMPTY)
 						.getItem() == new ItemStack(PoisonScoreItem.block, (int) (1)).getItem()))) {
@@ -134,9 +135,9 @@ public class ScoreEffectsProcedure extends InstrumentalModElements.ModElement {
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayerEntity) {
 						return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.SURVIVAL;
-					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote) {
+					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote()) {
 						NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
-								.getPlayerInfo(((ClientPlayerEntity) _ent).getGameProfile().getId());
+								.getPlayerInfo(((AbstractClientPlayerEntity) _ent).getGameProfile().getId());
 						return _npi != null && _npi.getGameType() == GameType.SURVIVAL;
 					}
 					return false;
@@ -151,7 +152,7 @@ public class ScoreEffectsProcedure extends InstrumentalModElements.ModElement {
 				}
 			}
 		}
-		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:ranged_instruments").toLowerCase(java.util.Locale.ENGLISH)))
+		if (((ItemTags.getCollection().getTagByID(new ResourceLocation(("forge:ranged_instruments").toLowerCase(java.util.Locale.ENGLISH)))
 				.contains(((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY).getItem()))
 				&& (((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemOffhand() : ItemStack.EMPTY)
 						.getItem() == new ItemStack(RottenScoreItem.block, (int) (1)).getItem()))) {
@@ -161,9 +162,9 @@ public class ScoreEffectsProcedure extends InstrumentalModElements.ModElement {
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayerEntity) {
 						return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.SURVIVAL;
-					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote) {
+					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote()) {
 						NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
-								.getPlayerInfo(((ClientPlayerEntity) _ent).getGameProfile().getId());
+								.getPlayerInfo(((AbstractClientPlayerEntity) _ent).getGameProfile().getId());
 						return _npi != null && _npi.getGameType() == GameType.SURVIVAL;
 					}
 					return false;
@@ -178,7 +179,7 @@ public class ScoreEffectsProcedure extends InstrumentalModElements.ModElement {
 				}
 			}
 		}
-		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:ranged_instruments").toLowerCase(java.util.Locale.ENGLISH)))
+		if (((ItemTags.getCollection().getTagByID(new ResourceLocation(("forge:ranged_instruments").toLowerCase(java.util.Locale.ENGLISH)))
 				.contains(((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY).getItem()))
 				&& (((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemOffhand() : ItemStack.EMPTY)
 						.getItem() == new ItemStack(SpectralScoreItem.block, (int) (1)).getItem()))) {
@@ -188,9 +189,9 @@ public class ScoreEffectsProcedure extends InstrumentalModElements.ModElement {
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayerEntity) {
 						return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.SURVIVAL;
-					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote) {
+					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote()) {
 						NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
-								.getPlayerInfo(((ClientPlayerEntity) _ent).getGameProfile().getId());
+								.getPlayerInfo(((AbstractClientPlayerEntity) _ent).getGameProfile().getId());
 						return _npi != null && _npi.getGameType() == GameType.SURVIVAL;
 					}
 					return false;
@@ -205,7 +206,7 @@ public class ScoreEffectsProcedure extends InstrumentalModElements.ModElement {
 				}
 			}
 		}
-		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:ranged_instruments").toLowerCase(java.util.Locale.ENGLISH)))
+		if (((ItemTags.getCollection().getTagByID(new ResourceLocation(("forge:ranged_instruments").toLowerCase(java.util.Locale.ENGLISH)))
 				.contains(((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY).getItem()))
 				&& (((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemOffhand() : ItemStack.EMPTY)
 						.getItem() == new ItemStack(EndScoreItem.block, (int) (1)).getItem()))) {
@@ -213,12 +214,12 @@ public class ScoreEffectsProcedure extends InstrumentalModElements.ModElement {
 				((ServerWorld) world).spawnParticle(ParticleTypes.PORTAL, (entity.getPosX()), (entity.getPosY()), (entity.getPosZ()), (int) 5, 1, 1,
 						1, 1);
 			}
-			if (!world.getWorld().isRemote) {
-				world.playSound(null, new BlockPos((int) (entity.getPosX()), (int) (entity.getPosY()), (int) (entity.getPosZ())),
+			if (world instanceof World && !world.isRemote()) {
+				((World) world).playSound(null, new BlockPos((int) (entity.getPosX()), (int) (entity.getPosY()), (int) (entity.getPosZ())),
 						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.enderman.teleport")),
 						SoundCategory.NEUTRAL, (float) 1, (float) 1);
 			} else {
-				world.getWorld().playSound((entity.getPosX()), (entity.getPosY()), (entity.getPosZ()),
+				((World) world).playSound((entity.getPosX()), (entity.getPosY()), (entity.getPosZ()),
 						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.enderman.teleport")),
 						SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
 			}
@@ -234,9 +235,9 @@ public class ScoreEffectsProcedure extends InstrumentalModElements.ModElement {
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayerEntity) {
 						return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.SURVIVAL;
-					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote) {
+					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote()) {
 						NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
-								.getPlayerInfo(((ClientPlayerEntity) _ent).getGameProfile().getId());
+								.getPlayerInfo(((AbstractClientPlayerEntity) _ent).getGameProfile().getId());
 						return _npi != null && _npi.getGameType() == GameType.SURVIVAL;
 					}
 					return false;
@@ -251,16 +252,16 @@ public class ScoreEffectsProcedure extends InstrumentalModElements.ModElement {
 				}
 			}
 		}
-		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:ranged_instruments").toLowerCase(java.util.Locale.ENGLISH)))
+		if (((ItemTags.getCollection().getTagByID(new ResourceLocation(("forge:ranged_instruments").toLowerCase(java.util.Locale.ENGLISH)))
 				.contains(((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY).getItem()))
 				&& (((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemOffhand() : ItemStack.EMPTY)
 						.getItem() == new ItemStack(PistonScoreItem.block, (int) (1)).getItem()))) {
-			if (!world.getWorld().isRemote) {
-				world.playSound(null, new BlockPos((int) (entity.getPosX()), (int) (entity.getPosY()), (int) (entity.getPosZ())),
+			if (world instanceof World && !world.isRemote()) {
+				((World) world).playSound(null, new BlockPos((int) (entity.getPosX()), (int) (entity.getPosY()), (int) (entity.getPosZ())),
 						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.piston.extend")),
 						SoundCategory.NEUTRAL, (float) 1, (float) 1);
 			} else {
-				world.getWorld().playSound((entity.getPosX()), (entity.getPosY()), (entity.getPosZ()),
+				((World) world).playSound((entity.getPosX()), (entity.getPosY()), (entity.getPosZ()),
 						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.piston.extend")),
 						SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
 			}
@@ -270,9 +271,9 @@ public class ScoreEffectsProcedure extends InstrumentalModElements.ModElement {
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayerEntity) {
 						return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.SURVIVAL;
-					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote) {
+					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote()) {
 						NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
-								.getPlayerInfo(((ClientPlayerEntity) _ent).getGameProfile().getId());
+								.getPlayerInfo(((AbstractClientPlayerEntity) _ent).getGameProfile().getId());
 						return _npi != null && _npi.getGameType() == GameType.SURVIVAL;
 					}
 					return false;
@@ -287,7 +288,7 @@ public class ScoreEffectsProcedure extends InstrumentalModElements.ModElement {
 				}
 			}
 		}
-		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:ranged_instruments").toLowerCase(java.util.Locale.ENGLISH)))
+		if (((ItemTags.getCollection().getTagByID(new ResourceLocation(("forge:ranged_instruments").toLowerCase(java.util.Locale.ENGLISH)))
 				.contains(((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY).getItem()))
 				&& (((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemOffhand() : ItemStack.EMPTY)
 						.getItem() == new ItemStack(LevitationScoreItem.block, (int) (1)).getItem()))) {
@@ -297,9 +298,9 @@ public class ScoreEffectsProcedure extends InstrumentalModElements.ModElement {
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayerEntity) {
 						return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.SURVIVAL;
-					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote) {
+					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote()) {
 						NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
-								.getPlayerInfo(((ClientPlayerEntity) _ent).getGameProfile().getId());
+								.getPlayerInfo(((AbstractClientPlayerEntity) _ent).getGameProfile().getId());
 						return _npi != null && _npi.getGameType() == GameType.SURVIVAL;
 					}
 					return false;
@@ -314,7 +315,7 @@ public class ScoreEffectsProcedure extends InstrumentalModElements.ModElement {
 				}
 			}
 		}
-		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:ranged_instruments").toLowerCase(java.util.Locale.ENGLISH)))
+		if (((ItemTags.getCollection().getTagByID(new ResourceLocation(("forge:ranged_instruments").toLowerCase(java.util.Locale.ENGLISH)))
 				.contains(((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY).getItem()))
 				&& (((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemOffhand() : ItemStack.EMPTY)
 						.getItem() == new ItemStack(WitherScoreItem.block, (int) (1)).getItem()))) {
@@ -324,9 +325,9 @@ public class ScoreEffectsProcedure extends InstrumentalModElements.ModElement {
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayerEntity) {
 						return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.SURVIVAL;
-					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote) {
+					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote()) {
 						NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
-								.getPlayerInfo(((ClientPlayerEntity) _ent).getGameProfile().getId());
+								.getPlayerInfo(((AbstractClientPlayerEntity) _ent).getGameProfile().getId());
 						return _npi != null && _npi.getGameType() == GameType.SURVIVAL;
 					}
 					return false;
@@ -341,7 +342,7 @@ public class ScoreEffectsProcedure extends InstrumentalModElements.ModElement {
 				}
 			}
 		}
-		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:ranged_instruments").toLowerCase(java.util.Locale.ENGLISH)))
+		if (((ItemTags.getCollection().getTagByID(new ResourceLocation(("forge:ranged_instruments").toLowerCase(java.util.Locale.ENGLISH)))
 				.contains(((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY).getItem()))
 				&& (((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemOffhand() : ItemStack.EMPTY)
 						.getItem() == new ItemStack(SwitchScoreItem.block, (int) (1)).getItem()))) {
@@ -364,12 +365,12 @@ public class ScoreEffectsProcedure extends InstrumentalModElements.ModElement {
 							_ent.rotationPitch, Collections.emptySet());
 				}
 			}
-			if (!world.getWorld().isRemote) {
-				world.playSound(null, new BlockPos((int) (entity.getPosX()), (int) (entity.getPosY()), (int) (entity.getPosZ())),
+			if (world instanceof World && !world.isRemote()) {
+				((World) world).playSound(null, new BlockPos((int) (entity.getPosX()), (int) (entity.getPosY()), (int) (entity.getPosZ())),
 						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.enderman.teleport")),
 						SoundCategory.NEUTRAL, (float) 1, (float) 1);
 			} else {
-				world.getWorld().playSound((entity.getPosX()), (entity.getPosY()), (entity.getPosZ()),
+				((World) world).playSound((entity.getPosX()), (entity.getPosY()), (entity.getPosZ()),
 						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.enderman.teleport")),
 						SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
 			}
@@ -377,12 +378,13 @@ public class ScoreEffectsProcedure extends InstrumentalModElements.ModElement {
 				((ServerWorld) world).spawnParticle(ParticleTypes.PORTAL, (entity.getPosX()), (entity.getPosY()), (entity.getPosZ()), (int) 5, 1, 1,
 						1, 1);
 			}
-			if (!world.getWorld().isRemote) {
-				world.playSound(null, new BlockPos((int) (sourceentity.getPosX()), (int) (sourceentity.getPosY()), (int) (sourceentity.getPosZ())),
+			if (world instanceof World && !world.isRemote()) {
+				((World) world).playSound(null,
+						new BlockPos((int) (sourceentity.getPosX()), (int) (sourceentity.getPosY()), (int) (sourceentity.getPosZ())),
 						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.enderman.teleport")),
 						SoundCategory.NEUTRAL, (float) 1, (float) 1);
 			} else {
-				world.getWorld().playSound((sourceentity.getPosX()), (sourceentity.getPosY()), (sourceentity.getPosZ()),
+				((World) world).playSound((sourceentity.getPosX()), (sourceentity.getPosY()), (sourceentity.getPosZ()),
 						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.enderman.teleport")),
 						SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
 			}
@@ -394,9 +396,9 @@ public class ScoreEffectsProcedure extends InstrumentalModElements.ModElement {
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayerEntity) {
 						return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.SURVIVAL;
-					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote) {
+					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote()) {
 						NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
-								.getPlayerInfo(((ClientPlayerEntity) _ent).getGameProfile().getId());
+								.getPlayerInfo(((AbstractClientPlayerEntity) _ent).getGameProfile().getId());
 						return _npi != null && _npi.getGameType() == GameType.SURVIVAL;
 					}
 					return false;

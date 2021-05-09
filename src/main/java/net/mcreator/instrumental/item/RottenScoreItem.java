@@ -22,7 +22,7 @@ public class RottenScoreItem extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:rotten_score")
 	public static final Item block = null;
 	public RottenScoreItem(InstrumentalModElements instance) {
-		super(instance, 41);
+		super(instance, 50);
 	}
 
 	@Override

@@ -5,10 +5,11 @@ import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.CapabilityItemHandler;
 
 import net.minecraft.world.server.ServerWorld;
+import net.minecraft.world.World;
 import net.minecraft.world.IWorld;
 import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.math.Vec3d;
-import net.minecraft.util.math.Vec2f;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.util.math.vector.Vector2f;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.SoundCategory;
@@ -17,7 +18,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.DamageSource;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.state.IProperty;
+import net.minecraft.state.Property;
 import net.minecraft.potion.Effects;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.item.Items;
@@ -50,6 +51,7 @@ import net.mcreator.instrumental.block.BrownDanceFloorBlock;
 import net.mcreator.instrumental.block.BlueDanceFloorBlock;
 import net.mcreator.instrumental.block.BlackDanceFloorBlock;
 import net.mcreator.instrumental.InstrumentalModElements;
+import net.mcreator.instrumental.InstrumentalMod;
 
 import java.util.function.Function;
 import java.util.Map;
@@ -58,28 +60,28 @@ import java.util.Comparator;
 @InstrumentalModElements.ModElement.Tag
 public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement {
 	public DrumTickUpdateProcedure(InstrumentalModElements instance) {
-		super(instance, 261);
+		super(instance, 276);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
-				System.err.println("Failed to load dependency x for procedure DrumTickUpdate!");
+				InstrumentalMod.LOGGER.warn("Failed to load dependency x for procedure DrumTickUpdate!");
 			return;
 		}
 		if (dependencies.get("y") == null) {
 			if (!dependencies.containsKey("y"))
-				System.err.println("Failed to load dependency y for procedure DrumTickUpdate!");
+				InstrumentalMod.LOGGER.warn("Failed to load dependency y for procedure DrumTickUpdate!");
 			return;
 		}
 		if (dependencies.get("z") == null) {
 			if (!dependencies.containsKey("z"))
-				System.err.println("Failed to load dependency z for procedure DrumTickUpdate!");
+				InstrumentalMod.LOGGER.warn("Failed to load dependency z for procedure DrumTickUpdate!");
 			return;
 		}
 		if (dependencies.get("world") == null) {
 			if (!dependencies.containsKey("world"))
-				System.err.println("Failed to load dependency world for procedure DrumTickUpdate!");
+				InstrumentalMod.LOGGER.warn("Failed to load dependency world for procedure DrumTickUpdate!");
 			return;
 		}
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
@@ -91,36 +93,37 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 		double sz = 0;
 		double GetDay = 0;
 		if ((((new Object() {
-			public String getValue(BlockPos pos, String tag) {
+			public String getValue(IWorld world, BlockPos pos, String tag) {
 				TileEntity tileEntity = world.getTileEntity(pos);
 				if (tileEntity != null)
 					return tileEntity.getTileData().getString(tag);
 				return "";
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "MelodyType"))).equals("Haste"))) {
-			if (!world.getWorld().isRemote) {
+		}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "MelodyType"))).equals("Haste"))) {
+			if (!world.isRemote()) {
 				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 				TileEntity _tileEntity = world.getTileEntity(_bp);
 				BlockState _bs = world.getBlockState(_bp);
 				if (_tileEntity != null)
 					_tileEntity.getTileData().putDouble("Countdown", ((new Object() {
-						public double getValue(BlockPos pos, String tag) {
+						public double getValue(IWorld world, BlockPos pos, String tag) {
 							TileEntity tileEntity = world.getTileEntity(pos);
 							if (tileEntity != null)
 								return tileEntity.getTileData().getDouble(tag);
 							return -1;
 						}
-					}.getValue(new BlockPos((int) x, (int) y, (int) z), "Countdown")) + 1));
-				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "Countdown")) + 1));
+				if (world instanceof World)
+					((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 			if (((new Object() {
-				public double getValue(BlockPos pos, String tag) {
+				public double getValue(IWorld world, BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
 					if (tileEntity != null)
 						return tileEntity.getTileData().getDouble(tag);
 					return -1;
 				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Countdown")) < 12000)) {
+			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "Countdown")) < 12000)) {
 				sx = (double) (-10);
 				for (int index0 = 0; index0 < (int) (21); index0++) {
 					sy = (double) (-10);
@@ -181,399 +184,439 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 						});
 					}
 				}
-				if (!world.getWorld().isRemote) {
+				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putDouble("DrumSoundCounter", ((new Object() {
-							public double getValue(BlockPos pos, String tag) {
+							public double getValue(IWorld world, BlockPos pos, String tag) {
 								TileEntity tileEntity = world.getTileEntity(pos);
 								if (tileEntity != null)
 									return tileEntity.getTileData().getDouble(tag);
 								return -1;
 							}
-						}.getValue(new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) + 1));
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+						}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) + 1));
+					if (world instanceof World)
+						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 				if (((((new Object() {
-					public double getValue(BlockPos pos, String tag) {
+					public double getValue(IWorld world, BlockPos pos, String tag) {
 						TileEntity tileEntity = world.getTileEntity(pos);
 						if (tileEntity != null)
 							return tileEntity.getTileData().getDouble(tag);
 						return -1;
 					}
-				}.getValue(new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) % 5) == 0)
+				}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) % 5) == 0)
 						&& (world.isAirBlock(new BlockPos((int) x, (int) (y + 1), (int) z))))) {
-					if (!world.getWorld().isRemote) {
-						world.playSound(null, new BlockPos((int) x, (int) y, (int) z), (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-								.getValue(new ResourceLocation("instrumental:drum_sound")), SoundCategory.NEUTRAL, (float) 1, (float) 1);
+					if (world instanceof World && !world.isRemote()) {
+						((World) world)
+								.playSound(null, new BlockPos((int) x, (int) y, (int) z),
+										(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+												.getValue(new ResourceLocation("instrumental:drum_sound")),
+										SoundCategory.NEUTRAL, (float) 1, (float) 1);
 					} else {
-						world.getWorld().playSound(x, y, z,
+						((World) world).playSound(x, y, z,
 								(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
 										.getValue(new ResourceLocation("instrumental:drum_sound")),
 								SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
 					}
 				}
 			} else {
-				if (!world.getWorld().isRemote) {
-					world.playSound(null, new BlockPos((int) x, (int) y, (int) z), (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-							.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")), SoundCategory.NEUTRAL, (float) 1, (float) 1);
+				if (world instanceof World && !world.isRemote()) {
+					((World) world)
+							.playSound(null, new BlockPos((int) x, (int) y, (int) z),
+									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+											.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")),
+									SoundCategory.NEUTRAL, (float) 1, (float) 1);
 				} else {
-					world.getWorld().playSound(x, y, z,
+					((World) world).playSound(x, y, z,
 							(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
 									.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")),
 							SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
 				}
-				if (!world.getWorld().isRemote) {
+				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putString("MelodyType", "None");
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					if (world instanceof World)
+						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
-				if (!world.getWorld().isRemote) {
+				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putDouble("Countdown", 0);
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					if (world instanceof World)
+						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 			}
 		}
 		if ((((new Object() {
-			public String getValue(BlockPos pos, String tag) {
+			public String getValue(IWorld world, BlockPos pos, String tag) {
 				TileEntity tileEntity = world.getTileEntity(pos);
 				if (tileEntity != null)
 					return tileEntity.getTileData().getString(tag);
 				return "";
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "MelodyType"))).equals("Rainy"))) {
-			if (!world.getWorld().isRemote) {
+		}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "MelodyType"))).equals("Rainy"))) {
+			if (!world.isRemote()) {
 				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 				TileEntity _tileEntity = world.getTileEntity(_bp);
 				BlockState _bs = world.getBlockState(_bp);
 				if (_tileEntity != null)
 					_tileEntity.getTileData().putDouble("Countdown", ((new Object() {
-						public double getValue(BlockPos pos, String tag) {
+						public double getValue(IWorld world, BlockPos pos, String tag) {
 							TileEntity tileEntity = world.getTileEntity(pos);
 							if (tileEntity != null)
 								return tileEntity.getTileData().getDouble(tag);
 							return -1;
 						}
-					}.getValue(new BlockPos((int) x, (int) y, (int) z), "Countdown")) + 1));
-				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "Countdown")) + 1));
+				if (world instanceof World)
+					((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 			if (((new Object() {
-				public double getValue(BlockPos pos, String tag) {
+				public double getValue(IWorld world, BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
 					if (tileEntity != null)
 						return tileEntity.getTileData().getDouble(tag);
 					return -1;
 				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Countdown")) < 12000)) {
-				if (!world.getWorld().isRemote) {
+			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "Countdown")) < 12000)) {
+				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putDouble("DrumSoundCounter", ((new Object() {
-							public double getValue(BlockPos pos, String tag) {
+							public double getValue(IWorld world, BlockPos pos, String tag) {
 								TileEntity tileEntity = world.getTileEntity(pos);
 								if (tileEntity != null)
 									return tileEntity.getTileData().getDouble(tag);
 								return -1;
 							}
-						}.getValue(new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) + 1));
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+						}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) + 1));
+					if (world instanceof World)
+						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 				if (((((new Object() {
-					public double getValue(BlockPos pos, String tag) {
+					public double getValue(IWorld world, BlockPos pos, String tag) {
 						TileEntity tileEntity = world.getTileEntity(pos);
 						if (tileEntity != null)
 							return tileEntity.getTileData().getDouble(tag);
 						return -1;
 					}
-				}.getValue(new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) % 5) == 0)
+				}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) % 5) == 0)
 						&& (world.isAirBlock(new BlockPos((int) x, (int) (y + 1), (int) z))))) {
-					if (!world.getWorld().isRemote) {
-						world.playSound(null, new BlockPos((int) x, (int) y, (int) z), (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-								.getValue(new ResourceLocation("instrumental:drum_sound")), SoundCategory.NEUTRAL, (float) 1, (float) 1);
+					if (world instanceof World && !world.isRemote()) {
+						((World) world)
+								.playSound(null, new BlockPos((int) x, (int) y, (int) z),
+										(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+												.getValue(new ResourceLocation("instrumental:drum_sound")),
+										SoundCategory.NEUTRAL, (float) 1, (float) 1);
 					} else {
-						world.getWorld().playSound(x, y, z,
+						((World) world).playSound(x, y, z,
 								(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
 										.getValue(new ResourceLocation("instrumental:drum_sound")),
 								SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
 					}
-					if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
-						world.getWorld().getServer().getCommandManager()
+					if (world instanceof ServerWorld) {
+						((World) world).getServer().getCommandManager()
 								.handleCommand(
-										new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
-												new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
+										new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world, 4, "",
+												new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
 										"weather rain");
 					}
 				}
 			} else {
-				if (!world.getWorld().isRemote) {
-					world.playSound(null, new BlockPos((int) x, (int) y, (int) z), (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-							.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")), SoundCategory.NEUTRAL, (float) 1, (float) 1);
+				if (world instanceof World && !world.isRemote()) {
+					((World) world)
+							.playSound(null, new BlockPos((int) x, (int) y, (int) z),
+									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+											.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")),
+									SoundCategory.NEUTRAL, (float) 1, (float) 1);
 				} else {
-					world.getWorld().playSound(x, y, z,
+					((World) world).playSound(x, y, z,
 							(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
 									.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")),
 							SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
 				}
-				if (!world.getWorld().isRemote) {
+				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putString("MelodyType", "None");
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					if (world instanceof World)
+						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
-				if (!world.getWorld().isRemote) {
+				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putDouble("Countdown", 0);
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					if (world instanceof World)
+						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 			}
 		}
 		if ((((new Object() {
-			public String getValue(BlockPos pos, String tag) {
+			public String getValue(IWorld world, BlockPos pos, String tag) {
 				TileEntity tileEntity = world.getTileEntity(pos);
 				if (tileEntity != null)
 					return tileEntity.getTileData().getString(tag);
 				return "";
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "MelodyType"))).equals("Tundery"))) {
-			if (!world.getWorld().isRemote) {
+		}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "MelodyType"))).equals("Tundery"))) {
+			if (!world.isRemote()) {
 				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 				TileEntity _tileEntity = world.getTileEntity(_bp);
 				BlockState _bs = world.getBlockState(_bp);
 				if (_tileEntity != null)
 					_tileEntity.getTileData().putDouble("Countdown", ((new Object() {
-						public double getValue(BlockPos pos, String tag) {
+						public double getValue(IWorld world, BlockPos pos, String tag) {
 							TileEntity tileEntity = world.getTileEntity(pos);
 							if (tileEntity != null)
 								return tileEntity.getTileData().getDouble(tag);
 							return -1;
 						}
-					}.getValue(new BlockPos((int) x, (int) y, (int) z), "Countdown")) + 1));
-				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "Countdown")) + 1));
+				if (world instanceof World)
+					((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 			if (((new Object() {
-				public double getValue(BlockPos pos, String tag) {
+				public double getValue(IWorld world, BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
 					if (tileEntity != null)
 						return tileEntity.getTileData().getDouble(tag);
 					return -1;
 				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Countdown")) < 12000)) {
-				if (!world.getWorld().isRemote) {
+			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "Countdown")) < 12000)) {
+				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putDouble("DrumSoundCounter", ((new Object() {
-							public double getValue(BlockPos pos, String tag) {
+							public double getValue(IWorld world, BlockPos pos, String tag) {
 								TileEntity tileEntity = world.getTileEntity(pos);
 								if (tileEntity != null)
 									return tileEntity.getTileData().getDouble(tag);
 								return -1;
 							}
-						}.getValue(new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) + 1));
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+						}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) + 1));
+					if (world instanceof World)
+						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 				if (((((new Object() {
-					public double getValue(BlockPos pos, String tag) {
+					public double getValue(IWorld world, BlockPos pos, String tag) {
 						TileEntity tileEntity = world.getTileEntity(pos);
 						if (tileEntity != null)
 							return tileEntity.getTileData().getDouble(tag);
 						return -1;
 					}
-				}.getValue(new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) % 5) == 0)
+				}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) % 5) == 0)
 						&& (world.isAirBlock(new BlockPos((int) x, (int) (y + 1), (int) z))))) {
-					if (!world.getWorld().isRemote) {
-						world.playSound(null, new BlockPos((int) x, (int) y, (int) z), (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-								.getValue(new ResourceLocation("instrumental:drum_sound")), SoundCategory.NEUTRAL, (float) 1, (float) 1);
+					if (world instanceof World && !world.isRemote()) {
+						((World) world)
+								.playSound(null, new BlockPos((int) x, (int) y, (int) z),
+										(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+												.getValue(new ResourceLocation("instrumental:drum_sound")),
+										SoundCategory.NEUTRAL, (float) 1, (float) 1);
 					} else {
-						world.getWorld().playSound(x, y, z,
+						((World) world).playSound(x, y, z,
 								(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
 										.getValue(new ResourceLocation("instrumental:drum_sound")),
 								SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
 					}
-					if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
-						world.getWorld().getServer().getCommandManager()
+					if (world instanceof ServerWorld) {
+						((World) world).getServer().getCommandManager()
 								.handleCommand(
-										new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
-												new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
+										new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world, 4, "",
+												new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
 										"weather thunder");
 					}
 				}
 			} else {
-				if (!world.getWorld().isRemote) {
-					world.playSound(null, new BlockPos((int) x, (int) y, (int) z), (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-							.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")), SoundCategory.NEUTRAL, (float) 1, (float) 1);
+				if (world instanceof World && !world.isRemote()) {
+					((World) world)
+							.playSound(null, new BlockPos((int) x, (int) y, (int) z),
+									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+											.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")),
+									SoundCategory.NEUTRAL, (float) 1, (float) 1);
 				} else {
-					world.getWorld().playSound(x, y, z,
+					((World) world).playSound(x, y, z,
 							(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
 									.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")),
 							SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
 				}
-				if (!world.getWorld().isRemote) {
+				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putString("MelodyType", "None");
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					if (world instanceof World)
+						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
-				if (!world.getWorld().isRemote) {
+				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putDouble("Countdown", 0);
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					if (world instanceof World)
+						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 			}
 		}
 		if ((((new Object() {
-			public String getValue(BlockPos pos, String tag) {
+			public String getValue(IWorld world, BlockPos pos, String tag) {
 				TileEntity tileEntity = world.getTileEntity(pos);
 				if (tileEntity != null)
 					return tileEntity.getTileData().getString(tag);
 				return "";
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "MelodyType"))).equals("Sunny"))) {
-			if (!world.getWorld().isRemote) {
+		}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "MelodyType"))).equals("Sunny"))) {
+			if (!world.isRemote()) {
 				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 				TileEntity _tileEntity = world.getTileEntity(_bp);
 				BlockState _bs = world.getBlockState(_bp);
 				if (_tileEntity != null)
 					_tileEntity.getTileData().putDouble("Countdown", ((new Object() {
-						public double getValue(BlockPos pos, String tag) {
+						public double getValue(IWorld world, BlockPos pos, String tag) {
 							TileEntity tileEntity = world.getTileEntity(pos);
 							if (tileEntity != null)
 								return tileEntity.getTileData().getDouble(tag);
 							return -1;
 						}
-					}.getValue(new BlockPos((int) x, (int) y, (int) z), "Countdown")) + 1));
-				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "Countdown")) + 1));
+				if (world instanceof World)
+					((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 			if (((new Object() {
-				public double getValue(BlockPos pos, String tag) {
+				public double getValue(IWorld world, BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
 					if (tileEntity != null)
 						return tileEntity.getTileData().getDouble(tag);
 					return -1;
 				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Countdown")) < 12000)) {
-				if (!world.getWorld().isRemote) {
+			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "Countdown")) < 12000)) {
+				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putDouble("DrumSoundCounter", ((new Object() {
-							public double getValue(BlockPos pos, String tag) {
+							public double getValue(IWorld world, BlockPos pos, String tag) {
 								TileEntity tileEntity = world.getTileEntity(pos);
 								if (tileEntity != null)
 									return tileEntity.getTileData().getDouble(tag);
 								return -1;
 							}
-						}.getValue(new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) + 1));
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+						}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) + 1));
+					if (world instanceof World)
+						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 				if (((((new Object() {
-					public double getValue(BlockPos pos, String tag) {
+					public double getValue(IWorld world, BlockPos pos, String tag) {
 						TileEntity tileEntity = world.getTileEntity(pos);
 						if (tileEntity != null)
 							return tileEntity.getTileData().getDouble(tag);
 						return -1;
 					}
-				}.getValue(new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) % 5) == 0)
+				}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) % 5) == 0)
 						&& (world.isAirBlock(new BlockPos((int) x, (int) (y + 1), (int) z))))) {
-					if (!world.getWorld().isRemote) {
-						world.playSound(null, new BlockPos((int) x, (int) y, (int) z), (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-								.getValue(new ResourceLocation("instrumental:drum_sound")), SoundCategory.NEUTRAL, (float) 1, (float) 1);
+					if (world instanceof World && !world.isRemote()) {
+						((World) world)
+								.playSound(null, new BlockPos((int) x, (int) y, (int) z),
+										(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+												.getValue(new ResourceLocation("instrumental:drum_sound")),
+										SoundCategory.NEUTRAL, (float) 1, (float) 1);
 					} else {
-						world.getWorld().playSound(x, y, z,
+						((World) world).playSound(x, y, z,
 								(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
 										.getValue(new ResourceLocation("instrumental:drum_sound")),
 								SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
 					}
-					if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
-						world.getWorld().getServer().getCommandManager()
+					if (world instanceof ServerWorld) {
+						((World) world).getServer().getCommandManager()
 								.handleCommand(
-										new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
-												new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
+										new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world, 4, "",
+												new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
 										"weather clear");
 					}
 				}
 			} else {
-				if (!world.getWorld().isRemote) {
-					world.playSound(null, new BlockPos((int) x, (int) y, (int) z), (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-							.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")), SoundCategory.NEUTRAL, (float) 1, (float) 1);
+				if (world instanceof World && !world.isRemote()) {
+					((World) world)
+							.playSound(null, new BlockPos((int) x, (int) y, (int) z),
+									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+											.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")),
+									SoundCategory.NEUTRAL, (float) 1, (float) 1);
 				} else {
-					world.getWorld().playSound(x, y, z,
+					((World) world).playSound(x, y, z,
 							(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
 									.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")),
 							SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
 				}
-				if (!world.getWorld().isRemote) {
+				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putString("MelodyType", "None");
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					if (world instanceof World)
+						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
-				if (!world.getWorld().isRemote) {
+				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putDouble("Countdown", 0);
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					if (world instanceof World)
+						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 			}
 		}
 		if ((((new Object() {
-			public String getValue(BlockPos pos, String tag) {
+			public String getValue(IWorld world, BlockPos pos, String tag) {
 				TileEntity tileEntity = world.getTileEntity(pos);
 				if (tileEntity != null)
 					return tileEntity.getTileData().getString(tag);
 				return "";
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "MelodyType"))).equals("Harm"))) {
-			if (!world.getWorld().isRemote) {
+		}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "MelodyType"))).equals("Harm"))) {
+			if (!world.isRemote()) {
 				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 				TileEntity _tileEntity = world.getTileEntity(_bp);
 				BlockState _bs = world.getBlockState(_bp);
 				if (_tileEntity != null)
 					_tileEntity.getTileData().putDouble("Countdown", ((new Object() {
-						public double getValue(BlockPos pos, String tag) {
+						public double getValue(IWorld world, BlockPos pos, String tag) {
 							TileEntity tileEntity = world.getTileEntity(pos);
 							if (tileEntity != null)
 								return tileEntity.getTileData().getDouble(tag);
 							return -1;
 						}
-					}.getValue(new BlockPos((int) x, (int) y, (int) z), "Countdown")) + 1));
-				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "Countdown")) + 1));
+				if (world instanceof World)
+					((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 			if (((new Object() {
-				public double getValue(BlockPos pos, String tag) {
+				public double getValue(IWorld world, BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
 					if (tileEntity != null)
 						return tileEntity.getTileData().getDouble(tag);
 					return -1;
 				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Countdown")) < 12000)) {
+			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "Countdown")) < 12000)) {
 				sx = (double) (-10);
 				for (int index3 = 0; index3 < (int) (21); index3++) {
 					sy = (double) (-10);
@@ -623,99 +666,109 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 						});
 					}
 				}
-				if (!world.getWorld().isRemote) {
+				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putDouble("DrumSoundCounter", ((new Object() {
-							public double getValue(BlockPos pos, String tag) {
+							public double getValue(IWorld world, BlockPos pos, String tag) {
 								TileEntity tileEntity = world.getTileEntity(pos);
 								if (tileEntity != null)
 									return tileEntity.getTileData().getDouble(tag);
 								return -1;
 							}
-						}.getValue(new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) + 1));
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+						}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) + 1));
+					if (world instanceof World)
+						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 				if (((((new Object() {
-					public double getValue(BlockPos pos, String tag) {
+					public double getValue(IWorld world, BlockPos pos, String tag) {
 						TileEntity tileEntity = world.getTileEntity(pos);
 						if (tileEntity != null)
 							return tileEntity.getTileData().getDouble(tag);
 						return -1;
 					}
-				}.getValue(new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) % 5) == 0)
+				}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) % 5) == 0)
 						&& (world.isAirBlock(new BlockPos((int) x, (int) (y + 1), (int) z))))) {
-					if (!world.getWorld().isRemote) {
-						world.playSound(null, new BlockPos((int) x, (int) y, (int) z), (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-								.getValue(new ResourceLocation("instrumental:drum_sound")), SoundCategory.NEUTRAL, (float) 1, (float) 1);
+					if (world instanceof World && !world.isRemote()) {
+						((World) world)
+								.playSound(null, new BlockPos((int) x, (int) y, (int) z),
+										(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+												.getValue(new ResourceLocation("instrumental:drum_sound")),
+										SoundCategory.NEUTRAL, (float) 1, (float) 1);
 					} else {
-						world.getWorld().playSound(x, y, z,
+						((World) world).playSound(x, y, z,
 								(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
 										.getValue(new ResourceLocation("instrumental:drum_sound")),
 								SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
 					}
 				}
 			} else {
-				if (!world.getWorld().isRemote) {
-					world.playSound(null, new BlockPos((int) x, (int) y, (int) z), (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-							.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")), SoundCategory.NEUTRAL, (float) 1, (float) 1);
+				if (world instanceof World && !world.isRemote()) {
+					((World) world)
+							.playSound(null, new BlockPos((int) x, (int) y, (int) z),
+									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+											.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")),
+									SoundCategory.NEUTRAL, (float) 1, (float) 1);
 				} else {
-					world.getWorld().playSound(x, y, z,
+					((World) world).playSound(x, y, z,
 							(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
 									.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")),
 							SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
 				}
-				if (!world.getWorld().isRemote) {
+				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putString("MelodyType", "None");
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					if (world instanceof World)
+						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
-				if (!world.getWorld().isRemote) {
+				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putDouble("Countdown", 0);
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					if (world instanceof World)
+						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 			}
 		}
 		if ((((new Object() {
-			public String getValue(BlockPos pos, String tag) {
+			public String getValue(IWorld world, BlockPos pos, String tag) {
 				TileEntity tileEntity = world.getTileEntity(pos);
 				if (tileEntity != null)
 					return tileEntity.getTileData().getString(tag);
 				return "";
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "MelodyType"))).equals("Growth"))) {
-			if (!world.getWorld().isRemote) {
+		}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "MelodyType"))).equals("Growth"))) {
+			if (!world.isRemote()) {
 				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 				TileEntity _tileEntity = world.getTileEntity(_bp);
 				BlockState _bs = world.getBlockState(_bp);
 				if (_tileEntity != null)
 					_tileEntity.getTileData().putDouble("Countdown", ((new Object() {
-						public double getValue(BlockPos pos, String tag) {
+						public double getValue(IWorld world, BlockPos pos, String tag) {
 							TileEntity tileEntity = world.getTileEntity(pos);
 							if (tileEntity != null)
 								return tileEntity.getTileData().getDouble(tag);
 							return -1;
 						}
-					}.getValue(new BlockPos((int) x, (int) y, (int) z), "Countdown")) + 1));
-				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "Countdown")) + 1));
+				if (world instanceof World)
+					((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 			if (((new Object() {
-				public double getValue(BlockPos pos, String tag) {
+				public double getValue(IWorld world, BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
 					if (tileEntity != null)
 						return tileEntity.getTileData().getDouble(tag);
 					return -1;
 				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Countdown")) < 12000)) {
+			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "Countdown")) < 12000)) {
 				{
 					TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
 					if (_ent != null) {
@@ -730,35 +783,39 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 						});
 					}
 				}
-				if (!world.getWorld().isRemote) {
+				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putDouble("DrumSoundCounter", ((new Object() {
-							public double getValue(BlockPos pos, String tag) {
+							public double getValue(IWorld world, BlockPos pos, String tag) {
 								TileEntity tileEntity = world.getTileEntity(pos);
 								if (tileEntity != null)
 									return tileEntity.getTileData().getDouble(tag);
 								return -1;
 							}
-						}.getValue(new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) + 1));
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+						}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) + 1));
+					if (world instanceof World)
+						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 				if (((((new Object() {
-					public double getValue(BlockPos pos, String tag) {
+					public double getValue(IWorld world, BlockPos pos, String tag) {
 						TileEntity tileEntity = world.getTileEntity(pos);
 						if (tileEntity != null)
 							return tileEntity.getTileData().getDouble(tag);
 						return -1;
 					}
-				}.getValue(new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) % 5) == 0)
+				}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) % 5) == 0)
 						&& (world.isAirBlock(new BlockPos((int) x, (int) (y + 1), (int) z))))) {
-					if (!world.getWorld().isRemote) {
-						world.playSound(null, new BlockPos((int) x, (int) y, (int) z), (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-								.getValue(new ResourceLocation("instrumental:drum_sound")), SoundCategory.NEUTRAL, (float) 1, (float) 1);
+					if (world instanceof World && !world.isRemote()) {
+						((World) world)
+								.playSound(null, new BlockPos((int) x, (int) y, (int) z),
+										(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+												.getValue(new ResourceLocation("instrumental:drum_sound")),
+										SoundCategory.NEUTRAL, (float) 1, (float) 1);
 					} else {
-						world.getWorld().playSound(x, y, z,
+						((World) world).playSound(x, y, z,
 								(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
 										.getValue(new ResourceLocation("instrumental:drum_sound")),
 								SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
@@ -772,12 +829,15 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 								if (((world.getBlockState(new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z))).isSolid())
 										|| ((world.getBlockState(new BlockPos((int) ((sx) + x), (int) (((sy) + y) - 1), (int) ((sz) + z))))
 												.getBlock() == Blocks.FARMLAND.getDefaultState().getBlock()))) {
-									if (BoneMealItem.applyBonemeal(new ItemStack(Items.BONE_MEAL), world.getWorld(),
-											new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z)))
-											|| BoneMealItem.growSeagrass(new ItemStack(Items.BONE_MEAL), world.getWorld(),
-													new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z)), (Direction) null)) {
-										if (!world.getWorld().isRemote)
-											world.getWorld().playEvent(2005, new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z)), 0);
+									if (world instanceof World) {
+										if (BoneMealItem.applyBonemeal(new ItemStack(Items.BONE_MEAL), (World) world,
+												new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z)))
+												|| BoneMealItem.growSeagrass(new ItemStack(Items.BONE_MEAL), (World) world,
+														new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z)), (Direction) null)) {
+											if (!world.isRemote())
+												((World) world).playEvent(2005, new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z)),
+														0);
+										}
 									}
 								}
 								sz = (double) ((sz) + 1);
@@ -788,64 +848,70 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 					}
 				}
 			} else {
-				if (!world.getWorld().isRemote) {
-					world.playSound(null, new BlockPos((int) x, (int) y, (int) z), (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-							.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")), SoundCategory.NEUTRAL, (float) 1, (float) 1);
+				if (world instanceof World && !world.isRemote()) {
+					((World) world)
+							.playSound(null, new BlockPos((int) x, (int) y, (int) z),
+									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+											.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")),
+									SoundCategory.NEUTRAL, (float) 1, (float) 1);
 				} else {
-					world.getWorld().playSound(x, y, z,
+					((World) world).playSound(x, y, z,
 							(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
 									.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")),
 							SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
 				}
-				if (!world.getWorld().isRemote) {
+				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putString("MelodyType", "None");
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					if (world instanceof World)
+						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
-				if (!world.getWorld().isRemote) {
+				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putDouble("Countdown", 0);
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					if (world instanceof World)
+						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 			}
 		}
 		if ((((new Object() {
-			public String getValue(BlockPos pos, String tag) {
+			public String getValue(IWorld world, BlockPos pos, String tag) {
 				TileEntity tileEntity = world.getTileEntity(pos);
 				if (tileEntity != null)
 					return tileEntity.getTileData().getString(tag);
 				return "";
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "MelodyType"))).equals("Party"))) {
-			if (!world.getWorld().isRemote) {
+		}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "MelodyType"))).equals("Party"))) {
+			if (!world.isRemote()) {
 				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 				TileEntity _tileEntity = world.getTileEntity(_bp);
 				BlockState _bs = world.getBlockState(_bp);
 				if (_tileEntity != null)
 					_tileEntity.getTileData().putDouble("Countdown", ((new Object() {
-						public double getValue(BlockPos pos, String tag) {
+						public double getValue(IWorld world, BlockPos pos, String tag) {
 							TileEntity tileEntity = world.getTileEntity(pos);
 							if (tileEntity != null)
 								return tileEntity.getTileData().getDouble(tag);
 							return -1;
 						}
-					}.getValue(new BlockPos((int) x, (int) y, (int) z), "Countdown")) + 1));
-				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "Countdown")) + 1));
+				if (world instanceof World)
+					((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 			if (((new Object() {
-				public double getValue(BlockPos pos, String tag) {
+				public double getValue(IWorld world, BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
 					if (tileEntity != null)
 						return tileEntity.getTileData().getDouble(tag);
 					return -1;
 				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Countdown")) < 12000)) {
+			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "Countdown")) < 12000)) {
 				sx = (double) (-10);
 				for (int index9 = 0; index9 < (int) (21); index9++) {
 					sy = (double) (-10);
@@ -853,17 +919,20 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 						sz = (double) (-10);
 						for (int index11 = 0; index11 < (int) (21); index11++) {
 							if ((BlockTags.getCollection()
-									.getOrCreate(new ResourceLocation(("forge:dance_floor_tag").toLowerCase(java.util.Locale.ENGLISH))).contains(
+									.getTagByID(new ResourceLocation(("forge:dance_floor_tag").toLowerCase(java.util.Locale.ENGLISH))).contains(
 											(world.getBlockState(new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z)))).getBlock()))) {
 								if ((Math.random() < 0)) {
 									{
 										BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
 										BlockState _bs = WhiteDanceFloorBlock.block.getDefaultState();
 										BlockState _bso = world.getBlockState(_bp);
-										for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-											IProperty _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
-											if (_bs.has(_property))
-												_bs = _bs.with(_property, (Comparable) entry.getValue());
+										for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
+											Property _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
+											if (_property != null && _bs.get(_property) != null)
+												try {
+													_bs = _bs.with(_property, (Comparable) entry.getValue());
+												} catch (Exception e) {
+												}
 										}
 										world.setBlockState(_bp, _bs, 3);
 									}
@@ -873,10 +942,13 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 											BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
 											BlockState _bs = OrangeDanceFloorBlock.block.getDefaultState();
 											BlockState _bso = world.getBlockState(_bp);
-											for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-												IProperty _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
-												if (_bs.has(_property))
-													_bs = _bs.with(_property, (Comparable) entry.getValue());
+											for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
+												Property _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
+												if (_property != null && _bs.get(_property) != null)
+													try {
+														_bs = _bs.with(_property, (Comparable) entry.getValue());
+													} catch (Exception e) {
+													}
 											}
 											world.setBlockState(_bp, _bs, 3);
 										}
@@ -886,10 +958,13 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 												BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
 												BlockState _bs = MagentaDanceFloorBlock.block.getDefaultState();
 												BlockState _bso = world.getBlockState(_bp);
-												for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-													IProperty _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
-													if (_bs.has(_property))
-														_bs = _bs.with(_property, (Comparable) entry.getValue());
+												for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
+													Property _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
+													if (_property != null && _bs.get(_property) != null)
+														try {
+															_bs = _bs.with(_property, (Comparable) entry.getValue());
+														} catch (Exception e) {
+														}
 												}
 												world.setBlockState(_bp, _bs, 3);
 											}
@@ -899,11 +974,13 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 													BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
 													BlockState _bs = LightBlueDanceFloorBlock.block.getDefaultState();
 													BlockState _bso = world.getBlockState(_bp);
-													for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-														IProperty _property = _bs.getBlock().getStateContainer()
-																.getProperty(entry.getKey().getName());
-														if (_bs.has(_property))
-															_bs = _bs.with(_property, (Comparable) entry.getValue());
+													for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
+														Property _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
+														if (_property != null && _bs.get(_property) != null)
+															try {
+																_bs = _bs.with(_property, (Comparable) entry.getValue());
+															} catch (Exception e) {
+															}
 													}
 													world.setBlockState(_bp, _bs, 3);
 												}
@@ -913,11 +990,14 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 														BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
 														BlockState _bs = YellowDanceFloorBlock.block.getDefaultState();
 														BlockState _bso = world.getBlockState(_bp);
-														for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-															IProperty _property = _bs.getBlock().getStateContainer()
+														for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
+															Property _property = _bs.getBlock().getStateContainer()
 																	.getProperty(entry.getKey().getName());
-															if (_bs.has(_property))
-																_bs = _bs.with(_property, (Comparable) entry.getValue());
+															if (_property != null && _bs.get(_property) != null)
+																try {
+																	_bs = _bs.with(_property, (Comparable) entry.getValue());
+																} catch (Exception e) {
+																}
 														}
 														world.setBlockState(_bp, _bs, 3);
 													}
@@ -927,11 +1007,14 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 															BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
 															BlockState _bs = LimeDanceFloorBlock.block.getDefaultState();
 															BlockState _bso = world.getBlockState(_bp);
-															for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-																IProperty _property = _bs.getBlock().getStateContainer()
+															for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
+																Property _property = _bs.getBlock().getStateContainer()
 																		.getProperty(entry.getKey().getName());
-																if (_bs.has(_property))
-																	_bs = _bs.with(_property, (Comparable) entry.getValue());
+																if (_property != null && _bs.get(_property) != null)
+																	try {
+																		_bs = _bs.with(_property, (Comparable) entry.getValue());
+																	} catch (Exception e) {
+																	}
 															}
 															world.setBlockState(_bp, _bs, 3);
 														}
@@ -941,11 +1024,14 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
 																BlockState _bs = PinkDanceFloorBlock.block.getDefaultState();
 																BlockState _bso = world.getBlockState(_bp);
-																for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-																	IProperty _property = _bs.getBlock().getStateContainer()
+																for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
+																	Property _property = _bs.getBlock().getStateContainer()
 																			.getProperty(entry.getKey().getName());
-																	if (_bs.has(_property))
-																		_bs = _bs.with(_property, (Comparable) entry.getValue());
+																	if (_property != null && _bs.get(_property) != null)
+																		try {
+																			_bs = _bs.with(_property, (Comparable) entry.getValue());
+																		} catch (Exception e) {
+																		}
 																}
 																world.setBlockState(_bp, _bs, 3);
 															}
@@ -955,11 +1041,14 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																	BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
 																	BlockState _bs = GrayDanceFloorBlock.block.getDefaultState();
 																	BlockState _bso = world.getBlockState(_bp);
-																	for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-																		IProperty _property = _bs.getBlock().getStateContainer()
+																	for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
+																		Property _property = _bs.getBlock().getStateContainer()
 																				.getProperty(entry.getKey().getName());
-																		if (_bs.has(_property))
-																			_bs = _bs.with(_property, (Comparable) entry.getValue());
+																		if (_property != null && _bs.get(_property) != null)
+																			try {
+																				_bs = _bs.with(_property, (Comparable) entry.getValue());
+																			} catch (Exception e) {
+																			}
 																	}
 																	world.setBlockState(_bp, _bs, 3);
 																}
@@ -970,12 +1059,15 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																				(int) ((sz) + z));
 																		BlockState _bs = LightGrayDanceFloorBlock.block.getDefaultState();
 																		BlockState _bso = world.getBlockState(_bp);
-																		for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues()
+																		for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues()
 																				.entrySet()) {
-																			IProperty _property = _bs.getBlock().getStateContainer()
+																			Property _property = _bs.getBlock().getStateContainer()
 																					.getProperty(entry.getKey().getName());
-																			if (_bs.has(_property))
-																				_bs = _bs.with(_property, (Comparable) entry.getValue());
+																			if (_property != null && _bs.get(_property) != null)
+																				try {
+																					_bs = _bs.with(_property, (Comparable) entry.getValue());
+																				} catch (Exception e) {
+																				}
 																		}
 																		world.setBlockState(_bp, _bs, 3);
 																	}
@@ -986,12 +1078,15 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																					(int) ((sz) + z));
 																			BlockState _bs = CyanDanceFloorBlock.block.getDefaultState();
 																			BlockState _bso = world.getBlockState(_bp);
-																			for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues()
+																			for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues()
 																					.entrySet()) {
-																				IProperty _property = _bs.getBlock().getStateContainer()
+																				Property _property = _bs.getBlock().getStateContainer()
 																						.getProperty(entry.getKey().getName());
-																				if (_bs.has(_property))
-																					_bs = _bs.with(_property, (Comparable) entry.getValue());
+																				if (_property != null && _bs.get(_property) != null)
+																					try {
+																						_bs = _bs.with(_property, (Comparable) entry.getValue());
+																					} catch (Exception e) {
+																					}
 																			}
 																			world.setBlockState(_bp, _bs, 3);
 																		}
@@ -1002,12 +1097,15 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																						(int) ((sz) + z));
 																				BlockState _bs = PurpleDancFloorBlock.block.getDefaultState();
 																				BlockState _bso = world.getBlockState(_bp);
-																				for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues()
+																				for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues()
 																						.entrySet()) {
-																					IProperty _property = _bs.getBlock().getStateContainer()
+																					Property _property = _bs.getBlock().getStateContainer()
 																							.getProperty(entry.getKey().getName());
-																					if (_bs.has(_property))
-																						_bs = _bs.with(_property, (Comparable) entry.getValue());
+																					if (_property != null && _bs.get(_property) != null)
+																						try {
+																							_bs = _bs.with(_property, (Comparable) entry.getValue());
+																						} catch (Exception e) {
+																						}
 																				}
 																				world.setBlockState(_bp, _bs, 3);
 																			}
@@ -1018,12 +1116,16 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																							(int) ((sz) + z));
 																					BlockState _bs = BlueDanceFloorBlock.block.getDefaultState();
 																					BlockState _bso = world.getBlockState(_bp);
-																					for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso
+																					for (Map.Entry<Property<?>, Comparable<?>> entry : _bso
 																							.getValues().entrySet()) {
-																						IProperty _property = _bs.getBlock().getStateContainer()
+																						Property _property = _bs.getBlock().getStateContainer()
 																								.getProperty(entry.getKey().getName());
-																						if (_bs.has(_property))
-																							_bs = _bs.with(_property, (Comparable) entry.getValue());
+																						if (_property != null && _bs.get(_property) != null)
+																							try {
+																								_bs = _bs.with(_property,
+																										(Comparable) entry.getValue());
+																							} catch (Exception e) {
+																							}
 																					}
 																					world.setBlockState(_bp, _bs, 3);
 																				}
@@ -1034,13 +1136,16 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																								(int) ((sy) + y), (int) ((sz) + z));
 																						BlockState _bs = BrownDanceFloorBlock.block.getDefaultState();
 																						BlockState _bso = world.getBlockState(_bp);
-																						for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso
+																						for (Map.Entry<Property<?>, Comparable<?>> entry : _bso
 																								.getValues().entrySet()) {
-																							IProperty _property = _bs.getBlock().getStateContainer()
+																							Property _property = _bs.getBlock().getStateContainer()
 																									.getProperty(entry.getKey().getName());
-																							if (_bs.has(_property))
-																								_bs = _bs.with(_property,
-																										(Comparable) entry.getValue());
+																							if (_property != null && _bs.get(_property) != null)
+																								try {
+																									_bs = _bs.with(_property,
+																											(Comparable) entry.getValue());
+																								} catch (Exception e) {
+																								}
 																						}
 																						world.setBlockState(_bp, _bs, 3);
 																					}
@@ -1052,14 +1157,17 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																							BlockState _bs = GreenDanceFloorBlock.block
 																									.getDefaultState();
 																							BlockState _bso = world.getBlockState(_bp);
-																							for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso
+																							for (Map.Entry<Property<?>, Comparable<?>> entry : _bso
 																									.getValues().entrySet()) {
-																								IProperty _property = _bs.getBlock()
+																								Property _property = _bs.getBlock()
 																										.getStateContainer()
 																										.getProperty(entry.getKey().getName());
-																								if (_bs.has(_property))
-																									_bs = _bs.with(_property,
-																											(Comparable) entry.getValue());
+																								if (_property != null && _bs.get(_property) != null)
+																									try {
+																										_bs = _bs.with(_property,
+																												(Comparable) entry.getValue());
+																									} catch (Exception e) {
+																									}
 																							}
 																							world.setBlockState(_bp, _bs, 3);
 																						}
@@ -1071,14 +1179,18 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																								BlockState _bs = RedDanceFloorBlock.block
 																										.getDefaultState();
 																								BlockState _bso = world.getBlockState(_bp);
-																								for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso
+																								for (Map.Entry<Property<?>, Comparable<?>> entry : _bso
 																										.getValues().entrySet()) {
-																									IProperty _property = _bs.getBlock()
+																									Property _property = _bs.getBlock()
 																											.getStateContainer()
 																											.getProperty(entry.getKey().getName());
-																									if (_bs.has(_property))
-																										_bs = _bs.with(_property,
-																												(Comparable) entry.getValue());
+																									if (_property != null
+																											&& _bs.get(_property) != null)
+																										try {
+																											_bs = _bs.with(_property,
+																													(Comparable) entry.getValue());
+																										} catch (Exception e) {
+																										}
 																								}
 																								world.setBlockState(_bp, _bs, 3);
 																							}
@@ -1089,14 +1201,18 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 																								BlockState _bs = BlackDanceFloorBlock.block
 																										.getDefaultState();
 																								BlockState _bso = world.getBlockState(_bp);
-																								for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso
+																								for (Map.Entry<Property<?>, Comparable<?>> entry : _bso
 																										.getValues().entrySet()) {
-																									IProperty _property = _bs.getBlock()
+																									Property _property = _bs.getBlock()
 																											.getStateContainer()
 																											.getProperty(entry.getKey().getName());
-																									if (_bs.has(_property))
-																										_bs = _bs.with(_property,
-																												(Comparable) entry.getValue());
+																									if (_property != null
+																											&& _bs.get(_property) != null)
+																										try {
+																											_bs = _bs.with(_property,
+																													(Comparable) entry.getValue());
+																										} catch (Exception e) {
+																										}
 																								}
 																								world.setBlockState(_bp, _bs, 3);
 																							}
@@ -1122,35 +1238,39 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 					}
 					sx = (double) ((sx) + 1);
 				}
-				if (!world.getWorld().isRemote) {
+				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putDouble("DrumSoundCounter", ((new Object() {
-							public double getValue(BlockPos pos, String tag) {
+							public double getValue(IWorld world, BlockPos pos, String tag) {
 								TileEntity tileEntity = world.getTileEntity(pos);
 								if (tileEntity != null)
 									return tileEntity.getTileData().getDouble(tag);
 								return -1;
 							}
-						}.getValue(new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) + 1));
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+						}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) + 1));
+					if (world instanceof World)
+						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 				if (((((new Object() {
-					public double getValue(BlockPos pos, String tag) {
+					public double getValue(IWorld world, BlockPos pos, String tag) {
 						TileEntity tileEntity = world.getTileEntity(pos);
 						if (tileEntity != null)
 							return tileEntity.getTileData().getDouble(tag);
 						return -1;
 					}
-				}.getValue(new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) % 5) == 0)
+				}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) % 5) == 0)
 						&& (world.isAirBlock(new BlockPos((int) x, (int) (y + 1), (int) z))))) {
-					if (!world.getWorld().isRemote) {
-						world.playSound(null, new BlockPos((int) x, (int) y, (int) z), (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-								.getValue(new ResourceLocation("instrumental:drum_sound")), SoundCategory.NEUTRAL, (float) 1, (float) 1);
+					if (world instanceof World && !world.isRemote()) {
+						((World) world)
+								.playSound(null, new BlockPos((int) x, (int) y, (int) z),
+										(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+												.getValue(new ResourceLocation("instrumental:drum_sound")),
+										SoundCategory.NEUTRAL, (float) 1, (float) 1);
 					} else {
-						world.getWorld().playSound(x, y, z,
+						((World) world).playSound(x, y, z,
 								(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
 										.getValue(new ResourceLocation("instrumental:drum_sound")),
 								SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
@@ -1164,16 +1284,19 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 						sz = (double) (-10);
 						for (int index14 = 0; index14 < (int) (21); index14++) {
 							if ((BlockTags.getCollection()
-									.getOrCreate(new ResourceLocation(("forge:dance_floor_tag").toLowerCase(java.util.Locale.ENGLISH))).contains(
+									.getTagByID(new ResourceLocation(("forge:dance_floor_tag").toLowerCase(java.util.Locale.ENGLISH))).contains(
 											(world.getBlockState(new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z)))).getBlock()))) {
 								{
 									BlockPos _bp = new BlockPos((int) ((sx) + x), (int) ((sy) + y), (int) ((sz) + z));
 									BlockState _bs = DanceFloorBlock.block.getDefaultState();
 									BlockState _bso = world.getBlockState(_bp);
-									for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-										IProperty _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
-										if (_bs.has(_property))
-											_bs = _bs.with(_property, (Comparable) entry.getValue());
+									for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
+										Property _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
+										if (_property != null && _bs.get(_property) != null)
+											try {
+												_bs = _bs.with(_property, (Comparable) entry.getValue());
+											} catch (Exception e) {
+											}
 									}
 									world.setBlockState(_bp, _bs, 3);
 								}
@@ -1184,64 +1307,70 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 					}
 					sx = (double) ((sx) + 1);
 				}
-				if (!world.getWorld().isRemote) {
-					world.playSound(null, new BlockPos((int) x, (int) y, (int) z), (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-							.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")), SoundCategory.NEUTRAL, (float) 1, (float) 1);
+				if (world instanceof World && !world.isRemote()) {
+					((World) world)
+							.playSound(null, new BlockPos((int) x, (int) y, (int) z),
+									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+											.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")),
+									SoundCategory.NEUTRAL, (float) 1, (float) 1);
 				} else {
-					world.getWorld().playSound(x, y, z,
+					((World) world).playSound(x, y, z,
 							(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
 									.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")),
 							SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
 				}
-				if (!world.getWorld().isRemote) {
+				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putString("MelodyType", "None");
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					if (world instanceof World)
+						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
-				if (!world.getWorld().isRemote) {
+				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putDouble("Countdown", 0);
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					if (world instanceof World)
+						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 			}
 		}
 		if ((((new Object() {
-			public String getValue(BlockPos pos, String tag) {
+			public String getValue(IWorld world, BlockPos pos, String tag) {
 				TileEntity tileEntity = world.getTileEntity(pos);
 				if (tileEntity != null)
 					return tileEntity.getTileData().getString(tag);
 				return "";
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "MelodyType"))).equals("Hero"))) {
-			if (!world.getWorld().isRemote) {
+		}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "MelodyType"))).equals("Hero"))) {
+			if (!world.isRemote()) {
 				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 				TileEntity _tileEntity = world.getTileEntity(_bp);
 				BlockState _bs = world.getBlockState(_bp);
 				if (_tileEntity != null)
 					_tileEntity.getTileData().putDouble("Countdown", ((new Object() {
-						public double getValue(BlockPos pos, String tag) {
+						public double getValue(IWorld world, BlockPos pos, String tag) {
 							TileEntity tileEntity = world.getTileEntity(pos);
 							if (tileEntity != null)
 								return tileEntity.getTileData().getDouble(tag);
 							return -1;
 						}
-					}.getValue(new BlockPos((int) x, (int) y, (int) z), "Countdown")) + 1));
-				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "Countdown")) + 1));
+				if (world instanceof World)
+					((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 			if (((new Object() {
-				public double getValue(BlockPos pos, String tag) {
+				public double getValue(IWorld world, BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
 					if (tileEntity != null)
 						return tileEntity.getTileData().getDouble(tag);
 					return -1;
 				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Countdown")) < 12000)) {
+			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "Countdown")) < 12000)) {
 				sx = (double) (-10);
 				for (int index15 = 0; index15 < (int) (21); index15++) {
 					sy = (double) (-10);
@@ -1302,99 +1431,109 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 						});
 					}
 				}
-				if (!world.getWorld().isRemote) {
+				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putDouble("DrumSoundCounter", ((new Object() {
-							public double getValue(BlockPos pos, String tag) {
+							public double getValue(IWorld world, BlockPos pos, String tag) {
 								TileEntity tileEntity = world.getTileEntity(pos);
 								if (tileEntity != null)
 									return tileEntity.getTileData().getDouble(tag);
 								return -1;
 							}
-						}.getValue(new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) + 1));
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+						}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) + 1));
+					if (world instanceof World)
+						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 				if (((((new Object() {
-					public double getValue(BlockPos pos, String tag) {
+					public double getValue(IWorld world, BlockPos pos, String tag) {
 						TileEntity tileEntity = world.getTileEntity(pos);
 						if (tileEntity != null)
 							return tileEntity.getTileData().getDouble(tag);
 						return -1;
 					}
-				}.getValue(new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) % 5) == 0)
+				}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) % 5) == 0)
 						&& (world.isAirBlock(new BlockPos((int) x, (int) (y + 1), (int) z))))) {
-					if (!world.getWorld().isRemote) {
-						world.playSound(null, new BlockPos((int) x, (int) y, (int) z), (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-								.getValue(new ResourceLocation("instrumental:drum_sound")), SoundCategory.NEUTRAL, (float) 1, (float) 1);
+					if (world instanceof World && !world.isRemote()) {
+						((World) world)
+								.playSound(null, new BlockPos((int) x, (int) y, (int) z),
+										(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+												.getValue(new ResourceLocation("instrumental:drum_sound")),
+										SoundCategory.NEUTRAL, (float) 1, (float) 1);
 					} else {
-						world.getWorld().playSound(x, y, z,
+						((World) world).playSound(x, y, z,
 								(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
 										.getValue(new ResourceLocation("instrumental:drum_sound")),
 								SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
 					}
 				}
 			} else {
-				if (!world.getWorld().isRemote) {
-					world.playSound(null, new BlockPos((int) x, (int) y, (int) z), (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-							.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")), SoundCategory.NEUTRAL, (float) 1, (float) 1);
+				if (world instanceof World && !world.isRemote()) {
+					((World) world)
+							.playSound(null, new BlockPos((int) x, (int) y, (int) z),
+									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+											.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")),
+									SoundCategory.NEUTRAL, (float) 1, (float) 1);
 				} else {
-					world.getWorld().playSound(x, y, z,
+					((World) world).playSound(x, y, z,
 							(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
 									.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")),
 							SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
 				}
-				if (!world.getWorld().isRemote) {
+				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putString("MelodyType", "None");
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					if (world instanceof World)
+						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
-				if (!world.getWorld().isRemote) {
+				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putDouble("Countdown", 0);
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					if (world instanceof World)
+						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 			}
 		}
 		if ((((new Object() {
-			public String getValue(BlockPos pos, String tag) {
+			public String getValue(IWorld world, BlockPos pos, String tag) {
 				TileEntity tileEntity = world.getTileEntity(pos);
 				if (tileEntity != null)
 					return tileEntity.getTileData().getString(tag);
 				return "";
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "MelodyType"))).equals("Nightvision"))) {
-			if (!world.getWorld().isRemote) {
+		}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "MelodyType"))).equals("Nightvision"))) {
+			if (!world.isRemote()) {
 				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 				TileEntity _tileEntity = world.getTileEntity(_bp);
 				BlockState _bs = world.getBlockState(_bp);
 				if (_tileEntity != null)
 					_tileEntity.getTileData().putDouble("Countdown", ((new Object() {
-						public double getValue(BlockPos pos, String tag) {
+						public double getValue(IWorld world, BlockPos pos, String tag) {
 							TileEntity tileEntity = world.getTileEntity(pos);
 							if (tileEntity != null)
 								return tileEntity.getTileData().getDouble(tag);
 							return -1;
 						}
-					}.getValue(new BlockPos((int) x, (int) y, (int) z), "Countdown")) + 1));
-				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "Countdown")) + 1));
+				if (world instanceof World)
+					((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 			if (((new Object() {
-				public double getValue(BlockPos pos, String tag) {
+				public double getValue(IWorld world, BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
 					if (tileEntity != null)
 						return tileEntity.getTileData().getDouble(tag);
 					return -1;
 				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Countdown")) < 12000)) {
+			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "Countdown")) < 12000)) {
 				sx = (double) (-10);
 				for (int index18 = 0; index18 < (int) (21); index18++) {
 					sy = (double) (-10);
@@ -1455,99 +1594,109 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 						});
 					}
 				}
-				if (!world.getWorld().isRemote) {
+				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putDouble("DrumSoundCounter", ((new Object() {
-							public double getValue(BlockPos pos, String tag) {
+							public double getValue(IWorld world, BlockPos pos, String tag) {
 								TileEntity tileEntity = world.getTileEntity(pos);
 								if (tileEntity != null)
 									return tileEntity.getTileData().getDouble(tag);
 								return -1;
 							}
-						}.getValue(new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) + 1));
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+						}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) + 1));
+					if (world instanceof World)
+						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 				if (((((new Object() {
-					public double getValue(BlockPos pos, String tag) {
+					public double getValue(IWorld world, BlockPos pos, String tag) {
 						TileEntity tileEntity = world.getTileEntity(pos);
 						if (tileEntity != null)
 							return tileEntity.getTileData().getDouble(tag);
 						return -1;
 					}
-				}.getValue(new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) % 5) == 0)
+				}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) % 5) == 0)
 						&& (world.isAirBlock(new BlockPos((int) x, (int) (y + 1), (int) z))))) {
-					if (!world.getWorld().isRemote) {
-						world.playSound(null, new BlockPos((int) x, (int) y, (int) z), (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-								.getValue(new ResourceLocation("instrumental:drum_sound")), SoundCategory.NEUTRAL, (float) 1, (float) 1);
+					if (world instanceof World && !world.isRemote()) {
+						((World) world)
+								.playSound(null, new BlockPos((int) x, (int) y, (int) z),
+										(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+												.getValue(new ResourceLocation("instrumental:drum_sound")),
+										SoundCategory.NEUTRAL, (float) 1, (float) 1);
 					} else {
-						world.getWorld().playSound(x, y, z,
+						((World) world).playSound(x, y, z,
 								(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
 										.getValue(new ResourceLocation("instrumental:drum_sound")),
 								SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
 					}
 				}
 			} else {
-				if (!world.getWorld().isRemote) {
-					world.playSound(null, new BlockPos((int) x, (int) y, (int) z), (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-							.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")), SoundCategory.NEUTRAL, (float) 1, (float) 1);
+				if (world instanceof World && !world.isRemote()) {
+					((World) world)
+							.playSound(null, new BlockPos((int) x, (int) y, (int) z),
+									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+											.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")),
+									SoundCategory.NEUTRAL, (float) 1, (float) 1);
 				} else {
-					world.getWorld().playSound(x, y, z,
+					((World) world).playSound(x, y, z,
 							(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
 									.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")),
 							SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
 				}
-				if (!world.getWorld().isRemote) {
+				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putString("MelodyType", "None");
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					if (world instanceof World)
+						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
-				if (!world.getWorld().isRemote) {
+				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putDouble("Countdown", 0);
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					if (world instanceof World)
+						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 			}
 		}
 		if ((((new Object() {
-			public String getValue(BlockPos pos, String tag) {
+			public String getValue(IWorld world, BlockPos pos, String tag) {
 				TileEntity tileEntity = world.getTileEntity(pos);
 				if (tileEntity != null)
 					return tileEntity.getTileData().getString(tag);
 				return "";
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "MelodyType"))).equals("Resistance"))) {
-			if (!world.getWorld().isRemote) {
+		}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "MelodyType"))).equals("Resistance"))) {
+			if (!world.isRemote()) {
 				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 				TileEntity _tileEntity = world.getTileEntity(_bp);
 				BlockState _bs = world.getBlockState(_bp);
 				if (_tileEntity != null)
 					_tileEntity.getTileData().putDouble("Countdown", ((new Object() {
-						public double getValue(BlockPos pos, String tag) {
+						public double getValue(IWorld world, BlockPos pos, String tag) {
 							TileEntity tileEntity = world.getTileEntity(pos);
 							if (tileEntity != null)
 								return tileEntity.getTileData().getDouble(tag);
 							return -1;
 						}
-					}.getValue(new BlockPos((int) x, (int) y, (int) z), "Countdown")) + 1));
-				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "Countdown")) + 1));
+				if (world instanceof World)
+					((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 			if (((new Object() {
-				public double getValue(BlockPos pos, String tag) {
+				public double getValue(IWorld world, BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
 					if (tileEntity != null)
 						return tileEntity.getTileData().getDouble(tag);
 					return -1;
 				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Countdown")) < 12000)) {
+			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "Countdown")) < 12000)) {
 				sx = (double) (-10);
 				for (int index21 = 0; index21 < (int) (21); index21++) {
 					sy = (double) (-10);
@@ -1608,99 +1757,109 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 						});
 					}
 				}
-				if (!world.getWorld().isRemote) {
+				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putDouble("DrumSoundCounter", ((new Object() {
-							public double getValue(BlockPos pos, String tag) {
+							public double getValue(IWorld world, BlockPos pos, String tag) {
 								TileEntity tileEntity = world.getTileEntity(pos);
 								if (tileEntity != null)
 									return tileEntity.getTileData().getDouble(tag);
 								return -1;
 							}
-						}.getValue(new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) + 1));
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+						}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) + 1));
+					if (world instanceof World)
+						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 				if (((((new Object() {
-					public double getValue(BlockPos pos, String tag) {
+					public double getValue(IWorld world, BlockPos pos, String tag) {
 						TileEntity tileEntity = world.getTileEntity(pos);
 						if (tileEntity != null)
 							return tileEntity.getTileData().getDouble(tag);
 						return -1;
 					}
-				}.getValue(new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) % 5) == 0)
+				}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) % 5) == 0)
 						&& (world.isAirBlock(new BlockPos((int) x, (int) (y + 1), (int) z))))) {
-					if (!world.getWorld().isRemote) {
-						world.playSound(null, new BlockPos((int) x, (int) y, (int) z), (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-								.getValue(new ResourceLocation("instrumental:drum_sound")), SoundCategory.NEUTRAL, (float) 1, (float) 1);
+					if (world instanceof World && !world.isRemote()) {
+						((World) world)
+								.playSound(null, new BlockPos((int) x, (int) y, (int) z),
+										(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+												.getValue(new ResourceLocation("instrumental:drum_sound")),
+										SoundCategory.NEUTRAL, (float) 1, (float) 1);
 					} else {
-						world.getWorld().playSound(x, y, z,
+						((World) world).playSound(x, y, z,
 								(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
 										.getValue(new ResourceLocation("instrumental:drum_sound")),
 								SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
 					}
 				}
 			} else {
-				if (!world.getWorld().isRemote) {
-					world.playSound(null, new BlockPos((int) x, (int) y, (int) z), (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-							.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")), SoundCategory.NEUTRAL, (float) 1, (float) 1);
+				if (world instanceof World && !world.isRemote()) {
+					((World) world)
+							.playSound(null, new BlockPos((int) x, (int) y, (int) z),
+									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+											.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")),
+									SoundCategory.NEUTRAL, (float) 1, (float) 1);
 				} else {
-					world.getWorld().playSound(x, y, z,
+					((World) world).playSound(x, y, z,
 							(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
 									.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")),
 							SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
 				}
-				if (!world.getWorld().isRemote) {
+				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putString("MelodyType", "None");
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					if (world instanceof World)
+						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
-				if (!world.getWorld().isRemote) {
+				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putDouble("Countdown", 0);
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					if (world instanceof World)
+						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 			}
 		}
 		if ((((new Object() {
-			public String getValue(BlockPos pos, String tag) {
+			public String getValue(IWorld world, BlockPos pos, String tag) {
 				TileEntity tileEntity = world.getTileEntity(pos);
 				if (tileEntity != null)
 					return tileEntity.getTileData().getString(tag);
 				return "";
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "MelodyType"))).equals("Speed"))) {
-			if (!world.getWorld().isRemote) {
+		}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "MelodyType"))).equals("Speed"))) {
+			if (!world.isRemote()) {
 				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 				TileEntity _tileEntity = world.getTileEntity(_bp);
 				BlockState _bs = world.getBlockState(_bp);
 				if (_tileEntity != null)
 					_tileEntity.getTileData().putDouble("Countdown", ((new Object() {
-						public double getValue(BlockPos pos, String tag) {
+						public double getValue(IWorld world, BlockPos pos, String tag) {
 							TileEntity tileEntity = world.getTileEntity(pos);
 							if (tileEntity != null)
 								return tileEntity.getTileData().getDouble(tag);
 							return -1;
 						}
-					}.getValue(new BlockPos((int) x, (int) y, (int) z), "Countdown")) + 1));
-				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "Countdown")) + 1));
+				if (world instanceof World)
+					((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 			if (((new Object() {
-				public double getValue(BlockPos pos, String tag) {
+				public double getValue(IWorld world, BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
 					if (tileEntity != null)
 						return tileEntity.getTileData().getDouble(tag);
 					return -1;
 				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Countdown")) < 12000)) {
+			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "Countdown")) < 12000)) {
 				sx = (double) (-10);
 				for (int index24 = 0; index24 < (int) (21); index24++) {
 					sy = (double) (-10);
@@ -1761,99 +1920,109 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 						});
 					}
 				}
-				if (!world.getWorld().isRemote) {
+				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putDouble("DrumSoundCounter", ((new Object() {
-							public double getValue(BlockPos pos, String tag) {
+							public double getValue(IWorld world, BlockPos pos, String tag) {
 								TileEntity tileEntity = world.getTileEntity(pos);
 								if (tileEntity != null)
 									return tileEntity.getTileData().getDouble(tag);
 								return -1;
 							}
-						}.getValue(new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) + 1));
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+						}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) + 1));
+					if (world instanceof World)
+						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 				if (((((new Object() {
-					public double getValue(BlockPos pos, String tag) {
+					public double getValue(IWorld world, BlockPos pos, String tag) {
 						TileEntity tileEntity = world.getTileEntity(pos);
 						if (tileEntity != null)
 							return tileEntity.getTileData().getDouble(tag);
 						return -1;
 					}
-				}.getValue(new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) % 5) == 0)
+				}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) % 5) == 0)
 						&& (world.isAirBlock(new BlockPos((int) x, (int) (y + 1), (int) z))))) {
-					if (!world.getWorld().isRemote) {
-						world.playSound(null, new BlockPos((int) x, (int) y, (int) z), (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-								.getValue(new ResourceLocation("instrumental:drum_sound")), SoundCategory.NEUTRAL, (float) 1, (float) 1);
+					if (world instanceof World && !world.isRemote()) {
+						((World) world)
+								.playSound(null, new BlockPos((int) x, (int) y, (int) z),
+										(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+												.getValue(new ResourceLocation("instrumental:drum_sound")),
+										SoundCategory.NEUTRAL, (float) 1, (float) 1);
 					} else {
-						world.getWorld().playSound(x, y, z,
+						((World) world).playSound(x, y, z,
 								(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
 										.getValue(new ResourceLocation("instrumental:drum_sound")),
 								SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
 					}
 				}
 			} else {
-				if (!world.getWorld().isRemote) {
-					world.playSound(null, new BlockPos((int) x, (int) y, (int) z), (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-							.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")), SoundCategory.NEUTRAL, (float) 1, (float) 1);
+				if (world instanceof World && !world.isRemote()) {
+					((World) world)
+							.playSound(null, new BlockPos((int) x, (int) y, (int) z),
+									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+											.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")),
+									SoundCategory.NEUTRAL, (float) 1, (float) 1);
 				} else {
-					world.getWorld().playSound(x, y, z,
+					((World) world).playSound(x, y, z,
 							(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
 									.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")),
 							SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
 				}
-				if (!world.getWorld().isRemote) {
+				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putString("MelodyType", "None");
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					if (world instanceof World)
+						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
-				if (!world.getWorld().isRemote) {
+				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putDouble("Countdown", 0);
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					if (world instanceof World)
+						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 			}
 		}
 		if ((((new Object() {
-			public String getValue(BlockPos pos, String tag) {
+			public String getValue(IWorld world, BlockPos pos, String tag) {
 				TileEntity tileEntity = world.getTileEntity(pos);
 				if (tileEntity != null)
 					return tileEntity.getTileData().getString(tag);
 				return "";
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "MelodyType"))).equals("Water"))) {
-			if (!world.getWorld().isRemote) {
+		}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "MelodyType"))).equals("Water"))) {
+			if (!world.isRemote()) {
 				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 				TileEntity _tileEntity = world.getTileEntity(_bp);
 				BlockState _bs = world.getBlockState(_bp);
 				if (_tileEntity != null)
 					_tileEntity.getTileData().putDouble("Countdown", ((new Object() {
-						public double getValue(BlockPos pos, String tag) {
+						public double getValue(IWorld world, BlockPos pos, String tag) {
 							TileEntity tileEntity = world.getTileEntity(pos);
 							if (tileEntity != null)
 								return tileEntity.getTileData().getDouble(tag);
 							return -1;
 						}
-					}.getValue(new BlockPos((int) x, (int) y, (int) z), "Countdown")) + 1));
-				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "Countdown")) + 1));
+				if (world instanceof World)
+					((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 			if (((new Object() {
-				public double getValue(BlockPos pos, String tag) {
+				public double getValue(IWorld world, BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
 					if (tileEntity != null)
 						return tileEntity.getTileData().getDouble(tag);
 					return -1;
 				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Countdown")) < 12000)) {
+			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "Countdown")) < 12000)) {
 				sx = (double) (-10);
 				for (int index27 = 0; index27 < (int) (21); index27++) {
 					sy = (double) (-10);
@@ -1937,99 +2106,109 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 						});
 					}
 				}
-				if (!world.getWorld().isRemote) {
+				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putDouble("DrumSoundCounter", ((new Object() {
-							public double getValue(BlockPos pos, String tag) {
+							public double getValue(IWorld world, BlockPos pos, String tag) {
 								TileEntity tileEntity = world.getTileEntity(pos);
 								if (tileEntity != null)
 									return tileEntity.getTileData().getDouble(tag);
 								return -1;
 							}
-						}.getValue(new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) + 1));
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+						}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) + 1));
+					if (world instanceof World)
+						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 				if (((((new Object() {
-					public double getValue(BlockPos pos, String tag) {
+					public double getValue(IWorld world, BlockPos pos, String tag) {
 						TileEntity tileEntity = world.getTileEntity(pos);
 						if (tileEntity != null)
 							return tileEntity.getTileData().getDouble(tag);
 						return -1;
 					}
-				}.getValue(new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) % 5) == 0)
+				}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) % 5) == 0)
 						&& (world.isAirBlock(new BlockPos((int) x, (int) (y + 1), (int) z))))) {
-					if (!world.getWorld().isRemote) {
-						world.playSound(null, new BlockPos((int) x, (int) y, (int) z), (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-								.getValue(new ResourceLocation("instrumental:drum_sound")), SoundCategory.NEUTRAL, (float) 1, (float) 1);
+					if (world instanceof World && !world.isRemote()) {
+						((World) world)
+								.playSound(null, new BlockPos((int) x, (int) y, (int) z),
+										(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+												.getValue(new ResourceLocation("instrumental:drum_sound")),
+										SoundCategory.NEUTRAL, (float) 1, (float) 1);
 					} else {
-						world.getWorld().playSound(x, y, z,
+						((World) world).playSound(x, y, z,
 								(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
 										.getValue(new ResourceLocation("instrumental:drum_sound")),
 								SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
 					}
 				}
 			} else {
-				if (!world.getWorld().isRemote) {
-					world.playSound(null, new BlockPos((int) x, (int) y, (int) z), (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-							.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")), SoundCategory.NEUTRAL, (float) 1, (float) 1);
+				if (world instanceof World && !world.isRemote()) {
+					((World) world)
+							.playSound(null, new BlockPos((int) x, (int) y, (int) z),
+									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+											.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")),
+									SoundCategory.NEUTRAL, (float) 1, (float) 1);
 				} else {
-					world.getWorld().playSound(x, y, z,
+					((World) world).playSound(x, y, z,
 							(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
 									.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")),
 							SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
 				}
-				if (!world.getWorld().isRemote) {
+				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putString("MelodyType", "None");
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					if (world instanceof World)
+						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
-				if (!world.getWorld().isRemote) {
+				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putDouble("Countdown", 0);
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					if (world instanceof World)
+						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 			}
 		}
 		if ((((new Object() {
-			public String getValue(BlockPos pos, String tag) {
+			public String getValue(IWorld world, BlockPos pos, String tag) {
 				TileEntity tileEntity = world.getTileEntity(pos);
 				if (tileEntity != null)
 					return tileEntity.getTileData().getString(tag);
 				return "";
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "MelodyType"))).equals("Regeneration"))) {
-			if (!world.getWorld().isRemote) {
+		}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "MelodyType"))).equals("Regeneration"))) {
+			if (!world.isRemote()) {
 				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 				TileEntity _tileEntity = world.getTileEntity(_bp);
 				BlockState _bs = world.getBlockState(_bp);
 				if (_tileEntity != null)
 					_tileEntity.getTileData().putDouble("Countdown", ((new Object() {
-						public double getValue(BlockPos pos, String tag) {
+						public double getValue(IWorld world, BlockPos pos, String tag) {
 							TileEntity tileEntity = world.getTileEntity(pos);
 							if (tileEntity != null)
 								return tileEntity.getTileData().getDouble(tag);
 							return -1;
 						}
-					}.getValue(new BlockPos((int) x, (int) y, (int) z), "Countdown")) + 1));
-				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "Countdown")) + 1));
+				if (world instanceof World)
+					((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 			if (((new Object() {
-				public double getValue(BlockPos pos, String tag) {
+				public double getValue(IWorld world, BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
 					if (tileEntity != null)
 						return tileEntity.getTileData().getDouble(tag);
 					return -1;
 				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Countdown")) < 12000)) {
+			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "Countdown")) < 12000)) {
 				sx = (double) (-10);
 				for (int index30 = 0; index30 < (int) (21); index30++) {
 					sy = (double) (-10);
@@ -2090,65 +2269,74 @@ public class DrumTickUpdateProcedure extends InstrumentalModElements.ModElement 
 						});
 					}
 				}
-				if (!world.getWorld().isRemote) {
+				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putDouble("DrumSoundCounter", ((new Object() {
-							public double getValue(BlockPos pos, String tag) {
+							public double getValue(IWorld world, BlockPos pos, String tag) {
 								TileEntity tileEntity = world.getTileEntity(pos);
 								if (tileEntity != null)
 									return tileEntity.getTileData().getDouble(tag);
 								return -1;
 							}
-						}.getValue(new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) + 1));
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+						}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) + 1));
+					if (world instanceof World)
+						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 				if (((((new Object() {
-					public double getValue(BlockPos pos, String tag) {
+					public double getValue(IWorld world, BlockPos pos, String tag) {
 						TileEntity tileEntity = world.getTileEntity(pos);
 						if (tileEntity != null)
 							return tileEntity.getTileData().getDouble(tag);
 						return -1;
 					}
-				}.getValue(new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) % 5) == 0)
+				}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "DrumSoundCounter")) % 5) == 0)
 						&& (world.isAirBlock(new BlockPos((int) x, (int) (y + 1), (int) z))))) {
-					if (!world.getWorld().isRemote) {
-						world.playSound(null, new BlockPos((int) x, (int) y, (int) z), (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-								.getValue(new ResourceLocation("instrumental:drum_sound")), SoundCategory.NEUTRAL, (float) 1, (float) 1);
+					if (world instanceof World && !world.isRemote()) {
+						((World) world)
+								.playSound(null, new BlockPos((int) x, (int) y, (int) z),
+										(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+												.getValue(new ResourceLocation("instrumental:drum_sound")),
+										SoundCategory.NEUTRAL, (float) 1, (float) 1);
 					} else {
-						world.getWorld().playSound(x, y, z,
+						((World) world).playSound(x, y, z,
 								(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
 										.getValue(new ResourceLocation("instrumental:drum_sound")),
 								SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
 					}
 				}
 			} else {
-				if (!world.getWorld().isRemote) {
-					world.playSound(null, new BlockPos((int) x, (int) y, (int) z), (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-							.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")), SoundCategory.NEUTRAL, (float) 1, (float) 1);
+				if (world instanceof World && !world.isRemote()) {
+					((World) world)
+							.playSound(null, new BlockPos((int) x, (int) y, (int) z),
+									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+											.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")),
+									SoundCategory.NEUTRAL, (float) 1, (float) 1);
 				} else {
-					world.getWorld().playSound(x, y, z,
+					((World) world).playSound(x, y, z,
 							(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
 									.getValue(new ResourceLocation("instrumental:drum_fail_sound.ogg")),
 							SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
 				}
-				if (!world.getWorld().isRemote) {
+				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putString("MelodyType", "None");
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					if (world instanceof World)
+						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
-				if (!world.getWorld().isRemote) {
+				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putDouble("Countdown", 0);
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					if (world instanceof World)
+						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 			}
 		}

@@ -16,7 +16,7 @@ public class RegenerationMelodyItem extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:regeneration_melody")
 	public static final Item block = null;
 	public RegenerationMelodyItem(InstrumentalModElements instance) {
-		super(instance, 306);
+		super(instance, 110);
 	}
 
 	@Override

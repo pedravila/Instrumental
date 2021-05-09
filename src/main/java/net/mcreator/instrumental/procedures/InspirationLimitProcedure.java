@@ -4,19 +4,20 @@ import net.minecraft.entity.Entity;
 
 import net.mcreator.instrumental.InstrumentalModVariables;
 import net.mcreator.instrumental.InstrumentalModElements;
+import net.mcreator.instrumental.InstrumentalMod;
 
 import java.util.Map;
 
 @InstrumentalModElements.ModElement.Tag
 public class InspirationLimitProcedure extends InstrumentalModElements.ModElement {
 	public InspirationLimitProcedure(InstrumentalModElements instance) {
-		super(instance, 208);
+		super(instance, 223);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				System.err.println("Failed to load dependency entity for procedure InspirationLimit!");
+				InstrumentalMod.LOGGER.warn("Failed to load dependency entity for procedure InspirationLimit!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");

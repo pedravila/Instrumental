@@ -22,7 +22,7 @@ public class NightVisionSpeakerItem extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:night_vision_speaker")
 	public static final Item block = null;
 	public NightVisionSpeakerItem(InstrumentalModElements instance) {
-		super(instance, 52);
+		super(instance, 61);
 	}
 
 	@Override

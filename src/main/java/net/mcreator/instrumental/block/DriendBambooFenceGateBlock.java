@@ -4,7 +4,7 @@ package net.mcreator.instrumental.block;
 import net.minecraftforge.registries.ObjectHolder;
 import net.minecraftforge.common.ToolType;
 
-import net.minecraft.world.storage.loot.LootContext;
+import net.minecraft.loot.LootContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
@@ -25,7 +25,7 @@ public class DriendBambooFenceGateBlock extends InstrumentalModElements.ModEleme
 	@ObjectHolder("instrumental:driend_bamboo_fence_gate")
 	public static final Block block = null;
 	public DriendBambooFenceGateBlock(InstrumentalModElements instance) {
-		super(instance, 105);
+		super(instance, 120);
 	}
 
 	@Override
@@ -35,8 +35,8 @@ public class DriendBambooFenceGateBlock extends InstrumentalModElements.ModEleme
 	}
 	public static class CustomBlock extends FenceGateBlock {
 		public CustomBlock() {
-			super(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(3f, 2f).lightValue(0).harvestLevel(0)
-					.harvestTool(ToolType.AXE));
+			super(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(3f, 2f).setLightLevel(s -> 0).harvestLevel(0)
+					.harvestTool(ToolType.AXE).setRequiresTool());
 			setRegistryName("driend_bamboo_fence_gate");
 		}
 

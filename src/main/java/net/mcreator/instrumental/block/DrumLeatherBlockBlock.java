@@ -3,7 +3,7 @@ package net.mcreator.instrumental.block;
 
 import net.minecraftforge.registries.ObjectHolder;
 
-import net.minecraft.world.storage.loot.LootContext;
+import net.minecraft.loot.LootContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
 import net.minecraft.item.BlockItem;
@@ -23,7 +23,7 @@ public class DrumLeatherBlockBlock extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:drum_leather_block")
 	public static final Block block = null;
 	public DrumLeatherBlockBlock(InstrumentalModElements instance) {
-		super(instance, 71);
+		super(instance, 80);
 	}
 
 	@Override
@@ -34,7 +34,7 @@ public class DrumLeatherBlockBlock extends InstrumentalModElements.ModElement {
 	}
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
-			super(Block.Properties.create(Material.WOOL).sound(SoundType.CLOTH).hardnessAndResistance(1f, 10f).lightValue(0));
+			super(Block.Properties.create(Material.WOOL).sound(SoundType.CLOTH).hardnessAndResistance(1f, 10f).setLightLevel(s -> 0));
 			setRegistryName("drum_leather_block");
 		}
 

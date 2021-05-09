@@ -4,7 +4,7 @@ package net.mcreator.instrumental.block;
 import net.minecraftforge.registries.ObjectHolder;
 import net.minecraftforge.common.ToolType;
 
-import net.minecraft.world.storage.loot.LootContext;
+import net.minecraft.loot.LootContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
@@ -24,7 +24,7 @@ public class DriedBambooFloorBlock extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:dried_bamboo_floor")
 	public static final Block block = null;
 	public DriedBambooFloorBlock(InstrumentalModElements instance) {
-		super(instance, 101);
+		super(instance, 116);
 	}
 
 	@Override
@@ -35,8 +35,8 @@ public class DriedBambooFloorBlock extends InstrumentalModElements.ModElement {
 	}
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
-			super(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(3f, 2f).lightValue(0).harvestLevel(0)
-					.harvestTool(ToolType.AXE));
+			super(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(3f, 2f).setLightLevel(s -> 0).harvestLevel(0)
+					.harvestTool(ToolType.AXE).setRequiresTool());
 			setRegistryName("dried_bamboo_floor");
 		}
 

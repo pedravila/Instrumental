@@ -22,7 +22,7 @@ public class EndScoreItem extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:end_score")
 	public static final Item block = null;
 	public EndScoreItem(InstrumentalModElements instance) {
-		super(instance, 37);
+		super(instance, 46);
 	}
 
 	@Override

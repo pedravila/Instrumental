@@ -1,0 +1,50 @@
+{
+  "_fv": 18,
+  "_type": "gun",
+  "definition": {
+    "renderType": 0,
+    "texture": "netherite_berimbau",
+    "customModelName": "Normal",
+    "name": "Netherite Berimbau",
+    "specialInfo": [
+      "§2 10 Attack Damage",
+      "§2 6 inspiration",
+      "§2 1 Seconds Cooldown"
+    ],
+    "creativeTab": {
+      "value": "CUSTOM:RangedInstrumentsTab"
+    },
+    "stackSize": 1,
+    "ammoItem": {
+      "value": ""
+    },
+    "shootConstantly": false,
+    "usageCount": 100,
+    "actionSound": {
+      "value": "CUSTOM:berimbau_sound"
+    },
+    "hasGlow": false,
+    "animation": "none",
+    "enableMeleeDamage": false,
+    "damageVsEntity": 0.0,
+    "onRangedItemUsed": {
+      "name": "NetheriteInstrumentRangedItemUse"
+    },
+    "useCondition": {
+      "name": "NetheriteInstrumentsCanUse"
+    },
+    "bulletPower": 1.2,
+    "bulletDamage": 4.0,
+    "bulletKnockback": 0,
+    "bulletParticles": false,
+    "bulletIgnitesFire": false,
+    "bulletItemTexture": {
+      "value": "Blocks.AIR"
+    },
+    "bulletModel": "Default",
+    "customBulletModelTexture": "",
+    "onBulletFlyingTick": {
+      "name": "FieryNoteProjectile"
+    }
+  }
+}

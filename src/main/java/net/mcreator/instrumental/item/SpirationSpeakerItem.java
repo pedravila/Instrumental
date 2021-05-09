@@ -22,7 +22,7 @@ public class SpirationSpeakerItem extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:spiration_speaker")
 	public static final Item block = null;
 	public SpirationSpeakerItem(InstrumentalModElements instance) {
-		super(instance, 57);
+		super(instance, 66);
 	}
 
 	@Override

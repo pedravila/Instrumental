@@ -7,10 +7,10 @@ import net.minecraftforge.common.ToolType;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
-import net.minecraft.world.storage.loot.LootContext;
 import net.minecraft.util.Direction;
 import net.minecraft.state.properties.DoubleBlockHalf;
 import net.minecraft.state.properties.BlockStateProperties;
+import net.minecraft.loot.LootContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
@@ -33,7 +33,7 @@ public class DriedBambooDoorBlock extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:dried_bamboo_door")
 	public static final Block block = null;
 	public DriedBambooDoorBlock(InstrumentalModElements instance) {
-		super(instance, 106);
+		super(instance, 121);
 	}
 
 	@Override
@@ -49,8 +49,8 @@ public class DriedBambooDoorBlock extends InstrumentalModElements.ModElement {
 	}
 	public static class CustomBlock extends DoorBlock {
 		public CustomBlock() {
-			super(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(3f, 2f).lightValue(0).harvestLevel(0)
-					.harvestTool(ToolType.AXE));
+			super(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(3f, 2f).setLightLevel(s -> 0).harvestLevel(0)
+					.harvestTool(ToolType.AXE).setRequiresTool());
 			setRegistryName("dried_bamboo_door");
 		}
 

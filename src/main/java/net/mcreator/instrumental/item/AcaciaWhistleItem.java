@@ -5,8 +5,7 @@ import net.minecraftforge.registries.ObjectHolder;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.fml.network.NetworkHooks;
 import net.minecraftforge.fml.network.FMLPlayMessages;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.client.registry.RenderingRegistry;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
@@ -32,14 +31,13 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.Entity;
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.client.renderer.entity.SpriteRenderer;
-import net.minecraft.client.Minecraft;
 import net.minecraft.block.Blocks;
 
 import net.mcreator.instrumental.procedures.OakWhistleRangedItemUsedProcedure;
 import net.mcreator.instrumental.procedures.OakWhistleCanUseRangedItemProcedure;
 import net.mcreator.instrumental.procedures.AsdaWhileBulletFlyingTickProcedure;
 import net.mcreator.instrumental.itemgroup.RangedInstrumentsTabItemGroup;
+import net.mcreator.instrumental.entity.renderer.AcaciaWhistleRenderer;
 import net.mcreator.instrumental.InstrumentalModElements;
 
 import java.util.Random;
@@ -53,25 +51,18 @@ import com.google.common.collect.ImmutableMap;
 public class AcaciaWhistleItem extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:acacia_whistle")
 	public static final Item block = null;
-	@ObjectHolder("instrumental:entitybulletacacia_whistle")
-	public static final EntityType arrow = null;
+	public static final EntityType arrow = (EntityType.Builder.<ArrowCustomEntity>create(ArrowCustomEntity::new, EntityClassification.MISC)
+			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).setCustomClientFactory(ArrowCustomEntity::new)
+			.size(0.5f, 0.5f)).build("entitybulletacacia_whistle").setRegistryName("entitybulletacacia_whistle");
 	public AcaciaWhistleItem(InstrumentalModElements instance) {
 		super(instance, 5);
+		FMLJavaModLoadingContext.get().getModEventBus().register(new AcaciaWhistleRenderer.ModelRegisterHandler());
 	}
 
 	@Override
 	public void initElements() {
 		elements.items.add(() -> new ItemRanged());
-		elements.entities.add(() -> (EntityType.Builder.<ArrowCustomEntity>create(ArrowCustomEntity::new, EntityClassification.MISC)
-				.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).setCustomClientFactory(ArrowCustomEntity::new)
-				.size(0.5f, 0.5f)).build("entitybulletacacia_whistle").setRegistryName("entitybulletacacia_whistle"));
-	}
-
-	@Override
-	@OnlyIn(Dist.CLIENT)
-	public void init(FMLCommonSetupEvent event) {
-		RenderingRegistry.registerEntityRenderingHandler(arrow,
-				renderManager -> new SpriteRenderer(renderManager, Minecraft.getInstance().getItemRenderer()));
+		elements.entities.add(() -> arrow);
 	}
 	public static class ItemRanged extends Item {
 		public ItemRanged() {
@@ -172,7 +163,7 @@ public class AcaciaWhistleItem extends InstrumentalModElements.ModElement {
 			double y = this.getPosY();
 			double z = this.getPosZ();
 			World world = this.world;
-			Entity entity = this.getShooter();
+			Entity entity = this.func_234616_v_();
 			{
 				Map<String, Object> $_dependencies = new HashMap<>();
 				$_dependencies.put("x", x);

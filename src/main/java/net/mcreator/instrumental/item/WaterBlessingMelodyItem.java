@@ -16,7 +16,7 @@ public class WaterBlessingMelodyItem extends InstrumentalModElements.ModElement 
 	@ObjectHolder("instrumental:water_blessing_melody")
 	public static final Item block = null;
 	public WaterBlessingMelodyItem(InstrumentalModElements instance) {
-		super(instance, 305);
+		super(instance, 109);
 	}
 
 	@Override

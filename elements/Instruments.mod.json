@@ -1,5 +1,5 @@
 {
-  "_fv": 13,
+  "_fv": 18,
   "_type": "tag",
   "definition": {
     "type": "Items",
@@ -114,10 +114,38 @@
       },
       {
         "value": "CUSTOM:GoldBanjo"
+      },
+      {
+        "value": "CUSTOM:NetheriteAccordion"
+      },
+      {
+        "value": "CUSTOM:NetheriteBanjo"
+      },
+      {
+        "value": "CUSTOM:NetheriteBell"
+      },
+      {
+        "value": "CUSTOM:NetheriteBerimbau"
+      },
+      {
+        "value": "CUSTOM:NetheriteClarinet"
+      },
+      {
+        "value": "CUSTOM:NetheriteLyre"
+      },
+      {
+        "value": "CUSTOM:NetheriteOcarina"
+      },
+      {
+        "value": "CUSTOM:NetheritePanflute"
+      },
+      {
+        "value": "CUSTOM:NetheriteUkulele"
       }
     ],
     "blocks": [],
     "functions": [],
+    "entities": [],
     "name": "instruments",
     "namespace": "forge"
   }

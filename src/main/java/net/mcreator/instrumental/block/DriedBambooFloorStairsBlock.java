@@ -4,7 +4,7 @@ package net.mcreator.instrumental.block;
 import net.minecraftforge.registries.ObjectHolder;
 import net.minecraftforge.common.ToolType;
 
-import net.minecraft.world.storage.loot.LootContext;
+import net.minecraft.loot.LootContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
@@ -25,7 +25,7 @@ public class DriedBambooFloorStairsBlock extends InstrumentalModElements.ModElem
 	@ObjectHolder("instrumental:dried_bamboo_floor_stairs")
 	public static final Block block = null;
 	public DriedBambooFloorStairsBlock(InstrumentalModElements instance) {
-		super(instance, 103);
+		super(instance, 118);
 	}
 
 	@Override
@@ -36,9 +36,10 @@ public class DriedBambooFloorStairsBlock extends InstrumentalModElements.ModElem
 	}
 	public static class CustomBlock extends StairsBlock {
 		public CustomBlock() {
-			super(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(3f, 2f)).getDefaultState(),
-					Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(3f, 2f).lightValue(0).harvestLevel(0)
-							.harvestTool(ToolType.AXE));
+			super(() -> new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(3f, 2f).setLightLevel(s -> 0)
+					.harvestLevel(0).harvestTool(ToolType.AXE).setRequiresTool()).getDefaultState(),
+					Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(3f, 2f).setLightLevel(s -> 0).harvestLevel(0)
+							.harvestTool(ToolType.AXE).setRequiresTool());
 			setRegistryName("dried_bamboo_floor_stairs");
 		}
 

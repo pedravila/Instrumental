@@ -22,7 +22,7 @@ public class SlowFallingSpeakerItem extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:slow_falling_speaker")
 	public static final Item block = null;
 	public SlowFallingSpeakerItem(InstrumentalModElements instance) {
-		super(instance, 53);
+		super(instance, 62);
 	}
 
 	@Override

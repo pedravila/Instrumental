@@ -16,7 +16,7 @@ public class HeroMelodyItem extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:hero_melody")
 	public static final Item block = null;
 	public HeroMelodyItem(InstrumentalModElements instance) {
-		super(instance, 301);
+		super(instance, 105);
 	}
 
 	@Override

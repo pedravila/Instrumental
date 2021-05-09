@@ -4,7 +4,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.common.MinecraftForge;
 
-import net.minecraft.world.World;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.GameType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.tags.ItemTags;
@@ -16,7 +16,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.client.network.play.NetworkPlayerInfo;
-import net.minecraft.client.entity.player.ClientPlayerEntity;
+import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.client.Minecraft;
 
 import net.mcreator.instrumental.potion.InspiratedPotion;
@@ -36,6 +36,7 @@ import net.mcreator.instrumental.item.FireResistanceSpeakerItem;
 import net.mcreator.instrumental.item.DolphinsGraceSpeakerItem;
 import net.mcreator.instrumental.InstrumentalModVariables;
 import net.mcreator.instrumental.InstrumentalModElements;
+import net.mcreator.instrumental.InstrumentalMod;
 
 import java.util.Random;
 import java.util.Map;
@@ -44,18 +45,18 @@ import java.util.HashMap;
 @InstrumentalModElements.ModElement.Tag
 public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement {
 	public SpeakerEffectsProcedure(InstrumentalModElements instance) {
-		super(instance, 225);
+		super(instance, 240);
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				System.err.println("Failed to load dependency entity for procedure SpeakerEffects!");
+				InstrumentalMod.LOGGER.warn("Failed to load dependency entity for procedure SpeakerEffects!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:melee_instruments").toLowerCase(java.util.Locale.ENGLISH)))
+		if (((ItemTags.getCollection().getTagByID(new ResourceLocation(("forge:melee_instruments").toLowerCase(java.util.Locale.ENGLISH)))
 				.contains(((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem()))
 				&& (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 						.getItem() == new ItemStack(RegenerationSpeakerItem.block, (int) (1)).getItem()))) {
@@ -65,9 +66,9 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayerEntity) {
 						return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.SURVIVAL;
-					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote) {
+					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote()) {
 						NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
-								.getPlayerInfo(((ClientPlayerEntity) _ent).getGameProfile().getId());
+								.getPlayerInfo(((AbstractClientPlayerEntity) _ent).getGameProfile().getId());
 						return _npi != null && _npi.getGameType() == GameType.SURVIVAL;
 					}
 					return false;
@@ -97,7 +98,7 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 				}
 			}
 		}
-		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:melee_instruments").toLowerCase(java.util.Locale.ENGLISH)))
+		if (((ItemTags.getCollection().getTagByID(new ResourceLocation(("forge:melee_instruments").toLowerCase(java.util.Locale.ENGLISH)))
 				.contains(((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem()))
 				&& (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 						.getItem() == new ItemStack(DolphinsGraceSpeakerItem.block, (int) (1)).getItem()))) {
@@ -107,9 +108,9 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayerEntity) {
 						return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.SURVIVAL;
-					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote) {
+					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote()) {
 						NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
-								.getPlayerInfo(((ClientPlayerEntity) _ent).getGameProfile().getId());
+								.getPlayerInfo(((AbstractClientPlayerEntity) _ent).getGameProfile().getId());
 						return _npi != null && _npi.getGameType() == GameType.SURVIVAL;
 					}
 					return false;
@@ -139,7 +140,7 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 				}
 			}
 		}
-		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:melee_instruments").toLowerCase(java.util.Locale.ENGLISH)))
+		if (((ItemTags.getCollection().getTagByID(new ResourceLocation(("forge:melee_instruments").toLowerCase(java.util.Locale.ENGLISH)))
 				.contains(((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem()))
 				&& (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 						.getItem() == new ItemStack(FireResistanceSpeakerItem.block, (int) (1)).getItem()))) {
@@ -149,9 +150,9 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayerEntity) {
 						return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.SURVIVAL;
-					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote) {
+					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote()) {
 						NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
-								.getPlayerInfo(((ClientPlayerEntity) _ent).getGameProfile().getId());
+								.getPlayerInfo(((AbstractClientPlayerEntity) _ent).getGameProfile().getId());
 						return _npi != null && _npi.getGameType() == GameType.SURVIVAL;
 					}
 					return false;
@@ -181,7 +182,7 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 				}
 			}
 		}
-		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:melee_instruments").toLowerCase(java.util.Locale.ENGLISH)))
+		if (((ItemTags.getCollection().getTagByID(new ResourceLocation(("forge:melee_instruments").toLowerCase(java.util.Locale.ENGLISH)))
 				.contains(((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem()))
 				&& (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 						.getItem() == new ItemStack(JumpBoostSpeakerItem.block, (int) (1)).getItem()))) {
@@ -191,9 +192,9 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayerEntity) {
 						return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.SURVIVAL;
-					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote) {
+					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote()) {
 						NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
-								.getPlayerInfo(((ClientPlayerEntity) _ent).getGameProfile().getId());
+								.getPlayerInfo(((AbstractClientPlayerEntity) _ent).getGameProfile().getId());
 						return _npi != null && _npi.getGameType() == GameType.SURVIVAL;
 					}
 					return false;
@@ -223,7 +224,7 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 				}
 			}
 		}
-		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:melee_instruments").toLowerCase(java.util.Locale.ENGLISH)))
+		if (((ItemTags.getCollection().getTagByID(new ResourceLocation(("forge:melee_instruments").toLowerCase(java.util.Locale.ENGLISH)))
 				.contains(((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem()))
 				&& (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 						.getItem() == new ItemStack(NightVisionSpeakerItem.block, (int) (1)).getItem()))) {
@@ -233,9 +234,9 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayerEntity) {
 						return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.SURVIVAL;
-					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote) {
+					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote()) {
 						NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
-								.getPlayerInfo(((ClientPlayerEntity) _ent).getGameProfile().getId());
+								.getPlayerInfo(((AbstractClientPlayerEntity) _ent).getGameProfile().getId());
 						return _npi != null && _npi.getGameType() == GameType.SURVIVAL;
 					}
 					return false;
@@ -265,7 +266,7 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 				}
 			}
 		}
-		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:melee_instruments").toLowerCase(java.util.Locale.ENGLISH)))
+		if (((ItemTags.getCollection().getTagByID(new ResourceLocation(("forge:melee_instruments").toLowerCase(java.util.Locale.ENGLISH)))
 				.contains(((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem()))
 				&& (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 						.getItem() == new ItemStack(SlowFallingSpeakerItem.block, (int) (1)).getItem()))) {
@@ -275,9 +276,9 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayerEntity) {
 						return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.SURVIVAL;
-					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote) {
+					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote()) {
 						NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
-								.getPlayerInfo(((ClientPlayerEntity) _ent).getGameProfile().getId());
+								.getPlayerInfo(((AbstractClientPlayerEntity) _ent).getGameProfile().getId());
 						return _npi != null && _npi.getGameType() == GameType.SURVIVAL;
 					}
 					return false;
@@ -307,7 +308,7 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 				}
 			}
 		}
-		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:melee_instruments").toLowerCase(java.util.Locale.ENGLISH)))
+		if (((ItemTags.getCollection().getTagByID(new ResourceLocation(("forge:melee_instruments").toLowerCase(java.util.Locale.ENGLISH)))
 				.contains(((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem()))
 				&& (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 						.getItem() == new ItemStack(SpeedSpeakerItem.block, (int) (1)).getItem()))) {
@@ -317,9 +318,9 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayerEntity) {
 						return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.SURVIVAL;
-					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote) {
+					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote()) {
 						NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
-								.getPlayerInfo(((ClientPlayerEntity) _ent).getGameProfile().getId());
+								.getPlayerInfo(((AbstractClientPlayerEntity) _ent).getGameProfile().getId());
 						return _npi != null && _npi.getGameType() == GameType.SURVIVAL;
 					}
 					return false;
@@ -349,7 +350,7 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 				}
 			}
 		}
-		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:melee_instruments").toLowerCase(java.util.Locale.ENGLISH)))
+		if (((ItemTags.getCollection().getTagByID(new ResourceLocation(("forge:melee_instruments").toLowerCase(java.util.Locale.ENGLISH)))
 				.contains(((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem()))
 				&& (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 						.getItem() == new ItemStack(StrengthSpeakerItem.block, (int) (1)).getItem()))) {
@@ -359,9 +360,9 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayerEntity) {
 						return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.SURVIVAL;
-					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote) {
+					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote()) {
 						NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
-								.getPlayerInfo(((ClientPlayerEntity) _ent).getGameProfile().getId());
+								.getPlayerInfo(((AbstractClientPlayerEntity) _ent).getGameProfile().getId());
 						return _npi != null && _npi.getGameType() == GameType.SURVIVAL;
 					}
 					return false;
@@ -391,7 +392,7 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 				}
 			}
 		}
-		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:melee_instruments").toLowerCase(java.util.Locale.ENGLISH)))
+		if (((ItemTags.getCollection().getTagByID(new ResourceLocation(("forge:melee_instruments").toLowerCase(java.util.Locale.ENGLISH)))
 				.contains(((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem()))
 				&& (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 						.getItem() == new ItemStack(WaterBreathingSpeakerItem.block, (int) (1)).getItem()))) {
@@ -401,9 +402,9 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayerEntity) {
 						return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.SURVIVAL;
-					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote) {
+					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote()) {
 						NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
-								.getPlayerInfo(((ClientPlayerEntity) _ent).getGameProfile().getId());
+								.getPlayerInfo(((AbstractClientPlayerEntity) _ent).getGameProfile().getId());
 						return _npi != null && _npi.getGameType() == GameType.SURVIVAL;
 					}
 					return false;
@@ -433,7 +434,7 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 				}
 			}
 		}
-		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:melee_instruments").toLowerCase(java.util.Locale.ENGLISH)))
+		if (((ItemTags.getCollection().getTagByID(new ResourceLocation(("forge:melee_instruments").toLowerCase(java.util.Locale.ENGLISH)))
 				.contains(((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem()))
 				&& (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 						.getItem() == new ItemStack(SpirationSpeakerItem.block, (int) (1)).getItem()))) {
@@ -443,9 +444,9 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayerEntity) {
 						return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.SURVIVAL;
-					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote) {
+					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote()) {
 						NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
-								.getPlayerInfo(((ClientPlayerEntity) _ent).getGameProfile().getId());
+								.getPlayerInfo(((AbstractClientPlayerEntity) _ent).getGameProfile().getId());
 						return _npi != null && _npi.getGameType() == GameType.SURVIVAL;
 					}
 					return false;
@@ -475,7 +476,7 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 				}
 			}
 		}
-		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:melee_instruments").toLowerCase(java.util.Locale.ENGLISH)))
+		if (((ItemTags.getCollection().getTagByID(new ResourceLocation(("forge:melee_instruments").toLowerCase(java.util.Locale.ENGLISH)))
 				.contains(((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem()))
 				&& (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 						.getItem() == new ItemStack(PoweredRegenerationSpeakerItem.block, (int) (1)).getItem()))) {
@@ -485,9 +486,9 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayerEntity) {
 						return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.SURVIVAL;
-					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote) {
+					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote()) {
 						NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
-								.getPlayerInfo(((ClientPlayerEntity) _ent).getGameProfile().getId());
+								.getPlayerInfo(((AbstractClientPlayerEntity) _ent).getGameProfile().getId());
 						return _npi != null && _npi.getGameType() == GameType.SURVIVAL;
 					}
 					return false;
@@ -517,7 +518,7 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 				}
 			}
 		}
-		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:melee_instruments").toLowerCase(java.util.Locale.ENGLISH)))
+		if (((ItemTags.getCollection().getTagByID(new ResourceLocation(("forge:melee_instruments").toLowerCase(java.util.Locale.ENGLISH)))
 				.contains(((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem()))
 				&& (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 						.getItem() == new ItemStack(PoweredJumpBoostSpeakerItem.block, (int) (1)).getItem()))) {
@@ -527,9 +528,9 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayerEntity) {
 						return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.SURVIVAL;
-					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote) {
+					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote()) {
 						NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
-								.getPlayerInfo(((ClientPlayerEntity) _ent).getGameProfile().getId());
+								.getPlayerInfo(((AbstractClientPlayerEntity) _ent).getGameProfile().getId());
 						return _npi != null && _npi.getGameType() == GameType.SURVIVAL;
 					}
 					return false;
@@ -559,7 +560,7 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 				}
 			}
 		}
-		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:melee_instruments").toLowerCase(java.util.Locale.ENGLISH)))
+		if (((ItemTags.getCollection().getTagByID(new ResourceLocation(("forge:melee_instruments").toLowerCase(java.util.Locale.ENGLISH)))
 				.contains(((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem()))
 				&& (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 						.getItem() == new ItemStack(PoweredSpeedSpeakerItem.block, (int) (1)).getItem()))) {
@@ -569,9 +570,9 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayerEntity) {
 						return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.SURVIVAL;
-					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote) {
+					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote()) {
 						NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
-								.getPlayerInfo(((ClientPlayerEntity) _ent).getGameProfile().getId());
+								.getPlayerInfo(((AbstractClientPlayerEntity) _ent).getGameProfile().getId());
 						return _npi != null && _npi.getGameType() == GameType.SURVIVAL;
 					}
 					return false;
@@ -601,7 +602,7 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 				}
 			}
 		}
-		if (((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge:melee_instruments").toLowerCase(java.util.Locale.ENGLISH)))
+		if (((ItemTags.getCollection().getTagByID(new ResourceLocation(("forge:melee_instruments").toLowerCase(java.util.Locale.ENGLISH)))
 				.contains(((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem()))
 				&& (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 						.getItem() == new ItemStack(PoweredStrengthSpeakerItem.block, (int) (1)).getItem()))) {
@@ -611,9 +612,9 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayerEntity) {
 						return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.SURVIVAL;
-					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote) {
+					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote()) {
 						NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
-								.getPlayerInfo(((ClientPlayerEntity) _ent).getGameProfile().getId());
+								.getPlayerInfo(((AbstractClientPlayerEntity) _ent).getGameProfile().getId());
 						return _npi != null && _npi.getGameType() == GameType.SURVIVAL;
 					}
 					return false;
@@ -648,12 +649,13 @@ public class SpeakerEffectsProcedure extends InstrumentalModElements.ModElement 
 	@SubscribeEvent
 	public void onRightClickItem(PlayerInteractEvent.RightClickItem event) {
 		PlayerEntity entity = event.getPlayer();
-		if (event.getHand() != entity.getActiveHand())
+		if (event.getHand() != entity.getActiveHand()) {
 			return;
-		int i = event.getPos().getX();
-		int j = event.getPos().getY();
-		int k = event.getPos().getZ();
-		World world = event.getWorld();
+		}
+		double i = event.getPos().getX();
+		double j = event.getPos().getY();
+		double k = event.getPos().getZ();
+		IWorld world = event.getWorld();
 		Map<String, Object> dependencies = new HashMap<>();
 		dependencies.put("x", i);
 		dependencies.put("y", j);

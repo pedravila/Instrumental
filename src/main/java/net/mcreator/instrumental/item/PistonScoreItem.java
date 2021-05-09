@@ -22,7 +22,7 @@ public class PistonScoreItem extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:piston_score")
 	public static final Item block = null;
 	public PistonScoreItem(InstrumentalModElements instance) {
-		super(instance, 43);
+		super(instance, 52);
 	}
 
 	@Override

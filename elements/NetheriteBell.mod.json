@@ -1,0 +1,30 @@
+{
+  "_fv": 18,
+  "_type": "tool",
+  "definition": {
+    "renderType": 0,
+    "texture": "netherite_bell",
+    "customModelName": "Normal",
+    "name": "Netherite Bell",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "CUSTOM:RangedInstrumentsTab"
+    },
+    "toolType": "Special",
+    "harvestLevel": 1,
+    "efficiency": 4.0,
+    "attackSpeed": 1.5,
+    "enchantability": 2,
+    "damageVsEntity": 10.0,
+    "usageCount": 2000,
+    "blocksAffected": [],
+    "hasGlow": false,
+    "repairItems": [],
+    "immuneToFire": true,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onRightClickedInAir": {
+      "name": "IronBellRightClickedInAir"
+    }
+  }
+}

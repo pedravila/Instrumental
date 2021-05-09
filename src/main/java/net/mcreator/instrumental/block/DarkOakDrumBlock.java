@@ -15,10 +15,8 @@ import net.minecraftforge.common.ToolType;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
-import net.minecraft.world.storage.loot.LootContext;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.World;
-import net.minecraft.world.IWorldReader;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.ITextComponent;
@@ -35,6 +33,7 @@ import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.loot.LootContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
 import net.minecraft.item.BlockItem;
@@ -75,8 +74,8 @@ public class DarkOakDrumBlock extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:dark_oak_drum")
 	public static final TileEntityType<CustomTileEntity> tileEntityType = null;
 	public DarkOakDrumBlock(InstrumentalModElements instance) {
-		super(instance, 77);
-		FMLJavaModLoadingContext.get().getModEventBus().register(this);
+		super(instance, 86);
+		FMLJavaModLoadingContext.get().getModEventBus().register(new TileEntityRegisterHandler());
 	}
 
 	@Override
@@ -85,15 +84,17 @@ public class DarkOakDrumBlock extends InstrumentalModElements.ModElement {
 		elements.items.add(
 				() -> new BlockItem(block, new Item.Properties().group(RangedInstrumentsTabItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
-
-	@SubscribeEvent
-	public void registerTileEntity(RegistryEvent.Register<TileEntityType<?>> event) {
-		event.getRegistry().register(TileEntityType.Builder.create(CustomTileEntity::new, block).build(null).setRegistryName("dark_oak_drum"));
+	private static class TileEntityRegisterHandler {
+		@SubscribeEvent
+		public void registerTileEntity(RegistryEvent.Register<TileEntityType<?>> event) {
+			event.getRegistry().register(TileEntityType.Builder.create(CustomTileEntity::new, block).build(null).setRegistryName("dark_oak_drum"));
+		}
 	}
+
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
-			super(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(1f, 10f).lightValue(0).harvestLevel(1)
-					.harvestTool(ToolType.AXE));
+			super(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(1f, 10f).setLightLevel(s -> 0).harvestLevel(1)
+					.harvestTool(ToolType.AXE).setRequiresTool());
 			setRegistryName("dark_oak_drum");
 		}
 
@@ -102,11 +103,6 @@ public class DarkOakDrumBlock extends InstrumentalModElements.ModElement {
 		public void addInformation(ItemStack itemstack, IBlockReader world, List<ITextComponent> list, ITooltipFlag flag) {
 			super.addInformation(itemstack, world, list, flag);
 			list.add(new StringTextComponent("\u00A77 Put a block above it to muffle the sound"));
-		}
-
-		@Override
-		public int tickRate(IWorldReader world) {
-			return 20;
 		}
 
 		@Override
@@ -123,7 +119,7 @@ public class DarkOakDrumBlock extends InstrumentalModElements.ModElement {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
-			world.getPendingBlockTicks().scheduleTick(new BlockPos(x, y, z), this, this.tickRate(world));
+			world.getPendingBlockTicks().scheduleTick(new BlockPos(x, y, z), this, 20);
 		}
 
 		@Override
@@ -140,7 +136,7 @@ public class DarkOakDrumBlock extends InstrumentalModElements.ModElement {
 				$_dependencies.put("world", world);
 				DrumTickUpdateProcedure.executeProcedure($_dependencies);
 			}
-			world.getPendingBlockTicks().scheduleTick(new BlockPos(x, y, z), this, this.tickRate(world));
+			world.getPendingBlockTicks().scheduleTick(new BlockPos(x, y, z), this, 20);
 		}
 
 		@Override
@@ -224,8 +220,8 @@ public class DarkOakDrumBlock extends InstrumentalModElements.ModElement {
 		}
 
 		@Override
-		public void read(CompoundNBT compound) {
-			super.read(compound);
+		public void read(BlockState blockState, CompoundNBT compound) {
+			super.read(blockState, compound);
 			if (!this.checkLootAndRead(compound)) {
 				this.stacks = NonNullList.withSize(this.getSizeInventory(), ItemStack.EMPTY);
 			}
@@ -253,7 +249,7 @@ public class DarkOakDrumBlock extends InstrumentalModElements.ModElement {
 
 		@Override
 		public void onDataPacket(NetworkManager net, SUpdateTileEntityPacket pkt) {
-			this.read(pkt.getNbtCompound());
+			this.read(this.getBlockState(), pkt.getNbtCompound());
 		}
 
 		@Override

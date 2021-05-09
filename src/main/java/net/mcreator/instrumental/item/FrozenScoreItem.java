@@ -22,7 +22,7 @@ public class FrozenScoreItem extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:frozen_score")
 	public static final Item block = null;
 	public FrozenScoreItem(InstrumentalModElements instance) {
-		super(instance, 39);
+		super(instance, 48);
 	}
 
 	@Override

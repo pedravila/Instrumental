@@ -1,5 +1,6 @@
 modLoader="javafml"
-loaderVersion="[31,)"
+loaderVersion="[36,)"
+license="Not specified"
 
 [[mods]]
 modId="instrumental"
@@ -12,15 +13,10 @@ authors="pedro, MCreator"
 [[dependencies.instrumental]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.15.2]"
+    versionRange="[1.16.5]"
     ordering="NONE"
     side="BOTH"
 
 
 
-[[dependencies.instrumental]]
-    modId="just_enough_items"
-    mandatory=false
-    ordering="NONE"
-    side="BOTH"
 

@@ -9,6 +9,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 
 import net.mcreator.instrumental.InstrumentalModElements;
+import net.mcreator.instrumental.InstrumentalMod;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -16,14 +17,14 @@ import java.util.HashMap;
 @InstrumentalModElements.ModElement.Tag
 public class PlayerFlyProcedure extends InstrumentalModElements.ModElement {
 	public PlayerFlyProcedure(InstrumentalModElements instance) {
-		super(instance, 293);
+		super(instance, 308);
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				System.err.println("Failed to load dependency entity for procedure PlayerFly!");
+				InstrumentalMod.LOGGER.warn("Failed to load dependency entity for procedure PlayerFly!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");

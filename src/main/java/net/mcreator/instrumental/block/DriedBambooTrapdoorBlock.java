@@ -7,8 +7,8 @@ import net.minecraftforge.common.ToolType;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
-import net.minecraft.world.storage.loot.LootContext;
 import net.minecraft.util.Direction;
+import net.minecraft.loot.LootContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
@@ -31,7 +31,7 @@ public class DriedBambooTrapdoorBlock extends InstrumentalModElements.ModElement
 	@ObjectHolder("instrumental:dried_bamboo_trapdoor")
 	public static final Block block = null;
 	public DriedBambooTrapdoorBlock(InstrumentalModElements instance) {
-		super(instance, 107);
+		super(instance, 122);
 	}
 
 	@Override
@@ -47,8 +47,8 @@ public class DriedBambooTrapdoorBlock extends InstrumentalModElements.ModElement
 	}
 	public static class CustomBlock extends TrapDoorBlock {
 		public CustomBlock() {
-			super(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(3f, 2f).lightValue(0).harvestLevel(0)
-					.harvestTool(ToolType.AXE));
+			super(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(3f, 2f).setLightLevel(s -> 0).harvestLevel(0)
+					.harvestTool(ToolType.AXE).setRequiresTool());
 			setRegistryName("dried_bamboo_trapdoor");
 		}
 

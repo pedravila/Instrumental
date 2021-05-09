@@ -22,7 +22,7 @@ public class SwitchScoreItem extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:switch_score")
 	public static final Item block = null;
 	public SwitchScoreItem(InstrumentalModElements instance) {
-		super(instance, 46);
+		super(instance, 55);
 	}
 
 	@Override

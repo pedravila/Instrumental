@@ -1,0 +1,32 @@
+{
+  "_fv": 18,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:GoldTriangle"
+      },
+      {
+        "value": "CUSTOM:GoldTrumpet"
+      },
+      {
+        "value": "CUSTOM:DriedBambooGoldChimes"
+      },
+      {
+        "value": "CUSTOM:GoldLyre"
+      },
+      {
+        "value": "CUSTOM:GoldBell"
+      },
+      {
+        "value": "CUSTOM:GoldBanjo"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "name": "piglin_loved",
+    "namespace": "minecraft"
+  }
+}

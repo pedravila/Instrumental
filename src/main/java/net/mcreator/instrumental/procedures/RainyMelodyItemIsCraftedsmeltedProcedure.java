@@ -8,19 +8,20 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 
 import net.mcreator.instrumental.InstrumentalModElements;
+import net.mcreator.instrumental.InstrumentalMod;
 
 import java.util.Map;
 
 @InstrumentalModElements.ModElement.Tag
 public class RainyMelodyItemIsCraftedsmeltedProcedure extends InstrumentalModElements.ModElement {
 	public RainyMelodyItemIsCraftedsmeltedProcedure(InstrumentalModElements instance) {
-		super(instance, 268);
+		super(instance, 283);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				System.err.println("Failed to load dependency entity for procedure RainyMelodyItemIsCraftedsmelted!");
+				InstrumentalMod.LOGGER.warn("Failed to load dependency entity for procedure RainyMelodyItemIsCraftedsmelted!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");

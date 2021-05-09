@@ -22,7 +22,7 @@ public class FireScoreItem extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:fire_score")
 	public static final Item block = null;
 	public FireScoreItem(InstrumentalModElements instance) {
-		super(instance, 38);
+		super(instance, 47);
 	}
 
 	@Override

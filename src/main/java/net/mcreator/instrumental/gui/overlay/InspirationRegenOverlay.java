@@ -24,7 +24,7 @@ import com.google.common.collect.ImmutableMap;
 @InstrumentalModElements.ModElement.Tag
 public class InspirationRegenOverlay extends InstrumentalModElements.ModElement {
 	public InspirationRegenOverlay(InstrumentalModElements instance) {
-		super(instance, 204);
+		super(instance, 219);
 	}
 
 	@Override
@@ -43,20 +43,20 @@ public class InspirationRegenOverlay extends InstrumentalModElements.ModElement 
 			double x = entity.getPosX();
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
+			RenderSystem.disableDepthTest();
+			RenderSystem.depthMask(false);
+			RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA,
+					GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
+			RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+			RenderSystem.disableAlphaTest();
 			if (InspirationRegenDisplayOverlayIngameProcedure.executeProcedure(ImmutableMap.of("entity", entity))) {
-				RenderSystem.disableDepthTest();
-				RenderSystem.depthMask(false);
-				RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA,
-						GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
-				RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
-				RenderSystem.disableAlphaTest();
 				Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("instrumental:textures/inspiration_regen.png"));
-				Minecraft.getInstance().ingameGUI.blit(posX + -92, posY + 76, 0, 0, 101, 12, 101, 12);
-				RenderSystem.depthMask(true);
-				RenderSystem.enableDepthTest();
-				RenderSystem.enableAlphaTest();
-				RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+				Minecraft.getInstance().ingameGUI.blit(event.getMatrixStack(), posX + -92, posY + 76, 0, 0, 101, 12, 101, 12);
 			}
+			RenderSystem.depthMask(true);
+			RenderSystem.enableDepthTest();
+			RenderSystem.enableAlphaTest();
+			RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
 		}
 	}
 }

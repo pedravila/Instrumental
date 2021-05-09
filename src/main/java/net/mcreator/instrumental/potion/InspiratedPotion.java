@@ -24,7 +24,7 @@ public class InspiratedPotion extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:inspirated")
 	public static final Effect potion = null;
 	public InspiratedPotion(InstrumentalModElements instance) {
-		super(instance, 205);
+		super(instance, 220);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
 	}
 

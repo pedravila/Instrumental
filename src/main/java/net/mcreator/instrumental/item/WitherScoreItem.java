@@ -22,7 +22,7 @@ public class WitherScoreItem extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:wither_score")
 	public static final Item block = null;
 	public WitherScoreItem(InstrumentalModElements instance) {
-		super(instance, 45);
+		super(instance, 54);
 	}
 
 	@Override

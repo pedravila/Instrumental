@@ -22,7 +22,7 @@ public class WaterBreathingSpeakerItem extends InstrumentalModElements.ModElemen
 	@ObjectHolder("instrumental:water_breathing_speaker")
 	public static final Item block = null;
 	public WaterBreathingSpeakerItem(InstrumentalModElements instance) {
-		super(instance, 55);
+		super(instance, 64);
 	}
 
 	@Override

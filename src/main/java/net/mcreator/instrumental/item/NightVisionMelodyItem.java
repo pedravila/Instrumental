@@ -16,7 +16,7 @@ public class NightVisionMelodyItem extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:night_vision_melody")
 	public static final Item block = null;
 	public NightVisionMelodyItem(InstrumentalModElements instance) {
-		super(instance, 302);
+		super(instance, 106);
 	}
 
 	@Override

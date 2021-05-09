@@ -15,10 +15,8 @@ import net.minecraftforge.common.ToolType;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
-import net.minecraft.world.storage.loot.LootContext;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.World;
-import net.minecraft.world.IWorldReader;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.ITextComponent;
@@ -35,6 +33,7 @@ import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.loot.LootContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
 import net.minecraft.item.BlockItem;
@@ -75,8 +74,8 @@ public class ObsidianDrumBlock extends InstrumentalModElements.ModElement {
 	@ObjectHolder("instrumental:obsidian_drum")
 	public static final TileEntityType<CustomTileEntity> tileEntityType = null;
 	public ObsidianDrumBlock(InstrumentalModElements instance) {
-		super(instance, 78);
-		FMLJavaModLoadingContext.get().getModEventBus().register(this);
+		super(instance, 87);
+		FMLJavaModLoadingContext.get().getModEventBus().register(new TileEntityRegisterHandler());
 	}
 
 	@Override
@@ -85,15 +84,17 @@ public class ObsidianDrumBlock extends InstrumentalModElements.ModElement {
 		elements.items.add(
 				() -> new BlockItem(block, new Item.Properties().group(RangedInstrumentsTabItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
-
-	@SubscribeEvent
-	public void registerTileEntity(RegistryEvent.Register<TileEntityType<?>> event) {
-		event.getRegistry().register(TileEntityType.Builder.create(CustomTileEntity::new, block).build(null).setRegistryName("obsidian_drum"));
+	private static class TileEntityRegisterHandler {
+		@SubscribeEvent
+		public void registerTileEntity(RegistryEvent.Register<TileEntityType<?>> event) {
+			event.getRegistry().register(TileEntityType.Builder.create(CustomTileEntity::new, block).build(null).setRegistryName("obsidian_drum"));
+		}
 	}
+
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
-			super(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(10f, 1000f).lightValue(0).harvestLevel(1)
-					.harvestTool(ToolType.PICKAXE));
+			super(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(10f, 1000f).setLightLevel(s -> 0)
+					.harvestLevel(1).harvestTool(ToolType.PICKAXE).setRequiresTool());
 			setRegistryName("obsidian_drum");
 		}
 
@@ -102,11 +103,6 @@ public class ObsidianDrumBlock extends InstrumentalModElements.ModElement {
 		public void addInformation(ItemStack itemstack, IBlockReader world, List<ITextComponent> list, ITooltipFlag flag) {
 			super.addInformation(itemstack, world, list, flag);
 			list.add(new StringTextComponent("\u00A77 Put a block above it to muffle the sound"));
-		}
-
-		@Override
-		public int tickRate(IWorldReader world) {
-			return 20;
 		}
 
 		@Override
@@ -123,7 +119,7 @@ public class ObsidianDrumBlock extends InstrumentalModElements.ModElement {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
-			world.getPendingBlockTicks().scheduleTick(new BlockPos(x, y, z), this, this.tickRate(world));
+			world.getPendingBlockTicks().scheduleTick(new BlockPos(x, y, z), this, 20);
 		}
 
 		@Override
@@ -140,7 +136,7 @@ public class ObsidianDrumBlock extends InstrumentalModElements.ModElement {
 				$_dependencies.put("world", world);
 				DrumTickUpdateProcedure.executeProcedure($_dependencies);
 			}
-			world.getPendingBlockTicks().scheduleTick(new BlockPos(x, y, z), this, this.tickRate(world));
+			world.getPendingBlockTicks().scheduleTick(new BlockPos(x, y, z), this, 20);
 		}
 
 		@Override
@@ -224,8 +220,8 @@ public class ObsidianDrumBlock extends InstrumentalModElements.ModElement {
 		}
 
 		@Override
-		public void read(CompoundNBT compound) {
-			super.read(compound);
+		public void read(BlockState blockState, CompoundNBT compound) {
+			super.read(blockState, compound);
 			if (!this.checkLootAndRead(compound)) {
 				this.stacks = NonNullList.withSize(this.getSizeInventory(), ItemStack.EMPTY);
 			}
@@ -253,7 +249,7 @@ public class ObsidianDrumBlock extends InstrumentalModElements.ModElement {
 
 		@Override
 		public void onDataPacket(NetworkManager net, SUpdateTileEntityPacket pkt) {
-			this.read(pkt.getNbtCompound());
+			this.read(this.getBlockState(), pkt.getNbtCompound());
 		}
 
 		@Override

@@ -10,11 +10,12 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.client.network.play.NetworkPlayerInfo;
-import net.minecraft.client.entity.player.ClientPlayerEntity;
+import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.client.Minecraft;
 
 import net.mcreator.instrumental.potion.InspiratedPotion;
 import net.mcreator.instrumental.InstrumentalModElements;
+import net.mcreator.instrumental.InstrumentalMod;
 
 import java.util.Map;
 import java.util.Collection;
@@ -22,13 +23,13 @@ import java.util.Collection;
 @InstrumentalModElements.ModElement.Tag
 public class InspirationRegenDisplayOverlayIngameProcedure extends InstrumentalModElements.ModElement {
 	public InspirationRegenDisplayOverlayIngameProcedure(InstrumentalModElements instance) {
-		super(instance, 206);
+		super(instance, 221);
 	}
 
 	public static boolean executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				System.err.println("Failed to load dependency entity for procedure InspirationRegenDisplayOverlayIngame!");
+				InstrumentalMod.LOGGER.warn("Failed to load dependency entity for procedure InspirationRegenDisplayOverlayIngame!");
 			return false;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
@@ -43,15 +44,15 @@ public class InspirationRegenDisplayOverlayIngameProcedure extends InstrumentalM
 				}
 				return false;
 			}
-		}.check(entity)) && ((ItemTags.getCollection().getOrCreate(new ResourceLocation(("forge_instruments").toLowerCase(java.util.Locale.ENGLISH)))
+		}.check(entity)) && ((ItemTags.getCollection().getTagByID(new ResourceLocation(("forge_instruments").toLowerCase(java.util.Locale.ENGLISH)))
 				.contains(((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem()))
 				&& (new Object() {
 					public boolean checkGamemode(Entity _ent) {
 						if (_ent instanceof ServerPlayerEntity) {
 							return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.SURVIVAL;
-						} else if (_ent instanceof PlayerEntity && _ent.world.isRemote) {
+						} else if (_ent instanceof PlayerEntity && _ent.world.isRemote()) {
 							NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
-									.getPlayerInfo(((ClientPlayerEntity) _ent).getGameProfile().getId());
+									.getPlayerInfo(((AbstractClientPlayerEntity) _ent).getGameProfile().getId());
 							return _npi != null && _npi.getGameType() == GameType.SURVIVAL;
 						}
 						return false;
