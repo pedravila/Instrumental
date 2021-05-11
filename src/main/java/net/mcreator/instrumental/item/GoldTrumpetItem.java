@@ -35,7 +35,7 @@ import net.minecraft.block.Blocks;
 
 import net.mcreator.instrumental.procedures.IronTrumpetRangedItemUsedProcedure;
 import net.mcreator.instrumental.procedures.IronTriangleCanUseRangedItemProcedure;
-import net.mcreator.instrumental.procedures.IronNoteProjectileProcedure;
+import net.mcreator.instrumental.procedures.GoldNoteProjectileProcedure;
 import net.mcreator.instrumental.itemgroup.RangedInstrumentsTabItemGroup;
 import net.mcreator.instrumental.entity.renderer.GoldTrumpetRenderer;
 import net.mcreator.instrumental.InstrumentalModElements;
@@ -170,7 +170,7 @@ public class GoldTrumpetItem extends InstrumentalModElements.ModElement {
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				IronNoteProjectileProcedure.executeProcedure($_dependencies);
+				GoldNoteProjectileProcedure.executeProcedure($_dependencies);
 			}
 			if (this.inGround) {
 				this.remove();

@@ -44,7 +44,7 @@
     "bulletModel": "Default",
     "customBulletModelTexture": "",
     "onBulletFlyingTick": {
-      "name": "IronNoteProjectile"
+      "name": "GoldNoteProjectile"
     }
   }
 }

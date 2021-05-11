@@ -35,7 +35,7 @@ import net.minecraft.block.Blocks;
 
 import net.mcreator.instrumental.procedures.DriedBambooDiamondChimesRangedItemUsedProcedure;
 import net.mcreator.instrumental.procedures.DriedBambooDiamondChimesCanUseRangedItemProcedure;
-import net.mcreator.instrumental.procedures.AsdaWhileBulletFlyingTickProcedure;
+import net.mcreator.instrumental.procedures.DiamondNoteProjectileProcedure;
 import net.mcreator.instrumental.itemgroup.RangedInstrumentsTabItemGroup;
 import net.mcreator.instrumental.entity.renderer.DriedBambooDiamondChimesRenderer;
 import net.mcreator.instrumental.InstrumentalModElements;
@@ -170,7 +170,7 @@ public class DriedBambooDiamondChimesItem extends InstrumentalModElements.ModEle
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				AsdaWhileBulletFlyingTickProcedure.executeProcedure($_dependencies);
+				DiamondNoteProjectileProcedure.executeProcedure($_dependencies);
 			}
 			if (this.inGround) {
 				this.remove();

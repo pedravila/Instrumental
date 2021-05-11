@@ -3530,15 +3530,6 @@
       "registry_name": "netherite_panflute"
     },
     {
-      "name": "NetheriteUkulele",
-      "type": "gun",
-      "sortid": 35,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "netherite_ukulele"
-    },
-    {
       "name": "NetheriteAccordionRecipe",
       "type": "recipe",
       "sortid": 321,
@@ -3618,6 +3609,15 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "netherite_ukulele_recipe"
+    },
+    {
+      "name": "NetheriteUkulele",
+      "type": "tool",
+      "sortid": 35,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "netherite_ukulele"
     }
   ],
   "variable_elements": [
